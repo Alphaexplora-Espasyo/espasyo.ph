@@ -1,0 +1,984 @@
+[
+  {
+    "id": 1,
+    "isFounder": false,
+    "businessName": "ABA Training Solutions",
+    "industry": [
+      "Applied Behavior Analysis"
+    ],
+    "services": [
+      "Trainings",
+      "Seminars",
+      "Mentorships"
+    ],
+    "links": {
+      "website": "https://abatsph.com/",
+      "facebook": "https://www.facebook.com/ABATrainingSolutions",
+      "instagram": "https://www.instagram.com/abatrainingsolutions/"
+    },
+    "testimonial": "Espasyo gave us the professional base we needed while we focused on delivering impactful training programs. Having reliable administrative support behind the scenes helped us stay focused on our mission.",
+    "media": {
+      "video": "public/assets/video/Testimonial_ABA.mp4",
+      "image1": "public/assets/media1/Media1_ABA.jpg",
+      "image2": "public/assets/media2/Media2_ABA.png",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/ABA Training Solutions.png"
+  },
+  {
+    "id": 2,
+    "isFounder": false,
+    "businessName": "ACCRUA Insight Management Inc.",
+    "industry": [
+      "Financial management",
+      "Advisory support"
+    ],
+    "services": [
+      "Financial Management",
+      "FP&A & Financial Advisory",
+      "Business Valuation Services",
+      "Business Support Services"
+    ],
+    "links": {
+      "website": "www.accruainsight.com",
+      "facebook": "facebook.com/accrua",
+      "instagram": "https://www.instagram.com/accruainsight?igsh=MXdocTl4ZXd1bnhjOQ=="
+    },
+    "testimonial": "Working with Espasyo allowed us to focus on advising our clients while they handled many of the operational details that come with running a growing firm.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/Accrua.jpg"
+  },
+  {
+    "id": 3,
+    "isFounder": false,
+    "businessName": "ALPHAEXPLORA Information Technology Services",
+    "industry": [
+      "Digital Services",
+      "IT Consultation",
+      "Analytics and Service Management"
+    ],
+    "services": [
+      "I.T. Consultancy",
+      "Software Solutions",
+      "Data Analytics",
+      "Managed Services",
+      "AI Enablement",
+      "Digital Marketing"
+    ],
+    "links": {
+      "website": "https://alphaexplora.com/",
+      "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo helped us maintain a professional presence while we focused on building digital solutions and supporting our clients' technology needs.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/Alphaexplora.png"
+  },
+  {
+    "id": 4,
+    "isFounder": false,
+    "businessName": "Astratech Business Innovations Inc.",
+    "industry": [
+      "Digital Agency",
+      "Business Service",
+      "Custom Solutions",
+      "I.T. Consultancy"
+    ],
+    "services": [
+      "ERP",
+      "HRIS/PAYROLL",
+      "Enterprise Email Services",
+      "Endpoint Protection Services",
+      "Custom Business Solutions",
+      "I.T. Consulting"
+    ],
+    "links": {
+      "website": "https://astratech.com.ph/",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "As a company focused on innovation, Espasyo provided the operational structure that helped us stay organized while we developed solutions for our clients.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/AstraTech.png"
+  },
+  {
+    "id": 5,
+    "isFounder": false,
+    "businessName": "GLOBALBIM Engineering Services",
+    "industry": [
+      "Engineering Services",
+      "Steel Detailing"
+    ],
+    "services": [
+      "Pre-Engineered Building Detailing",
+      "Structural Steel Detailing",
+      "Steel Design and Analysis",
+      "BIM Consulting"
+    ],
+    "links": {
+      "website": "https://globalbimph.vercel.app",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo allowed us to concentrate on delivering precise engineering work while they supported the administrative side of running a business.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/GBIM.png"
+  },
+  {
+    "id": 6,
+    "isFounder": false,
+    "businessName": "GMST, Inc.",
+    "industry": [
+      "Educational",
+      "Technology Solutions"
+    ],
+    "services": [
+      "whiteStrings",
+      "SkillSpark",
+      "Custome Web Systems",
+      "2D Metaverse",
+      "Consulting"
+    ],
+    "links": {
+      "website": "gmst.com.ph",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "With Espasyo supporting our office and documentation needs, our team was able to dedicate more time to developing technology and learning solutions.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/GMST.png"
+  },
+  {
+    "id": 7,
+    "isFounder": false,
+    "businessName": "KREDDU Ventures Corporation",
+    "industry": [
+      "Commercial"
+    ],
+    "services": [
+      "Bags"
+    ],
+    "links": {
+      "website": "www.shopee.ph/OurTown257",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo provided the structure and support that helped us manage our operations efficiently as we explored new opportunities.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 8,
+    "isFounder": false,
+    "businessName": "Ludo Launchpad Software Inc.",
+    "industry": [
+      "Publisher"
+    ],
+    "services": [
+      "Game Publisher",
+      "Marketing",
+      "Game Design"
+    ],
+    "links": {
+      "website": "https://ludolaunchpad.com",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo helped us maintain a professional business presence while we focused on creating and launching new software products.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/LudoLaunchPad.png"
+  },
+  {
+    "id": 9,
+    "isFounder": false,
+    "businessName": "NM Development and Construction Corp.",
+    "industry": [
+      "Design",
+      "Construction"
+    ],
+    "services": [
+      "Design",
+      "Construction",
+      "Consultancy"
+    ],
+    "links": {
+      "website": "www.nmdc-corp.com",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "Having Espasyo support our administrative processes allowed our team to focus on planning, design, and project execution.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/NMDC.jpg"
+  },
+  {
+    "id": 10,
+    "isFounder": false,
+    "businessName": "NSC Trading ,OPC",
+    "industry": [
+      "Healthcare"
+    ],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "https://www.facebook.com/share/17j2W8WqRP/?mibextid=wwXIfr",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo helped us keep our business operations organized so we could focus on serving clients in the healthcare sector.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/NSC.jpg"
+  },
+  {
+    "id": 11,
+    "isFounder": false,
+    "businessName": "OVERFLOW Creatives Art Studio Inc.",
+    "industry": [
+      "Art"
+    ],
+    "services": [
+      "Mixed Media Abstract",
+      "Cubist Pop Art"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "https://Facebook.com/OverflowCreativesArt",
+      "instagram": "https://Instagram.com/jmesamson"
+    },
+    "testimonial": "Espasyo provided a dependable operational foundation that allowed our creative team to focus on producing meaningful work.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/Overflow.jpg"
+  },
+  {
+    "id": 12,
+    "isFounder": false,
+    "businessName": "S.T.E.P. Leadership and Management Consultancy",
+    "industry": [
+      "Consulting"
+    ],
+    "services": [
+      "Leadership and Management Consultancy"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "https://www.facebook.com/stepleadership",
+      "instagram": ""
+    },
+    "testimonial": "Espasyo helped streamline the operational side of our consultancy so we could focus on guiding organizations and leaders.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "public/assets/logo/STEP.jpg"
+  },
+  {
+    "id": 13,
+    "isFounder": false,
+    "businessName": "A. Valentin Construction",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 14,
+    "isFounder": false,
+    "businessName": "Ameribuild Company, OPC",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 15,
+    "isFounder": false,
+    "businessName": "APrime Education Experts Technology and Solutions Inc.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 16,
+    "isFounder": false,
+    "businessName": "Axis Point Management Inc.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 17,
+    "isFounder": false,
+    "businessName": "Azure Mobile Telecom, Inc.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 18,
+    "isFounder": false,
+    "businessName": "BCHS Corporation",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 19,
+    "isFounder": false,
+    "businessName": "BORJAL-AMAHAN Tax and Accounting Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 20,
+    "isFounder": false,
+    "businessName": "Build Quotient AEC Management OPC",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 21,
+    "isFounder": false,
+    "businessName": "CEECARE Medical Supplies Trading",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 22,
+    "isFounder": false,
+    "businessName": "ELENJ Consulting Company",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 23,
+    "isFounder": false,
+    "businessName": "Eltech Information Technology Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 24,
+    "isFounder": false,
+    "businessName": "Estrukutura Manila Interior Supplies Trading",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 25,
+    "isFounder": false,
+    "businessName": "Everything Green PH Inc",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 26,
+    "isFounder": false,
+    "businessName": "FASCONS Corporation",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 27,
+    "isFounder": false,
+    "businessName": "FZA Advertizing Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 28,
+    "isFounder": false,
+    "businessName": "GAMMS Property MGT. CORP.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 29,
+    "isFounder": false,
+    "businessName": "Green Pulse Technologies Inc.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 30,
+    "isFounder": false,
+    "businessName": "Highlands Construction Corporation",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 31,
+    "isFounder": false,
+    "businessName": "JEXPRESS Tourist Transport Service Cooperative",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 32,
+    "isFounder": false,
+    "businessName": "JTV Enterprises Corporation",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 33,
+    "isFounder": false,
+    "businessName": "K2C Civil Engineering Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 34,
+    "isFounder": false,
+    "businessName": "KAIZEN Optima Facility & Property Management Services, Inc",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 35,
+    "isFounder": false,
+    "businessName": "NV Graphic Design Studio",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 36,
+    "isFounder": false,
+    "businessName": "Primo Digital Marketing Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 37,
+    "isFounder": false,
+    "businessName": "PYZEN Corp.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 38,
+    "isFounder": false,
+    "businessName": "Rockmetal Information Technology Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 39,
+    "isFounder": false,
+    "businessName": "Sales Edge Professionals, OPC",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 40,
+    "isFounder": false,
+    "businessName": "Shantal's Beauty and Wellness Corporation",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 41,
+    "isFounder": false,
+    "businessName": "SJB Ultimate Enterprises",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 42,
+    "isFounder": false,
+    "businessName": "STARGOLD Group Realty Inc",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 43,
+    "isFounder": false,
+    "businessName": "SUHAY StratEdge Management Consultancy Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 44,
+    "isFounder": false,
+    "businessName": "Verdan Terra Estate Incorporated",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 45,
+    "isFounder": false,
+    "businessName": "Wisdom Nourishment Learning Hub, Inc.",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
+  }
+]

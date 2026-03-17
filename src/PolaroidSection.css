@@ -1,0 +1,77 @@
+/* src/components/PolaroidSection.css */
+
+.split-container {
+  display: flex;
+  width: 100%;
+  /* Adjust height to account for your Navbar if needed */
+  height: 90vh; 
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* --- LEFT SIDE (SCROLLABLE) --- */
+.scroll-area {
+  flex: 1; /* Takes remaining space */
+  display: flex;
+  align-items: center; /* Vertically center items */
+  gap: 30px;
+  padding: 0 40px; /* Horizontal padding */
+  overflow-x: auto; /* ENABLE HORIZONTAL SCROLL */
+  overflow-y: hidden;
+  
+  /* Optional: Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for cleaner look (optional) */
+.scroll-area::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* --- RIGHT SIDE (STATIC) --- */
+.static-text-panel {
+  width: 350px;
+  min-width: 300px; /* Prevent it from getting too squished */
+  background: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+/* --- POLAROID CARD STYLING --- */
+.polaroid-card {
+  min-width: 220px;
+  height: 280px;
+  background-color: white;
+  padding: 10px 10px 40px 10px; /* Extra bottom padding for caption */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(-2deg);
+  transition: transform 0.2s;
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 5;
+}
+
+/* Alternating rotation for natural look */
+.polaroid-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 80%;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}

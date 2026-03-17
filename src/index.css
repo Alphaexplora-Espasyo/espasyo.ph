@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling reset */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Global scrollbar hiding */
+*::-webkit-scrollbar {
+  display: none !important;
+}
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Pannellum (360 viewer) - hide center loading/reticle circle for Espasyo tour only */
+#espasyo-tour .pnlm-load-box,
+#espasyo-tour .pnlm-load-button {
+  display: none !important;
+}
+
+/* Pannellum hotspots - hide default circular sprite so only custom React hotspot content shows */
+#espasyo-tour .pnlm-hotspot,
+#espasyo-tour .pnlm-hotspot.pnlm-sprite {
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Pannellum default custom-hotspot circle (textInfo) - remove white ring + fill */
+#espasyo-tour #textInfo .hotspot .out,
+#espasyo-tour #textInfo .hotspot .in,
+#espasyo-tour #textInfo .hotspot .out:after {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* New Espasyo arrow-style hotspot marker */
+#espasyo-tour .espasyo-arrow-hotspot-wrapper {
+  cursor: pointer;
+}
+
+#espasyo-tour .espasyo-arrow-hotspot {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: rgba(240, 234, 214, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(44, 54, 40, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#espasyo-tour .espasyo-arrow-hotspot::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #2C3628;
+  transform: translateX(1px);
+}
+
+#espasyo-tour .espasyo-arrow-hotspot:hover {
+  transform: translateY(-2px);
+  background-color: #D4A373;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+#espasyo-tour .espasyo-arrow-hotspot:hover::before {
+  border-left-color: #F0EAD6;
+}
+
+
+
+

@@ -1,5 +1,5 @@
 // src/components/Contact.tsx
-import { useRef, useLayoutEffect, useEffect } from 'react';
+import { useRef, useLayoutEffect, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Navbar from './Navbar';
@@ -10,6 +10,54 @@ const Contact = () => {
     const container = useRef<HTMLDivElement>(null);
     const formRef = useRef<HTMLFormElement>(null);
     const navigate = useNavigate();
+
+    // --- FORM STATE LOGIC ---
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+    });
+    const [isLoading, setIsLoading] = useState(false);
+    const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setStatusMessage({ type: '', text: '' });
+
+        try {
+            // Send to the Next.js/Vercel serverless function
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
+                    email: formData.email,
+                    company: "N/A (Espasyo Inquiry)",
+                    service: "Espasyo Inquiry",
+                    details: formData.message
+                }),
+            });
+
+            if (response.ok) {
+                setStatusMessage({ type: 'success', text: 'Thank you! Your inquiry has been sent.' });
+                setFormData({ firstName: '', lastName: '', email: '', message: '' });
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || 'Failed to send');
+            }
+        } catch (error) {
+            setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     // --- NUCLEAR SCROLL RESET ---
     useLayoutEffect(() => {
@@ -33,31 +81,26 @@ const Contact = () => {
             { opacity: 0 },
             { opacity: 1, duration: 1 }
         );
-        gsap.from(".contact-card", {
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            delay: 0.2,
-            ease: "power3.out"
-        });
-        gsap.from(formRef.current?.children || [], {
-            y: 20,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            delay: 0.6,
-            ease: "power2.out"
-        });
+        gsap.fromTo(".contact-card",
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, delay: 0.2, ease: "power3.out" }
+        );
+        // FIX: Use fromTo and a specific class name for safety
+        gsap.fromTo(".form-animate",
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, delay: 0.6, ease: "power2.out" }
+        );
     }, { scope: container });
 
     const handleBack = () => {
         navigate('/', {
             state: {
                 skipIntro: true,
-                scrollToSection: 'services' // Changed to 'our-story' (ID usually doesn't need # in state logic depending on implementation, but kept standard string)
+                scrollToSection: 'services'
             }
         });
     };
+
     return (
         <div ref={container} className="min-h-screen bg-[#2C3628] text-[#F0EAD6] flex flex-col">
             <Navbar theme="brown" />
@@ -74,7 +117,7 @@ const Contact = () => {
                     {/* LEFT SIDE: INFO */}
                     <div className="w-full md:w-1/2 bg-[#3E4A35] text-[#F0EAD6] p-8 md:p-12 flex flex-col relative overflow-hidden">
                         <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#D4A373]/10 rounded-full blur-3xl" />
-                        <div className="relative z-10">
+                        <div className="relative z-10 flex flex-col h-full">
                             <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-2 text-[#D4A373]">Espasyo</h2>
                             <p className="font-body text-xs tracking-[0.2em] uppercase opacity-70 mb-12">Study & Office Hub</p>
 
@@ -98,9 +141,8 @@ const Contact = () => {
                                     <Facebook size={18} /><span>Follow on Facebook</span>
                                 </a>
                                 <div className="w-full h-48 rounded-xl overflow-hidden border-2 border-[#F0EAD6]/10 shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
-                                    {/* Updated to a valid secure placeholder to avoid mixed content warnings */}
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.200567087814!2d121.116667!3d14.646111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDM4JzQ2LjAiTiAxMjHCsDA3JzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1600000000000!5m2!1sen!2sph"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.2796443493134!2d121.1147575114704!3d14.640050876115993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9a528a49c95%3A0xc02e3b1c678ec09a!2sEspasyo%20Study%20%26%20Office%20Hub!5e0!3m2!1sen!2sph!4v1709123456789!5m2!1sen!2sph"
                                         width="100%"
                                         height="100%"
                                         style={{ border: 0 }}
@@ -114,16 +156,50 @@ const Contact = () => {
                     </div>
 
                     {/* RIGHT SIDE: FORM */}
-                    <div className="w-full md:w-1/2 bg-[#F0EAD6] text-[#2C3628] p-8 md:p-12 flex flex-col justify-center relative">
+                    <div className="w-full md:w-1/2 bg-[#F0EAD6] text-[#2C3628] p-8 md:p-12 flex flex-col relative pb-16">
                         <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#2C3628]/5 rounded-full blur-3xl pointer-events-none" />
-                        <div className="max-w-md mx-auto w-full relative z-10">
+                        <div className="max-w-md mx-auto w-full relative z-10 py-4">
                             <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-2">Get in Touch</h2>
-                            <p className="font-body text-sm opacity-70 mb-10">Fill out the form below and we'll get back to you shortly.</p>
-                            <form ref={formRef} className="flex flex-col gap-6">
-                                <div className="group"><label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Your Name</label><input type="text" className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30" placeholder="John Doe" /></div>
-                                <div className="group"><label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Email Address</label><input type="email" className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30" placeholder="hello@example.com" /></div>
-                                <div className="group"><label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Message</label><textarea className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30 min-h-[120px] resize-none" placeholder="How can we help you?"></textarea></div>
-                                <button className="group mt-6 w-full py-4 bg-[#2C3628] text-[#F0EAD6] rounded-xl font-bold uppercase tracking-widest hover:bg-[#3E4A35] transition-all flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:-translate-y-1"><span>Send Message</span><Send size={18} className="group-hover:translate-x-1 transition-transform" /></button>
+                            <p className="font-body text-sm opacity-70 mb-8">Fill out the form below and we'll get back to you shortly.</p>
+
+                            {/* Status Message Display */}
+                            {/* Status Message Display */}
+                            {statusMessage.text && (
+                                <div className={`mb-6 p-4 rounded-xl border-2 flex items-center justify-center text-center font-display text-xs font-bold uppercase tracking-widest transition-all ${statusMessage.type === 'success'
+                                        ? 'bg-[#3E4A35]/10 border-[#3E4A35]/30 text-[#2C3628]'
+                                        : 'bg-[#C87941]/10 border-[#C87941]/30 text-[#C87941]'
+                                    }`}>
+                                    {statusMessage.type === 'success' ? '✓ ' : '⚠ '} {statusMessage.text}
+                                </div>
+                            )}
+
+                            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6 pb-6">
+                                {/* First Name & Last Name */}
+                                <div className="flex gap-4 form-animate">
+                                    <div className="group w-1/2">
+                                        <label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">First Name</label>
+                                        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30" placeholder="John" />
+                                    </div>
+                                    <div className="group w-1/2">
+                                        <label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Last Name</label>
+                                        <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30" placeholder="Doe" />
+                                    </div>
+                                </div>
+
+                                <div className="group form-animate">
+                                    <label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Email Address</label>
+                                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30" placeholder="hello@example.com" />
+                                </div>
+
+                                <div className="group form-animate">
+                                    <label className="block font-display text-xs font-bold uppercase tracking-widest mb-2 opacity-60 group-focus-within:opacity-100 group-focus-within:text-[#C87941] transition-all">Message</label>
+                                    <textarea name="message" value={formData.message} onChange={handleInputChange} required className="w-full bg-transparent border-b-2 border-[#2C3628]/20 py-3 text-lg focus:outline-none focus:border-[#C87941] transition-colors placeholder:text-[#2C3628]/30 min-h-[100px] resize-none" placeholder="How can we help you?"></textarea>
+                                </div>
+
+                                <button type="submit" disabled={isLoading} className="form-animate group mt-2 w-full py-4 bg-[#2C3628] text-[#D4A373] border-2 border-[#2C3628] rounded-xl font-bold uppercase tracking-widest hover:bg-[#D4A373] hover:text-[#2C3628] transition-all flex items-center justify-center gap-3 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed shrink-0">
+                                    <span>{isLoading ? 'Sending...' : 'Send Inquiry'}</span>
+                                    {!isLoading && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
+                                </button>
                             </form>
                         </div>
                     </div>

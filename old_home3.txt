@@ -1,0 +1,216 @@
+﻿
+// src/components/Home.tsx
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from './Navbar';
+import Services from './Services'; // <--- IMPORT THE NEW FILE
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Home = () => {
+  const container = useRef<HTMLDivElement>(null);
+  const scrollContainer = useRef<HTMLDivElement>(null);
+  const testimonialColumnRef = useRef<HTMLDivElement>(null);
+
+  const polaroidImageUri = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80";
+
+  const testimonialData = [
+    { id: 1, src: polaroidImageUri, caption: "CLIENT STORY 1", rotate: "rotate-[-2deg]" },
+    { id: 2, src: polaroidImageUri, caption: "STARTUP HUB", rotate: "rotate-[1.5deg]" },
+    { id: 3, src: polaroidImageUri, caption: "TECH TEAM", rotate: "rotate-[-1deg]" },
+    { id: 4, src: polaroidImageUri, caption: "FREELANCER", rotate: "rotate-[2deg]" },
+    { id: 5, src: polaroidImageUri, caption: "DESIGNER", rotate: "rotate-[-1.5deg]" }, 
+    { id: 6, src: polaroidImageUri, caption: "FOUNDER", rotate: "rotate-[1deg]" },
+    // VIEW ALL CARD
+    { id: 7, src: null, caption: "VIEW ALL WORK", rotate: "rotate-0", isViewAll: true }, 
+  ];
+
+  const heroTextRef1 = useRef<HTMLHeadingElement>(null);
+  const heroTextRef2 = useRef<HTMLHeadingElement>(null);
+  const subTextRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  const marqueeText = Array(4).fill("COMMUNITY ΓÇó WORK ΓÇó CREATE ΓÇó ");
+
+  useGSAP(() => {
+    // --- 1. INTRO ANIMATION ---
+    const introTl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+    introTl.from(navRef.current, { y: -50, opacity: 0, duration: 1, delay: 0.2 })
+      .from([heroTextRef1.current, heroTextRef2.current], {
+        y: 150, skewY: 7, opacity: 0, duration: 1.5, stagger: 0.2
+      }, "-=0.8")
+      .from(subTextRef.current, { y: 20, opacity: 0, duration: 1 }, "-=1");
+    
+    // --- 2. CALCULATIONS ---
+
+    const calculateTestimonialScroll = () => {
+        if (!testimonialColumnRef.current) return 0;
+        return -(testimonialColumnRef.current.scrollHeight - window.innerHeight + 500);
+    };
+
+    const getScrollDist1 = () => {
+       return -(window.innerWidth * 0.6);
+    };
+
+    const getScrollDist2 = () => {
+       return -(window.innerWidth * 1.6);
+    };
+
+    // --- 3. MASTER TIMELINE ---
+    const scrollTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: scrollContainer.current,
+        pin: true,
+        scrub: 1,
+        end: () => "+=" + (window.innerWidth * 2 + window.innerHeight * 3), 
+        invalidateOnRefresh: true, 
+      }
+    });
+
+    // SEQUENCE A: Scroll Horizontal to Section 2
+    scrollTl.to(scrollContainer.current, {
+      x: getScrollDist1, 
+      ease: "none",
+      duration: 1
+    });
+
+    // SEQUENCE B: Scroll Vertical (Testimonials Up)
+    scrollTl
+      .to(testimonialColumnRef.current, {
+        y: calculateTestimonialScroll, 
+        ease: "none",
+        duration: 2 
+      })
+      // VIEW ALL CARD ANIMATION
+      .fromTo(".view-all-card", 
+        { scale: 0.5, opacity: 0.5 }, 
+        { scale: 1, opacity: 1, ease: "power1.out", duration: 0.8 }, 
+        "<+60%" 
+      );
+
+    // SEQUENCE C: Scroll Horizontal to Section 3 (Services)
+    scrollTl.to(scrollContainer.current, {
+      x: getScrollDist2, 
+      ease: "none",
+      duration: 1
+    });
+
+  }, { scope: container });
+
+  return (
+    <div ref={container} className="relative bg-[#d9d8d7] text-[#7d512d] overflow-x-hidden">
+      
+      <style>{`
+        @keyframes infinite-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-100%); }
+        }
+        .animate-infinite-scroll {
+          animation: infinite-scroll 25s linear infinite;
+        }
+      `}</style>
+
+      <Navbar ref={navRef} />
+
+      {/* --- MASTER SCROLL CONTAINER --- */}
+      <div ref={scrollContainer} className="flex w-fit h-screen pt-[96px] relative z-10 overscroll-none items-start">
+        
+        {/* === SECTION 1: HERO (60vw) === */}
+        <section className="w-[60vw] h-full flex flex-col justify-center items-center pr-8 relative shrink-0">
+           <div className="overflow-hidden">
+             <h1 ref={heroTextRef1} className="mb-2 lg:text-10xl font-display text-mega uppercase text-center tracking-tighter leading-[0.9]">
+               ESPASYO
+             </h1>
+           </div>
+           <div className="overflow-hidden">
+             <h1 ref={heroTextRef2} className="font-display text-3xl md:text-5xl lg:text-5xl uppercase text-center tracking-tighter leading-[0.9] text-transparent" style={{ WebkitTextStroke: '1px #7d512d' }}>
+               COMMUNITY OF ENTREPENEURS
+             </h1>
+           </div>
+           <div ref={subTextRef} className="mt-6 max-w-md text-center">
+             <p className="font-body text-lg leading-relaxed font-bold tracking-widest uppercase">Study & Office Hub</p>
+           </div>
+           <div className="absolute bottom-10 animate-bounce font-display text-xs tracking-[0.3em] uppercase opacity-60">
+             Scroll for Stories
+           </div>
+        </section>
+
+        {/* === SECTION 2: TESTIMONIALS + STORY (100vw) === */}
+        <section className="w-[100vw] h-full flex shrink-0 overflow-hidden bg-[#d9d8d7]">
+           
+           {/* MARQUEE */}
+           <div className="w-[70px] h-[calc(100vh-104px)] ml-2 border-2 border-[#7d512d] rounded-lg bg-[#d9d8d7] flex items-center justify-center overflow-hidden shrink-0 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vh] flex gap-8 -rotate-90">
+                 <div className="animate-infinite-scroll flex gap-8 shrink-0 items-center justify-around opacity-60">
+                    {marqueeText.map((text, i) => <h2 key={`t1-${i}`} className="font-display text-xs font-bold uppercase tracking-[0.3em] text-[#7d512d] whitespace-nowrap">{text}</h2>)}
+                 </div>
+                 <div className="animate-infinite-scroll flex gap-8 shrink-0 items-center justify-around opacity-60">
+                    {marqueeText.map((text, i) => <h2 key={`t2-${i}`} className="font-display text-xs font-bold uppercase tracking-[0.3em] text-[#7d512d] whitespace-nowrap">{text}</h2>)}
+                 </div>
+              </div>
+           </div>
+
+           {/* MAIN CONTENT */}
+           <div className="flex-1 grid grid-cols-2 gap-8 h-full pl-8 pr-12 relative">
+               
+               {/* LEFT: TESTIMONIAL VIDEOS (POLAROIDS) */}
+               <div className="h-full flex justify-center items-start pt-10 overflow-hidden relative"> 
+                  <div ref={testimonialColumnRef} className="flex flex-col gap-y-32 pb-32">
+                     {testimonialData.map((item) => {
+                       if (item.isViewAll) {
+                         return (
+                           <div key={item.id} className="view-all-card w-[600px] h-[350px] border-2 border-[#7d512d] rounded-2xl bg-transparent flex flex-col items-center justify-center cursor-pointer group hover:bg-[#7d512d] transition-colors duration-300">
+                               <h3 className="font-display text-5xl text-[#7d512d] group-hover:text-[#f4f1ea] uppercase tracking-tighter mb-4 transition-colors">
+                                 {item.caption}
+                               </h3>
+                               <div className="text-[#7d512d] group-hover:text-[#f4f1ea] text-4xl transform -rotate-45 group-hover:rotate-0 transition-all duration-300">
+                                 Γ₧ö
+                               </div>
+                           </div>
+                         );
+                       }
+                       return (
+                       <div key={item.id} className={`bg-[#f4f1ea] p-6 pb-16 shadow-2xl ${item.rotate} hover:rotate-0 transition-transform duration-500 ease-out w-[600px] group cursor-pointer`}>
+                           <div className="bg-gray-200 aspect-[16/10] w-full overflow-hidden mb-6 filter grayscale contrast-125 relative">
+                               <img src={item.src} alt={item.caption} className="w-full h-full object-cover"/>
+                               <div className="absolute inset-0 flex items-center justify-center">
+                                  <div className="w-16 h-16 bg-[#ce422b]/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                     <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[20px] border-l-white border-b-[10px] border-b-transparent ml-2"></div>
+                                  </div>
+                               </div>
+                           </div>
+                           <div className="text-center">
+                               <p className="font-body text-sm tracking-widest uppercase mb-3 text-gray-500">WATCH STORY</p>
+                               <h3 className="font-display text-5xl text-[#ce422b] uppercase tracking-tighter">{item.caption}</h3>
+                           </div>
+                       </div>
+                       );
+                     })}
+                  </div>
+               </div>
+
+               {/* RIGHT: OUR STORY TEXT */}
+               <div className="h-full flex flex-col justify-center sticky top-0 pl-16">
+                  <p className="font-body text-sm tracking-widest uppercase mb-6 text-[#ce422b] font-bold">Community Voices</p>
+                  <h2 className="font-display text-6xl md:text-8xl uppercase tracking-tighter mb-8 leading-[0.9]">Our Story</h2>
+                  <div className="max-w-3xl font-body text-lg md:text-xl opacity-80 leading-relaxed space-y-6 text-justify">
+                      <p>ESPASYO was built on the stories of the people who work here. We aren't just a landlord; we are a canvas for your business journey.</p>
+                      <p>From solo founders to scaling teams, our members define who we are. Listen to their experiences and see why they call this place home.</p>
+                      <p className="font-bold text-[#ce422b]">Scroll to see our services.</p>
+                  </div>
+               </div>
+           </div>
+        </section>
+
+        {/* === SECTION 3: SERVICES (IMPORTED) === */}
+        <Services />
+
+      </div> 
+    </div>
+  );
+};
+
+export default Home;

@@ -9,6 +9,7 @@ import FounderModal from './FounderModal'; // <-- IMPORT THE FOUNDER MODAL
 gsap.registerPlugin(Draggable);
 
 import Navbar from './Navbar';
+import LOGO from '../assets/LOGO.png';
 
 // --- IMAGE LOADING ---
 type GlobModule = { default: string;[key: string]: unknown; };
@@ -63,6 +64,7 @@ export interface TestimonialItem {
   };
   placeholderImage?: string;
   src: string; // Dynamic source
+  isPlaceholder?: boolean;
 }
 
 // Helper to resolve public paths
@@ -124,9 +126,13 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
   const thumbnailSrc =
     resolvePath(clientData.placeholderImage) ||
     resolvePath(clientData.media?.image1) ||
-    imagePool[i % imagePool.length];
+    LOGO; // Use Espasyo Logo for fallback instead of random images
 
-  return { ...clientData, src: thumbnailSrc } as TestimonialItem;
+  return { 
+    ...clientData, 
+    src: thumbnailSrc, 
+    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') 
+  } as TestimonialItem;
 });
 
 const Testimonials = () => {
@@ -374,10 +380,17 @@ const Testimonials = () => {
                   <img
                     src={item.src}
                     alt={item.businessName}
-                    className="w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628]"
+                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-30 blur-[4px] scale-110' : ''}`}
                     loading="lazy"
                     decoding="async"
                   />
+                  {item.isPlaceholder && (
+                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0">
+                      <h3 className="font-display text-xl md:text-2xl uppercase tracking-widest text-[#F0EAD6] drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] px-2 bg-black/20 rounded-lg backdrop-blur-sm">
+                        {item.businessName}
+                      </h3>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-[#837B70] opacity-[0.38] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none rounded-sm" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[0px]">
                     <div className="mb-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">

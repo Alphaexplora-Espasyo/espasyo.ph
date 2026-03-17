@@ -1,0 +1,564 @@
+﻿// src/components/Home.tsx
+import { useRef, useState, useEffect, useLayoutEffect, type MouseEvent, type TouchEvent } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import Navbar from './Navbar';
+import Intro from './Intro';
+import Services360 from './Services360';
+import FounderModal from './FounderModal'; // <-- IMPORT NEW MODAL
+
+// --- IMAGE IMPORTS ---
+import birLogo from '../assets/footer-img/BIR.png';
+import dtiLogo from '../assets/footer-img/DTI.png';
+import lguLogo from '../assets/footer-img/LGU.png';
+import secLogo from '../assets/footer-img/SEC.png';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Home = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    // --- REFS ---
+    const container = useRef<HTMLDivElement>(null);
+    const scrollContainer = useRef<HTMLDivElement>(null);
+    const testimonialColumnRef = useRef<HTMLDivElement>(null);
+    const servicesContentRef = useRef<HTMLDivElement>(null);
+    const heroTextRef1 = useRef<HTMLHeadingElement>(null);
+    const heroTextRef2 = useRef<HTMLHeadingElement>(null);
+    const subTextRef = useRef<HTMLDivElement>(null);
+    const navContainerRef = useRef<HTMLDivElement>(null);
+    const marqueeRef = useRef<HTMLDivElement>(null);
+    const morphRef = useRef<HTMLDivElement>(null);
+    const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
+    // --- STATE ---
+    const [navTheme, setNavTheme] = useState<'default' | 'brown'>(() => {
+        const target = location.state?.scrollToSection;
+        return (target === 'services' || target === 'services-end') ? 'brown' : 'default';
+    });
+
+    const isDarkTheme = navTheme === 'brown';
+    const [introFinished, setIntroFinished] = useState(() => location.state?.skipIntro ? true : false);
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [tilt, setTilt] = useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = useState(false);
+
+    // Swipe State
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // Founder Modal State
+    const [showFounderModal, setShowFounderModal] = useState(false);
+    const [founderRect, setFounderRect] = useState<DOMRect | null>(null);
+
+    // --- DATA ---
+    const currentYear = new Date().getFullYear();
+    const polaroidImageUri = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80";
+    const sampleVideoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+    const marqueeText = Array(4).fill("COMMUNITY ΓÇó WORK ΓÇó CREATE ΓÇó ");
+
+    const testimonialData = [
+        // --- ADDED FOUNDER CARD AT INDEX 0 ---
+        { id: 'founder', src: polaroidImageUri, videoSrc: null, caption: "THE FOUNDERS", rotate: "rotate-[-3deg]", isFounder: true },
+        { id: 1, src: polaroidImageUri, videoSrc: sampleVideoUrl, caption: "CLIENT STORY 1", rotate: "rotate-[1.5deg]" },
+        { id: 2, src: polaroidImageUri, videoSrc: sampleVideoUrl, caption: "STARTUP HUB", rotate: "rotate-[-1deg]" },
+        { id: 3, src: polaroidImageUri, videoSrc: sampleVideoUrl, caption: "TECH TEAM", rotate: "rotate-[2deg]" },
+        { id: 4, src: polaroidImageUri, videoSrc: sampleVideoUrl, caption: "FREELANCER", rotate: "rotate-[-1.5deg]" },
+        { id: 5, src: polaroidImageUri, videoSrc: sampleVideoUrl, caption: "DESIGNER", rotate: "rotate-[1deg]" },
+        { id: 7, src: null, videoSrc: null, caption: "VIEW ALL TESTIMONIALS", rotate: "rotate-0", isViewAll: true },
+    ];
+
+    const servicesData = [
+        {
+            title: "Coworking",
+            tagline: "Find Your Tribe",
+            story: "It's not just a desk. It's where isolation ends and collaboration begins. Surround yourself with creators, founders, and doers.",
+            image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Meeting Room",
+            tagline: "Impress Your Clients",
+            story: "Close deals in a space designed for professionalism. Equipped with everything you need to present your best self.",
+            image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Business Registration",
+            tagline: "Make It Official",
+            story: "Skip the bureaucracy. We handle the paperwork so you can focus on building your legacy, not standing in lines.",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Bookkeeping",
+            tagline: "Know Your Numbers",
+            story: "Financial clarity gives you the confidence to scale. Let our experts track every peso while you track your growth.",
+            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Tax Filing",
+            tagline: "Peace of Mind",
+            story: "Never worry about a deadline again. We ensure you stay compliant with the BIR, keeping your business safe and sound.",
+            image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&w=800&q=80"
+        },
+    ];
+
+    // --- HANDLERS ---
+    const handleIntroComplete = () => setIntroFinished(true);
+    const handleGalleryClick = () => navigate('/gallery');
+    const openVideo = (videoUrl: string) => setActiveVideo(videoUrl);
+    const closeVideo = () => setActiveVideo(null);
+
+    const handleViewAllClick = (e: MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const morphEl = morphRef.current;
+        if (morphEl) {
+            gsap.set(morphEl, { display: 'block', top: rect.top, left: rect.left, width: rect.width, height: rect.height, borderRadius: '16px', opacity: 1, zIndex: 9999 });
+            gsap.to(morphEl, { top: 0, left: 0, width: '100vw', height: '100vh', borderRadius: 0, duration: 0.8, ease: "power4.inOut", onComplete: () => { navigate('/testimonials'); } });
+        }
+    };
+
+    const nextSlide = () => { setCurrentIndex((prev) => (prev + 1) % servicesData.length); setTilt({ x: 0, y: 0 }); };
+    const prevSlide = () => { setCurrentIndex((prev) => (prev - 1 + servicesData.length) % servicesData.length); setTilt({ x: 0, y: 0 }); };
+
+    // --- SWIPE HANDLERS ---
+    const handleTouchStart = (e: TouchEvent) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+    const handleTouchMove = (e: TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const minSwipeDistance = 50;
+        if (distance > minSwipeDistance) nextSlide();
+        if (distance < -minSwipeDistance) prevSlide();
+        setTouchStart(null);
+        setTouchEnd(null);
+    };
+
+    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+        if (!isHovering) return;
+        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / (width / 2);
+        const y = (e.clientY - top - height / 2) / (height / 2);
+        setTilt({ x: -y * 10, y: x * 10 });
+    };
+
+    // --- RESPONSIVE SLIDE STYLES ---
+    const getSlideStyles = (index: number) => {
+        const len = servicesData.length;
+        const isCenter = index === currentIndex;
+        const isRight = index === (currentIndex + 1) % len;
+        const isLeft = index === (currentIndex - 1 + len) % len;
+
+        // Default hidden
+        let styles = "opacity-0 scale-50 z-0 translate-x-[-50%] pointer-events-none";
+
+        if (isCenter) {
+            styles = "left-1/2 -translate-x-1/2 opacity-100 scale-100 z-20 cursor-pointer";
+        } else if (isLeft) {
+            styles = "left-1/2 -translate-x-full md:left-[15%] md:-translate-x-1/2 opacity-0 md:opacity-40 scale-75 z-10 grayscale";
+        } else if (isRight) {
+            styles = "left-1/2 translate-x-0 md:left-[85%] md:-translate-x-1/2 opacity-0 md:opacity-40 scale-75 z-10 grayscale";
+        }
+
+        return { className: styles, isCenter };
+    };
+
+    useEffect(() => {
+        const handleScrollEvent = (e: Event) => {
+            const customEvent = e as CustomEvent;
+            const target = customEvent.detail;
+            if (timelineRef.current && target) {
+                const labelPos = timelineRef.current.scrollTrigger?.labelToScroll(target);
+                if (labelPos !== undefined) timelineRef.current.scrollTrigger?.scroll(labelPos);
+            }
+        };
+        window.addEventListener('scrollToSection', handleScrollEvent);
+        return () => window.removeEventListener('scrollToSection', handleScrollEvent);
+    }, []);
+
+    useLayoutEffect(() => {
+        if (!location.state?.scrollToSection) window.scrollTo(0, 0);
+    }, [location.pathname, location.state]);
+
+    useGSAP(() => {
+        if (introFinished) {
+            const duration = location.state?.skipIntro ? 0 : 1.2;
+            const stagger = location.state?.skipIntro ? 0 : 0.1;
+
+            // --- 1. HERO ANIMATION ---
+            const entranceTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+            entranceTl
+                .fromTo(navContainerRef.current, { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: duration })
+                .fromTo(heroTextRef1.current, { y: 100, opacity: 0, skewY: 0 }, { y: 0, opacity: 1, skewY: 0, duration: duration }, "-=0.8")
+                .fromTo(heroTextRef2.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: duration }, "-=1.0")
+                .fromTo(subTextRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: duration }, "-=0.8")
+                .fromTo(marqueeRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: duration }, "-=1.2")
+                .fromTo(".polaroid-entry", { y: 150, opacity: 0, rotation: 5 }, { y: 0, opacity: 1, rotation: 0, duration: duration, stagger: stagger }, "-=1.0");
+
+            // --- 2. SCROLL TRIGGER LOGIC (Responsive Rebuild) ---
+            if (scrollContainer.current && testimonialColumnRef.current && servicesContentRef.current) {
+                ScrollTrigger.refresh();
+
+                const scrollTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: scrollContainer.current,
+                        pin: true,
+                        scrub: 0,
+                        end: () => {
+                            const vw = window.innerWidth;
+                            const vh = window.innerHeight;
+                            const mWidth = (vw < 640 ? 50 : vw < 768 ? 60 : 70) + 16;
+                            const widthTotal = vw * 3 - mWidth;
+
+                            const tColParent = testimonialColumnRef.current?.parentElement?.clientHeight || vh;
+                            const tScroll = Math.max(0, (testimonialColumnRef.current?.scrollHeight || 0) - tColParent + 50);
+                            const sScroll = Math.max(0, (servicesContentRef.current?.scrollHeight || 0) - vh);
+
+                            const horizontalScroll = widthTotal - vw;
+                            return "+=" + (horizontalScroll + tScroll + sScroll);
+                        },
+                        invalidateOnRefresh: true,
+                    }
+                });
+                timelineRef.current = scrollTl;
+
+                scrollTl.to(scrollContainer.current, {
+                    x: () => {
+                        const vw = window.innerWidth;
+                        const mWidth = (vw < 640 ? 50 : vw < 768 ? 60 : 70) + 16;
+                        return -(vw - mWidth);
+                    },
+                    ease: "none", duration: 10
+                });
+                scrollTl.addLabel("our-story");
+
+                scrollTl.to(testimonialColumnRef.current, {
+                    y: () => {
+                        const tColParent = testimonialColumnRef.current?.parentElement?.clientHeight || window.innerHeight;
+                        return -(Math.max(0, (testimonialColumnRef.current?.scrollHeight || 0) - tColParent + 50));
+                    },
+                    ease: "none", duration: 25
+                });
+                scrollTl.addLabel("testimonials-end");
+
+                scrollTl.fromTo(".view-all-card", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, ease: "back.out(1.7)", duration: 5 }, "<+80%");
+
+                scrollTl.to(scrollContainer.current, {
+                    x: () => {
+                        const vw = window.innerWidth;
+                        const mWidth = (vw < 640 ? 50 : vw < 768 ? 60 : 70) + 16;
+                        return -(2 * vw - mWidth);
+                    },
+                    ease: "none",
+                    duration: 10,
+                    onStart: () => setNavTheme('brown'),
+                    onReverseComplete: () => setNavTheme('default'),
+                });
+                scrollTl.addLabel("services");
+
+                scrollTl.to(servicesContentRef.current, {
+                    y: () => -(Math.max(0, (servicesContentRef.current?.scrollHeight || 0) - window.innerHeight)),
+                    ease: "none", duration: 25
+                });
+                scrollTl.addLabel("services-end");
+
+                const targetSection = location.state?.scrollToSection;
+                if (targetSection) {
+                    const labelPos = scrollTl.scrollTrigger?.labelToScroll(targetSection);
+                    if (labelPos) scrollTl.scrollTrigger?.scroll(labelPos);
+                }
+            }
+        }
+    }, { scope: container, dependencies: [introFinished] });
+
+    const activeService = servicesData[currentIndex];
+
+    return (
+        <div ref={container} className={`relative w-full overflow-x-hidden transition-colors duration-1000 ease-in-out ${isDarkTheme ? 'bg-[#2C3628] text-[#F0EAD6]' : 'bg-[#F0EAD6] text-[#2C3628]'}`}>
+            {!introFinished && <Intro onComplete={handleIntroComplete} />}
+            <div ref={morphRef} className="fixed hidden bg-[#F0EAD6] pointer-events-none" style={{ zIndex: 9999 }} />
+
+            {/* --- FOUNDER MODAL RENDER --- */}
+            {showFounderModal && founderRect && (
+                <FounderModal
+                    originRect={founderRect}
+                    src={polaroidImageUri}
+                    onClose={() => setShowFounderModal(false)}
+                />
+            )}
+
+            <style>{`
+        @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        .animate-infinite-scroll { animation: infinite-scroll 25s linear infinite; }
+        .animate-scale-up { animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .polaroid-shadow { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+      `}</style>
+            <div ref={navContainerRef} className={`fixed top-0 left-0 right-0 z-50 ${introFinished ? '' : 'opacity-0'}`}>
+                <Navbar theme={navTheme} />
+            </div>
+
+            {/* RESPONSIVE TRACK WIDTH */}
+            <div ref={scrollContainer} className="flex h-screen relative overscroll-none w-[calc(300vw-66px)] sm:w-[calc(300vw-76px)] md:w-[calc(300vw-86px)]">
+
+                {/* SECTION 1: HERO */}
+                <section className="h-full flex flex-col justify-center items-center px-4 sm:px-6 md:pr-8 relative shrink-0 pt-[96px] w-[calc(100vw-66px)] sm:w-[calc(100vw-76px)] md:w-[calc(100vw-86px)]">
+                    <div className="overflow-hidden"><h1 ref={heroTextRef1} className={`mb-2 text-5xl sm:text-7xl md:text-9xl lg:text-10xl font-display text-mega uppercase text-center tracking-tighter leading-[0.9] ${introFinished ? '' : 'opacity-0'}`}>ESPASYO</h1></div>
+                    <div className="overflow-hidden"><h1 ref={heroTextRef2} className={`font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl uppercase text-center tracking-tighter leading-[0.9] ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]/70'} ${introFinished ? '' : 'opacity-0'}`}>COMMUNITY OF ENTREPENEURS</h1></div>
+                </section>
+
+                {/* SECTION 2: TESTIMONIALS & FOUNDER (Width 1.0) */}
+                <section className="h-full flex shrink-0 overflow-hidden relative pt-[96px] pb-2 bg-transparent w-[100vw]">
+                    <div ref={marqueeRef} className={`w-[50px] sm:w-[60px] md:w-[70px] h-[calc(100vh-104px)] mx-2 border-2 rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative bg-[#F0EAD6] border-[#2C3628] text-[#2C3628] ${introFinished ? '' : 'opacity-0'}`}>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vh] flex gap-2 -rotate-90">
+                            <div className="animate-infinite-scroll flex gap-6 sm:gap-7 md:gap-8 shrink-0 items-center justify-around opacity-60">
+                                {marqueeText.map((text, i) => <h2 key={`t1-${i}`} className="font-display text-xs font-bold uppercase tracking-[0.3em] whitespace-nowrap">{text}</h2>)}
+                            </div>
+                            <div className="animate-infinite-scroll flex gap-6 sm:gap-7 md:gap-8 shrink-0 items-center justify-around opacity-60">
+                                {marqueeText.map((text, i) => <h2 key={`t2-${i}`} className="font-display text-xs font-bold uppercase tracking-[0.3em] whitespace-nowrap">{text}</h2>)}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-2 sm:gap-6 md:gap-8 h-full px-4 sm:px-6 md:pl-8 md:pr-12 relative pt-8 md:pt-0">
+
+                        <div id="our-story" className="order-1 md:order-2 flex-none md:h-full flex flex-col justify-center md:sticky top-0 px-2 sm:px-6 md:pl-16 mb-4 md:mb-0 z-10">
+                            <h2 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]'}`}>Our Story</h2>
+                            <div className={`max-w-3xl font-body text-sm sm:text-lg md:text-xl opacity-80 leading-relaxed space-y-2 sm:space-y-6 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]'}`}>
+                                <p>ESPASYO Coworking & Office Space nurtures a dynamic community from a diverse array of businesses & individuals across various sectors. </p>
+                                <p>Established in 2018 by a group of educators, ESPASYO promotes engagement & collaboration among like-minded professionals</p>
+                                <p className={`font-bold transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]'}`}>Scroll to see our services.</p>
+                            </div>
+                        </div>
+
+                        <div className="order-2 md:order-1 flex-1 md:h-full flex justify-center items-start overflow-hidden relative bg-[#2C3628] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 my-2 sm:my-3 md:my-4 ml-0 shadow-inner">
+                            <div ref={testimonialColumnRef} className="flex flex-col items-center justify-start w-full gap-y-8 sm:gap-y-16 md:gap-y-24 lg:gap-y-32 pb-32 pt-12 md:pt-16 lg:pt-24">
+                                {testimonialData.map((item) => {
+                                    if (item.isViewAll) {
+                                        return (
+                                            <div key={item.id} onClick={handleViewAllClick} className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} view-all-card flex-shrink-0 w-full sm:w-[500px] md:w-[600px] lg:w-[700px] h-auto sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-2xl bg-[#F0EAD6] polaroid-shadow flex flex-col items-center justify-center cursor-pointer group transition-colors duration-300 p-6 sm:p-8`}>
+                                                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter mb-4 transition-colors text-[#2C3628] group-hover:text-[#C87941] text-center">{item.caption}</h3>
+                                                <div className="text-2xl sm:text-3xl md:text-4xl transform -rotate-45 group-hover:rotate-0 transition-all duration-300 text-[#2C3628] group-hover:text-[#C87941]">Γ₧ö</div>
+                                            </div>
+                                        );
+                                    }
+                                    return (
+                                        <div
+                                            key={item.id}
+                                            onClick={(e) => {
+                                                if ('isFounder' in item && item.isFounder) {
+                                                    setFounderRect(e.currentTarget.getBoundingClientRect());
+                                                    setShowFounderModal(true);
+                                                } else if (item.videoSrc) {
+                                                    openVideo(item.videoSrc);
+                                                }
+                                            }}
+                                            className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} flex-shrink-0 bg-[#F0EAD6] p-4 sm:p-6 md:p-8 lg:p-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32 polaroid-shadow ${item.rotate} hover:rotate-0 transition-transform duration-500 ease-out w-full max-w-[450px] md:max-w-[550px] lg:max-w-[700px] group cursor-pointer rounded-xl mx-auto`}
+                                        >
+                                            <div className="aspect-[16/10] w-full overflow-hidden mb-4 sm:mb-5 md:mb-6 filter grayscale contrast-125 relative rounded-lg bg-gray-200 shadow-inner">
+                                                <img src={item.src || ''} alt={item.caption} className="w-full h-full object-cover" />
+                                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/0 transition-colors">
+                                                    <div className="w-10 sm:w-12 md:w-14 lg:w-16 h-10 sm:h-12 md:h-14 lg:h-16 bg-[#C87941] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                                        {/* If founder show plus or eye icon, else show play */}
+                                                        {'isFounder' in item && item.isFounder ? (
+                                                            <svg width="16" height="16" className="sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px]" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg>
+                                                        ) : (
+                                                            <div className="w-0 h-0 border-t-[8px] sm:border-t-[9px] md:border-t-[10px] border-t-transparent border-l-[16px] sm:border-l-[18px] md:border-l-[20px] border-l-white border-b-[8px] sm:border-b-[9px] md:border-b-[10px] border-b-transparent ml-1 sm:ml-1.5 md:ml-2"></div>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="text-center">
+                                                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#C87941] uppercase tracking-tighter">{item.caption}</h3>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* SECTION 3: SERVICES + FOOTER (Width 1.0) */}
+                <section className="h-screen shrink-0 bg-transparent border-l-2 border-[#F0EAD6]/20 relative overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-[96px]" style={{ width: '100vw' }}>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-5 z-0">
+                        <h1 className="font-display text-[10vw] sm:text-[12vw] md:text-[14vw] lg:text-[15vw] leading-none uppercase tracking-tighter transition-all duration-700">{activeService.title.split(' ')[0]}</h1>
+                    </div>
+
+                    <div ref={servicesContentRef} className="w-full relative z-10 flex flex-col">
+
+                        {/* --- REPLACED: SERVICES 360 IS NOW FIRST --- */}
+                        <Services360 />
+
+                        {/* WRAPPER 1: CAROUSEL & WHY ESPASYO */}
+                        <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-12 sm:py-16 md:py-24 w-full min-h-screen">
+                            <div className="flex flex-col items-center w-full max-w-5xl">
+                                <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                                    <p className="font-body text-xs sm:text-sm tracking-widest uppercase mb-2 opacity-80">Our Expertise</p>
+                                    <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none">SERVICES</h2>
+                                </div>
+
+                                <div
+                                    className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] mb-4 sm:mb-6 md:mb-8 flex items-center justify-center perspective-1000 touch-pan-y"
+                                    onTouchStart={handleTouchStart}
+                                    onTouchMove={handleTouchMove}
+                                    onTouchEnd={handleTouchEnd}
+                                >
+                                    {servicesData.map((service, index) => {
+                                        const { className, isCenter } = getSlideStyles(index);
+                                        return (
+                                            <div
+                                                key={`${service.title}-${index}`}
+                                                onMouseMove={isCenter ? handleMouseMove : undefined}
+                                                onMouseEnter={isCenter ? () => setIsHovering(true) : undefined}
+                                                onMouseLeave={isCenter ? () => { setIsHovering(false); setTilt({ x: 0, y: 0 }); } : undefined}
+                                                className={`absolute top-0 w-[90vw] sm:w-[80vw] md:w-72 h-[250px] sm:h-[300px] md:h-80 rounded-lg sm:rounded-xl overflow-hidden shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] ${className}`}
+                                                style={{
+                                                    transform: isCenter && isHovering
+                                                        ? `translateX(-50%) perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.05, 1.05, 1.05)`
+                                                        : undefined,
+                                                    transition: isHovering ? 'transform 0.1s ease-out' : 'all 0.7s cubic-bezier(0.25,0.8,0.25,1)'
+                                                }}
+                                            >
+                                                <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                                                {isCenter && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" style={{ opacity: isHovering ? 0.3 + (tilt.y / 20) : 0, transition: 'opacity 0.3s' }} />}
+                                                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-3 sm:p-4 md:p-6 transition-opacity duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>
+                                                    <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#D4A373] leading-tight">{service.title}</h3>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+
+                                <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8 md:mb-10">
+                                    <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
+                                        <button onClick={prevSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#F0EAD6] rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors font-bold text-sm md:text-lg">ΓåÉ</button>
+                                        <div className="flex gap-2 sm:gap-2.5 md:gap-3">
+                                            {servicesData.map((_, i) => (
+                                                <div key={i} className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#D4A373] w-3 sm:w-4' : 'bg-[#F0EAD6]/30'}`} />
+                                            ))}
+                                        </div>
+                                        <button onClick={nextSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#F0EAD6] rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors font-bold text-sm md:text-lg">ΓåÆ</button>
+                                    </div>
+                                    <button onClick={handleGalleryClick} className="px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2 border-2 border-[#F0EAD6] rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors">Show All Gallery</button>
+                                </div>
+
+                                <div className="text-center px-4 max-w-2xl animate-fade-in-up">
+                                    <h3 className="font-display text-xl sm:text-2xl md:text-3xl uppercase tracking-widest mb-2 sm:mb-3 opacity-90 text-[#D4A373] transition-all duration-500">{activeService.tagline}</h3>
+                                    <p className="font-body text-base sm:text-lg opacity-90 leading-relaxed">{activeService.story}</p>
+                                </div>
+
+                            </div>
+
+                            <div className="w-full max-w-5xl text-center border-t border-[#F0EAD6]/20 pt-16 mt-16">
+                                <h3 className="font-display text-4xl uppercase tracking-widest mb-12 opacity-60">Why Espasyo?</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
+                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">LEGAL &<br />COMPLIANCE</h4><p className="font-body text-sm opacity-80 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</p></div>
+                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">COST<br />EFFICIENT</h4><p className="font-body text-sm opacity-80 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</p></div>
+                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">TRUSTED &<br />DEPENDABLE</h4><p className="font-body text-sm opacity-80 leading-relaxed">With 7 years experience supporting nearly 100 MSMEs.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <footer className="w-full bg-[#F0EAD6] text-[#2C3628] border-t border-[#2C3628]/20 flex flex-col z-50 relative pb-4 md:pb-0 min-h-[60vh] justify-between">
+                            <div className="flex-1 px-4 sm:px-8 md:px-16 py-8 sm:py-12 md:py-16">
+                                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 md:gap-12">
+                                    <div className="md:col-span-4 flex flex-col justify-between h-full">
+                                        <div>
+                                            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-tighter leading-none mb-3 sm:mb-4 md:mb-6 text-[#2C3628]">Espasyo</h2>
+                                            <p className="font-body text-xs sm:text-sm text-[#2C3628]/80 max-w-xs leading-relaxed">
+                                                Study & Office Hub.<br />
+                                                Where isolation ends and collaboration begins.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-2">
+                                        <h4 className="font-display text-xs font-bold uppercase tracking-widest mb-3 sm:mb-4 md:mb-6 text-[#2C3628]/60">INFORMATION</h4>
+                                        <ul className="space-y-2 sm:space-y-3 font-body text-xs sm:text-sm text-[#2C3628]/80">
+                                            <li><a href="#" className="hover:text-[#C87941] transition-colors">Terms & Conditions</a></li>
+                                            <li><a href="#" className="hover:text-[#C87941] transition-colors">Privacy Policy</a></li>
+                                            <li><a href="#" className="hover:text-[#C87941] transition-colors">Booking Policy</a></li>
+                                            <li><a href="#" className="hover:text-[#C87941] transition-colors">FAQs</a></li>                           </ul>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <h4 className="font-display text-xs font-bold uppercase tracking-widest mb-3 sm:mb-4 md:mb-6 text-[#2C3628]/60">Visit Us</h4>
+                                        <div className="font-body text-xs sm:text-sm text-[#2C3628]/80 space-y-2 sm:space-y-4">
+                                            <p className="leading-relaxed">
+                                                6A T. Bugallon Street,<br />
+                                                Marikina Heights,<br />
+                                                Marikina City
+                                            </p>
+                                            <p>0916 611 2928</p>
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-3">
+                                        <h4 className="font-display text-xs font-bold uppercase tracking-widest mb-3 sm:mb-4 md:mb-6 text-[#2C3628]/60">Stay Connected</h4>
+                                        <div className="flex gap-3 sm:gap-4">
+                                            <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noreferrer" className="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 rounded-full bg-[#2C3628] text-white flex items-center justify-center hover:bg-[#C87941] transition-colors">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                                            </a>
+                                            <a href="https://www.instagram.com/espasyostudyhub_coworkingspace/" target="_blank" rel="noreferrer" className="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 rounded-full bg-[#2C3628] text-white flex items-center justify-center hover:bg-[#C87941] transition-colors">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                                            </a>
+                                            <a href="mailto:espasyostudyandofficehub@gmail.com" className="w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 rounded-full bg-[#2C3628] text-white flex items-center justify-center hover:bg-[#C87941] transition-colors">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="w-full h-px bg-[#2C3628]/20 my-6 sm:my-8 md:my-12"></div>
+                                <div className="flex flex-col items-center gap-6 sm:gap-7 md:gap-8">
+                                    <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6">
+                                        <h4 className="font-display text-xs font-bold uppercase tracking-wider text-[#2C3628]/60">Accredited By</h4>
+                                        <div className="flex items-center gap-4 sm:gap-6 md:gap-8 flex-wrap justify-center">
+                                            <img src={secLogo} alt="SEC Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
+                                            <img src={dtiLogo} alt="DTI Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
+                                            <img src={lguLogo} alt="LGU Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
+                                            <img src={birLogo} alt="BIR Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
+                                        </div>
+                                    </div>
+                                    <p className="font-body text-xs md:text-sm text-[#2C3628]/40 text-center px-4">
+                                        ┬⌐ {currentYear} Espasyo Coworking Space. All rights reserved.
+                                    </p>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </section>
+            </div>
+
+            {/* --- VIDEO MODAL --- */}
+            {activeVideo && (
+                <div className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-3 sm:p-4 md:p-12 backdrop-blur-sm transition-opacity duration-300">
+                    <button
+                        onClick={closeVideo}
+                        className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 text-white/50 hover:text-white transition-colors z-10 p-1 sm:p-2"
+                    >
+                        <svg width="24" height="24" className="sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                    <div className="w-full max-w-5xl aspect-video bg-black rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden relative shadow-2xl border border-white/10 animate-scale-up">
+                        <video src={activeVideo} controls autoPlay className="w-full h-full object-contain">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default Home;

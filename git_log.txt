@@ -1,0 +1,114 @@
+﻿commit 16a8d16dac6bf0915ebe5e6138a18f0043e50cb0
+Author: Liss Monica Perez <115916056+MoniKawaii@users.noreply.github.com>
+Date:   Wed Mar 18 01:18:35 2026 +0800
+
+    Uploaded video
+
+diff --git a/src/components/Home.tsx b/src/components/Home.tsx
+index 4b2b6ff..f111a1c 100644
+--- a/src/components/Home.tsx
++++ b/src/components/Home.tsx
+@@ -317,9 +317,37 @@ const Home = () => {
+ 
+             <div ref={scrollContainer} className="flex h-screen relative overscroll-none w-[calc(300vw-66px)] sm:w-[calc(300vw-76px)] md:w-[calc(300vw-86px)]">
+ 
+-                <section className="h-full flex flex-col justify-center items-center px-4 sm:px-6 md:pr-8 relative shrink-0 pt-[96px] w-[calc(100vw-66px)] sm:w-[calc(100vw-76px)] md:w-[calc(100vw-86px)]">
+-                    <div className="overflow-hidden"><h1 ref={heroTextRef1} className={`mb-2 text-5xl sm:text-7xl md:text-9xl lg:text-10xl font-display text-mega uppercase text-center tracking-tighter leading-[0.9] ${introFinished ? '' : 'opacity-0'}`}>ESPASYO</h1></div>
+-                    <div className="overflow-hidden"><h1 ref={heroTextRef2} className={`font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl uppercase text-center tracking-tighter leading-[0.9] ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]/70'} ${introFinished ? '' : 'opacity-0'}`}>COMMUNITY OF ENTREPENEURS</h1></div>
++                <section className="h-full flex flex-col justify-center items-center px-4 sm:px-6 md:pr-8 relative shrink-0 pt-[96px] w-[calc(100vw-66px)] sm:w-[calc(100vw-76px)] md:w-[calc(100vw-86px)] overflow-hidden">
++                    {/* Background Video & Dark Green Overlay */}
++                    <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
++                        <video
++                            autoPlay
++                            loop
++                            muted
++                            playsInline
++                            className="absolute inset-0 w-full h-full object-cover"
++                            src="https://res.cloudinary.com/dlk93aehl/video/upload/v1773766338/landing_wmxsq3.mp4"
++                        />
++                        <div className="absolute inset-0 bg-[#2C3628]/75 mix-blend-multiply"></div>
++                    </div>
++
++                    {/* Text Content */}
++                    <div className="overflow-hidden z-10 relative">
++                        <h1
++                            ref={heroTextRef1}
++                            className={`mb-2 text-5xl sm:text-7xl md:text-9xl lg:text-10xl font-display text-[#F0EAD6] drop-shadow-[0_8px_8px_rgba(0,0,0,0.8)] uppercase text-center tracking-tighter leading-[0.9] ${introFinished ? '' : 'opacity-0'}`}
++                        >
++                            ESPASYO
++                        </h1>
++                    </div>
++                    <div className="overflow-hidden z-10 relative">
++                        <h1
++                            ref={heroTextRef2}
++                            className={`font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl uppercase text-center tracking-tighter leading-[0.9] text-[#F0EAD6] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] ${introFinished ? '' : 'opacity-0'}`}
++                        >
++                            COMMUNITY OF ENTREPENEURS
++                        </h1>
++                    </div>
+                 </section>
+ 
+                 <section className="h-full flex shrink-0 overflow-hidden relative pt-[96px] pb-2 bg-transparent w-[100vw]">
+
+commit c4681af6c28cdd18828f8eb17a2c3898b7fcb312
+Author: Liss Monica Perez <115916056+MoniKawaii@users.noreply.github.com>
+Date:   Tue Mar 17 20:18:27 2026 +0800
+
+    remove AND
+
+diff --git a/src/components/Home.tsx b/src/components/Home.tsx
+index eabe25a..4b2b6ff 100644
+--- a/src/components/Home.tsx
++++ b/src/components/Home.tsx
+@@ -85,7 +85,7 @@ const Home = () => {
+         {
+             id: 'it',
+             title: 'I.T. Services',
+-            provider: 'Alphaexplora Information and Technology Services',
++            provider: 'Alphaexplora Information Technology Services',
+             providerLink: 'https://www.alphaexplora.com',
+             bgText: 'TECHNOLOGY',
+             image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+commit ec71cf9beb924738dd5960593a45d70dda4c1d09
+Author: Liss Monica Perez <115916056+MoniKawaii@users.noreply.github.com>
+Date:   Tue Mar 17 19:56:34 2026 +0800
+
+    added a link to ae
+
+diff --git a/src/components/Home.tsx b/src/components/Home.tsx
+index 65628bb..eabe25a 100644
+--- a/src/components/Home.tsx
++++ b/src/components/Home.tsx
+@@ -86,6 +86,7 @@ const Home = () => {
+             id: 'it',
+             title: 'I.T. Services',
+             provider: 'Alphaexplora Information and Technology Services',
++            providerLink: 'https://www.alphaexplora.com',
+             bgText: 'TECHNOLOGY',
+             image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+             description: "Comprehensive digital solutions to power your business operations and scale your growth.",
+@@ -478,9 +479,20 @@ const Home = () => {
+                                         </div>
+                                         <div className="text-left md:text-right shrink-0">
+                                             <span className="text-[10px] font-bold uppercase tracking-widest opacity-50 block mb-1">Provided by</span>
+-                                            <span className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#D4A373]">
+-                                                {activeService.provider}
+-                                            </span>
++                                            {activeService.providerLink ? (
++                                                <a
++                                                    href={activeService.providerLink}
++                                                    target="_blank"
++                                                    rel="noopener noreferrer"
++                                                    className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#D4A373] hover:text-[#F0EAD6] transition-colors underline decoration-[#D4A373]/30 hover:decoration-[#F0EAD6]/70 underline-offset-4 cursor-pointer"
++                                                >
++                                                    {activeService.provider}
++                                                </a>
++                                            ) : (
++                                                <span className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#D4A373]">
++                                                    {activeService.provider}
++                                                </span>
++                                            )}
+                                         </div>
+                                     </div>
+ 

@@ -255,7 +255,7 @@ const Services360 = () => {
         <div
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="w-full h-[85vh] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden"
+          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden"
           style={{ filter: 'brightness(1.1) contrast(1.05) saturate(1.15)' }}
         >
           <div className="absolute inset-0 z-30 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_60%,rgba(212,163,115,0.08)_100%)]" />

@@ -13,8 +13,6 @@ import {
   Clock,
 } from "lucide-react";
 
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Resources = () => {
@@ -52,6 +50,7 @@ const Resources = () => {
     [key: number]: { title: string; time: string; type: string }[];
   } = {
     18: [{ title: "8th Founding Anniversary", time: "6:00 PM", type: "Event" }],
+    20: [{ title: "Eid'l Fitr", time: "All Day", type: "Holiday" }],
   };
 
   const weeklyData = [
@@ -61,6 +60,13 @@ const Resources = () => {
       title: "8th Founding Anniversary",
       time: "6:00 PM",
       tag: "Anniversary",
+    },
+    {
+      day: "FRI",
+      date: "20",
+      title: "Eid'l Fitr",
+      time: "All Day",
+      tag: "Holiday",
     },
   ];
 
@@ -72,6 +78,14 @@ const Resources = () => {
       location: "Espasyo, Marikina",
       image:
         "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: 2,
+      title: "Eid'l Fitr (Regular Holiday)",
+      date: "March 20, 2026",
+      location: "National Holiday",
+      image:
+        "https://images.unsplash.com/photo-1738382782161-a0bf706eced2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
@@ -287,11 +301,10 @@ const Resources = () => {
                   <button
                     key={view}
                     onClick={() => setCalendarView(view)}
-                    className={`px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all ${
-                      calendarView === view
-                        ? "bg-[#F0EAD6] text-[#2C3628] shadow-md"
-                        : "text-[#F0EAD6]/60 hover:text-[#F0EAD6]"
-                    }`}
+                    className={`px-4 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full transition-all ${calendarView === view
+                      ? "bg-[#F0EAD6] text-[#2C3628] shadow-md"
+                      : "text-[#F0EAD6]/60 hover:text-[#F0EAD6]"
+                      }`}
                   >
                     {view}
                   </button>
@@ -501,18 +514,16 @@ const Resources = () => {
                 <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#D4A373] mb-8">
                   <MapPin size={16} /> {activeEvent.location}
                 </div>
-
               </div>
 
               <div className="absolute top-8 right-8 flex gap-2">
                 {eventsData.map((_, idx) => (
                   <div
                     key={idx}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      idx === currentEventIndex
-                        ? "bg-[#D4A373] w-6"
-                        : "bg-[#F0EAD6]/30"
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all ${idx === currentEventIndex
+                      ? "bg-[#D4A373] w-6"
+                      : "bg-[#F0EAD6]/30"
+                      }`}
                   />
                 ))}
               </div>
@@ -521,71 +532,73 @@ const Resources = () => {
         </div>
 
         {/* --- PARTNER STORIES (CAROUSEL) — hidden, preserved for later --- */}
-        {false && <div className="features-section mt-24 border-t border-[#F0EAD6]/20 pt-16 relative z-10">
-          <div className="flex items-center justify-between mb-10 px-4">
-            <div>
-              <h3 className="font-display text-sm font-bold uppercase tracking-widest text-[#D4A373] mb-2">
-                Featured Stories
-              </h3>
-              <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-[#F0EAD6]">
-                Community Articles
-              </h2>
-            </div>
+        {false && (
+          <div className="features-section mt-24 border-t border-[#F0EAD6]/20 pt-16 relative z-10">
+            <div className="flex items-center justify-between mb-10 px-4">
+              <div>
+                <h3 className="font-display text-sm font-bold uppercase tracking-widest text-[#D4A373] mb-2">
+                  Featured Stories
+                </h3>
+                <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-[#F0EAD6]">
+                  Community Articles
+                </h2>
+              </div>
 
-            <div className="flex gap-4">
-              <button
-                onClick={prevFeature}
-                className="w-12 h-12 border border-[#F0EAD6]/20 rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={nextFeature}
-                className="w-12 h-12 border border-[#F0EAD6]/20 rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-
-          <div className="feature-carousel overflow-hidden w-full px-4">
-            <div
-              className="flex gap-8 transition-transform duration-700 cubic-bezier(0.23, 1, 0.32, 1)"
-              style={{
-                transform: `translateX(-${featureScrollIndex * 340}px)`,
-              }}
-            >
-              {partnerArticles.map((article, idx) => (
-                <div
-                  key={idx}
-                  className="min-w-[300px] md:min-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer border border-[#F0EAD6]/10 hover:border-[#D4A373]/50 transition-colors"
+              <div className="flex gap-4">
+                <button
+                  onClick={prevFeature}
+                  className="w-12 h-12 border border-[#F0EAD6]/20 rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors"
                 >
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C3628] via-[#2C3628]/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+                  <ChevronLeft size={20} />
+                </button>
+                <button
+                  onClick={nextFeature}
+                  className="w-12 h-12 border border-[#F0EAD6]/20 rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            </div>
 
-                  <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-start transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A373] mb-2 bg-[#2C3628]/80 backdrop-blur-md px-2 py-1 rounded border border-[#D4A373]/20">
-                      {article.category} • {article.business}
-                    </span>
-                    <h4 className="font-display text-xl uppercase leading-tight mb-3 text-[#F0EAD6] group-hover:text-[#D4A373] transition-colors">
-                      {article.title}
-                    </h4>
-                    <p className="font-body text-xs text-[#F0EAD6]/70 leading-relaxed mb-4 line-clamp-2">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#D4A373] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                      Read Article <ArrowRight size={12} />
+            <div className="feature-carousel overflow-hidden w-full px-4">
+              <div
+                className="flex gap-8 transition-transform duration-700 cubic-bezier(0.23, 1, 0.32, 1)"
+                style={{
+                  transform: `translateX(-${featureScrollIndex * 340}px)`,
+                }}
+              >
+                {partnerArticles.map((article, idx) => (
+                  <div
+                    key={idx}
+                    className="min-w-[300px] md:min-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer border border-[#F0EAD6]/10 hover:border-[#D4A373]/50 transition-colors"
+                  >
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C3628] via-[#2C3628]/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+
+                    <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-start transform transition-transform duration-500 group-hover:-translate-y-2">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#D4A373] mb-2 bg-[#2C3628]/80 backdrop-blur-md px-2 py-1 rounded border border-[#D4A373]/20">
+                        {article.category} • {article.business}
+                      </span>
+                      <h4 className="font-display text-xl uppercase leading-tight mb-3 text-[#F0EAD6] group-hover:text-[#D4A373] transition-colors">
+                        {article.title}
+                      </h4>
+                      <p className="font-body text-xs text-[#F0EAD6]/70 leading-relaxed mb-4 line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#D4A373] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                        Read Article <ArrowRight size={12} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>}
+        )}
       </div>
 
       {/* --- FOOTER COMPONENT --- */}

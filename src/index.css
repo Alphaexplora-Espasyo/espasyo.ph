@@ -97,6 +97,17 @@ html.lenis {
   border-left-color: #F0EAD6;
 }
 
+/* Photo Sphere Viewer - ensure container fills its parent */
+.psv-container-fill {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.psv-container-fill .psv-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 
 
 

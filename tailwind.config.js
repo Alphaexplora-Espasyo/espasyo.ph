@@ -15,6 +15,7 @@ export default {
       fontFamily: {
         display: ['Oswald', 'sans-serif'], // Bold headers
         body: ['Inter', 'sans-serif'],     // Paragraphs
+        caption: ['Caveat', 'cursive'],    // For polaroid captions
       },
       fontSize: {
         'mega': ['clamp(4rem, 15vw, 12rem)', { lineHeight: '0.9' }],

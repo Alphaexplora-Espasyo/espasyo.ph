@@ -22,6 +22,7 @@
     "react-dom": "^19.2.0",
     "react-photo-sphere-viewer": "^6.2.3",
     "react-router-dom": "^7.12.0",
+    "resend": "^6.9.4",
     "tailwind-scrollbar-hide": "^4.0.0"
   },
   "devDependencies": {

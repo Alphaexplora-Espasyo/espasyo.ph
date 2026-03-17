@@ -79,7 +79,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[60] h-[72px] flex justify-between items-center m-2 px-6 md:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
+        className={`fixed top-0 left-0 right-0 z-[110] h-[72px] flex justify-between items-center m-2 px-6 md:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
       >
         <Link
           to="/"
@@ -91,7 +91,7 @@ const Navbar = ({ theme }: NavbarProps) => {
             }
           }}
         >
-          ESPASYO
+          COMMUNITY OF ENTREPENEURS
         </Link>
 
         <div className="hidden md:flex gap-8 font-body text-sm font-bold uppercase tracking-widest">
@@ -124,7 +124,7 @@ const Navbar = ({ theme }: NavbarProps) => {
       {/* MOBILE OVERLAY NAVIGATION */}
       {typeof document !== 'undefined' && createPortal(
         <div
-          className={`fixed inset-0 z-[45] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#2C3628]' : 'bg-[#F0EAD6]'} 
+          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#2C3628]' : 'bg-[#F0EAD6]'} 
           ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-[20px]'}`}
         >
           <div className="flex flex-col items-center gap-6 sm:gap-8 w-full overflow-y-auto no-scrollbar pb-8">

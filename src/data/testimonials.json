@@ -980,5 +980,25 @@
       "image3": ""
     },
     "placeholderImage": "src/assets/LogoWhite.jpg"
+  },
+  {
+    "id": 46,
+    "isFounder": false,
+    "businessName": "Gervacio Construction Services",
+    "industry": [],
+    "services": [],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "placeholderImage": "src/assets/LogoWhite.jpg"
   }
 ]

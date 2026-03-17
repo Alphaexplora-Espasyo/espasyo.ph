@@ -132,7 +132,7 @@ const Contact = () => {
                                 </div>
                                 <div className="flex items-start gap-4 group">
                                     <div className="p-3 bg-[#F0EAD6]/10 rounded-full group-hover:bg-[#D4A373] group-hover:text-[#2C3628] transition-colors"><Mail size={20} /></div>
-                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#D4A373]">Email Us</h3><p className="text-sm opacity-80">inquiry@espasyo.com</p></div>
+                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#D4A373]">Email Us</h3><p className="text-sm opacity-80">inquiry@espasyo.ph</p></div>
                                 </div>
                             </div>
 
@@ -166,8 +166,8 @@ const Contact = () => {
                             {/* Status Message Display */}
                             {statusMessage.text && (
                                 <div className={`mb-6 p-4 rounded-xl border-2 flex items-center justify-center text-center font-display text-xs font-bold uppercase tracking-widest transition-all ${statusMessage.type === 'success'
-                                        ? 'bg-[#3E4A35]/10 border-[#3E4A35]/30 text-[#2C3628]'
-                                        : 'bg-[#C87941]/10 border-[#C87941]/30 text-[#C87941]'
+                                    ? 'bg-[#3E4A35]/10 border-[#3E4A35]/30 text-[#2C3628]'
+                                    : 'bg-[#C87941]/10 border-[#C87941]/30 text-[#C87941]'
                                     }`}>
                                     {statusMessage.type === 'success' ? '✓ ' : '⚠ '} {statusMessage.text}
                                 </div>

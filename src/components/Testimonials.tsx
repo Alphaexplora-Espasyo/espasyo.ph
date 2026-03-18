@@ -4,12 +4,12 @@ import { Play } from 'lucide-react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
 import DetailModal from './DetailModal';
-import FounderModal from './FounderModal'; // <-- IMPORT THE FOUNDER MODAL
-
-gsap.registerPlugin(Draggable);
-
+import FounderModal from './FounderModal';
 import Navbar from './Navbar';
 import LOGO from '../assets/LOGO.png';
+import testimonialsData from '../data/testimonials.json';
+
+gsap.registerPlugin(Draggable);
 
 // --- IMAGE LOADING ---
 type GlobModule = { default: string;[key: string]: unknown; };
@@ -35,8 +35,6 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 const imagePool = loadedImages.length > 0 ? shuffleArray(loadedImages) : fallbackImages;
-
-import testimonialsData from '../data/testimonials.json';
 
 // --- GRID CONFIGURATION ---
 const ROWS = 7;
@@ -70,42 +68,37 @@ export interface TestimonialItem {
 // Helper to resolve public paths
 const resolvePath = (p?: string): string => p ? p.replace(/^public\//, '/') : '';
 
-// --- ITEMS ARRAY BUILD ---
-// Helper: a client is "complete" if it has at least one link AND a testimonial
+// --- ITEMS ARRAY BUILD (BUG FIX APPLIED HERE) ---
 const isComplete = (t: typeof testimonialsData[0]): boolean =>
   Object.values(t.links ?? {}).some(v => Boolean(v)) && Boolean(t.testimonial);
 
-// All non-founder clients – complete ones first, then incomplete
+// 1. Check if a Founder exists first before assigning random images
+const founderData = testimonialsData.find(t => t.isFounder); 
+
 const allClients = testimonialsData
   .filter(t => !t.isFounder)
   .slice()
   .sort((a, b) => (isComplete(b) ? 1 : 0) - (isComplete(a) ? 1 : 0));
 const completeClients = allClients.filter(isComplete);
 
-// At x=0, y=0 the visual centre of the infinite grid is at col=4, row=3.5
-// (14 vw/cell × 8 cols = 112 vw wrap → offset 56; 14 vw × 7 rows = 98 vw → offset 49)
-// Sort grid-slot indices 1-55 (slot 0 = founder) by distance from that visual centre
-// so we can assign complete clients to the slots the user sees first.
-const centerPrioritySlots = Array.from({ length: TOTAL_ITEMS }, (_, i) => i)
-  .filter(i => i !== 0)
-  .sort((a, b) => {
-    const dist = (i: number) => {
-      const col = i % COLS;
-      const row = Math.floor(i / COLS);
-      return (col - 4) ** 2 + (row - 3.5) ** 2;
-    };
-    return dist(a) - dist(b);
-  });
+// 2. Only reserve Slot 0 if there is actually a Founder. Otherwise, use all slots.
+const availableSlots = Array.from({ length: TOTAL_ITEMS }, (_, i) => i).filter(i => founderData ? i !== 0 : true);
 
-// Build a map: gridIndex → client data
+const centerPrioritySlots = availableSlots.sort((a, b) => {
+  const dist = (i: number) => {
+    const col = i % COLS;
+    const row = Math.floor(i / COLS);
+    return (col - 4) ** 2 + (row - 3.5) ** 2;
+  };
+  return dist(a) - dist(b);
+});
+
 const clientBySlot = new Map<number, typeof allClients[0]>();
 
-// Complete clients → center-most slots (they render side-by-side around the title)
 completeClients.forEach((client, j) => {
   clientBySlot.set(centerPrioritySlots[j], client);
 });
 
-// Remaining slots → cycle through all clients
 let cycleIdx = 0;
 centerPrioritySlots.slice(completeClients.length).forEach(idx => {
   clientBySlot.set(idx, allClients[cycleIdx % allClients.length]);
@@ -113,12 +106,13 @@ centerPrioritySlots.slice(completeClients.length).forEach(idx => {
 });
 
 const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
-  // Slot 0 is always the founder
-  if (i === 0) {
-    const founderData = testimonialsData.find(t => t.isFounder) || testimonialsData[0];
+  // Handle Founder logic properly
+  if (founderData && i === 0) {
     return {
       ...founderData,
+      id: `founder-0`,
       src: imagePool.length > 0 ? imagePool[0] : fallbackImages[0],
+      isPlaceholder: false
     } as TestimonialItem;
   }
 
@@ -126,12 +120,13 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
   const thumbnailSrc =
     resolvePath(clientData.placeholderImage) ||
     resolvePath(clientData.media?.image1) ||
-    LOGO; // Use Espasyo Logo for fallback instead of random images
+    LOGO;
 
   return { 
     ...clientData, 
+    id: `${clientData.id}-${i}`, // 3. FIX FOR REACT DOM: Force unique IDs even for duplicate loop items
     src: thumbnailSrc, 
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') 
+    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg') 
   } as TestimonialItem;
 });
 
@@ -142,7 +137,6 @@ const Testimonials = () => {
   const draggableInstanceRef = useRef<Draggable | null>(null);
   const visibleItemsRef = useRef<Set<number>>(new Set());
 
-  // --- MODAL STATE ---
   const [selectedItem, setSelectedItem] = useState<typeof items[0] | null>(null);
   const [originRect, setOriginRect] = useState<DOMRect | null>(null);
 
@@ -151,10 +145,6 @@ const Testimonials = () => {
   const [titleStep, setTitleStep] = useState(0);
   const [hasEverDragged, setHasEverDragged] = useState(false);
 
-  // No need to useMemo the generated array since we calculate it globally, but for consistency if you prefer:
-  // const itemsList = useMemo(() => items, []);
-
-  // --- SCROLL LOCK WHEN MODAL IS OPEN ---
   useEffect(() => {
     if (selectedItem) {
       document.body.style.overflow = 'hidden';
@@ -163,23 +153,19 @@ const Testimonials = () => {
     }
   }, [selectedItem]);
 
-  // Intro animation sequence
   useEffect(() => {
     const timeline = gsap.timeline();
 
-    // Step 1: Show "CLIENT"
     timeline.to({}, {
       duration: 0.5,
       onStart: () => setTitleStep(1)
     });
 
-    // Step 2: Show "STORIES"
     timeline.to({}, {
       duration: 0.8,
       onStart: () => setTitleStep(2)
     });
 
-    // Step 3: Start fading in images randomly
     timeline.add(() => {
       const shuffledIndices = [...Array(items.length).keys()].sort(() => Math.random() - 0.5);
 
@@ -204,7 +190,6 @@ const Testimonials = () => {
     };
   }, []);
 
-  // Check if item is in viewport
   const isInViewport = useCallback((element: HTMLDivElement) => {
     const rect = element.getBoundingClientRect();
     const buffer = 100;
@@ -216,7 +201,6 @@ const Testimonials = () => {
     );
   }, []);
 
-  // Morph animation for newly visible items
   const morphInItem = useCallback((element: HTMLDivElement, index: number) => {
     if (visibleItemsRef.current.has(index)) return;
 
@@ -228,7 +212,6 @@ const Testimonials = () => {
     );
   }, []);
 
-  // Check visibility on drag
   const checkVisibleItems = useCallback(() => {
     if (!introComplete) return;
     itemsRef.current.forEach((item, index) => {
@@ -236,7 +219,6 @@ const Testimonials = () => {
     });
   }, [introComplete, isInViewport, morphInItem]);
 
-  // Memoize the update function
   const updateItems = useCallback((x: number, y: number, itemWidth: number, itemHeight: number, wrapW: number, wrapH: number) => {
     itemsRef.current.forEach((item, index) => {
       if (!item) return;
@@ -316,7 +298,6 @@ const Testimonials = () => {
     };
   }, [updateItems]);
 
-  // --- CLICK HANDLER ---
   const handleClick = useCallback((item: typeof items[0], index: number) => {
     if (isDragging) return;
 
@@ -336,9 +317,7 @@ const Testimonials = () => {
       {/* Animated Title */}
       <div className="fixed inset-0 z-[40] flex items-center justify-center pointer-events-none select-none">
         <div className="flex flex-col items-center gap-6">
-          {/* Container with darker blur to help text stand out against the busy logo grid */}
           <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
-            {/* Very subtle noise/texture overlay for the background blur panel to make it look premium */}
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
             
             <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"
@@ -377,22 +356,33 @@ const Testimonials = () => {
                 onClick={() => handleClick(item, i)}
               >
                 <div className="w-full h-full relative transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:rotate-[2deg] shadow-none group-hover:shadow-xl origin-center">
+                  
+                  {/* Base Image */}
                   <img
                     src={item.src}
                     alt={item.businessName}
-                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-30 blur-[4px] scale-110' : ''}`}
+                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-0' : ''}`}
                     loading="lazy"
                     decoding="async"
                   />
+                  
+                  {/* TEXT ONLY PLACEHOLDER DESIGN */}
                   {item.isPlaceholder && (
-                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0">
-                      <h3 className="font-display text-xl md:text-2xl uppercase tracking-widest text-[#F0EAD6] drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] px-2 bg-black/20 rounded-lg backdrop-blur-sm">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#2C3628] to-[#1a2018] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
+                      <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] overflow-hidden pointer-events-none">
+                        <span className="font-display text-[15vw] md:text-[8vw] leading-none text-[#F0EAD6]">E</span>
+                      </div>
+
+                      <h3 className="font-display text-base md:text-lg lg:text-xl font-bold uppercase tracking-widest text-[#F0EAD6] line-clamp-4 relative z-10 leading-snug drop-shadow-md" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
                         {item.businessName}
                       </h3>
                     </div>
                   )}
+
                   <div className="absolute inset-0 bg-[#837B70] opacity-[0.38] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none rounded-sm" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[0px]">
+                  
+                  {/* Hover Info Overlay */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[2px]">
                     <div className="mb-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                       <h3 className="font-display text-lg md:text-2xl uppercase text-[#e68a52] leading-none mb-1 truncate drop-shadow-sm" style={{ textShadow: '1px 1px 0px #F0EAD6' }}>{item.businessName}</h3>
                     </div>
@@ -414,7 +404,6 @@ const Testimonials = () => {
       <div ref={proxyRef} className="absolute top-0 left-0 w-1 h-1 opacity-0 pointer-events-none" />
 
       {/* --- MODAL RENDERING LOGIC --- */}
-      {/* If clicked item is the Founder, show FounderModal */}
       {selectedItem && originRect && selectedItem.isFounder && (
         <FounderModal
           src={selectedItem.src}
@@ -423,7 +412,6 @@ const Testimonials = () => {
         />
       )}
 
-      {/* If clicked item is a normal client, show DetailModal */}
       {selectedItem && originRect && !selectedItem.isFounder && (
         <DetailModal
           item={selectedItem}

@@ -75,7 +75,7 @@
       "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
       "instagram": ""
     },
-    "testimonial": "Espasyo helped us maintain a professional presence while we focused on building digital solutions and supporting our clients' technology needs.",
+    "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
       "image1": "",
@@ -999,6 +999,6 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "src/assets/LogoWhite.jpg"
+    "placeholderImage": "/LogoWhite.jpg"
   }
 ]

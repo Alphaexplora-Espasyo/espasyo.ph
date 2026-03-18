@@ -38,7 +38,7 @@ const Footer = () => {
                 Marikina Heights,<br />
                 Marikina City
               </p>
-              <p>0916 611 2928</p>
+              <p>0916 611 2928<br/>700 600 42</p>
             </div>
           </div>
           <div className="md:col-span-3">

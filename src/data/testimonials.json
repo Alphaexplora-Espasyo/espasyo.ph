@@ -78,8 +78,8 @@
     "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "public/assets/logo/Alphaexplora.png",
+      "image2": "public/assets/media1/Media1_ALPHA.jpg",
       "image3": ""
     },
     "placeholderImage": "public/assets/logo/Alphaexplora.png"

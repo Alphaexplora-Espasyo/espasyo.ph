@@ -147,10 +147,10 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
         onClick={(e) => { e.stopPropagation(); handleClose(); }}
       />
 
-      {/* modal */}
+      {/* modal - ADJUSTED RESPONSIVE HEIGHTS */}
       <div
         ref={modalRef}
-        className="relative z-10 flex flex-col md:flex-row w-[92vw] max-w-6xl h-[78vh] rounded-2xl overflow-hidden bg-[#2b3327]/60 shadow-[0_40px_120px_rgba(0,0,0,0.6)]"
+        className="relative z-10 flex flex-col md:flex-row w-[92vw] max-w-6xl max-h-[90vh] md:h-[78vh] rounded-2xl overflow-hidden bg-[#2b3327]/60 shadow-[0_40px_120px_rgba(0,0,0,0.6)]"
       >
         {/* close */}
         <button
@@ -160,10 +160,10 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           <X size={22} />
         </button>
 
-        {/* media (Carousel Container) */}
+        {/* media (Carousel Container) - ADJUSTED RESPONSIVE HEIGHTS */}
         <div
           ref={mediaRef}
-          className="relative w-full h-[40%] md:w-[58%] md:h-full overflow-hidden bg-black shrink-0 flex flex-col"
+          className="relative w-full h-[35vh] min-h-[250px] md:min-h-0 md:w-[58%] md:h-full overflow-hidden bg-black shrink-0 flex flex-col"
         >
           {/* Active Media Display */}
           <div className="w-full h-full relative">
@@ -255,68 +255,72 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           )}
         </div>
 
-        {/* details */}
+        {/* details - ADDED FLEX-1 TO ALLOW NATURAL SCROLLING */}
         <div
           ref={detailsRef}
-          className="w-full h-[60%] md:w-[42%] md:h-full px-6 py-8 md:px-10 md:py-12 flex flex-col overflow-y-auto pointer-events-auto custom-scrollbar"
+          className="w-full flex-1 md:w-[42%] md:h-full px-6 py-6 md:px-10 md:py-12 flex flex-col overflow-y-auto pointer-events-auto custom-scrollbar"
         >
-          <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#d4a373] mb-4 font-bold font-display opacity-80 shrink-0">
-            About Our Client
-          </h3>
+          <div className="flex-1 flex flex-col">
+            <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#d4a373] mb-4 font-bold font-display opacity-80 shrink-0">
+              About Our Client
+            </h3>
 
-          <div className="space-y-4 text-sm">
-            <div>
-              <p className="font-display uppercase text-[24px] md:text-[32px] text-[#c87941] font-bold leading-tight mb-3">
-                {item.businessName}
-              </p>
-              
-              {item.industry && item.industry.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {item.industry.map((ind, idx) => (
-                    <span key={idx} className="inline-block bg-[#d4a373]/15 text-[#e6dfc8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-[#d4a373]/30">
-                      {ind}
-                    </span>
-                  ))}
+            <div className="space-y-4 text-sm shrink-0">
+              <div>
+                <p className="font-display uppercase text-[24px] md:text-[32px] text-[#c87941] font-bold leading-tight mb-3">
+                  {item.businessName}
+                </p>
+                
+                {item.industry && item.industry.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {item.industry.map((ind, idx) => (
+                      <span key={idx} className="inline-block bg-[#d4a373]/15 text-[#e6dfc8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-[#d4a373]/30">
+                        {ind}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {item.services && item.services.length > 0 && (
+                <div className="pt-2">
+                  <p className="font-display uppercase text-[12px] text-[#d4a373] font-semibold tracking-widest mb-2 opacity-70">
+                    Services Provided
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 ml-4 w-full">
+                    <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 w-full">
+                      {item.services.slice(0, 4).map((service, idx) => (
+                        <li key={idx} className="break-words" title={service}>{service}</li>
+                      ))}
+                    </ul>
+                    {item.services.length > 4 && (
+                      <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 w-full">
+                        {item.services.slice(4, 8).map((service, idx) => (
+                          <li key={idx} className="break-words" title={service}>{service}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
 
-            {item.services && item.services.length > 0 && (
-              <div className="pt-2">
-                <p className="font-display uppercase text-[12px] text-[#d4a373] font-semibold tracking-widest mb-2 opacity-70">
-                  Services Provided
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 ml-4 block w-full">
-                  <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
-                    {item.services.slice(0, 4).map((service, idx) => (
-                      <li key={idx} className="break-words" title={service}>{service}</li>
-                    ))}
-                  </ul>
-                  {item.services.length > 4 && (
-                    <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
-                      {item.services.slice(4, 8).map((service, idx) => (
-                        <li key={idx} className="break-words" title={service}>{service}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            )}
+            <div className="my-6 h-px bg-white/10 shrink-0" />
+
+            {/* REMOVED mb-auto TO FIX SCROLL OVERFLOW */}
+            <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-6 text-[#efe9d5] font-body border-l-2 border-[#d4a373]/50 pl-4">
+              “{item.testimonial}”
+            </blockquote>
           </div>
 
-          <div className="my-6 h-px bg-white/10" />
-
-          <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#d4a373]/50 pl-4">
-            “{item.testimonial}”
-          </blockquote>
-
-          <div className="mt-8 flex items-center gap-4 pt-4 border-t border-white/5">
+          {/* ADDED shrink-0 and mt-auto SO IT STAYS AT THE BOTTOM */}
+          <div className="mt-auto shrink-0 flex items-center gap-4 pt-4 border-t border-white/5">
             {item.links?.website && (
               <a
                 href={item.links.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d4a373] text-[#2b3327] hover:bg-[#c87941] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
+                className="bg-[#d4a373] text-[#2b3327] hover:bg-[#c87941] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider mr-auto"
               >
                 View Website
               </a>

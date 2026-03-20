@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Navbar from './Navbar';
+import Navbar from '../components/Common/Navbar';
 import testimonialsData from '../data/testimonials.json';
 
 // --- TYPES ---
@@ -67,7 +67,7 @@ const MediaCard = ({ business, onClick }: { business: Business, onClick: () => v
                 />
             </div>
             <div className="mt-2 text-center relative z-20">
-                <h3 className="font-display text-lg tracking-wide uppercase group-hover:text-[#DDA79A] transition-colors line-clamp-2 px-2">
+                <h3 className="font-display text-lg tracking-wide uppercase group-hover:text-[#FDF4DC] transition-colors line-clamp-2 px-2">
                     {business.businessName}
                 </h3>
             </div>
@@ -81,10 +81,10 @@ const ListCard = ({ business, onClick }: { business: Business, onClick: () => vo
             onClick={onClick}
             className="flex items-center justify-between border-b border-[#2C3628]/10 py-4 cursor-pointer group gallery-anim-item"
         >
-            <h3 className="font-display text-lg md:text-xl uppercase tracking-wide group-hover:text-[#DDA79A] transition-colors w-full leading-tight">
+            <h3 className="font-display text-lg md:text-xl uppercase tracking-wide group-hover:text-[#FDF4DC] transition-colors w-full leading-tight">
                 {business.businessName}
             </h3>
-            <span className="text-[#2C3628]/30 group-hover:text-[#DDA79A] transition-colors text-2xl font-light shrink-0 ml-4 group-hover:translate-x-1 duration-300">→</span>
+            <span className="text-[#2C3628]/30 group-hover:text-[#FDF4DC] transition-colors text-2xl font-light shrink-0 ml-4 group-hover:translate-x-1 duration-300">→</span>
         </div>
     );
 };
@@ -132,7 +132,7 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
                 {/* Back Button */}
                 <button 
                     onClick={handleClose} 
-                    className="absolute top-4 left-4 md:top-6 md:left-6 z-[110] text-[#2C3628] hover:text-[#DDA79A] p-2 md:p-3 bg-white/50 hover:bg-white/80 backdrop-blur-md rounded-full transition-all flex items-center gap-2"
+                    className="absolute top-4 left-4 md:top-6 md:left-6 z-[110] text-[#2C3628] hover:text-[#FDF4DC] p-2 md:p-3 bg-white/50 hover:bg-white/80 backdrop-blur-md rounded-full transition-all flex items-center gap-2"
                 >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                     <span className="text-xs font-bold tracking-widest uppercase hidden md:block pr-2">Back</span>
@@ -151,13 +151,13 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
                         <>
                             <button 
                                 onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === 0 ? allMedia.length - 1 : i - 1); }}
-                                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#DDA79A] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
+                                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#FDF4DC] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
                             >
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
                             </button>
                             <button 
                                 onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === allMedia.length - 1 ? 0 : i + 1); }}
-                                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#DDA79A] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
+                                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#FDF4DC] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
                             >
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </button>
@@ -177,7 +177,7 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
 
                 {/* Content Area */}
                 <div className="w-full md:w-[40%] h-[60vh] md:h-full text-[#2C3628] p-8 md:p-12 flex flex-col overflow-y-auto no-scrollbar">
-                    <h2 className="font-display text-3xl md:text-5xl uppercase tracking-wider mb-4 text-[#DDA79A] leading-tight">
+                    <h2 className="font-display text-3xl md:text-5xl uppercase tracking-wider mb-4 text-[#FDF4DC] leading-tight">
                         {business.businessName}
                     </h2>
                     
@@ -193,7 +193,7 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
 
                     {business.testimonial && (
                         <div className="mb-10">
-                            <p className="font-body text-sm md:text-base italic opacity-90 leading-relaxed border-l-2 border-[#DDA79A] pl-4 py-1">
+                            <p className="font-body text-sm md:text-base italic opacity-90 leading-relaxed border-l-2 border-[#FDF4DC] pl-4 py-1">
                                 "{business.testimonial}"
                             </p>
                         </div>
@@ -205,7 +205,7 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                                 {business.services.map((srv, i) => (
                                     <li key={i} className="font-body opacity-90 flex items-start gap-3 text-sm md:text-base group">
-                                        <span className="text-[#DDA79A] mt-1 text-[10px] md:text-xs shrink-0 transition-transform group-hover:scale-110">◆</span>
+                                        <span className="text-[#FDF4DC] mt-1 text-[10px] md:text-xs shrink-0 transition-transform group-hover:scale-110">◆</span>
                                         <span className="flex-1 leading-snug line-clamp-2" title={srv}>{srv}</span>
                                     </li>
                                 ))}
@@ -218,18 +218,18 @@ const GalleryModal = ({ business, onClose }: { business: Business, onClose: () =
                             <h4 className="font-display text-xs uppercase tracking-widest mb-4 opacity-50">Connect</h4>
                             <div className="flex flex-wrap items-center gap-4">
                                 {business.links.website && (
-                                    <a href={business.links.website.startsWith('http') ? business.links.website : `https://${business.links.website}`} target="_blank" rel="noreferrer" className="text-sm font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors flex items-center gap-3 w-fit bg-[#2C3628]/5 hover:bg-[#2C3628]/10 px-4 py-3 rounded-full">
+                                    <a href={business.links.website.startsWith('http') ? business.links.website : `https://${business.links.website}`} target="_blank" rel="noreferrer" className="text-sm font-bold uppercase tracking-widest hover:text-[#FDF4DC] transition-colors flex items-center gap-3 w-fit bg-[#2C3628]/5 hover:bg-[#2C3628]/10 px-4 py-3 rounded-full">
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                                         View website in new tab
                                     </a>
                                 )}
                                 {business.links.facebook && (
-                                    <a href={business.links.facebook} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DDA79A] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Facebook">
+                                    <a href={business.links.facebook} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#FDF4DC] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Facebook">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                                     </a>
                                 )}
                                 {business.links.instagram && (
-                                    <a href={business.links.instagram} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DDA79A] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Instagram">
+                                    <a href={business.links.instagram} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#FDF4DC] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Instagram">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                                     </a>
                                 )}
@@ -303,8 +303,8 @@ const Testimonials = () => {
     return (
         <div ref={containerRef} className="min-h-screen w-full bg-[#FDF4DC] text-[#2C3628] flex flex-col font-body selection:bg-[#2C3628] selection:text-[#FDF4DC]">
             <div className="fixed top-0 left-0 w-full z-50 bg-[#FDF4DC]/90 backdrop-blur-md border-b border-[#2C3628]/10 transition-all">
-                {/* Replaced theme="brown" with theme="green" to ensure Navbar links swap to green for contrast against cream bg */}
-                <Navbar theme="green" />
+                {/* Replaced theme="brown" with theme="default" to ensure Navbar links swap for contrast against cream bg */}
+                <Navbar theme="default" />
             </div>
 
             {/* Main Flex Container using Sidebar Layout as requested ("like the previous gallery layout") */}
@@ -312,7 +312,7 @@ const Testimonials = () => {
                 
                 {/* --- SIDEBAR: HEADER & CATEGORIES --- */}
                 <div className="w-full md:w-1/4 lg:w-1/5 flex flex-col z-20 shrink-0">
-                    <button onClick={() => navigate('/', { state: { skipIntro: true } })} className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors mb-8 opacity-60">
+                    <button onClick={() => navigate('/', { state: { skipIntro: true } })} className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#FDF4DC] transition-colors mb-8 opacity-60">
                         <span>←</span> Back Home
                     </button>
                     
@@ -332,7 +332,7 @@ const Testimonials = () => {
                                 onClick={() => setActiveCategory(cat)}
                                 className={`whitespace-nowrap px-4 py-2 md:p-0 rounded-full md:rounded-none text-left text-sm md:text-base font-body tracking-wide transition-all snap-start ${
                                     activeCategory === cat 
-                                    ? 'bg-[#DDA79A] md:bg-transparent text-[#FDF4DC] md:text-[#DDA79A] font-bold md:translate-x-1' 
+                                    ? 'bg-[#FDF4DC] md:bg-transparent text-[#FDF4DC] md:text-[#FDF4DC] font-bold md:translate-x-1' 
                                     : 'bg-[#2C3628]/5 md:bg-transparent text-[#2C3628]/60 hover:text-[#2C3628]'
                                 }`}
                             >

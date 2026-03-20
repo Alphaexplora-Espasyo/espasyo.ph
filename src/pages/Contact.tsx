@@ -2,7 +2,7 @@
 import { useRef, useLayoutEffect, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Navbar from './Navbar';
+import Navbar from '../components/Common/Navbar';
 import { MapPin, Phone, Mail, Facebook, Send } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -108,7 +108,7 @@ const Contact = () => {
             <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-8 py-24 relative">
 
                 <div className="md:w-1/4 lg:w-1/5 flex flex-col z-20 pb-8 h-full">
-                    <button onClick={handleBack} className="absolute top-28 left-8 md:left-12 flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors z-10 opacity-80">
+                    <button onClick={handleBack} className="absolute top-28 left-8 md:left-12 flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#FDF4DC] transition-colors z-10 opacity-80">
                         <span>←</span> Back
                     </button>
                 </div>
@@ -116,28 +116,28 @@ const Contact = () => {
                 <div className="contact-card w-full max-w-6xl bg-[#FDF4DC] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[600px]">
                     {/* LEFT SIDE: INFO */}
                     <div className="w-full md:w-1/2 bg-[#3E4A35] text-[#FDF4DC] p-8 md:p-12 flex flex-col relative overflow-hidden">
-                        <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#DDA79A]/10 rounded-full blur-3xl" />
+                        <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#FDF4DC]/10 rounded-full blur-3xl" />
                         <div className="relative z-10 flex flex-col h-full">
-                            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-2 text-[#DDA79A]">Espasyo</h2>
+                            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-2 text-[#FDF4DC]">Espasyo</h2>
                             <p className="font-body text-xs tracking-[0.2em] uppercase opacity-70 mb-12">Study & Office Hub</p>
 
                             <div className="flex flex-col gap-8 mb-12">
                                 <div className="flex items-start gap-4 group">
-                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#DDA79A] group-hover:text-[#3A2618] transition-colors"><MapPin size={20} /></div>
-                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#DDA79A]">Visit Us</h3><p className="text-sm opacity-80 leading-relaxed max-w-xs">6A T. Bugallon Street, Marikina Heights,<br />Marikina City, Philippines</p></div>
+                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#FDF4DC] group-hover:text-[#3A2618] transition-colors"><MapPin size={20} /></div>
+                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#FDF4DC]">Visit Us</h3><p className="text-sm opacity-80 leading-relaxed max-w-xs">6A T. Bugallon Street, Marikina Heights,<br />Marikina City, Philippines</p></div>
                                 </div>
                                 <div className="flex items-start gap-4 group">
-                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#DDA79A] group-hover:text-[#3A2618] transition-colors"><Phone size={20} /></div>
-                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#DDA79A]">Call Us</h3><p className="text-sm opacity-80">0916 611 2928</p><p className="text-sm opacity-80">700 600 42</p></div>
+                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#FDF4DC] group-hover:text-[#3A2618] transition-colors"><Phone size={20} /></div>
+                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#FDF4DC]">Call Us</h3><p className="text-sm opacity-80">0916 611 2928</p><p className="text-sm opacity-80">700 600 42</p></div>
                                 </div>
                                 <div className="flex items-start gap-4 group">
-                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#DDA79A] group-hover:text-[#3A2618] transition-colors"><Mail size={20} /></div>
-                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#DDA79A]">Email Us</h3><p className="text-sm opacity-80">inquiry@espasyo.com</p></div>
+                                    <div className="p-3 bg-[#FDF4DC]/10 rounded-full group-hover:bg-[#FDF4DC] group-hover:text-[#3A2618] transition-colors"><Mail size={20} /></div>
+                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#FDF4DC]">Email Us</h3><p className="text-sm opacity-80">inquiry@espasyo.com</p></div>
                                 </div>
                             </div>
 
                             <div className="mt-auto">
-                                <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors">
+                                <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-widest hover:text-[#FDF4DC] transition-colors">
                                     <Facebook size={18} /><span>Follow on Facebook</span>
                                 </a>
                                 <div className="w-full h-48 rounded-xl overflow-hidden border-2 border-[#FDF4DC]/10 shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
@@ -196,7 +196,7 @@ const Contact = () => {
                                     <textarea name="message" value={formData.message} onChange={handleInputChange} required className="w-full bg-transparent border-b-2 border-[#3A2618]/20 py-3 text-lg focus:outline-none focus:border-[#B56A54] transition-colors placeholder:text-[#3A2618]/30 min-h-[100px] resize-none" placeholder="How can we help you?"></textarea>
                                 </div>
 
-                                <button type="submit" disabled={isLoading} className="form-animate group mt-2 w-full py-4 bg-[#3A2618] text-[#DDA79A] border-2 border-[#3A2618] rounded-xl font-bold uppercase tracking-widest hover:bg-[#DDA79A] hover:text-[#3A2618] transition-all flex items-center justify-center gap-3 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed shrink-0">
+                                <button type="submit" disabled={isLoading} className="form-animate group mt-2 w-full py-4 bg-[#3A2618] text-[#FDF4DC] border-2 border-[#3A2618] rounded-xl font-bold uppercase tracking-widest hover:bg-[#FDF4DC] hover:text-[#3A2618] transition-all flex items-center justify-center gap-3 shadow-xl disabled:opacity-50 disabled:cursor-not-allowed shrink-0">
                                     <span>{isLoading ? 'Sending...' : 'Send Inquiry'}</span>
                                     {!isLoading && <Send size={18} className="group-hover:translate-x-1 transition-transform" />}
                                 </button>

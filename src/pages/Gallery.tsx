@@ -4,11 +4,11 @@ import { Draggable } from 'gsap/all';
 
 gsap.registerPlugin(Draggable);
 
-import Navbar from './Navbar';
+import Navbar from '../components/Common/Navbar';
 
 // --- IMAGE LOADING ---
 type GlobModule = { default: string;[key: string]: unknown; };
-const galleryModules = import.meta.glob<GlobModule>('../assets/gallery/**/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
+const galleryModules = import.meta.glob<GlobModule>('./../assets/gallery/**/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
 const extractUrls = (modules: Record<string, GlobModule>) => Object.values(modules).map((mod) => mod.default);
 const loadedImages = extractUrls(galleryModules);
 const fallbackImages = [

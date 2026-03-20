@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "./Navbar";
-import Footer from "./footer";
+import Navbar from '../components/Common/Navbar';
+import Footer from '../components/Common/Footer';
 import {
   Calendar as CalendarIcon,
   ArrowRight,
@@ -274,7 +274,7 @@ const Resources = () => {
         <div className="page-title-group border-b border-[#3A2618]/20 pb-12 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-16">
           {/* Title on the Left */}
           <h1 className="font-display text-5xl md:text-8xl uppercase tracking-tighter text-[#3A2618] drop-shadow-lg shrink-0">
-            Life at <span className="text-[#DDA79A]">Espasyo</span>
+            Life at <span className="text-[#FDF4DC]">Espasyo</span>
           </h1>
 
           {/* Description on the Right (Right aligned text) */}
@@ -292,7 +292,7 @@ const Resources = () => {
           {/* LEFT COLUMN: CALENDAR */}
           <div className="content-block h-full flex flex-col">
             <div className="flex flex-wrap items-end justify-between mb-8 gap-4">
-              <h2 className="font-display text-3xl uppercase tracking-widest text-[#DDA79A]">
+              <h2 className="font-display text-3xl uppercase tracking-widest text-[#FDF4DC]">
                 Activity <br /> Calendar
               </h2>
 
@@ -315,19 +315,19 @@ const Resources = () => {
             <div className="flex flex-col flex-1 min-h-[400px]">
               {/* DAILY VIEW */}
               {calendarView === "daily" && (
-                <div className="flex flex-col gap-0 border-l-2 border-[#DDA79A]/30 pl-6 ml-3 py-2 animate-fade-in-up">
-                  <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-6 text-[#DDA79A]">
+                <div className="flex flex-col gap-0 border-l-2 border-[#FDF4DC]/30 pl-6 ml-3 py-2 animate-fade-in-up">
+                  <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-6 text-[#FDF4DC]">
                     Today's Agenda
                   </h3>
                   {dailySchedule.map((item, idx) => (
                     <div key={idx} className="relative pb-8 group last:pb-0">
-                      <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-[#FDF4DC] border-2 border-[#DDA79A] group-hover:bg-[#DDA79A] transition-colors z-10 scale-100 group-hover:scale-125 duration-300" />
+                      <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-[#FDF4DC] border-2 border-[#FDF4DC] group-hover:bg-[#FDF4DC] transition-colors z-10 scale-100 group-hover:scale-125 duration-300" />
                       <div className="bg-[#3A2618]/5 border border-[#3A2618]/10 p-4 rounded-xl hover:bg-[#3A2618]/10 hover:border-[#3A2618]/20 transition-all cursor-default backdrop-blur-sm">
                         <div className="flex justify-between items-start mb-2">
                           <span className="font-display text-lg font-bold text-[#3A2618]">
                             {item.title}
                           </span>
-                          <span className="text-[10px] font-bold uppercase bg-[#DDA79A] text-[#FDF4DC] px-2 py-0.5 rounded-full">
+                          <span className="text-[10px] font-bold uppercase bg-[#FDF4DC] text-[#FDF4DC] px-2 py-0.5 rounded-full">
                             {item.type}
                           </span>
                         </div>
@@ -345,7 +345,7 @@ const Resources = () => {
               {/* WEEKLY VIEW */}
               {calendarView === "weekly" && (
                 <div className="flex flex-col gap-4 animate-fade-in-up">
-                  <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-2 text-[#DDA79A]">
+                  <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-2 text-[#FDF4DC]">
                     This Week
                   </h3>
                   {weeklyData.map((item, idx) => (
@@ -353,7 +353,7 @@ const Resources = () => {
                       key={idx}
                       className="group flex items-center gap-6 p-5 border border-[#3A2618]/10 rounded-xl hover:bg-[#3A2618]/5 transition-all duration-300 cursor-default backdrop-blur-sm"
                     >
-                      <div className="flex flex-col items-center justify-center w-16 h-16 bg-[#3E4A35] rounded-lg group-hover:bg-[#DDA79A] transition-colors shadow-inner">
+                      <div className="flex flex-col items-center justify-center w-16 h-16 bg-[#3E4A35] rounded-lg group-hover:bg-[#FDF4DC] transition-colors shadow-inner">
                         <span className="font-display text-[10px] uppercase tracking-wider opacity-80 group-hover:text-[#FDF4DC]">
                           {item.day}
                         </span>
@@ -362,7 +362,7 @@ const Resources = () => {
                         </span>
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-display text-xl uppercase tracking-tight mb-1 group-hover:text-[#DDA79A] transition-colors">
+                        <h3 className="font-display text-xl uppercase tracking-tight mb-1 group-hover:text-[#FDF4DC] transition-colors">
                           {item.title}
                         </h3>
                         <div className="flex items-center gap-3 text-xs font-body opacity-60">
@@ -386,7 +386,7 @@ const Resources = () => {
                       March 2026
                     </h3>
                     <div className="flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#DDA79A]"></span>
+                      <span className="w-2 h-2 rounded-full bg-[#FDF4DC]"></span>
                       <span className="text-[10px] uppercase tracking-widest opacity-60">
                         Has Event
                       </span>
@@ -414,8 +414,8 @@ const Resources = () => {
                         <div
                           key={idx}
                           className={`aspect-square rounded-lg flex flex-col items-center justify-center relative text-sm group
-                                                ${date === 0 ? "invisible" : "bg-[#3E4A35]/50 hover:bg-[#DDA79A] hover:text-[#FDF4DC] cursor-pointer transition-colors"}
-                                                ${hasEvent ? "border border-[#DDA79A] shadow-[0_0_10px_rgba(212,163,115,0.2)]" : ""}
+                                                ${date === 0 ? "invisible" : "bg-[#3E4A35]/50 hover:bg-[#FDF4DC] hover:text-[#FDF4DC] cursor-pointer transition-colors"}
+                                                ${hasEvent ? "border border-[#FDF4DC] shadow-[0_0_10px_rgba(212,163,115,0.2)]" : ""}
                                             `}
                         >
                           <span
@@ -424,21 +424,21 @@ const Resources = () => {
                             {date}
                           </span>
                           {hasEvent && (
-                            <div className="w-1 h-1 bg-[#DDA79A] rounded-full mt-1 group-hover:bg-[#FDF4DC]"></div>
+                            <div className="w-1 h-1 bg-[#FDF4DC] rounded-full mt-1 group-hover:bg-[#FDF4DC]"></div>
                           )}
 
                           {/* Tooltip */}
                           {hasEvent && (
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block z-50 w-48 animate-scale-up origin-bottom">
-                              <div className="bg-[#FDF4DC] border border-[#DDA79A]/30 text-[#3A2618] text-xs rounded-lg p-3 shadow-2xl relative">
-                                <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#FDF4DC] border-b border-r border-[#DDA79A]/30 rotate-45"></div>
+                              <div className="bg-[#FDF4DC] border border-[#FDF4DC]/30 text-[#3A2618] text-xs rounded-lg p-3 shadow-2xl relative">
+                                <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#FDF4DC] border-b border-r border-[#FDF4DC]/30 rotate-45"></div>
                                 <div className="flex flex-col gap-2">
                                   {events.map((evt, i) => (
                                     <div
                                       key={i}
                                       className="border-b border-[#3A2618]/10 last:border-0 pb-1 last:pb-0"
                                     >
-                                      <div className="font-bold text-[#DDA79A] mb-0.5">
+                                      <div className="font-bold text-[#FDF4DC] mb-0.5">
                                         {evt.title}
                                       </div>
                                       <div className="flex justify-between opacity-70 text-[10px]">
@@ -465,7 +465,7 @@ const Resources = () => {
           {/* RIGHT COLUMN: EVENTS CAROUSEL */}
           <div className="content-block h-full flex flex-col perspective-1000">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="font-display text-3xl uppercase tracking-widest text-[#DDA79A]">
+              <h2 className="font-display text-3xl uppercase tracking-widest text-[#FDF4DC]">
                 Upcoming <br /> Events
               </h2>
 
@@ -505,13 +505,13 @@ const Resources = () => {
                 key={activeEvent.id}
                 className="absolute bottom-0 left-0 w-full p-8 md:p-12 flex flex-col items-start animate-fade-in-up transform translate-z-10"
               >
-                <div className="bg-[#DDA79A] text-[#FDF4DC] font-bold text-xs uppercase px-4 py-2 rounded-full mb-4 shadow-lg flex items-center gap-2">
+                <div className="bg-[#FDF4DC] text-[#FDF4DC] font-bold text-xs uppercase px-4 py-2 rounded-full mb-4 shadow-lg flex items-center gap-2">
                   <CalendarIcon size={12} /> {activeEvent.date}
                 </div>
                 <h3 className="font-display text-4xl md:text-5xl text-[#3A2618] uppercase tracking-tighter mb-4 leading-[0.9] drop-shadow-md">
                   {activeEvent.title}
                 </h3>
-                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#DDA79A] mb-8">
+                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#FDF4DC] mb-8">
                   <MapPin size={16} /> {activeEvent.location}
                 </div>
               </div>
@@ -521,7 +521,7 @@ const Resources = () => {
                   <div
                     key={idx}
                     className={`w-2 h-2 rounded-full transition-all ${idx === currentEventIndex
-                      ? "bg-[#DDA79A] w-6"
+                      ? "bg-[#FDF4DC] w-6"
                       : "bg-[#3A2618]/30"
                       }`}
                   />
@@ -536,7 +536,7 @@ const Resources = () => {
           <div className="features-section mt-24 border-t border-[#3A2618]/20 pt-16 relative z-10">
             <div className="flex items-center justify-between mb-10 px-4">
               <div>
-                <h3 className="font-display text-sm font-bold uppercase tracking-widest text-[#DDA79A] mb-2">
+                <h3 className="font-display text-sm font-bold uppercase tracking-widest text-[#FDF4DC] mb-2">
                   Featured Stories
                 </h3>
                 <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tighter text-[#3A2618]">
@@ -570,7 +570,7 @@ const Resources = () => {
                 {partnerArticles.map((article, idx) => (
                   <div
                     key={idx}
-                    className="min-w-[300px] md:min-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer border border-[#3A2618]/10 hover:border-[#DDA79A]/50 transition-colors"
+                    className="min-w-[300px] md:min-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer border border-[#3A2618]/10 hover:border-[#FDF4DC]/50 transition-colors"
                   >
                     <img
                       src={article.image}
@@ -580,16 +580,16 @@ const Resources = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#FDF4DC] via-[#FDF4DC]/60 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
 
                     <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-start transform transition-transform duration-500 group-hover:-translate-y-2">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#DDA79A] mb-2 bg-[#FDF4DC]/80 backdrop-blur-md px-2 py-1 rounded border border-[#DDA79A]/20">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#FDF4DC] mb-2 bg-[#FDF4DC]/80 backdrop-blur-md px-2 py-1 rounded border border-[#FDF4DC]/20">
                         {article.category} • {article.business}
                       </span>
-                      <h4 className="font-display text-xl uppercase leading-tight mb-3 text-[#3A2618] group-hover:text-[#DDA79A] transition-colors">
+                      <h4 className="font-display text-xl uppercase leading-tight mb-3 text-[#3A2618] group-hover:text-[#FDF4DC] transition-colors">
                         {article.title}
                       </h4>
                       <p className="font-body text-xs text-[#3A2618]/70 leading-relaxed mb-4 line-clamp-2">
                         {article.excerpt}
                       </p>
-                      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#DDA79A] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#FDF4DC] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                         Read Article <ArrowRight size={12} />
                       </div>
                     </div>

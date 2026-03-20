@@ -18,7 +18,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   // COLORS
   const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#3A2618]';
   const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]';
-  const hoverTextClasses = isDarkTheme ? 'text-[#DDA79A]' : 'text-[#B56A54]';
+  const hoverTextClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#B56A54]';
 
   // --- MOBILE MENU STATE ---
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

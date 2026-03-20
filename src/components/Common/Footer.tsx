@@ -1,9 +1,9 @@
 // src/components/Footer.tsx
-import birLogo from '../assets/footer-img/BIR.png';
-import cdaLogo from '../assets/footer-img/CDA.png';
-import dtiLogo from '../assets/footer-img/DTI.png';
-import lguLogo from '../assets/footer-img/LGU.png';
-import secLogo from '../assets/footer-img/SEC.png';
+import birLogo from '../../assets/footer-img/BIR.png';
+import cdaLogo from '../../assets/footer-img/CDA.png';
+import dtiLogo from '../../assets/footer-img/DTI.png';
+import lguLogo from '../../assets/footer-img/LGU.png';
+import secLogo from '../../assets/footer-img/SEC.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

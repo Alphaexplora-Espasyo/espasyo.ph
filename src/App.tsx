@@ -57,7 +57,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="antialiased bg-[#d9d8d7] min-h-screen">
+      <div className="antialiased bg-[#FDF4DC] min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />

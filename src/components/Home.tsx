@@ -300,9 +300,9 @@ const Home = () => {
     const activeService = serviceCategories[currentIndex];
 
     return (
-        <div ref={container} className={`relative w-full overflow-x-hidden transition-colors duration-1000 ease-in-out ${isDarkTheme ? 'bg-[#2C3628] text-[#F0EAD6]' : 'bg-[#F0EAD6] text-[#2C3628]'}`}>
+        <div ref={container} className={`relative w-full overflow-x-hidden transition-colors duration-1000 ease-in-out ${isDarkTheme ? 'bg-[#4B533E] text-[#FDF4DC]' : 'bg-[#FDF4DC] text-[#3A2618]'}`}>
             {!introFinished && <Intro onComplete={handleIntroComplete} />}
-            <div ref={morphRef} className="fixed hidden bg-[#F0EAD6] pointer-events-none" style={{ zIndex: 9999 }} />
+            <div ref={morphRef} className="fixed hidden bg-[#FDF4DC] pointer-events-none" style={{ zIndex: 9999 }} />
 
             <style>{`
         @keyframes infinite-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
@@ -330,15 +330,15 @@ const Home = () => {
                             className="absolute inset-0 w-full h-full object-cover"
                             src="https://res.cloudinary.com/dlk93aehl/video/upload/v1773766338/landing_wmxsq3.mp4"
                         />
-                        <div className="absolute inset-0 bg-[#2C3628]/75 mix-blend-multiply"></div>
-                        <div className="absolute inset-y-0 right-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-[#F0EAD6] to-transparent pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-[#3A2618]/75 mix-blend-multiply"></div>
+                        <div className="absolute inset-y-0 right-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-[#FDF4DC] to-transparent pointer-events-none"></div>
                     </div>
 
                     {/* Text Content */}
                     <div className="overflow-hidden z-10 relative">
                         <h1
                             ref={heroTextRef1}
-                            className={`mb-2 text-5xl sm:text-7xl md:text-9xl lg:text-10xl font-display text-[#F0EAD6] drop-shadow-[0_8px_8px_rgba(0,0,0,0.8)] uppercase text-center tracking-tighter leading-[0.9] ${introFinished ? '' : 'opacity-0'}`}
+                            className={`mb-2 text-5xl sm:text-7xl md:text-9xl lg:text-10xl font-display text-[#FDF4DC] drop-shadow-[0_8px_8px_rgba(0,0,0,0.8)] uppercase text-center tracking-tighter leading-[0.9] ${introFinished ? '' : 'opacity-0'}`}
                         >
                             ESPASYO
                         </h1>
@@ -346,7 +346,7 @@ const Home = () => {
                 </section>
 
                 <section className="h-full flex shrink-0 overflow-hidden relative pt-[96px] pb-2 bg-transparent w-[100vw]">
-                    <div ref={marqueeRef} className={`w-[50px] sm:w-[60px] md:w-[70px] h-[calc(100vh-104px)] mx-2 border-2 rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative bg-[#F0EAD6] border-[#2C3628] text-[#2C3628] ${introFinished ? '' : 'opacity-0'}`}>
+                    <div ref={marqueeRef} className={`w-[50px] sm:w-[60px] md:w-[70px] h-[calc(100vh-104px)] mx-2 border-2 rounded-lg flex items-center justify-center overflow-hidden shrink-0 relative bg-[#FDF4DC] border-[#3A2618] text-[#3A2618] ${introFinished ? '' : 'opacity-0'}`}>
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vh] flex gap-2 -rotate-90">
                             <div className="animate-infinite-scroll flex gap-6 sm:gap-7 md:gap-8 shrink-0 items-center justify-around opacity-60">
                                 {marqueeText.map((text, i) => <h2 key={`t1-${i}`} className="font-display text-xs font-bold uppercase tracking-[0.3em] whitespace-nowrap">{text}</h2>)}
@@ -360,45 +360,45 @@ const Home = () => {
                         <div id="our-story" className="order-1 md:order-2 flex-none h-[40%] min-h-[300px] md:h-full md:min-h-0 flex flex-col justify-center md:sticky top-0 px-2 sm:px-6 md:pl-16 mb-2 md:mb-0 z-10 relative overflow-hidden">
                             {/* Panel 1: Intro — visible until origin story kicks in */}
                             <div className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:pl-16 transition-all duration-700 ease-in-out ${originStoryVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
-                                <h2 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]'}`}>Our Story</h2>
-                                <div className={`max-w-3xl font-body text-sm sm:text-lg md:text-xl opacity-80 leading-relaxed space-y-2 sm:space-y-6 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]'}`}>
+                                <h2 className={`font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#3A2618]'}`}>Our Story</h2>
+                                <div className={`max-w-3xl font-body text-sm sm:text-lg md:text-xl opacity-80 leading-relaxed space-y-2 sm:space-y-6 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]'}`}>
                                     <p>ESPASYO Coworking &amp; Office Space nurtures a dynamic community from a diverse array of businesses &amp; individuals across various sectors.</p>
                                     <p>Established in 2018 by a group of educators, ESPASYO promotes engagement &amp; collaboration among like-minded professionals.</p>
-                                    <p className={`font-bold pb-4 md:pb-0 transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]'}`}>Scroll to see our origin story.</p>
+                                    <p className={`font-bold pb-4 md:pb-0 transition-colors duration-1000 ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#B56A54]'}`}>Scroll to see our origin story.</p>
                                 </div>
                             </div>
 
                             {/* Panel 2: Origin Story — visible after first 3 polaroids */}
                             <div className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:pl-16 transition-all duration-700 ease-in-out ${originStoryVisible && !missionVisible ? 'opacity-100 translate-y-0' : originStoryVisible && missionVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
-                                <p className={`font-display text-xs sm:text-sm uppercase tracking-widest mb-1 sm:mb-3 font-bold ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]'}`}>Origin Story</p>
-                                <h2 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]'}`}>How It All Started</h2>
-                                <div className={`max-w-3xl font-body text-xs sm:text-base md:text-lg opacity-80 leading-relaxed space-y-2 sm:space-y-5 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]'}`}>
+                                <p className={`font-display text-xs sm:text-sm uppercase tracking-widest mb-1 sm:mb-3 font-bold ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#B56A54]'}`}>Origin Story</p>
+                                <h2 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#3A2618]'}`}>How It All Started</h2>
+                                <div className={`max-w-3xl font-body text-xs sm:text-base md:text-lg opacity-80 leading-relaxed space-y-2 sm:space-y-5 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]'}`}>
                                     <p>It began with a simple observation by our founder, <strong>Ms. Tina</strong>. She noticed that many talented freelancers and small business owners were isolated — working from noisy cafes or lonely bedrooms.</p>
                                     <p>She didn't want to build just another office hub with cubicles. She envisioned a sanctuary — a place where creatives could collide, collaborate, and grow together.</p>
                                 </div>
-                                <blockquote className={`mt-4 sm:mt-8 italic text-sm sm:text-xl md:text-2xl leading-relaxed opacity-90 font-display border-l-4 pl-3 sm:pl-6 transition-colors duration-1000 pb-4 md:pb-0 ${isDarkTheme ? 'border-[#D4A373] text-[#F0EAD6]' : 'border-[#C87941] text-[#2C3628]'}`}>
+                                <blockquote className={`mt-4 sm:mt-8 italic text-sm sm:text-xl md:text-2xl leading-relaxed opacity-90 font-display border-l-4 pl-3 sm:pl-6 transition-colors duration-1000 pb-4 md:pb-0 ${isDarkTheme ? 'border-[#DDA79A] text-[#FDF4DC]' : 'border-[#B56A54] text-[#3A2618]'}`}>
                                     "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
                                 </blockquote>
                             </div>
 
                             {/* Panel 3: Mission — visible after next 3 polaroids */}
                             <div className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:pl-16 transition-all duration-700 ease-in-out ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
-                                <p className={`font-display text-xs sm:text-sm uppercase tracking-widest mb-1 sm:mb-3 font-bold ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]'}`}>Mission</p>
-                                <h2 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#D4A373]' : 'text-[#2C3628]'}`}>OUR COLLECTIVE IMPACT</h2>
-                                <div className={`max-w-3xl font-body text-xs sm:text-base md:text-lg opacity-80 leading-relaxed space-y-2 sm:space-y-5 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]'}`}>
+                                <p className={`font-display text-xs sm:text-sm uppercase tracking-widest mb-1 sm:mb-3 font-bold ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#B56A54]'}`}>Mission</p>
+                                <h2 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl uppercase tracking-tighter mb-2 sm:mb-6 md:mb-8 leading-[0.9] transition-colors duration-1000 ${isDarkTheme ? 'text-[#DDA79A]' : 'text-[#3A2618]'}`}>OUR COLLECTIVE IMPACT</h2>
+                                <div className={`max-w-3xl font-body text-xs sm:text-base md:text-lg opacity-80 leading-relaxed space-y-2 sm:space-y-5 text-justify transition-colors duration-1000 ${isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]'}`}>
                                     <p>ESPASYO is committed to providing accessible, innovative, and professional workspace and virtual business solutions that support entrepreneurs, freelancers, and growing enterprises—through space, service, and a strong community network.</p>
                                 </div>
-                                <blockquote className={`mt-4 sm:mt-8 italic text-sm sm:text-lg md:text-xl leading-relaxed opacity-90 font-display border-l-4 pl-3 sm:pl-6 transition-colors duration-1000 pb-4 md:pb-0 ${isDarkTheme ? 'border-[#D4A373] text-[#F0EAD6]' : 'border-[#C87941] text-[#2C3628]'}`}>
+                                <blockquote className={`mt-4 sm:mt-8 italic text-sm sm:text-lg md:text-xl leading-relaxed opacity-90 font-display border-l-4 pl-3 sm:pl-6 transition-colors duration-1000 pb-4 md:pb-0 ${isDarkTheme ? 'border-[#DDA79A] text-[#FDF4DC]' : 'border-[#B56A54] text-[#3A2618]'}`}>
                                     "A COMMUNITY OF ENTREPRENEURS EMPOWERED TO CONNECT, COLLABORATE AND SUCCEED."
                                 </blockquote>
                             </div>
                         </div>
-                        <div className="order-2 md:order-1 flex-1 md:h-full flex justify-center items-start overflow-hidden relative bg-[#2C3628] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 my-2 sm:my-3 md:my-4 ml-0 shadow-inner">
+                        <div className="order-2 md:order-1 flex-1 md:h-full flex justify-center items-start overflow-hidden relative bg-[#3A2618] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 my-2 sm:my-3 md:my-4 ml-0 shadow-inner">
                             <div ref={testimonialColumnRef} className="flex flex-col items-center justify-start w-full gap-y-8 sm:gap-y-16 md:gap-y-24 lg:gap-y-32 pb-32 pt-12 md:pt-16 lg:pt-24">
                                 {testimonialData.map((item) => {
                                     if (item.isViewAll) {
                                         return (
-                                            <div key={item.id} onClick={handleViewAllClick} className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} view-all-card flex-shrink-0 w-full max-w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] h-auto min-h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-2xl bg-[#F0EAD6] polaroid-shadow flex flex-col items-center justify-center cursor-pointer group transition-colors duration-300 p-6 sm:p-8 mx-auto`}>
+                                            <div key={item.id} onClick={handleViewAllClick} className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} view-all-card flex-shrink-0 w-full max-w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] h-auto min-h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-2xl bg-[#FDF4DC] polaroid-shadow flex flex-col items-center justify-center cursor-pointer group transition-colors duration-300 p-6 sm:p-8 mx-auto`}>
                                                 <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter mb-4 transition-colors text-[#482216] group-hover:text-[#908660] text-center">{item.caption}</h3>
                                                 <div className="text-2xl sm:text-3xl md:text-4xl transform -rotate-45 group-hover:rotate-0 transition-all duration-300 text-[#482216] group-hover:text-[#908660]">➔</div>
                                             </div>
@@ -407,7 +407,7 @@ const Home = () => {
                                     return (
                                         <div
                                             key={item.id}
-                                            className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} flex-shrink-0 bg-[#F0EAD6] p-4 sm:p-6 md:p-8 lg:p-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32 polaroid-shadow ${item.rotate} hover:rotate-0 transition-transform duration-500 ease-out w-full max-w-[400px] md:max-w-[550px] lg:max-w-[700px] group rounded-xl mx-auto`}
+                                            className={`polaroid-entry ${introFinished ? '' : 'opacity-0'} flex-shrink-0 bg-[#FDF4DC] p-4 sm:p-6 md:p-8 lg:p-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32 polaroid-shadow ${item.rotate} hover:rotate-0 transition-transform duration-500 ease-out w-full max-w-[400px] md:max-w-[550px] lg:max-w-[700px] group rounded-xl mx-auto`}
                                         >
                                             <div className="aspect-square w-full overflow-hidden mb-4 sm:mb-5 md:mb-6 relative rounded-lg bg-gray-200 shadow-inner">
                                                 <img src={item.src || ''} alt={item.caption} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -423,7 +423,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="h-screen shrink-0 bg-transparent border-l-2 border-[#F0EAD6]/20 relative overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-[96px]" style={{ width: '100vw' }}>
+                <section className="h-screen shrink-0 bg-transparent border-l-2 border-[#FDF4DC]/20 relative overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-[96px]" style={{ width: '100vw' }}>
                     {/* UPDATED: Dynamic Background Text using the new `bgText` property */}
                     <div
                         key={activeService.bgText} // Key forces re-render/animation on change
@@ -469,7 +469,7 @@ const Home = () => {
                                                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                                                 {isCenter && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" style={{ opacity: isHovering ? 0.3 + (tilt.y / 20) : 0, transition: 'opacity 0.3s' }} />}
                                                 <div className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex items-end p-3 sm:p-4 md:p-6 transition-opacity duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>
-                                                    <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#F0EAD6] leading-tight">{service.title}</h3>
+                                                    <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#FDF4DC] leading-tight">{service.title}</h3>
                                                 </div>
                                             </div>
                                         );
@@ -478,15 +478,15 @@ const Home = () => {
 
                                 <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8 md:mb-10">
                                     <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-                                        <button onClick={prevSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#F0EAD6] rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors font-bold text-sm md:text-lg">←</button>
+                                        <button onClick={prevSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#FDF4DC] rounded-full flex items-center justify-center hover:bg-[#FDF4DC] hover:text-[#3A2618] transition-colors font-bold text-sm md:text-lg">←</button>
                                         <div className="flex gap-2 sm:gap-2.5 md:gap-3">
                                             {serviceCategories.map((_, i) => (
-                                                <div key={i} className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#D4A373] w-3 sm:w-4' : 'bg-[#F0EAD6]/30'}`} />
+                                                <div key={i} className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#DDA79A] w-3 sm:w-4' : 'bg-[#FDF4DC]/30'}`} />
                                             ))}
                                         </div>
-                                        <button onClick={nextSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#F0EAD6] rounded-full flex items-center justify-center hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors font-bold text-sm md:text-lg">→</button>
+                                        <button onClick={nextSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#FDF4DC] rounded-full flex items-center justify-center hover:bg-[#FDF4DC] hover:text-[#3A2618] transition-colors font-bold text-sm md:text-lg">→</button>
                                     </div>
-                                    <button onClick={handleGalleryClick} className="px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2 border-2 border-[#F0EAD6] rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#F0EAD6] hover:text-[#2C3628] transition-colors">Show All Gallery</button>
+                                    <button onClick={handleGalleryClick} className="px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2 border-2 border-[#FDF4DC] rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#FDF4DC] hover:text-[#3A2618] transition-colors">Show All Gallery</button>
                                 </div>
 
                                 {/* UPDATED: Detailed Services Container below Carousel (Stacked Grid for consistent max-height) */}
@@ -494,11 +494,11 @@ const Home = () => {
                                     {serviceCategories.map((service, index) => (
                                         <div 
                                             key={service.id} 
-                                            className={`col-start-1 row-start-1 w-full bg-[#F0EAD6]/5 border border-[#F0EAD6]/10 rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur-sm transition-all duration-500 ease-in-out ${index === currentIndex ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 pointer-events-none translate-y-4'}`}
+                                            className={`col-start-1 row-start-1 w-full bg-[#FDF4DC]/5 border border-[#FDF4DC]/10 rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur-sm transition-all duration-500 ease-in-out ${index === currentIndex ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 pointer-events-none translate-y-4'}`}
                                         >
-                                            <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#F0EAD6]/20 pb-6 md:pb-8 mb-6 md:mb-8 gap-4">
+                                            <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#FDF4DC]/20 pb-6 md:pb-8 mb-6 md:mb-8 gap-4">
                                                 <div className="text-left">
-                                                    <h3 className="font-display text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter mb-2 text-[#F0EAD6]">
+                                                    <h3 className="font-display text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter mb-2 text-[#FDF4DC]">
                                                         {service.title}
                                                     </h3>
                                                     <p className="font-body opacity-70 max-w-2xl text-sm md:text-base leading-relaxed">
@@ -512,12 +512,12 @@ const Home = () => {
                                                             href={service.providerLink}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#D4A373] hover:text-[#F0EAD6] transition-colors underline decoration-[#D4A373]/30 hover:decoration-[#F0EAD6]/70 underline-offset-4 cursor-pointer"
+                                                            className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#DDA79A] hover:text-[#FDF4DC] transition-colors underline decoration-[#DDA79A]/30 hover:decoration-[#FDF4DC]/70 underline-offset-4 cursor-pointer"
                                                         >
                                                             {service.provider}
                                                         </a>
                                                     ) : (
-                                                        <span className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#D4A373]">
+                                                        <span className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#DDA79A]">
                                                             {service.provider}
                                                         </span>
                                                     )}
@@ -528,15 +528,15 @@ const Home = () => {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                                                 {service.services.map((subService, idx) => (
                                                     <div key={idx} className="flex flex-col">
-                                                        <h4 className="font-display text-lg sm:text-xl uppercase tracking-wide text-[#F0EAD6] mb-3 flex items-start gap-2">
-                                                            <span className="text-[#D4A373] mt-1 shrink-0"><Check size={16} /></span>
+                                                        <h4 className="font-display text-lg sm:text-xl uppercase tracking-wide text-[#FDF4DC] mb-3 flex items-start gap-2">
+                                                            <span className="text-[#DDA79A] mt-1 shrink-0"><Check size={16} /></span>
                                                             {subService.title}
                                                         </h4>
 
                                                         {subService.items.length > 0 && (
                                                             <ul className="flex flex-col gap-2 pl-6">
                                                                 {subService.items.map((item, i) => (
-                                                                    <li key={i} className="text-sm font-body text-[#F0EAD6]/60 leading-relaxed list-disc marker:text-[#D4A373]/50">
+                                                                    <li key={i} className="text-sm font-body text-[#FDF4DC]/60 leading-relaxed list-disc marker:text-[#DDA79A]/50">
                                                                         {item}
                                                                     </li>
                                                                 ))}
@@ -551,12 +551,12 @@ const Home = () => {
 
                             </div>
 
-                            <div className="w-full max-w-5xl text-center border-t border-[#F0EAD6]/20 pt-16 mt-16">
+                            <div className="w-full max-w-5xl text-center border-t border-[#FDF4DC]/20 pt-16 mt-16">
                                 <h3 className="font-display text-4xl uppercase tracking-widest mb-12 opacity-60">Why Espasyo?</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
-                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">LEGAL &<br />COMPLIANCE</h4><p className="font-body text-sm opacity-80 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</p></div>
-                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">COST<br />EFFICIENT</h4><p className="font-body text-sm opacity-80 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</p></div>
-                                    <div><h4 className="font-display text-2xl uppercase text-[#D4A373] mb-3 leading-none">TRUSTED &<br />DEPENDABLE</h4><p className="font-body text-sm opacity-80 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</p></div>
+                                    <div><h4 className="font-display text-2xl uppercase text-[#DDA79A] mb-3 leading-none">LEGAL &<br />COMPLIANCE</h4><p className="font-body text-sm opacity-80 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</p></div>
+                                    <div><h4 className="font-display text-2xl uppercase text-[#DDA79A] mb-3 leading-none">COST<br />EFFICIENT</h4><p className="font-body text-sm opacity-80 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</p></div>
+                                    <div><h4 className="font-display text-2xl uppercase text-[#DDA79A] mb-3 leading-none">TRUSTED &<br />DEPENDABLE</h4><p className="font-body text-sm opacity-80 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</p></div>
                                 </div>
                             </div>
                         </div>

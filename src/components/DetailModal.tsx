@@ -245,7 +245,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                   }}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                     idx === activeIndex 
-                      ? "bg-[#d4a373] w-8" 
+                      ? "bg-[#DDA79A] w-8" 
                       : "bg-white/50 hover:bg-white/80"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
@@ -260,20 +260,20 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           ref={detailsRef}
           className="w-full h-[60%] md:w-[42%] md:h-full px-6 py-8 md:px-10 md:py-12 flex flex-col overflow-y-auto pointer-events-auto custom-scrollbar"
         >
-          <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#d4a373] mb-4 font-bold font-display opacity-80 shrink-0">
+          <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#DDA79A] mb-4 font-bold font-display opacity-80 shrink-0">
             About Our Client
           </h3>
 
           <div className="space-y-4 text-sm">
             <div>
-              <p className="font-display uppercase text-[24px] md:text-[32px] text-[#c87941] font-bold leading-tight mb-3">
+              <p className="font-display uppercase text-[24px] md:text-[32px] text-[#B56A54] font-bold leading-tight mb-3">
                 {item.businessName}
               </p>
               
               {item.industry && item.industry.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-2">
                   {item.industry.map((ind, idx) => (
-                    <span key={idx} className="inline-block bg-[#d4a373]/15 text-[#e6dfc8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-[#d4a373]/30">
+                    <span key={idx} className="inline-block bg-[#DDA79A]/15 text-[#e6dfc8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-[#DDA79A]/30">
                       {ind}
                     </span>
                   ))}
@@ -283,7 +283,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
 
             {item.services && item.services.length > 0 && (
               <div className="pt-2">
-                <p className="font-display uppercase text-[12px] text-[#d4a373] font-semibold tracking-widest mb-2 opacity-70">
+                <p className="font-display uppercase text-[12px] text-[#DDA79A] font-semibold tracking-widest mb-2 opacity-70">
                   Services Provided
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 ml-4 block w-full">
@@ -306,7 +306,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
 
           <div className="my-6 h-px bg-white/10" />
 
-          <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#d4a373]/50 pl-4">
+          <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#DDA79A]/50 pl-4">
             “{item.testimonial}”
           </blockquote>
 
@@ -316,13 +316,13 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                 href={item.links.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#d4a373] text-[#2b3327] hover:bg-[#c87941] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
+                className="bg-[#DDA79A] text-[#2b3327] hover:bg-[#B56A54] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
               >
                 View Website
               </a>
             )}
 
-            <div className="flex gap-4 ml-auto text-[#d4a373]">
+            <div className="flex gap-4 ml-auto text-[#DDA79A]">
               {item.links?.facebook && (
                 <a
                   href={item.links.facebook}

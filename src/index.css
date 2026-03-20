@@ -72,7 +72,7 @@ html.lenis {
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(44, 54, 40, 0.2);
+  border: 1px solid rgba(58,38,24, 0.2);
   transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -83,18 +83,18 @@ html.lenis {
   height: 0;
   border-top: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-left: 10px solid #2C3628;
+  border-left: 10px solid #3A2618;
   transform: translateX(1px);
 }
 
 #espasyo-tour .espasyo-arrow-hotspot:hover {
   transform: translateY(-2px);
-  background-color: #D4A373;
+  background-color: #DDA79A;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 #espasyo-tour .espasyo-arrow-hotspot:hover::before {
-  border-left-color: #F0EAD6;
+  border-left-color: #FDF4DC;
 }
 
 /* Photo Sphere Viewer - ensure container fills its parent */

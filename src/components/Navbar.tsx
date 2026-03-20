@@ -16,9 +16,9 @@ const Navbar = ({ theme }: NavbarProps) => {
   const isDarkTheme = activeTheme === 'brown';
 
   // COLORS
-  const containerClasses = isDarkTheme ? 'bg-[#2C3628] border-[#F0EAD6]' : 'bg-[#F0EAD6] border-[#2C3628]';
-  const textClasses = isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]';
-  const hoverTextClasses = isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]';
+  const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#3A2618]';
+  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]';
+  const hoverTextClasses = isDarkTheme ? 'text-[#DDA79A]' : 'text-[#B56A54]';
 
   // --- MOBILE MENU STATE ---
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
     { label: 'What We Do', dest: '#services', type: 'scroll' },
-    { label: 'Testimonials', dest: '/testimonials', type: 'route' },
+    { label: 'Community', dest: '/testimonials', type: 'route' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
     { label: 'Contact Us', dest: '/contact', type: 'route' },
@@ -124,7 +124,7 @@ const Navbar = ({ theme }: NavbarProps) => {
       {/* MOBILE OVERLAY NAVIGATION */}
       {typeof document !== 'undefined' && createPortal(
         <div
-          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#2C3628]' : 'bg-[#F0EAD6]'} 
+          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#4B533E]' : 'bg-[#FDF4DC]'} 
           ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-[20px]'}`}
         >
           <div className="flex flex-col items-center gap-6 sm:gap-8 w-full overflow-y-auto no-scrollbar pb-8">

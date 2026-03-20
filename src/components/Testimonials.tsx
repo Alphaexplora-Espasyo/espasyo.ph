@@ -1,438 +1,398 @@
-// src/components/Testimonials.tsx
-import { useRef, useEffect, useState, useCallback } from 'react';
-import { Play } from 'lucide-react';
+import { useState, useMemo, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
-import { Draggable } from 'gsap/all';
-import DetailModal from './DetailModal';
-import FounderModal from './FounderModal'; // <-- IMPORT THE FOUNDER MODAL
-
-gsap.registerPlugin(Draggable);
-
+import { useGSAP } from '@gsap/react';
 import Navbar from './Navbar';
-import LOGO from '../assets/LOGO.png';
-
-// --- IMAGE LOADING ---
-type GlobModule = { default: string;[key: string]: unknown; };
-const coworkingModules = import.meta.glob<GlobModule>('../assets/gallery/coworking/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const eventModules = import.meta.glob<GlobModule>('../assets/gallery/events/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const extractUrls = (modules: Record<string, GlobModule>) => Object.values(modules).map((mod) => mod.default);
-const loadedImages = [...extractUrls(coworkingModules), ...extractUrls(eventModules)];
-const fallbackImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=500&q=60'
-];
-
-const shuffleArray = <T,>(array: T[]): T[] => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
-
-const imagePool = loadedImages.length > 0 ? shuffleArray(loadedImages) : fallbackImages;
-
 import testimonialsData from '../data/testimonials.json';
 
-// --- GRID CONFIGURATION ---
-const ROWS = 7;
-const COLS = 8;
-const TOTAL_ITEMS = ROWS * COLS;
+// --- TYPES ---
+interface Media {
+  video: string;
+  image1: string;
+  image2: string;
+  image3: string;
+}
 
-// Generate items based on JSON data
-export interface TestimonialItem {
-  id: string | number;
+interface Links {
+  website: string;
+  facebook: string;
+  instagram: string;
+}
+
+interface Business {
+  id: number;
   isFounder: boolean;
   businessName: string;
   industry: string[];
   services: string[];
-  links?: {
-    website?: string;
-    facebook?: string;
-    instagram?: string;
-  };
+  categories?: string[];
+  links: Links;
   testimonial: string;
-  media?: {
-    video?: string;
-    image1?: string;
-    image2?: string;
-    image3?: string;
-  };
-  placeholderImage?: string;
-  src: string; // Dynamic source
-  isPlaceholder?: boolean;
+  media: Media;
+  placeholderImage: string;
 }
 
-// Helper to resolve public paths
-const resolvePath = (p?: string): string => p ? p.replace(/^public\//, '/') : '';
+const CATEGORIES = [
+    "All",
+    "Architecture & Construction",
+    "Art & Design",
+    "Beauty",
+    "Consulting",
+    "Education",
+    "Engineering",
+    "Financial Services",
+    "Healthcare",
+    "Information Technology",
+    "Logistics & Transport",
+    "Marketing & Advertising",
+    "Real Estate & Property",
+    "Retail & General Trade"
+];
 
-// --- ITEMS ARRAY BUILD ---
-// Helper: a client is "complete" if it has at least one link AND a testimonial
-const isComplete = (t: typeof testimonialsData[0]): boolean =>
-  Object.values(t.links ?? {}).some(v => Boolean(v)) && Boolean(t.testimonial);
+// --- HELPER COMPONENTS ---
+const resolvePath = (path: string) => {
+    if (!path) return '';
+    return path.startsWith('public/') ? path.replace('public/', '/') : path;
+};
 
-// All non-founder clients – complete ones first, then incomplete
-const allClients = testimonialsData
-  .filter(t => !t.isFounder)
-  .slice()
-  .sort((a, b) => (isComplete(b) ? 1 : 0) - (isComplete(a) ? 1 : 0));
-const completeClients = allClients.filter(isComplete);
-
-// At x=0, y=0 the visual centre of the infinite grid is at col=4, row=3.5
-// (14 vw/cell × 8 cols = 112 vw wrap → offset 56; 14 vw × 7 rows = 98 vw → offset 49)
-// Sort grid-slot indices 1-55 (slot 0 = founder) by distance from that visual centre
-// so we can assign complete clients to the slots the user sees first.
-const centerPrioritySlots = Array.from({ length: TOTAL_ITEMS }, (_, i) => i)
-  .filter(i => i !== 0)
-  .sort((a, b) => {
-    const dist = (i: number) => {
-      const col = i % COLS;
-      const row = Math.floor(i / COLS);
-      return (col - 4) ** 2 + (row - 3.5) ** 2;
-    };
-    return dist(a) - dist(b);
-  });
-
-// Build a map: gridIndex → client data
-const clientBySlot = new Map<number, typeof allClients[0]>();
-
-// Complete clients → center-most slots (they render side-by-side around the title)
-completeClients.forEach((client, j) => {
-  clientBySlot.set(centerPrioritySlots[j], client);
-});
-
-// Remaining slots → cycle through all clients
-let cycleIdx = 0;
-centerPrioritySlots.slice(completeClients.length).forEach(idx => {
-  clientBySlot.set(idx, allClients[cycleIdx % allClients.length]);
-  cycleIdx++;
-});
-
-const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
-  // Slot 0 is always the founder
-  if (i === 0) {
-    const founderData = testimonialsData.find(t => t.isFounder) || testimonialsData[0];
-    return {
-      ...founderData,
-      src: imagePool.length > 0 ? imagePool[0] : fallbackImages[0],
-    } as TestimonialItem;
-  }
-
-  const clientData = clientBySlot.get(i)!;
-  const thumbnailSrc =
-    resolvePath(clientData.placeholderImage) ||
-    resolvePath(clientData.media?.image1) ||
-    LOGO; // Use Espasyo Logo for fallback instead of random images
-
-  return { 
-    ...clientData, 
-    src: thumbnailSrc, 
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') 
-  } as TestimonialItem;
-});
-
-const Testimonials = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const proxyRef = useRef<HTMLDivElement>(null);
-  const draggableInstanceRef = useRef<Draggable | null>(null);
-  const visibleItemsRef = useRef<Set<number>>(new Set());
-
-  // --- MODAL STATE ---
-  const [selectedItem, setSelectedItem] = useState<typeof items[0] | null>(null);
-  const [originRect, setOriginRect] = useState<DOMRect | null>(null);
-
-  const [isDragging, setIsDragging] = useState(false);
-  const [introComplete, setIntroComplete] = useState(false);
-  const [titleStep, setTitleStep] = useState(0);
-  const [hasEverDragged, setHasEverDragged] = useState(false);
-
-  // No need to useMemo the generated array since we calculate it globally, but for consistency if you prefer:
-  // const itemsList = useMemo(() => items, []);
-
-  // --- SCROLL LOCK WHEN MODAL IS OPEN ---
-  useEffect(() => {
-    if (selectedItem) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [selectedItem]);
-
-  // Intro animation sequence
-  useEffect(() => {
-    const timeline = gsap.timeline();
-
-    // Step 1: Show "CLIENT"
-    timeline.to({}, {
-      duration: 0.5,
-      onStart: () => setTitleStep(1)
-    });
-
-    // Step 2: Show "STORIES"
-    timeline.to({}, {
-      duration: 0.8,
-      onStart: () => setTitleStep(2)
-    });
-
-    // Step 3: Start fading in images randomly
-    timeline.add(() => {
-      const shuffledIndices = [...Array(items.length).keys()].sort(() => Math.random() - 0.5);
-
-      shuffledIndices.forEach((index, i) => {
-        gsap.to(itemsRef.current[index], {
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          delay: i * 0.05,
-          ease: "elastic.out(1, 0.5)",
-          onComplete: () => {
-            if (i === shuffledIndices.length - 1) {
-              setIntroComplete(true);
-            }
-          }
-        });
-      });
-    }, "-=0.3");
-
-    return () => {
-      timeline.kill();
-    };
-  }, []);
-
-  // Check if item is in viewport
-  const isInViewport = useCallback((element: HTMLDivElement) => {
-    const rect = element.getBoundingClientRect();
-    const buffer = 100;
+const MediaCard = ({ business, onClick }: { business: Business, onClick: () => void }) => {
     return (
-      rect.right >= -buffer &&
-      rect.left <= window.innerWidth + buffer &&
-      rect.bottom >= -buffer &&
-      rect.top <= window.innerHeight + buffer
-    );
-  }, []);
-
-  // Morph animation for newly visible items
-  const morphInItem = useCallback((element: HTMLDivElement, index: number) => {
-    if (visibleItemsRef.current.has(index)) return;
-
-    visibleItemsRef.current.add(index);
-
-    gsap.fromTo(element,
-      { opacity: 0, scale: 0.3, filter: "blur(20px)" },
-      { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "back.out(1.7)" }
-    );
-  }, []);
-
-  // Check visibility on drag
-  const checkVisibleItems = useCallback(() => {
-    if (!introComplete) return;
-    itemsRef.current.forEach((item, index) => {
-      if (item && isInViewport(item)) morphInItem(item, index);
-    });
-  }, [introComplete, isInViewport, morphInItem]);
-
-  // Memoize the update function
-  const updateItems = useCallback((x: number, y: number, itemWidth: number, itemHeight: number, wrapW: number, wrapH: number) => {
-    itemsRef.current.forEach((item, index) => {
-      if (!item) return;
-
-      const initialCol = index % COLS;
-      const initialRow = Math.floor(index / COLS);
-      const initialX = initialCol * itemWidth;
-      const initialY = initialRow * itemHeight;
-
-      let newX = (initialX + x) % wrapW;
-      let newY = (initialY + y) % wrapH;
-
-      if (newX < 0) newX += wrapW;
-      if (newY < 0) newY += wrapH;
-
-      newX -= wrapW / 2;
-      newY -= wrapH / 2;
-
-      gsap.set(item, { x: newX, y: newY });
-    });
-
-    requestAnimationFrame(checkVisibleItems);
-  }, [checkVisibleItems]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const proxy = proxyRef.current;
-    if (!container || !proxy) return;
-
-    const getItemSize = () => {
-      const vw = window.innerWidth;
-      const sizeVw = vw < 768 ? 40 : 14;
-      return (vw * sizeVw) / 100;
-    };
-    let ITEM_WIDTH = getItemSize();
-    let ITEM_HEIGHT = getItemSize();
-    let wrapWidth = COLS * ITEM_WIDTH;
-    let wrapHeight = ROWS * ITEM_HEIGHT;
-
-    const draggableInstance = Draggable.create(proxy, {
-      trigger: container,
-      type: "x,y",
-      inertia: true,
-      edgeResistance: 0,
-      cursor: "grab",
-      activeCursor: "grabbing",
-
-      onDragStart: () => {
-        setIsDragging(true);
-        setHasEverDragged(true);
-      },
-      onDragEnd: () => {
-        setTimeout(() => setIsDragging(false), 100);
-      },
-      onDrag: function () { updateItems(this.x, this.y, ITEM_WIDTH, ITEM_HEIGHT, wrapWidth, wrapHeight); },
-      onThrowUpdate: function () { updateItems(this.x, this.y, ITEM_WIDTH, ITEM_HEIGHT, wrapWidth, wrapHeight); }
-    })[0];
-
-    draggableInstanceRef.current = draggableInstance;
-
-    const handleResize = () => {
-      ITEM_WIDTH = getItemSize();
-      ITEM_HEIGHT = getItemSize();
-      wrapWidth = COLS * ITEM_WIDTH;
-      wrapHeight = ROWS * ITEM_HEIGHT;
-      if (draggableInstance) {
-        updateItems(draggableInstance.x, draggableInstance.y, ITEM_WIDTH, ITEM_HEIGHT, wrapWidth, wrapHeight);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    updateItems(0, 0, ITEM_WIDTH, ITEM_HEIGHT, wrapWidth, wrapHeight);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (draggableInstance) draggableInstance.kill();
-    };
-  }, [updateItems]);
-
-  // --- CLICK HANDLER ---
-  const handleClick = useCallback((item: typeof items[0], index: number) => {
-    if (isDragging) return;
-
-    const element = itemsRef.current[index];
-
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      setOriginRect(rect);
-      setSelectedItem(item);
-    }
-  }, [isDragging]);
-
-  return (
-    <div className="h-screen w-screen bg-[#F0EAD6] overflow-hidden relative select-none touch-none">
-      <Navbar theme="default" />
-
-      {/* Animated Title */}
-      <div className="fixed inset-0 z-[40] flex items-center justify-center pointer-events-none select-none">
-        <div className="flex flex-col items-center gap-6">
-          {/* Container with darker blur to help text stand out against the busy logo grid */}
-          <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
-            {/* Very subtle noise/texture overlay for the background blur panel to make it look premium */}
-            <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
-            
-            <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"
-              style={{ textShadow: '4px 4px 15px rgba(0,0,0,0.6), 10px 5px 0px #2C3628', opacity: titleStep >= 1 ? 1 : 0, transform: titleStep >= 1 ? 'scale(1) translateY(0)' : 'scale(0.5) translateY(50px)', transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)' }}>
-              CLIENT
-            </h1>
-            <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"
-              style={{ textShadow: '4px 4px 15px rgba(0,0,0,0.6), 10px 5px 0px #2C3628', opacity: titleStep >= 2 ? 1 : 0, transform: titleStep >= 2 ? 'scale(1) translateY(0)' : 'scale(0.5) translateY(50px)', transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)', transitionDelay: '0.2s' }}>
-              STORIES
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-2 font-body text-sm md:text-base font-bold uppercase tracking-widest text-[#2C3628] bg-white/40 backdrop-blur-md px-6 py-2 rounded-full border border-white/50 shadow-lg mt-2"
-            style={{ opacity: introComplete && !hasEverDragged ? 1 : 0, transform: introComplete && !hasEverDragged ? 'translateY(0)' : 'translateY(20px)', transition: 'all 0.6s ease-out', transitionDelay: hasEverDragged ? '0s' : '1s' }}>
-            <div className="flex items-center gap-2" style={{ textShadow: '0px 1px 2px rgba(255,255,255,0.8)' }}>
-              <span>Drag to see more</span>
-              <span className="text-xl animate-pulse">→</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div ref={containerRef} className="absolute inset-0 flex items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden">
-        <div className="relative w-0 h-0">
-          {items.map((item, i) => {
-            return (
-              <div
-                key={item.id}
-                ref={el => { itemsRef.current[i] = el }}
-                className={`absolute top-0 left-0 group perspective-1000 z-0 hover:z-[150] ${isDragging ? 'pointer-events-none' : ''} p-2 sm:p-3 w-[40vw] h-[40vw] -ml-[20vw] -mt-[20vw] md:w-[14vw] md:h-[14vw] md:-ml-[7vw] md:-mt-[7vw]`}
-                style={{
-                  willChange: 'transform',
-                  opacity: 0,
-                  transform: 'scale(0.5)'
-                }}
-                onClick={() => handleClick(item, i)}
-              >
-                <div className="w-full h-full relative transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:rotate-[2deg] shadow-none group-hover:shadow-xl origin-center">
-                  <img
-                    src={item.src}
-                    alt={item.businessName}
-                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-30 blur-[4px] scale-110' : ''}`}
+        <div className="flex flex-col gap-3 group cursor-pointer gallery-anim-item" onClick={onClick}>
+            <div className="relative w-full aspect-square flex items-center justify-center p-8 transition-transform duration-500 group-hover:-translate-y-2">
+                <img 
+                    src={resolvePath(business.placeholderImage)} 
+                    alt={business.businessName} 
+                    className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-lg relative z-10" 
                     loading="lazy"
-                    decoding="async"
-                  />
-                  {item.isPlaceholder && (
-                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0">
-                      <h3 className="font-display text-xl md:text-2xl uppercase tracking-widest text-[#F0EAD6] drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] px-2 bg-black/20 rounded-lg backdrop-blur-sm">
-                        {item.businessName}
-                      </h3>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-[#837B70] opacity-[0.38] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none rounded-sm" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[0px]">
-                    <div className="mb-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                      <h3 className="font-display text-lg md:text-2xl uppercase text-[#e68a52] leading-none mb-1 truncate drop-shadow-sm" style={{ textShadow: '1px 1px 0px #F0EAD6' }}>{item.businessName}</h3>
-                    </div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform scale-0 group-hover:scale-100 transition-all duration-300 delay-100">
-                      <div className="w-10 h-10 md:w-14 md:h-14 bg-[#F0EAD6] rounded-xl rotate-12 flex items-center justify-center shadow-lg hover:rotate-0 transition-transform">
-                        <Play size={20} className="text-[#5c4033] fill-current ml-1 -rotate-12" />
-                      </div>
-                    </div>
-                    <div className="mt-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                      <p className="font-body text-[12px] md:text-auto text-center text-white leading-tight italic opacity-90 line-clamp-2 drop-shadow-sm">"{item.testimonial}"</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+                />
+            </div>
+            <div className="mt-2 text-center relative z-20">
+                <h3 className="font-display text-lg tracking-wide uppercase group-hover:text-[#DDA79A] transition-colors line-clamp-2 px-2">
+                    {business.businessName}
+                </h3>
+            </div>
         </div>
-      </div>
-      <div ref={proxyRef} className="absolute top-0 left-0 w-1 h-1 opacity-0 pointer-events-none" />
+    );
+};
 
-      {/* --- MODAL RENDERING LOGIC --- */}
-      {/* If clicked item is the Founder, show FounderModal */}
-      {selectedItem && originRect && selectedItem.isFounder && (
-        <FounderModal
-          src={selectedItem.src}
-          originRect={originRect}
-          onClose={() => setSelectedItem(null)}
-        />
-      )}
+const ListCard = ({ business, onClick }: { business: Business, onClick: () => void }) => {
+    return (
+        <div 
+            onClick={onClick}
+            className="flex items-center justify-between border-b border-[#2C3628]/10 py-4 cursor-pointer group gallery-anim-item"
+        >
+            <h3 className="font-display text-lg md:text-xl uppercase tracking-wide group-hover:text-[#DDA79A] transition-colors w-full leading-tight">
+                {business.businessName}
+            </h3>
+            <span className="text-[#2C3628]/30 group-hover:text-[#DDA79A] transition-colors text-2xl font-light shrink-0 ml-4 group-hover:translate-x-1 duration-300">→</span>
+        </div>
+    );
+};
 
-      {/* If clicked item is a normal client, show DetailModal */}
-      {selectedItem && originRect && !selectedItem.isFounder && (
-        <DetailModal
-          item={selectedItem}
-          originRect={originRect}
-          onClose={() => setSelectedItem(null)}
-        />
-      )}
-    </div>
-  );
+const GalleryModal = ({ business, onClose }: { business: Business, onClose: () => void }) => {
+    const [currentMediaIdx, setCurrentMediaIdx] = useState(0);
+    const [isClosing, setIsClosing] = useState(false);
+
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(onClose, 300);
+    };
+
+    const allMedia = [];
+    if (business.media?.video) allMedia.push({ type: 'video', src: business.media.video });
+    if (business.media?.image1) allMedia.push({ type: 'img', src: business.media.image1 });
+    if (business.media?.image2) allMedia.push({ type: 'img', src: business.media.image2 });
+    if (business.media?.image3) allMedia.push({ type: 'img', src: business.media.image3 });
+    if (allMedia.length === 0) {
+        allMedia.push({ type: 'img', src: business.placeholderImage });
+    }
+
+    const currentMedia = allMedia[currentMediaIdx];
+    const src = resolvePath(currentMedia.src);
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') handleClose();
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
+    return (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 lg:p-12">
+            {/* Backdrop overlay */}
+            <div 
+                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`} 
+                onClick={handleClose} 
+            />
+            
+            {/* Modal Container */}
+            <div className={`relative w-full h-[90vh] md:h-full max-h-[900px] max-w-7xl bg-[#FDF4DC] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 transform ${isClosing ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'}`}>
+                
+                {/* Back Button */}
+                <button 
+                    onClick={handleClose} 
+                    className="absolute top-4 left-4 md:top-6 md:left-6 z-[110] text-[#2C3628] hover:text-[#DDA79A] p-2 md:p-3 bg-white/50 hover:bg-white/80 backdrop-blur-md rounded-full transition-all flex items-center gap-2"
+                >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    <span className="text-xs font-bold tracking-widest uppercase hidden md:block pr-2">Back</span>
+                </button>
+
+                {/* Media Area */}
+                <div className="w-full md:w-[60%] h-[40vh] md:h-full relative flex items-center justify-center bg-[#2C3628]/5 p-4 md:p-8">
+                    {currentMedia.type === 'video' ? (
+                        <video src={src} controls autoPlay className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
+                    ) : (
+                        <img src={src} alt="Media preview" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
+                    )}
+
+                    {/* Carousel Controls */}
+                    {allMedia.length > 1 && (
+                        <>
+                            <button 
+                                onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === 0 ? allMedia.length - 1 : i - 1); }}
+                                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#DDA79A] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </button>
+                            <button 
+                                onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === allMedia.length - 1 ? 0 : i + 1); }}
+                                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#DDA79A] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </button>
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-50 bg-[#2C3628]/40 px-3 py-2 rounded-full backdrop-blur-md">
+                                {allMedia.map((_, i) => (
+                                    <button 
+                                        key={i} 
+                                        onClick={() => setCurrentMediaIdx(i)}
+                                        className={`w-2 h-2 rounded-full transition-all ${i === currentMediaIdx ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`} 
+                                        aria-label={`Go to slide ${i + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+
+                {/* Content Area */}
+                <div className="w-full md:w-[40%] h-[60vh] md:h-full text-[#2C3628] p-8 md:p-12 flex flex-col overflow-y-auto no-scrollbar">
+                    <h2 className="font-display text-3xl md:text-5xl uppercase tracking-wider mb-4 text-[#DDA79A] leading-tight">
+                        {business.businessName}
+                    </h2>
+                    
+                    {business.industry && business.industry.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-8">
+                            {business.industry.map((ind, i) => (
+                                <span key={i} className="text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1.5 bg-[#2C3628]/10 rounded-full">
+                                    {ind}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+
+                    {business.testimonial && (
+                        <div className="mb-10">
+                            <p className="font-body text-sm md:text-base italic opacity-90 leading-relaxed border-l-2 border-[#DDA79A] pl-4 py-1">
+                                "{business.testimonial}"
+                            </p>
+                        </div>
+                    )}
+
+                    {business.services && business.services.length > 0 && (
+                        <div className="mb-10">
+                            <h4 className="font-display text-lg uppercase tracking-widest mb-4 opacity-60">Services</h4>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                                {business.services.map((srv, i) => (
+                                    <li key={i} className="font-body opacity-90 flex items-start gap-3 text-sm md:text-base group">
+                                        <span className="text-[#DDA79A] mt-1 text-[10px] md:text-xs shrink-0 transition-transform group-hover:scale-110">◆</span>
+                                        <span className="flex-1 leading-snug line-clamp-2" title={srv}>{srv}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {(business.links?.website || business.links?.facebook || business.links?.instagram) && (
+                        <div className="mt-auto pt-8 border-t border-[#2C3628]/10">
+                            <h4 className="font-display text-xs uppercase tracking-widest mb-4 opacity-50">Connect</h4>
+                            <div className="flex flex-wrap items-center gap-4">
+                                {business.links.website && (
+                                    <a href={business.links.website.startsWith('http') ? business.links.website : `https://${business.links.website}`} target="_blank" rel="noreferrer" className="text-sm font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors flex items-center gap-3 w-fit bg-[#2C3628]/5 hover:bg-[#2C3628]/10 px-4 py-3 rounded-full">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                        View website in new tab
+                                    </a>
+                                )}
+                                {business.links.facebook && (
+                                    <a href={business.links.facebook} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DDA79A] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Facebook">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                    </a>
+                                )}
+                                {business.links.instagram && (
+                                    <a href={business.links.instagram} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DDA79A] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Instagram">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+// --- MAIN GALLERY COMPONENT ---
+const Testimonials = () => {
+    const navigate = useNavigate();
+    const [activeCategory, setActiveCategory] = useState("All");
+    const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const filteredBusinesses = useMemo(() => {
+        const data = testimonialsData as Business[];
+        if (activeCategory === "All") return data;
+        
+        return data.filter(b => {
+            return b.categories?.includes(activeCategory) || false;
+        });
+    }, [activeCategory]);
+
+    const { mediaBusinesses, listBusinesses } = useMemo(() => {
+        const media: Business[] = [];
+        const list: Business[] = [];
+
+        filteredBusinesses.forEach(b => {
+            const m = b.media;
+            const hasMedia = m && (m.video || m.image1 || m.image2 || m.image3);
+            const hasTestimonial = b.testimonial && b.testimonial.trim().length > 0;
+            
+            if (hasMedia || hasTestimonial) {
+                media.push(b);
+            } else {
+                list.push(b);
+            }
+        });
+
+        return { mediaBusinesses: media, listBusinesses: list };
+    }, [filteredBusinesses]);
+
+    useGSAP(() => {
+        // Animation reset and trigger
+        gsap.fromTo(".gallery-anim-item", 
+            { y: 30, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: "power2.out",
+                overwrite: "auto"
+            }
+        );
+    }, { scope: containerRef, dependencies: [activeCategory] }); 
+
+    useEffect(() => {
+        if (selectedBusiness) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [selectedBusiness]);
+
+    return (
+        <div ref={containerRef} className="min-h-screen w-full bg-[#FDF4DC] text-[#2C3628] flex flex-col font-body selection:bg-[#2C3628] selection:text-[#FDF4DC]">
+            <div className="fixed top-0 left-0 w-full z-50 bg-[#FDF4DC]/90 backdrop-blur-md border-b border-[#2C3628]/10 transition-all">
+                {/* Replaced theme="brown" with theme="green" to ensure Navbar links swap to green for contrast against cream bg */}
+                <Navbar theme="green" />
+            </div>
+
+            {/* Main Flex Container using Sidebar Layout as requested ("like the previous gallery layout") */}
+            <div className="flex-1 flex flex-col md:flex-row max-w-[1600px] mx-auto w-full pt-28 md:pt-36 px-4 md:px-12 gap-8 md:gap-12 relative pb-24">
+                
+                {/* --- SIDEBAR: HEADER & CATEGORIES --- */}
+                <div className="w-full md:w-1/4 lg:w-1/5 flex flex-col z-20 shrink-0">
+                    <button onClick={() => navigate('/', { state: { skipIntro: true } })} className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#DDA79A] transition-colors mb-8 opacity-60">
+                        <span>←</span> Back Home
+                    </button>
+                    
+                    <h1 className="font-display text-5xl md:text-6xl uppercase tracking-tighter mb-6 md:mb-8 leading-none mt-4 md:mt-0">
+                        Meet the Community
+                    </h1>
+
+                    <p className="hidden md:block text-sm opacity-70 mb-8 leading-relaxed pr-4">
+                        Discover the diverse businesses, creative studios, and professional agencies within the Espasyo network.
+                    </p>
+
+                    {/* Vertical list on Desktop, Horizontal on Mobile */}
+                    <div className="flex flex-row md:flex-col gap-2 md:gap-3 md:border-l border-[#2C3628]/20 md:pl-6 overflow-x-auto md:overflow-y-hidden md:overflow-x-hidden no-scrollbar pb-4 md:pb-0 w-full snap-x">
+                        {CATEGORIES.map((cat) => (
+                            <button
+                                key={cat}
+                                onClick={() => setActiveCategory(cat)}
+                                className={`whitespace-nowrap px-4 py-2 md:p-0 rounded-full md:rounded-none text-left text-sm md:text-base font-body tracking-wide transition-all snap-start ${
+                                    activeCategory === cat 
+                                    ? 'bg-[#DDA79A] md:bg-transparent text-[#FDF4DC] md:text-[#DDA79A] font-bold md:translate-x-1' 
+                                    : 'bg-[#2C3628]/5 md:bg-transparent text-[#2C3628]/60 hover:text-[#2C3628]'
+                                }`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* --- MAIN CONTENT AREA --- */}
+                <div className="w-full md:w-3/4 lg:w-4/5 flex flex-col">
+                    
+                    {/* Grid for Media Businesses */}
+                    {mediaBusinesses.length > 0 && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mb-20">
+                            {mediaBusinesses.map((b) => (
+                                <MediaCard key={b.id} business={b} onClick={() => setSelectedBusiness(b)} />
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Divider if both exist */}
+                    {mediaBusinesses.length > 0 && listBusinesses.length > 0 && (
+                        <div className="w-full flex justify-center mb-16">
+                            <div className="w-1/2 h-px bg-gradient-to-r from-transparent via-[#2C3628]/20 to-transparent"></div>
+                        </div>
+                    )}
+
+                    {/* List for List Businesses */}
+                    {listBusinesses.length > 0 && (
+                        <div className="flex flex-col w-full">
+                            <h3 className="font-display text-xl uppercase tracking-widest opacity-50 mb-6 text-center md:text-left">More of our community</h3>
+                            {listBusinesses.map(b => (
+                                <ListCard key={b.id} business={b} onClick={() => setSelectedBusiness(b)} />
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Empty State */}
+                    {mediaBusinesses.length === 0 && listBusinesses.length === 0 && (
+                        <div className="w-full py-32 flex flex-col items-center justify-center opacity-50 text-center gallery-anim-item">
+                            <span className="text-4xl mb-4">🔍</span>
+                            <p className="font-display text-2xl uppercase tracking-widest">No businesses found</p>
+                        </div>
+                    )}
+                </div>
+
+            </div>
+
+            {/* Modal Overlay */}
+            {selectedBusiness && (
+                <GalleryModal business={selectedBusiness} onClose={() => setSelectedBusiness(null)} />
+            )}
+
+            <style>{`
+                .no-scrollbar::-webkit-scrollbar { display: none; }
+                .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            `}</style>
+        </div>
+    );
 };
 
 export default Testimonials;

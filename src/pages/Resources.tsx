@@ -1,250 +1,24 @@
-import { useRef, useState } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from '../components/Common/Navbar';
 import Footer from '../components/Common/Footer';
-import {
-  Calendar as CalendarIcon,
-  ArrowRight,
-  MapPin,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
-} from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Calendar as CalendarIcon, ArrowRight, MapPin, ChevronLeft, ChevronRight, Clock } from "lucide-react";
+import { useResourcesControl } from '../hooks/useResourcesControl';
+import { useResourcesAnimations } from '../hooks/useResourcesAnimations';
+import { DAILY_SCHEDULE, MONTHLY_GRID, MONTHLY_EVENTS, WEEKLY_DATA, EVENTS_DATA, PARTNER_ARTICLES } from '../constants/resourcesData';
 
 const Resources = () => {
-  const container = useRef<HTMLDivElement>(null);
-  const marqueeRef = useRef<HTMLDivElement>(null);
-  const eventCardRef = useRef<HTMLDivElement>(null);
+  const { 
+    calendarView, setCalendarView, currentEventIndex, activeEvent,
+    nextEvent, prevEvent, featureScrollIndex, nextFeature, prevFeature
+  } = useResourcesControl();
 
-  // --- STATE ---
-  const [calendarView, setCalendarView] = useState<
-    "daily" | "weekly" | "monthly"
-  >("weekly");
-  const [currentEventIndex, setCurrentEventIndex] = useState(0);
-  const [featureScrollIndex, setFeatureScrollIndex] = useState(0);
-
-  // --- DATA ---
-  const dailySchedule = [
-    {
-      time: "6:00 PM",
-      title: "8th Founding Anniversary",
-      type: "Event",
-      duration: "Evening",
-    },
-  ];
-
-  // March 2026 starts on a Sunday — no leading padding needed
-  const monthlyGrid = [
-    1, 2, 3, 4, 5, 6, 7,
-    8, 9, 10, 11, 12, 13, 14,
-    15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28,
-    29, 30, 31, 0, 0, 0, 0,
-  ];
-
-  const monthlyEvents: {
-    [key: number]: { title: string; time: string; type: string }[];
-  } = {
-    18: [{ title: "8th Founding Anniversary", time: "6:00 PM", type: "Event" }],
-    20: [{ title: "Eid'l Fitr", time: "All Day", type: "Holiday" }],
-  };
-
-  const weeklyData = [
-    {
-      day: "WED",
-      date: "18",
-      title: "8th Founding Anniversary",
-      time: "6:00 PM",
-      tag: "Anniversary",
-    },
-    {
-      day: "FRI",
-      date: "20",
-      title: "Eid'l Fitr",
-      time: "All Day",
-      tag: "Holiday",
-    },
-  ];
-
-  const eventsData = [
-    {
-      id: 1,
-      title: "8th Founding Anniversary",
-      date: "March 18, 2026",
-      location: "Espasyo, Marikina",
-      image:
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 2,
-      title: "Eid'l Fitr (Regular Holiday)",
-      date: "March 20, 2026",
-      location: "National Holiday",
-      image:
-        "https://images.unsplash.com/photo-1738382782161-a0bf706eced2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
-
-  const partnerArticles = [
-    {
-      category: "Coffee Partner",
-      business: "Kape Klasiko",
-      title: "The Art of Slow Brewing: Why Patience Tastes Better",
-      excerpt:
-        "Learn how our local partner sources beans from Benguet and the best way to brew them at your desk.",
-      image:
-        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Financial Advice",
-      business: "SecureBooks PH",
-      title: "Tax Compliance Guide for Freelancers in 2026",
-      excerpt:
-        "Our resident accounting partners break down the new BIR updates so you don't have to stress.",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Local Eats",
-      business: "The Daily Dough",
-      title: "Best Pastries for Your Morning Meetings",
-      excerpt:
-        "A guide to the flakiest croissants in Marikina, delivered fresh to Espasyo every Tuesday.",
-      image:
-        "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Legal",
-      business: "Atty. Marco & Associates",
-      title: "Intellectual Property Rights for Creatives",
-      excerpt:
-        "Protecting your designs and code: A simplified guide for our freelance members.",
-      image:
-        "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Wellness",
-      business: "Serene Yoga Studio",
-      title: "5 Desk Stretches to Prevent Back Pain",
-      excerpt:
-        "Simple movements you can do right in the coworking area to keep your energy flowing.",
-      image:
-        "https://images.unsplash.com/photo-1544367563-12123d8965cd?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Design",
-      business: "Pixel Perfect Studio",
-      title: "Branding Trends Taking Over 2026",
-      excerpt:
-        "Our in-house design residents share what's hot in typography and color palettes this year.",
-      image:
-        "https://images.unsplash.com/photo-1626785774573-4b7993125486?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Productivity",
-      business: "Focus Flow",
-      title: "Time Blocking 101: Master Your Schedule",
-      excerpt:
-        "How to use the Espasyo quiet zones effectively to double your output in half the time.",
-      image:
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      category: "Tech Gear",
-      business: "Circuit City",
-      title: "Essential Gadgets for the Digital Nomad",
-      excerpt:
-        "A curated list of noise-canceling headphones and power banks available at a discount for members.",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-    },
-  ];
-
-  // --- HANDLERS ---
-  const nextEvent = () =>
-    setCurrentEventIndex((prev) => (prev + 1) % eventsData.length);
-  const prevEvent = () =>
-    setCurrentEventIndex(
-      (prev) => (prev - 1 + eventsData.length) % eventsData.length,
-    );
-
-  const nextFeature = () => {
-    const maxIndex = Math.max(0, partnerArticles.length - 1);
-    setFeatureScrollIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
-  };
-  const prevFeature = () => {
-    const maxIndex = Math.max(0, partnerArticles.length - 1);
-    setFeatureScrollIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
-  };
-
-  // --- 3D TILT EFFECT ---
-  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!eventCardRef.current) return;
-    const { left, top, width, height } =
-      eventCardRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    gsap.to(eventCardRef.current, {
-      rotationY: x,
-      rotationX: -y,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  };
-
-  const handleCardMouseLeave = () => {
-    if (!eventCardRef.current) return;
-    gsap.to(eventCardRef.current, {
-      rotationY: 0,
-      rotationX: 0,
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  };
-
-  const activeEvent = eventsData[currentEventIndex];
-
-  // --- ANIMATIONS ---
-  useGSAP(
-    () => {
-      if (marqueeRef.current) {
-        gsap.to(marqueeRef.current, {
-          xPercent: -50,
-          repeat: -1,
-          duration: 20,
-          ease: "linear",
-        });
-      }
-
-      const tl = gsap.timeline();
-      tl.from(".page-title-group", {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-      }).from(
-        ".content-block",
-        { y: 50, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" },
-        "-=0.5",
-      );
-
-      gsap.from(".features-section", {
-        scrollTrigger: { trigger: ".features-section", start: "top 85%" },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-      });
-    },
-    { scope: container },
-  );
+  const { 
+    containerRef, marqueeRef, eventCardRef, 
+    handleCardMouseMove, handleCardMouseLeave 
+  } = useResourcesAnimations();
 
   return (
     <div
-      ref={container}
+      ref={containerRef}
       className="min-h-screen bg-[#FDF4DC] text-[#3A2618] overflow-x-hidden flex flex-col relative"
     >
       {/* --- GRAIN TEXTURE --- */}
@@ -319,7 +93,7 @@ const Resources = () => {
                   <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-6 text-[#FDF4DC]">
                     Today's Agenda
                   </h3>
-                  {dailySchedule.map((item, idx) => (
+                  {DAILY_SCHEDULE.map((item, idx) => (
                     <div key={idx} className="relative pb-8 group last:pb-0">
                       <div className="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-[#FDF4DC] border-2 border-[#FDF4DC] group-hover:bg-[#FDF4DC] transition-colors z-10 scale-100 group-hover:scale-125 duration-300" />
                       <div className="bg-[#3A2618]/5 border border-[#3A2618]/10 p-4 rounded-xl hover:bg-[#3A2618]/10 hover:border-[#3A2618]/20 transition-all cursor-default backdrop-blur-sm">
@@ -348,7 +122,7 @@ const Resources = () => {
                   <h3 className="font-display text-sm font-bold uppercase tracking-widest mb-2 text-[#FDF4DC]">
                     This Week
                   </h3>
-                  {weeklyData.map((item, idx) => (
+                  {WEEKLY_DATA.map((item, idx) => (
                     <div
                       key={idx}
                       className="group flex items-center gap-6 p-5 border border-[#3A2618]/10 rounded-xl hover:bg-[#3A2618]/5 transition-all duration-300 cursor-default backdrop-blur-sm"
@@ -405,9 +179,9 @@ const Resources = () => {
                   </div>
 
                   <div className="grid grid-cols-7 gap-2">
-                    {monthlyGrid.map((date, idx) => {
+                    {MONTHLY_GRID.map((date, idx) => {
                       const events =
-                        monthlyEvents[date as keyof typeof monthlyEvents];
+                        MONTHLY_EVENTS[date as keyof typeof MONTHLY_EVENTS];
                       const hasEvent = events && events.length > 0;
 
                       return (
@@ -517,7 +291,7 @@ const Resources = () => {
               </div>
 
               <div className="absolute top-8 right-8 flex gap-2">
-                {eventsData.map((_, idx) => (
+                {EVENTS_DATA.map((_, idx) => (
                   <div
                     key={idx}
                     className={`w-2 h-2 rounded-full transition-all ${idx === currentEventIndex
@@ -531,7 +305,7 @@ const Resources = () => {
           </div>
         </div>
 
-        {/* --- PARTNER STORIES (CAROUSEL) — hidden, preserved for later --- */}
+        {/* --- PARTNER STORIES (CAROUSEL) --- */}
         {false && (
           <div className="features-section mt-24 border-t border-[#3A2618]/20 pt-16 relative z-10">
             <div className="flex items-center justify-between mb-10 px-4">
@@ -567,7 +341,7 @@ const Resources = () => {
                   transform: `translateX(-${featureScrollIndex * 340}px)`,
                 }}
               >
-                {partnerArticles.map((article, idx) => (
+                {PARTNER_ARTICLES.map((article, idx) => (
                   <div
                     key={idx}
                     className="min-w-[300px] md:min-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer border border-[#3A2618]/10 hover:border-[#FDF4DC]/50 transition-colors"

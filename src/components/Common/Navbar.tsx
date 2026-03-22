@@ -16,8 +16,8 @@ const Navbar = ({ theme }: NavbarProps) => {
   const isDarkTheme = activeTheme === 'brown';
 
   // COLORS
-  const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#3A2618]';
-  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]';
+  const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#4B533E]/20';
+  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#4B533E]';
   const hoverTextClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#B56A54]';
 
   // --- MOBILE MENU STATE ---
@@ -70,7 +70,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
     { label: 'What We Do', dest: '#services', type: 'scroll' },
-    { label: 'Community', dest: '/testimonials', type: 'route' },
+    { label: 'Community', dest: '#testimonials', type: 'scroll' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
     { label: 'Contact Us', dest: '/contact', type: 'route' },

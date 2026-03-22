@@ -178,7 +178,7 @@ const Services360 = () => {
   };
 
   return (
-    <div className="w-full bg-[#3A2618] text-[#FDF4DC] overflow-x-hidden relative">
+    <div className="w-full bg-[#FDF4DC] text-[#482216] overflow-x-hidden relative">
 
       {/* --- PURE CSS STYLES FOR MARKERS & MODAL ANIMATIONS --- */}
       <style>{`
@@ -186,19 +186,19 @@ const Services360 = () => {
     
     .espasyo-marker-content {
         width: 32px; height: 32px;
-        background-color: rgba(240, 234, 214, 0.9);
+        background-color: rgba(75, 83, 62, 0.9);
         border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
         cursor: pointer;
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 0 0 1px rgba(58,38,24, 0.2);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 0 0 1px rgba(72,34,22, 0.2);
         transition: all 0.3s ease;
         animation: customBounce 2s infinite;
-        color: #3A2618;
+        color: #FDF4DC;
     }
     
     .espasyo-marker-content:hover {
-        background-color: #FDF4DC;
-        color: #3A2618;
+        background-color: #482216;
+        color: #FDF4DC;
         transform: scale(1.1);
     }
     
@@ -241,12 +241,12 @@ const Services360 = () => {
 `}</style>
 
       {/* --- SECTION 1: THE VIRTUAL GATEWAY (FULL WIDTH) --- */}
-      <section className="flex flex-col items-center w-full bg-gradient-to-b from-[#4B533E] to-[#3A2618] pt-16">
+      <section className="flex flex-col items-center w-full bg-[#FDF4DC] pt-16">
         <div className="text-center mb-8 px-4">
-          <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-4 text-[#FDF4DC]">
+          <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-4 text-[#482216]">
             The Espasyo Experience
           </h1>
-          <p className="font-body text-sm md:text-base tracking-[0.2em] uppercase opacity-70 text-[#FDF4DC]">
+          <p className="font-body text-sm md:text-base tracking-[0.2em] uppercase text-[#4B533E] font-bold">
             Your Digital Gateway to our Community
           </p>
         </div>
@@ -255,8 +255,8 @@ const Services360 = () => {
         <div
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden"
-          style={{ filter: 'brightness(1.1) contrast(1.05) saturate(1.15)' }}
+          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.3)] overflow-hidden"
+          style={{ filter: 'sepia(0.2) saturate(1.2) contrast(1.05) brightness(1.05)' }}
         >
           <div className="absolute inset-0 z-30 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_60%,rgba(212,163,115,0.08)_100%)]" />
 
@@ -392,27 +392,38 @@ const Services360 = () => {
             }}
           />
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/30 backdrop-blur-sm px-6 py-2 rounded-full pointer-events-none z-30 group-hover:opacity-0 transition-opacity duration-500 border border-white/5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/90">Click Arrows to Navigate</p>
-          </div>
+        </div>
+
+        {/* --- SMOOTH TRANSITION DIVIDER --- */}
+        <div className="w-full flex justify-center py-12">
+          <div className="w-24 border-b border-[#4B533E]/10" />
         </div>
       </section>
 
-      {/* --- FINAL CTA --- */}
-      <div className="w-full flex flex-col items-center gap-6 text-center py-32 px-4 bg-gradient-to-t from-[#3A2618] to-[#1C110C]">
-        <p className="font-body text-xl md:text-2xl leading-relaxed text-[#FDF4DC] opacity-90">
-          Ready to find your place in our community?
-        </p>
-        <button
-          onClick={() => navigate('/contact')}
-          className="px-14 py-5 bg-[#FDF4DC] text-[#3A2618] rounded-full text-sm font-bold uppercase tracking-[0.15em] hover:bg-[#E6C280] transition-colors shadow-[0_10px_30px_rgba(212,163,115,0.2)] hover:shadow-[0_15px_40px_rgba(212,163,115,0.3)] hover:-translate-y-1 transform duration-300"
-        >
-          Contact Us
-        </button>
-        <p className="text-[10px] text-[#FDF4DC]/30 uppercase tracking-[0.2em] mt-2">
-          Schedule a visit or inquire about rates
-        </p>
-      </div>
+      {/* --- FINAL CTA: Blended into the flow --- */}
+      <section className="w-full flex flex-col items-center gap-8 text-center py-20 px-4 bg-[#FDF4DC]">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <p className="font-body text-2xl md:text-3xl leading-relaxed text-[#482216] font-medium tracking-tight">
+            Ready to find your place in <span className="italic text-[#4B533E]">our community?</span>
+          </p>
+          <div className="flex flex-col items-center gap-4">
+            <button
+              onClick={() => navigate('/contact')}
+              className="px-16 py-6 bg-[#482216] text-[#FDF4DC] rounded-full text-sm font-bold uppercase tracking-[0.2em] hover:bg-[#B56A54] transition-all shadow-[0_15px_30px_rgba(72,34,22,0.15)] hover:shadow-[0_20px_40px_rgba(72,34,22,0.25)] hover:-translate-y-1 transform duration-300"
+            >
+              Contact Us
+            </button>
+            <p className="text-[10px] text-[#4B533E]/50 uppercase tracking-[0.3em] font-bold">
+              Schedule a visit or inquire about rates
+            </p>
+          </div>
+        </div>
+        
+        {/* Subtle Horizontal Divider - Fades into Contact Form */}
+        <div className="w-full max-w-4xl mt-12 mb-4">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#4B533E]/10 to-transparent" />
+        </div>
+      </section>
     </div>
   );
 };

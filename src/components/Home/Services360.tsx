@@ -1,6 +1,6 @@
 // src/components/Services360.tsx
 import { useState, useRef, useEffect } from 'react';
-import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer'; 
+import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
 import { useNavigate } from 'react-router-dom';
 
@@ -81,7 +81,7 @@ const Services360 = () => {
       hotspots: [
         { pitch: -5, yaw: -10, text: "Exit Room", target: "nav7" },
         { pitch: -7, yaw: -120, text: "Private Suite B", target: "nav9_1" },
-         { pitch: 0, yaw: 150, text: "View Medals", target: "modal", imageUrl: "/assets/360/Nav8-1.png", iconType: "eye" },
+        { pitch: 0, yaw: 150, text: "View Medals", target: "modal", imageUrl: "/assets/360/Nav8-1.png", iconType: "eye" },
         { pitch: -7, yaw: 120, text: "Private Suite C", target: "nav9_2" },
         { pitch: 12, yaw: -140, text: "View Medals", target: "modal", imageUrl: "/assets/360/Nav8-2.png", iconType: "eye" },
       ]
@@ -142,7 +142,7 @@ const Services360 = () => {
   // --- GET MARKERS FOR CURRENT SCENE ---
   const getMarkersForScene = () => {
     const scene = scenes[currentScene];
-    
+
     if (!scene.hotspots) return [];
 
     return scene.hotspots.map((hs: any, index: number) => {
@@ -152,16 +152,16 @@ const Services360 = () => {
       };
 
       const markerHtml = hs.iconType === 'eye' ? templates.eye : templates.dot;
-      
+
       return {
         id: `marker-${currentScene}-${index}`,
         position: { yaw: hs.yaw * Math.PI / 180, pitch: hs.pitch * Math.PI / 180 },
         html: markerHtml,
         anchor: 'center center',
         // FIX: Everything goes INSIDE the data object so the click listener can find it!
-        data: { 
-          target: hs.target, 
-          pitch: hs.pitch, 
+        data: {
+          target: hs.target,
+          pitch: hs.pitch,
           yaw: hs.yaw,
           imageUrl: hs.imageUrl,
           onClick: () => {
@@ -262,16 +262,16 @@ const Services360 = () => {
 
           {/* --- CONTAINER-BOUND MODAL --- */}
           {modalImage && (
-            <div 
+            <div
               className="absolute inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-pointer animate-modal-bg"
               onClick={() => setModalImage(null)}
             >
-              <div 
-                className="relative flex items-center justify-center max-w-full max-h-[80vh]" 
+              <div
+                className="relative flex items-center justify-center max-w-full max-h-[80vh]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
-                <button 
+                <button
                   className="absolute -top-4 -right-4 z-50 w-10 h-10 bg-black hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
                   onClick={() => setModalImage(null)}
                 >
@@ -281,7 +281,7 @@ const Services360 = () => {
                 {/* --- IMAGE TRANSITION CONTAINER --- */}
                 <div key={modalImage} className="relative inline-block max-h-[80vh] animate-image-transition">
                   <img src={modalImage} alt="Detail View" className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-[#FDF4DC]/20" />
-                  
+
                   {/* ========================================================= */}
                   {/* HOTSPOTS FOR NAV 3-1 */}
                   {/* ========================================================= */}
@@ -289,19 +289,19 @@ const Services360 = () => {
                     <>
                       <div className="absolute top-[10%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-40">
                         <div className="espasyo-marker-content modal-eye-hotspot" onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-1-1.png"); }} title="Click for closer view">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                         </div>
                       </div>
-                      
+
                       <div className="absolute top-[40%] left-[20%] z-40">
                         <div className="espasyo-marker-content modal-eye-hotspot" onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-1-3.png"); }} title="Click for close-up view">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                         </div>
                       </div>
-                      
+
                       <div className="absolute bottom-[20%] left-[20%] z-40">
                         <div className="espasyo-marker-content modal-eye-hotspot" onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-1-4.png"); }} title="Click for close-up view">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                         </div>
                       </div>
                     </>
@@ -315,14 +315,14 @@ const Services360 = () => {
                       {/* Nav3-2-1 Link (Guessing left side) */}
                       <div className="absolute top-[28%] left-[33%] -translate-x-1/2 -translate-y-1/2 z-40">
                         <div className="espasyo-marker-content modal-eye-hotspot" onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-2-1.png"); }} title="Click for close-up view">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                         </div>
                       </div>
 
                       {/* Nav3-2-2 Link (Guessing right side) */}
                       <div className="absolute bottom-[20%] left-[33%] -translate-x-1/2 -translate-y-1/2 z-40">
                         <div className="espasyo-marker-content modal-eye-hotspot" onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-2-2.png"); }} title="Click for close-up view">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
                         </div>
                       </div>
                     </>
@@ -334,7 +334,7 @@ const Services360 = () => {
                 {/* ========================================================= */}
                 {/* Back button for Nav3-1 Sub-details */}
                 {(modalImage === "/assets/360/Nav3-1-1.png" || modalImage === "/assets/360/Nav3-1-3.png" || modalImage === "/assets/360/Nav3-1-4.png") && (
-                  <button 
+                  <button
                     className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
                     onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-1.png"); }}
                   >
@@ -344,7 +344,7 @@ const Services360 = () => {
 
                 {/* Back button for Nav3-2 Sub-details */}
                 {(modalImage === "/assets/360/Nav3-2-1.png" || modalImage === "/assets/360/Nav3-2-2.png") && (
-                  <button 
+                  <button
                     className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
                     onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-2.png"); }}
                   >
@@ -369,12 +369,12 @@ const Services360 = () => {
             plugins={[[MarkersPlugin, {}]]}
             onReady={(instance: any) => {
               viewerRef.current = instance;
-              
+
               const markersPlugin = instance.getPlugin(MarkersPlugin);
               if (markersPlugin) {
                 const markers = getMarkersForScene();
                 markersPlugin.setMarkers(markers);
-                
+
                 // Fixed selecting markers to call their onClick handler
                 markersPlugin.addEventListener('select-marker', (e: any) => {
                   const marker = e.marker;
@@ -400,30 +400,6 @@ const Services360 = () => {
         </div>
       </section>
 
-      {/* --- FINAL CTA: Blended into the flow --- */}
-      <section className="w-full flex flex-col items-center gap-8 text-center py-20 px-4 bg-[#FDF4DC]">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <p className="font-body text-2xl md:text-3xl leading-relaxed text-[#482216] font-medium tracking-tight">
-            Ready to find your place in <span className="italic text-[#4B533E]">our community?</span>
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <button
-              onClick={() => navigate('/contact')}
-              className="px-16 py-6 bg-[#482216] text-[#FDF4DC] rounded-full text-sm font-bold uppercase tracking-[0.2em] hover:bg-[#B56A54] transition-all shadow-[0_15px_30px_rgba(72,34,22,0.15)] hover:shadow-[0_20px_40px_rgba(72,34,22,0.25)] hover:-translate-y-1 transform duration-300"
-            >
-              Contact Us
-            </button>
-            <p className="text-[10px] text-[#4B533E]/50 uppercase tracking-[0.3em] font-bold">
-              Schedule a visit or inquire about rates
-            </p>
-          </div>
-        </div>
-        
-        {/* Subtle Horizontal Divider - Fades into Contact Form */}
-        <div className="w-full max-w-4xl mt-12 mb-4">
-          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#4B533E]/10 to-transparent" />
-        </div>
-      </section>
     </div>
   );
 };

@@ -34,8 +34,11 @@ export const useSpatialHub = (introFinished: boolean) => {
 
         // Minimum swipe distance
         if (Math.max(absDx, absDy) > 50) {
+            const scrollCol = document.getElementById('main-scroll-column');
+            const isScrolled = scrollCol ? scrollCol.scrollTop > 50 : false;
+
             if (activeView === 'hero') {
-                if (absDx > absDy) {
+                if (absDx > absDy && !isScrolled) {
                     if (dx > 0) setActiveView('story'); // Swipe Right -> Show Left content (Story)
                     else setActiveView('testimonials'); // Swipe Left -> Show Right content (Testimonials)
                 }

@@ -33,7 +33,6 @@ export const CATEGORIES = [
     "Beauty",
     "Consulting",
     "Education",
-    "Engineering",
     "Financial Services",
     "Healthcare",
     "Information Technology",

@@ -1,5 +1,12 @@
-import { type RefObject } from 'react';
+import { useState, useEffect, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const images = [
+  '/assets/landing/1.jpg',
+  '/assets/landing/2.jpg',
+  '/assets/landing/3.jpg',
+  '/assets/landing/4.jpg'
+];
 
 interface HeroProps {
   heroTextRef1: RefObject<HTMLHeadingElement | null>;
@@ -8,10 +15,20 @@ interface HeroProps {
 }
 
 const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative w-screen h-screen flex flex-col justify-center items-center overflow-hidden shrink-0">
-      {/* Background Video & Brown Overlay */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+      {/* Background Slideshow & Brown Overlay */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+        {/*
         <video
           autoPlay
           loop
@@ -20,8 +37,24 @@ const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
           className="absolute inset-0 w-full h-full object-cover"
           src="https://res.cloudinary.com/dlk93aehl/video/upload/v1774184312/Untitled_design.mp4"
         />
+        */}
+        
+        {images.map((img, index) => (
+          <div
+            key={img}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'
+            }`}
+          >
+            <div 
+              className="w-full h-full bg-cover bg-center animate-breathe"
+              style={{ backgroundImage: `url(${img})` }}
+            />
+          </div>
+        ))}
+
         {/* Brown overlay for yellow text pop */}
-        <div className="absolute inset-0 bg-[#3A2618]/60 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#3A2618]/60 mix-blend-multiply z-10"></div>
       </div>
 
       {/* Main Text Content */}
@@ -76,6 +109,14 @@ const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
         }
         .animate-scroll-line {
           animation: scroll-line 2s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+        }
+        @keyframes breathe {
+          0% { transform: scale(1.05); }
+          50% { transform: scale(1.15); }
+          100% { transform: scale(1.05); }
+        }
+        .animate-breathe {
+          animation: breathe 16s ease-in-out infinite;
         }
       `}</style>
     </section>

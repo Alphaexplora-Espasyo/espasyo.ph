@@ -15,165 +15,203 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
     <div ref={containerRef} className="min-h-screen bg-[#FDF4DC] text-[#3A2618] selection:bg-[#3A2618] selection:text-[#FDF4DC]">
       {!hideNavbar && <Navbar theme="default" />}
 
-      <main className="pt-16 pb-20 px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">
+      <main className={`pb-20 px-4 sm:px-8 max-w-[1400px] mx-auto flex flex-col justify-center items-center ${hideNavbar ? 'pt-20' : 'pt-32 lg:pt-40 min-h-[calc(100vh-160px)]'}`}>
         {/* Subtle Divider at Top of Form (When embedded) */}
         {hideNavbar && (
-          <div className="w-full flex justify-center mb-16 opacity-0 animate-[fade-in_1s_ease-out_forwards]">
+          <div className="w-full flex justify-center mb-10 opacity-0 animate-[fade-in_1s_ease-out_forwards]">
              <div className="w-16 h-[1px] bg-[#4B533E]/20" />
           </div>
         )}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+
+        <div className="w-full max-w-[1100px] bg-[#F2E8D5] rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(44,54,40,0.3)] flex flex-col lg:flex-row border border-[#4B533E]/10 relative z-10 transition-all">
           
-          {/* LEFT: CONTENT */}
-          <div ref={contentRef} className="space-y-12">
-            <div className="space-y-6">
-              <h1 className="text-6xl sm:text-7xl font-display uppercase tracking-tighter leading-[0.9]">
-                Let's Build <br />
-                <span className="text-[#4B533E]">Something Great</span>
-              </h1>
-              <p className="text-xl text-[#3A2618]/70 font-body leading-relaxed max-w-md">
-                Whether you're looking for a workspace, I.T. solutions, or professional accounting support, we're here to help you grow.
-              </p>
-            </div>
+          {/* LEFT: CONTENT (Dark Green) */}
+          <div ref={contentRef} className="lg:w-[45%] bg-[#3A4332] p-10 lg:p-14 text-[#FDF4DC] flex flex-col justify-between relative overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute top-0 left-0 w-full h-full bg-[#2C3628] opacity-50 z-0"></div>
+            
+            <div className="relative z-10 space-y-10">
+              <div className="space-y-1">
+                <h1 className="text-4xl sm:text-5xl font-display font-bold uppercase tracking-tighter text-[#DFA878]">
+                  ESPASYO
+                </h1>
+                <p className="text-sm font-body tracking-[0.2em] uppercase text-[#FDF4DC]/60 font-semibold">
+                  Study & Office Hub
+                </p>
+              </div>
 
-            <div className="space-y-8">
-              <div className="contact-info-item flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-2xl bg-[#4B533E]/10 flex items-center justify-center shrink-0 group-hover:bg-[#4B533E] group-hover:text-[#FDF4DC] transition-all duration-500">
-                  <Mail size={24} />
+              <div className="space-y-8 pl-1">
+                <div className="flex items-start gap-5">
+                  <div className="w-8 h-8 rounded-full bg-[#FDF4DC]/10 flex items-center justify-center shrink-0 text-[#FDF4DC]">
+                    <MapPin size={16} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Visit Us</p>
+                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">
+                      6A T. Bugallon Street, Marikina Heights,<br />
+                      Marikina City, Philippines
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#4B533E] mb-1">Email Us</p>
-                  <p className="text-xl font-display uppercase tracking-wide">hello@espasyo.ph</p>
+
+                <div className="flex items-start gap-5">
+                  <div className="w-8 h-8 rounded-full bg-[#FDF4DC]/10 flex items-center justify-center shrink-0 text-[#FDF4DC]">
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Call Us</p>
+                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">
+                      0916 611 2928<br />
+                      700 600 42
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-5">
+                  <div className="w-8 h-8 rounded-full bg-[#FDF4DC]/10 flex items-center justify-center shrink-0 text-[#FDF4DC]">
+                    <Mail size={16} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Email Us</p>
+                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="contact-info-item flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-2xl bg-[#4B533E]/10 flex items-center justify-center shrink-0 group-hover:bg-[#4B533E] group-hover:text-[#FDF4DC] transition-all duration-500">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#4B533E] mb-1">Call Us</p>
-                  <p className="text-xl font-display uppercase tracking-wide">+63 917 123 4567</p>
-                </div>
-              </div>
-
-              <div className="contact-info-item flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-2xl bg-[#4B533E]/10 flex items-center justify-center shrink-0 group-hover:bg-[#4B533E] group-hover:text-[#FDF4DC] transition-all duration-500">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#4B533E] mb-1">Visit Us</p>
-                  <p className="text-xl font-display uppercase tracking-wide">
-                    2nd Floor, ABC Building,<br />
-                    Cebu City, Philippines
-                  </p>
+              <div className="pt-6 space-y-4">
+                <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noreferrer" className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#FDF4DC] flex items-center gap-3 hover:text-[#DFA878] transition-colors w-max">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                  Follow On Facebook
+                </a>
+                
+                <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden shadow-lg relative group">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=ESPASYO%20STUDY%20%26%20OFFICE%20HUB&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    className="grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Espasyo Study & Office Hub Location"
+                  ></iframe>
                 </div>
               </div>
             </div>
           </div>
 
           {/* RIGHT: FORM */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-[#4B533E]/5 rounded-[2rem] -rotate-1" />
+          <div className="lg:w-[55%] p-10 lg:p-16 bg-[#F2E8D5] relative flex flex-col justify-center">
+            <div className="mb-12 space-y-2">
+              <h2 className="text-5xl lg:text-6xl font-display font-bold uppercase tracking-tighter text-[#3A2618]">
+                Get In Touch
+              </h2>
+              <p className="text-sm text-[#3A2618]/70 font-body">
+                Fill out the form below and we'll get back to you shortly.
+              </p>
+            </div>
+
             <form 
               ref={formRef}
               onSubmit={handleSubmit}
-              className="relative bg-[#FDF4DC] p-8 sm:p-12 rounded-[2rem] border border-[#3A2618]/10 shadow-xl space-y-8"
+              className="space-y-8"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#4B533E]">Name</label>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="space-y-2 w-full">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">First Name</label>
                   <input
                     required
                     type="text"
-                    name="name"
-                    value={formState.name}
+                    name="firstName"
+                    value={formState.firstName || ''}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b-2 border-[#3A2618]/10 py-3 focus:border-[#4B533E] outline-none transition-colors font-body text-lg"
-                    placeholder="John Doe"
+                    className="w-full bg-transparent border-b border-[#3A2618]/20 py-2 focus:border-[#3A2618] outline-none transition-colors font-body text-base text-[#3A2618] placeholder:text-[#3A2618]/30"
+                    placeholder="Juan"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#4B533E]">Email</label>
+                <div className="space-y-2 w-full">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Last Name</label>
                   <input
                     required
-                    type="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b-2 border-[#3A2618]/10 py-3 focus:border-[#4B533E] outline-none transition-colors font-body text-lg"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#4B533E]">Company (Optional)</label>
-                  <input
                     type="text"
-                    name="company"
-                    value={formState.company}
+                    name="lastName"
+                    value={formState.lastName || ''}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b-2 border-[#3A2618]/10 py-3 focus:border-[#4B533E] outline-none transition-colors font-body text-lg"
-                    placeholder="Example Corp"
+                    className="w-full bg-transparent border-b border-[#3A2618]/20 py-2 focus:border-[#3A2618] outline-none transition-colors font-body text-base text-[#3A2618] placeholder:text-[#3A2618]/30"
+                    placeholder="Dela Cruz"
                   />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-[#4B533E]">Interest</label>
-                  <select
-                    name="subject"
-                    value={formState.subject}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b-2 border-[#3A2618]/10 py-3 focus:border-[#4B533E] outline-none transition-colors font-body text-lg appearance-none cursor-pointer"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="coworking">Coworking Space</option>
-                    <option value="it">I.T. Services</option>
-                    <option value="accounting">Accounting & Tax</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-[#4B533E]">Message</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Email Address</label>
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-[#3A2618]/20 py-2 focus:border-[#3A2618] outline-none transition-colors font-body text-base text-[#3A2618] placeholder:text-[#3A2618]/30"
+                  placeholder="hello@example.com"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Inquiry Type</label>
+                <select
+                  required
+                  name="inquiryType"
+                  value={formState.inquiryType || ''}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-[#3A2618]/20 py-2 focus:border-[#3A2618] outline-none transition-colors font-body text-base text-[#3A2618] appearance-none cursor-pointer"
+                >
+                  <option value="" disabled className="text-[#3A2618]/30">Select an option...</option>
+                  <option value="General Inquiry" className="text-[#3A2618] bg-[#F2E8D5]">General Inquiry</option>
+                  <option value="Consultation" className="text-[#3A2618] bg-[#F2E8D5]">Consultation</option>
+                  <option value="Booking" className="text-[#3A2618] bg-[#F2E8D5]">Booking</option>
+                  <option value="Other" className="text-[#3A2618] bg-[#F2E8D5]">Other</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Message</label>
                 <textarea
                   required
                   name="message"
                   value={formState.message}
                   onChange={handleChange}
-                  rows={4}
-                  className="w-full bg-transparent border-b-2 border-[#3A2618]/10 py-3 focus:border-[#4B533E] outline-none transition-colors font-body text-lg resize-none"
-                  placeholder="Tell us more about your needs..."
+                  rows={3}
+                  className="w-full bg-transparent border-b border-[#3A2618]/20 py-2 focus:border-[#3A2618] outline-none transition-colors font-body text-base text-[#3A2618] placeholder:text-[#3A2618]/30 resize-none"
+                  placeholder="How can we help you?"
                 />
               </div>
 
-              <button
-                disabled={isSubmitting || submitted}
-                type="submit"
-                className={`w-full py-6 rounded-2xl font-display text-xl uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-500 overflow-hidden relative group
-                  ${submitted 
-                    ? 'bg-[#4B533E] text-[#FDF4DC]' 
-                    : 'bg-[#3A2618] text-[#FDF4DC] hover:bg-[#4B533E] active:scale-[0.98]'
-                  }
-                  ${isSubmitting ? 'opacity-70 pointer-events-none' : ''}
-                `}
-              >
-                <div className={`absolute inset-0 bg-[#FDF4DC]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500`} />
-                
-                {submitted ? (
-                  <>
-                    <CheckCircle2 size={24} className="animate-scale-up" />
-                    <span>Message Sent!</span>
-                  </>
-                ) : (
-                  <>
-                    <Send size={20} className={`${isSubmitting ? 'animate-bounce' : 'group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'}`} />
-                    <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  </>
-                )}
-              </button>
+              <div className="pt-8 flex justify-center w-full">
+                <button
+                  disabled={isSubmitting || submitted}
+                  type="submit"
+                  className={`group w-full max-w-[280px] py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-all duration-300 font-display text-sm uppercase tracking-widest shadow-md hover:shadow-lg
+                    ${submitted 
+                      ? 'bg-transparent border border-[#3A2618] text-[#3A2618]' 
+                      : 'bg-[#3A2618] text-[#DFA878] hover:bg-[#2A1A10] hover:scale-[1.02]'
+                    }
+                    ${isSubmitting ? 'opacity-70 pointer-events-none' : ''}
+                  `}
+                >
+                  {submitted ? (
+                    <>
+                      <CheckCircle2 size={20} className="animate-scale-up text-[#3A2618]" />
+                      <span className="font-bold">Message Sent!</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="font-bold">Send Message</span>
+                      <Send size={16} className={`${isSubmitting ? 'animate-bounce' : 'group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'}`} />
+                    </>
+                  )}
+                </button>
+              </div>
             </form>
           </div>
         </div>

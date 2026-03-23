@@ -89,7 +89,7 @@
     "businessName": "GLOBALBIM Engineering Services",
     "industry": ["Engineering Services", "Steel Detailing"],
     "services": ["Pre-Engineered Building Detailing", "Structural Steel Detailing", "Steel Design and Analysis", "BIM Consulting"],
-    "categories": ["Engineering", "Consulting"],
+    "categories": ["Architecture & Construction", "Consulting"],
     "links": {
       "website": "https://globalbimph.vercel.app",
       "facebook": "",
@@ -404,7 +404,7 @@
     "businessName": "Build Quotient AEC Management OPC",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction", "Engineering"],
+    "categories": ["Architecture & Construction"],
     "links": {
       "website": "",
       "facebook": "",
@@ -593,7 +593,7 @@
     "businessName": "Green Pulse Technologies Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Engineering", "Information Technology"],
+    "categories": ["Information Technology"],
     "links": {
       "website": "",
       "facebook": "",
@@ -677,7 +677,7 @@
     "businessName": "K2C Civil Engineering Services",
     "industry": [],
     "services": [],
-    "categories": ["Engineering"],
+    "categories": ["Architecture & Construction"],
     "links": {
       "website": "",
       "facebook": "",

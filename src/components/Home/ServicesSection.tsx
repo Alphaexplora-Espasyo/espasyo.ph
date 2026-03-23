@@ -76,22 +76,20 @@ const ServicesSection = ({
             <h3 className="font-display text-4xl uppercase tracking-widest mb-12 text-[#F0EAD6]/30">Why Espasyo?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none underline decoration-[#F0EAD6]/20 decoration-2 underline-offset-8">LEGAL &<br />COMPLIANCE</h4>
+                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none">LEGAL &<br />COMPLIANCE</h4>
                 <p className="font-body text-sm text-[#F0EAD6]/70 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</p>
               </div>
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none underline decoration-[#F0EAD6]/20 decoration-2 underline-offset-8">COST<br />EFFICIENT</h4>
+                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none">COST<br />EFFICIENT</h4>
                 <p className="font-body text-sm text-[#F0EAD6]/70 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</p>
               </div>
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none underline decoration-[#F0EAD6]/20 decoration-2 underline-offset-8">TRUSTED &<br />DEPENDABLE</h4>
+                <h4 className="font-display text-2xl uppercase text-[#DFA878] mb-3 leading-none">TRUSTED &<br />DEPENDABLE</h4>
                 <p className="font-body text-sm text-[#F0EAD6]/70 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</p>
               </div>
             </div>
           </div>
           
-          {/* Subtle Horizontal Divider */}
-          <div className="w-full max-w-6xl mt-24 border-b border-white/10" />
         </div>
 
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-8 sm:py-12 md:py-16 w-full">

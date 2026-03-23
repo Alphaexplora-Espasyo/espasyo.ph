@@ -101,11 +101,11 @@ const Home = () => {
             const target = (e as CustomEvent).detail;
             if (target === 'our-story') setActiveView('story');
             if (target === 'testimonials') setActiveView('testimonials');
-            if (target === 'services' || target === 'contact') {
+            if (target === 'services' || target === 'contact' || target === 'hero') {
                 setActiveView('hero');
                 setTimeout(() => {
                    document.getElementById('main-scroll-column')?.scrollTo({
-                     top: document.getElementById(target)?.offsetTop,
+                     top: document.getElementById(target)?.offsetTop || 0,
                      behavior: 'smooth'
                    });
                 }, 100);
@@ -208,7 +208,7 @@ const Home = () => {
                 {/* 3. RIGHT: TESTIMONIALS */}
                 <div className={`absolute top-0 left-[100vw] w-screen h-screen bg-[#FDF4DC] overflow-y-auto no-scrollbar transition-all duration-300 ${activeView === 'testimonials' ? 'z-20 pointer-events-auto opacity-100' : 'z-0 pointer-events-none opacity-0'}`} data-lenis-prevent="true">
                     {/* Render Testimonials natively, hide its internal navbar */}
-                    <div className="relative w-full min-h-screen pb-12 pt-40 md:pt-48">
+                    <div className="relative w-full min-h-screen pb-12">
                         <Testimonials 
                             hideNavbar={true} 
                             onBusinessClick={(b) => {

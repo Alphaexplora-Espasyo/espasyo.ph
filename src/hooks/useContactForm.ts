@@ -2,10 +2,10 @@ import { useState, type FormEvent } from 'react';
 
 export const useContactForm = () => {
     const [formState, setFormState] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
-        company: '',
-        subject: '',
+        inquiryType: '',
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +22,7 @@ export const useContactForm = () => {
         await new Promise(resolve => setTimeout(resolve, 1500));
         setIsSubmitting(false);
         setSubmitted(true);
-        setFormState({ name: '', email: '', company: '', subject: '', message: '' });
+        setFormState({ firstName: '', lastName: '', email: '', inquiryType: '', message: '' });
         setTimeout(() => setSubmitted(false), 5000);
     };
 

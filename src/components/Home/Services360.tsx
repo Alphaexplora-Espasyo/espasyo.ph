@@ -2,16 +2,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer'; 
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
-import { useNavigate } from 'react-router-dom';
 
 // REQUIRED CSS FOR PHOTO SPHERE VIEWER
 import '@photo-sphere-viewer/core/index.css';
 import '@photo-sphere-viewer/markers-plugin/index.css';
 
 const Services360 = () => {
-  const navigate = useNavigate();
   const [currentScene, setCurrentScene] = useState('nav1');
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const [isInteractive, setIsInteractive] = useState(false);
 
   // --- 360 VIEWER STATE ---
   const viewerRef = useRef<any>(null);
@@ -123,8 +122,7 @@ const Services360 = () => {
     });
   };
 
-  const handleMouseEnter = () => { document.body.style.overflow = 'hidden'; };
-  const handleMouseLeave = () => { document.body.style.overflow = 'auto'; };
+
 
   // --- UPDATE MARKERS WHEN SCENE CHANGES ---
   useEffect(() => {
@@ -253,11 +251,23 @@ const Services360 = () => {
 
         {/* 360 VIEWER CONTAINER - EDGE TO EDGE */}
         <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseLeave={() => setIsInteractive(false)}
           className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.3)] overflow-hidden"
           style={{ filter: 'sepia(0.2) saturate(1.2) contrast(1.05) brightness(1.05)' }}
         >
+          {/* INTERACTION OVERLAY */}
+          {!isInteractive && (
+            <div 
+              className="absolute inset-0 z-40 bg-black/20 flex items-center justify-center cursor-pointer backdrop-blur-[2px] transition-all duration-300 hover:bg-black/40"
+              onClick={() => setIsInteractive(true)}
+            >
+              <div className="bg-[#FDF4DC]/90 text-[#3A2618] px-6 py-3 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-sm shadow-xl flex items-center gap-3 transition-transform hover:scale-105 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+                Click to Interact
+              </div>
+            </div>
+          )}
+
           <div className="absolute inset-0 z-30 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_60%,rgba(212,163,115,0.08)_100%)]" />
 
           {/* --- CONTAINER-BOUND MODAL --- */}
@@ -397,31 +407,6 @@ const Services360 = () => {
         {/* --- SMOOTH TRANSITION DIVIDER --- */}
         <div className="w-full flex justify-center py-12">
           <div className="w-24 border-b border-[#4B533E]/10" />
-        </div>
-      </section>
-
-      {/* --- FINAL CTA: Blended into the flow --- */}
-      <section className="w-full flex flex-col items-center gap-8 text-center py-20 px-4 bg-[#FDF4DC]">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <p className="font-body text-2xl md:text-3xl leading-relaxed text-[#482216] font-medium tracking-tight">
-            Ready to find your place in <span className="italic text-[#4B533E]">our community?</span>
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <button
-              onClick={() => navigate('/contact')}
-              className="px-16 py-6 bg-[#482216] text-[#FDF4DC] rounded-full text-sm font-bold uppercase tracking-[0.2em] hover:bg-[#B56A54] transition-all shadow-[0_15px_30px_rgba(72,34,22,0.15)] hover:shadow-[0_20px_40px_rgba(72,34,22,0.25)] hover:-translate-y-1 transform duration-300"
-            >
-              Contact Us
-            </button>
-            <p className="text-[10px] text-[#4B533E]/50 uppercase tracking-[0.3em] font-bold">
-              Schedule a visit or inquire about rates
-            </p>
-          </div>
-        </div>
-        
-        {/* Subtle Horizontal Divider - Fades into Contact Form */}
-        <div className="w-full max-w-4xl mt-12 mb-4">
-          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#4B533E]/10 to-transparent" />
         </div>
       </section>
     </div>

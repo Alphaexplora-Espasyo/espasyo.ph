@@ -64,7 +64,7 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
     return (
         <div ref={containerRef} className="min-h-screen w-full bg-[#FDF4DC] text-[#2C3628] flex flex-col font-body selection:bg-[#2C3628] selection:text-[#FDF4DC] relative">
             {/* STICKY CURTAIN: Makes content disappear under the 'Back to Hub' button */}
-            <div className="sticky top-0 left-0 w-full h-[155px] bg-[#FDF4DC] z-[140] pointer-events-none" />
+            <div className="sticky top-0 left-0 w-full h-[135px] bg-[#FDF4DC] z-[140] pointer-events-none" />
 
             {!hideNavbar && (
                 <div className="fixed top-0 left-0 w-full z-[160] bg-[#FDF4DC]/90 backdrop-blur-md border-b border-[#2C3628]/10 transition-all">

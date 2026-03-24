@@ -2,16 +2,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer'; 
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin';
-import { useNavigate } from 'react-router-dom';
 
 // REQUIRED CSS FOR PHOTO SPHERE VIEWER
 import '@photo-sphere-viewer/core/index.css';
 import '@photo-sphere-viewer/markers-plugin/index.css';
 
 const Services360 = () => {
-  const navigate = useNavigate();
   const [currentScene, setCurrentScene] = useState('nav1');
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const [isInteractive, setIsInteractive] = useState(false);
 
   // --- 360 VIEWER STATE ---
   const viewerRef = useRef<any>(null);
@@ -123,8 +122,7 @@ const Services360 = () => {
     });
   };
 
-  const handleMouseEnter = () => { document.body.style.overflow = 'hidden'; };
-  const handleMouseLeave = () => { document.body.style.overflow = 'auto'; };
+
 
   // --- UPDATE MARKERS WHEN SCENE CHANGES ---
   useEffect(() => {
@@ -178,7 +176,7 @@ const Services360 = () => {
   };
 
   return (
-    <div className="w-full bg-[#2C3628] text-[#F0EAD6] overflow-x-hidden relative">
+    <div className="w-full bg-[#FDF4DC] text-[#482216] overflow-x-hidden relative">
 
       {/* --- PURE CSS STYLES FOR MARKERS & MODAL ANIMATIONS --- */}
       <style>{`
@@ -186,19 +184,19 @@ const Services360 = () => {
     
     .espasyo-marker-content {
         width: 32px; height: 32px;
-        background-color: rgba(240, 234, 214, 0.9);
+        background-color: rgba(75, 83, 62, 0.9);
         border-radius: 50%;
         display: flex; align-items: center; justify-content: center;
         cursor: pointer;
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 0 0 1px rgba(44, 54, 40, 0.2);
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 0 0 1px rgba(72,34,22, 0.2);
         transition: all 0.3s ease;
         animation: customBounce 2s infinite;
-        color: #2C3628;
+        color: #FDF4DC;
     }
     
     .espasyo-marker-content:hover {
-        background-color: #D4A373;
-        color: #F0EAD6;
+        background-color: #482216;
+        color: #FDF4DC;
         transform: scale(1.1);
     }
     
@@ -241,23 +239,35 @@ const Services360 = () => {
 `}</style>
 
       {/* --- SECTION 1: THE VIRTUAL GATEWAY (FULL WIDTH) --- */}
-      <section className="flex flex-col items-center w-full bg-gradient-to-b from-[#2C3628] to-[#242c20] pt-16">
+      <section className="flex flex-col items-center w-full bg-[#FDF4DC] pt-16">
         <div className="text-center mb-8 px-4">
-          <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-4 text-[#D4A373]">
+          <h1 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-4 text-[#482216]">
             The Espasyo Experience
           </h1>
-          <p className="font-body text-sm md:text-base tracking-[0.2em] uppercase opacity-70 text-[#F0EAD6]">
+          <p className="font-body text-sm md:text-base tracking-[0.2em] uppercase text-[#4B533E] font-bold">
             Your Digital Gateway to our Community
           </p>
         </div>
 
         {/* 360 VIEWER CONTAINER - EDGE TO EDGE */}
         <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.6)] overflow-hidden"
-          style={{ filter: 'brightness(1.1) contrast(1.05) saturate(1.15)' }}
+          onMouseLeave={() => setIsInteractive(false)}
+          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.3)] overflow-hidden"
+          style={{ filter: 'sepia(0.2) saturate(1.2) contrast(1.05) brightness(1.05)' }}
         >
+          {/* INTERACTION OVERLAY */}
+          {!isInteractive && (
+            <div 
+              className="absolute inset-0 z-40 bg-black/20 flex items-center justify-center cursor-pointer backdrop-blur-[2px] transition-all duration-300 hover:bg-black/40"
+              onClick={() => setIsInteractive(true)}
+            >
+              <div className="bg-[#FDF4DC]/90 text-[#3A2618] px-6 py-3 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-sm shadow-xl flex items-center gap-3 transition-transform hover:scale-105 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+                Click to Interact
+              </div>
+            </div>
+          )}
+
           <div className="absolute inset-0 z-30 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_60%,rgba(212,163,115,0.08)_100%)]" />
 
           {/* --- CONTAINER-BOUND MODAL --- */}
@@ -272,7 +282,7 @@ const Services360 = () => {
               >
                 {/* Close Button */}
                 <button 
-                  className="absolute -top-4 -right-4 z-50 w-10 h-10 bg-black hover:bg-[#D4A373] text-[#F0EAD6] rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
+                  className="absolute -top-4 -right-4 z-50 w-10 h-10 bg-black hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full flex items-center justify-center transition-colors duration-300 shadow-lg border border-white/20"
                   onClick={() => setModalImage(null)}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -280,7 +290,7 @@ const Services360 = () => {
 
                 {/* --- IMAGE TRANSITION CONTAINER --- */}
                 <div key={modalImage} className="relative inline-block max-h-[80vh] animate-image-transition">
-                  <img src={modalImage} alt="Detail View" className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-[#F0EAD6]/20" />
+                  <img src={modalImage} alt="Detail View" className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-[#FDF4DC]/20" />
                   
                   {/* ========================================================= */}
                   {/* HOTSPOTS FOR NAV 3-1 */}
@@ -335,7 +345,7 @@ const Services360 = () => {
                 {/* Back button for Nav3-1 Sub-details */}
                 {(modalImage === "/assets/360/Nav3-1-1.png" || modalImage === "/assets/360/Nav3-1-3.png" || modalImage === "/assets/360/Nav3-1-4.png") && (
                   <button 
-                    className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#D4A373] text-[#F0EAD6] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
                     onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-1.png"); }}
                   >
                     ← Back
@@ -345,7 +355,7 @@ const Services360 = () => {
                 {/* Back button for Nav3-2 Sub-details */}
                 {(modalImage === "/assets/360/Nav3-2-1.png" || modalImage === "/assets/360/Nav3-2-2.png") && (
                   <button 
-                    className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#D4A373] text-[#F0EAD6] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
+                    className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-black/80 hover:bg-[#FDF4DC] text-[#FDF4DC] hover:text-[#3A2618] rounded-full text-xs font-bold uppercase tracking-widest transition-colors duration-300 backdrop-blur-md border border-white/20 shadow-lg animate-image-transition pointer-events-auto"
                     onClick={(e) => { e.stopPropagation(); setModalImage("/assets/360/Nav3-2.png"); }}
                   >
                     ← Back
@@ -392,27 +402,13 @@ const Services360 = () => {
             }}
           />
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/30 backdrop-blur-sm px-6 py-2 rounded-full pointer-events-none z-30 group-hover:opacity-0 transition-opacity duration-500 border border-white/5">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/90">Click Arrows to Navigate</p>
-          </div>
+        </div>
+
+        {/* --- SMOOTH TRANSITION DIVIDER --- */}
+        <div className="w-full flex justify-center py-12">
+          <div className="w-24 border-b border-[#4B533E]/10" />
         </div>
       </section>
-
-      {/* --- FINAL CTA --- */}
-      <div className="w-full flex flex-col items-center gap-6 text-center py-32 px-4 bg-gradient-to-t from-[#2C3628] to-[#1f261c]">
-        <p className="font-body text-xl md:text-2xl leading-relaxed text-[#F0EAD6] opacity-90">
-          Ready to find your place in our community?
-        </p>
-        <button
-          onClick={() => navigate('/contact')}
-          className="px-14 py-5 bg-[#D4A373] text-[#2C3628] rounded-full text-sm font-bold uppercase tracking-[0.15em] hover:bg-[#C29263] transition-colors shadow-[0_10px_30px_rgba(212,163,115,0.2)] hover:shadow-[0_15px_40px_rgba(212,163,115,0.3)] hover:-translate-y-1 transform duration-300"
-        >
-          Contact Us
-        </button>
-        <p className="text-[10px] text-[#F0EAD6]/30 uppercase tracking-[0.2em] mt-2">
-          Schedule a visit or inquire about rates
-        </p>
-      </div>
     </div>
   );
 };

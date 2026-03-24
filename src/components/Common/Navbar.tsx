@@ -16,9 +16,9 @@ const Navbar = ({ theme }: NavbarProps) => {
   const isDarkTheme = activeTheme === 'brown';
 
   // COLORS
-  const containerClasses = isDarkTheme ? 'bg-[#2C3628] border-[#F0EAD6]' : 'bg-[#F0EAD6] border-[#2C3628]';
-  const textClasses = isDarkTheme ? 'text-[#F0EAD6]' : 'text-[#2C3628]';
-  const hoverTextClasses = isDarkTheme ? 'text-[#D4A373]' : 'text-[#C87941]';
+  const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#4B533E]/20';
+  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#4B533E]';
+  const hoverTextClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#B56A54]';
 
   // --- MOBILE MENU STATE ---
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
     { label: 'What We Do', dest: '#services', type: 'scroll' },
-    { label: 'Testimonials', dest: '/testimonials', type: 'route' },
+    { label: 'Community', dest: '#testimonials', type: 'scroll' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
     { label: 'Contact Us', dest: '/contact', type: 'route' },
@@ -84,10 +84,13 @@ const Navbar = ({ theme }: NavbarProps) => {
         <Link
           to="/"
           className={`flex items-center font-display font-bold text-xl tracking-tighter transition-colors duration-500 ${textClasses}`}
-          onClick={() => {
-            // Scroll to top if clicking logo on home page
+          onClick={(e) => {
             if (location.pathname === '/') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              e.preventDefault();
+              window.dispatchEvent(new CustomEvent('scrollToSection', { detail: 'hero' }));
+            } else {
+              e.preventDefault();
+              navigate('/', { state: { skipIntro: true } });
             }
           }}
         >
@@ -124,7 +127,7 @@ const Navbar = ({ theme }: NavbarProps) => {
       {/* MOBILE OVERLAY NAVIGATION */}
       {typeof document !== 'undefined' && createPortal(
         <div
-          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#2C3628]' : 'bg-[#F0EAD6]'} 
+          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#4B533E]' : 'bg-[#FDF4DC]'} 
           ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-[20px]'}`}
         >
           <div className="flex flex-col items-center gap-6 sm:gap-8 w-full overflow-y-auto no-scrollbar pb-8">

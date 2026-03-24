@@ -2,7 +2,7 @@
 import { useRef, useLayoutEffect, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Navbar from './Navbar';
+import Navbar from './Common/Navbar';
 import { MapPin, Phone, Mail, Facebook, Send } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

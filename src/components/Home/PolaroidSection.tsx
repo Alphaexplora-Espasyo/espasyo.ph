@@ -19,11 +19,11 @@ const PolaroidSection: React.FC = () => {
 
   return (
     // CONTAINER: Stacks vertically on mobile (flex-col), side-by-side on desktop (md:flex-row)
-    <div className="w-full min-h-screen flex flex-col md:flex-row bg-[#2C3628]">
+    <div className="w-full min-h-screen flex flex-col md:flex-row bg-[#3A2618]">
       
       {/* RIGHT PANEL (Text) */}
-      <div className="w-full md:w-1/2 order-1 md:order-2 flex flex-col justify-center p-8 md:p-20 text-[#F0EAD6] md:h-screen md:sticky md:top-0 bg-[#2C3628] z-10">
-        <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-6 text-[#D4A373]">
+      <div className="w-full md:w-1/2 order-1 md:order-2 flex flex-col justify-center p-8 md:p-20 text-[#FDF4DC] md:h-screen md:sticky md:top-0 bg-[#3A2618] z-10">
+        <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-6 text-[#DDA79A]">
           Our Journey
         </h2>
         <div className="font-body text-lg md:text-xl leading-relaxed opacity-90 space-y-6">
@@ -40,7 +40,7 @@ const PolaroidSection: React.FC = () => {
       </div>
 
       {/* LEFT PANEL (Scrollable Images) */}
-      <div className="w-full md:w-1/2 order-2 md:order-1 flex flex-col items-center gap-12 py-12 md:py-24 bg-[#F0EAD6]/5">
+      <div className="w-full md:w-1/2 order-2 md:order-1 flex flex-col items-center gap-12 py-12 md:py-24 bg-[#FDF4DC]/5">
         {items.map((item, index) => (
           // POLAROID CARD STYLE
           <div 
@@ -50,7 +50,7 @@ const PolaroidSection: React.FC = () => {
             // 2. max-w-md -> Stops it from getting too big on tablets
             // 3. md:w-80 -> Reverts to fixed size on large desktop screens
             className={`
-                bg-[#F0EAD6] p-4 pb-8 md:pb-12 shadow-2xl flex-shrink-0 transition-transform duration-500 hover:scale-105 hover:rotate-0
+                bg-[#FDF4DC] p-4 pb-8 md:pb-12 shadow-2xl flex-shrink-0 transition-transform duration-500 hover:scale-105 hover:rotate-0
                 w-[90%] max-w-md md:w-80
                 ${index % 2 === 0 ? '-rotate-1 md:-rotate-2' : 'rotate-1 md:rotate-2'} 
             `}
@@ -61,7 +61,7 @@ const PolaroidSection: React.FC = () => {
               style={{ backgroundColor: item.color }} 
             />
             {/* Caption */}
-            <p className="font-display text-center text-[#2C3628] text-2xl md:text-xl uppercase tracking-widest leading-none mt-2">
+            <p className="font-display text-center text-[#3A2618] text-2xl md:text-xl uppercase tracking-widest leading-none mt-2">
                 {item.text}
             </p>
           </div>

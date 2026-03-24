@@ -3,9 +3,9 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import { Play } from 'lucide-react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
-import DetailModal from './DetailModal';
-import FounderModal from './FounderModal';
-import Navbar from './Navbar';
+import DetailModal from './Shared/Modals/DetailModal';
+import FounderModal from './Shared/Modals/FounderModal';
+import Navbar from './Common/Navbar';
 import LOGO from '../assets/LOGO.png';
 import testimonialsData from '../data/testimonials.json';
 

@@ -10,14 +10,7 @@ const resolvePath = (p?: string): string => {
   return p.replace(/^public\//, '/');
 };
 
-// Helper to force external links to have https://
-const formatUrl = (url?: string) => {
-  if (!url) return '#';
-  if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    return `https://${url}`;
-  }
-  return url;
-};
+
 
 interface DetailModalProps {
   item: {
@@ -194,6 +187,27 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
               </div>
             </>
           )}
+
+          {/* Carousel Navigation Dots */}
+          {availableMedia.length > 1 && (
+            <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+              {availableMedia.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setActiveIndex(idx);
+                    setPlay(false); // Reset video play state when changing slides
+                  }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    idx === activeIndex 
+                      ? "bg-[#FDF4DC] w-8" 
+                      : "bg-white/50 hover:bg-white/80"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* DETAILS SECTION */}
@@ -201,61 +215,92 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           ref={detailsRef}
           className="flex-1 min-h-0 md:w-[45%] flex flex-col px-5 py-5 md:px-8 md:py-8 overflow-y-auto custom-scrollbar pointer-events-auto"
         >
-          <div className="flex flex-col flex-1">
-            <h3 className="uppercase tracking-widest text-xs md:text-sm text-[#d4a373] mb-3 font-bold font-display opacity-80 shrink-0">
-              About Our Client
-            </h3>
+          <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#FDF4DC] mb-4 font-bold font-display opacity-80 shrink-0">
+            About Our Client
+          </h3>
 
-            <div className="space-y-3 shrink-0">
-              <div>
-                <p className="font-display uppercase text-[clamp(1.25rem,4vw,2rem)] text-[#c87941] font-bold leading-tight mb-2">
-                  {item.businessName}
-                </p>
-                {item.industry && item.industry.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {item.industry.map((ind, idx) => (
-                      <span key={idx} className="inline-block bg-[#d4a373]/15 text-[#e6dfc8] px-2.5 py-1 rounded-full text-[10px] md:text-xs font-semibold tracking-wider uppercase border border-[#d4a373]/30">
-                        {ind}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {item.services && item.services.length > 0 && (
-                <div className="pt-2">
-                  <p className="font-display uppercase text-[10px] md:text-xs text-[#d4a373] font-semibold tracking-widest mb-1.5 opacity-70">Services Provided</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 ml-4 w-full">
-                    <ul className="text-[#f2f0e9] font-body text-xs md:text-sm leading-relaxed opacity-90 list-disc list-outside space-y-0.5 w-full">
-                      {item.services.slice(0, 4).map((service, idx) => <li key={idx} className="break-words leading-tight py-0.5">{service}</li>)}
-                    </ul>
-                    {item.services.length > 4 && (
-                      <ul className="text-[#f2f0e9] font-body text-xs md:text-sm leading-relaxed opacity-90 list-disc list-outside space-y-0.5 w-full">
-                        {item.services.slice(4, 8).map((service, idx) => <li key={idx} className="break-words leading-tight py-0.5">{service}</li>)}
-                      </ul>
-                    )}
-                  </div>
+          <div className="space-y-4 text-sm">
+            <div>
+              <p className="font-display uppercase text-[24px] md:text-[32px] text-[#B56A54] font-bold leading-tight mb-3">
+                {item.businessName}
+              </p>
+              
+              {item.industry && item.industry.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {item.industry.map((ind, idx) => (
+                    <span key={idx} className="inline-block bg-[#FDF4DC]/15 text-[#e6dfc8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-[#FDF4DC]/30">
+                      {ind}
+                    </span>
+                  ))}
                 </div>
               )}
             </div>
 
-            <div className="my-5 h-px bg-white/10 shrink-0" />
-
-            <blockquote className="italic text-sm md:text-base lg:text-lg leading-relaxed opacity-90 mb-4 text-[#efe9d5] font-body border-l-2 border-[#d4a373]/50 pl-4 shrink-0">
-              “{item.testimonial}”
-            </blockquote>
+            {item.services && item.services.length > 0 && (
+              <div className="pt-2">
+                <p className="font-display uppercase text-[12px] text-[#FDF4DC] font-semibold tracking-widest mb-2 opacity-70">
+                  Services Provided
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 ml-4 block w-full">
+                  <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
+                    {item.services.slice(0, 4).map((service, idx) => (
+                      <li key={idx} className="break-words" title={service}>{service}</li>
+                    ))}
+                  </ul>
+                  {item.services.length > 4 && (
+                    <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
+                      {item.services.slice(4, 8).map((service, idx) => (
+                        <li key={idx} className="break-words" title={service}>{service}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
-          <div className="mt-auto shrink-0 flex items-center gap-4 pt-4 border-t border-white/5">
+          <div className="my-6 h-px bg-white/10" />
+
+          <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#FDF4DC]/50 pl-4">
+            “{item.testimonial}”
+          </blockquote>
+
+          <div className="mt-8 flex items-center gap-4 pt-4 border-t border-white/5">
             {item.links?.website && (
-              <a href={formatUrl(item.links.website)} target="_blank" rel="noopener noreferrer" className="bg-[#d4a373] text-[#2b3327] hover:bg-[#c87941] hover:text-white transition-colors px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider mr-auto">
+              <a
+                href={item.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#FDF4DC] text-[#2b3327] hover:bg-[#E6C280] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
+              >
                 View Website
               </a>
             )}
 
-            <div className="flex gap-3 md:gap-4 ml-auto text-[#d4a373]">
-              {item.links?.facebook && <a href={formatUrl(item.links.facebook)} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={20} className="md:w-6 md:h-6" /></a>}
-              {item.links?.instagram && <a href={formatUrl(item.links.instagram)} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={20} className="md:w-6 md:h-6" /></a>}
+            <div className="flex gap-4 ml-auto text-[#FDF4DC]">
+              {item.links?.facebook && (
+                <a
+                  href={item.links.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={24} />
+                </a>
+              )}
+
+              {item.links?.instagram && (
+                <a
+                  href={item.links.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={24} />
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -4,11 +4,11 @@ import Lenis from "lenis";
 import gsap from "gsap"; // NEW IMPORT
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // NEW IMPORT
 
-import Home from "./components/Home";
-import Gallery from "./components/Gallery";
-import Testimonials from "./components/Testimonials";
-import Resources from "./components/Resources";
-import Contact from "./components/Contact";
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import Testimonials from "./pages/Testimonials";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 
 // Register ScrollTrigger globally here as well to be safe
 gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +57,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="antialiased bg-[#d9d8d7] min-h-screen">
+      <div className="antialiased bg-[#FDF4DC] min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />

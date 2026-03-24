@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "./Navbar";
-import Footer from "./footer";
+import Navbar from '../components/Common/Navbar';
+import Footer from '../components/Common/Footer';
 import {
   Calendar as CalendarIcon,
   ArrowRight,

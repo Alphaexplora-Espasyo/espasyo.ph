@@ -108,12 +108,12 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
       {/* modal */}
       <div
         ref={modalRef}
-        className="relative z-10 flex w-[92vw] max-w-6xl h-[78vh] rounded-2xl overflow-hidden bg-[#2b3327]/90 backdrop-blur-xl shadow-[0_40px_120px_rgba(0,0,0,0.6)] border border-[#d4a373]/20"
+        className="relative z-10 flex w-[92vw] max-w-6xl h-[78vh] rounded-2xl overflow-hidden bg-[#2b3327]/90 backdrop-blur-xl shadow-[0_40px_120px_rgba(0,0,0,0.6)] border border-[#FDF4DC]/20"
       >
         {/* close */}
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 z-50 text-[#e6dfc8] hover:text-[#d4a373] transition-colors bg-black/20 p-2 rounded-full backdrop-blur-md"
+          className="absolute top-5 right-5 z-50 text-[#e6dfc8] hover:text-[#FDF4DC] transition-colors bg-black/20 p-2 rounded-full backdrop-blur-md"
         >
           <X size={22} />
         </button>
@@ -155,10 +155,10 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
         <div ref={detailsRef} className="w-[50%] md:w-[42%] h-full px-8 md:px-12 py-12 flex flex-col justify-start relative z-20 -ml-8 overflow-y-auto pointer-events-auto custom-scrollbar">
           {/* Container added for scroll flow */}
           <div className="flex flex-col h-auto min-h-full justify-center">
-            <h3 className="uppercase tracking-widest text-[14px] md:text-[18px] text-[#d4a373] mb-4 font-bold font-display">
+            <h3 className="uppercase tracking-widest text-[14px] md:text-[18px] text-[#FDF4DC] mb-4 font-bold font-display">
               Origin Story
             </h3>
-            <h4 className="font-display uppercase text-[32px] md:text-[46px] text-[#c87941] font-semibold mb-6 leading-none tracking-tighter">
+            <h4 className="font-display uppercase text-[32px] md:text-[46px] text-[#B56A54] font-semibold mb-6 leading-none tracking-tighter">
               How It All Started
             </h4>
 
@@ -173,11 +173,11 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
 
             <div className="my-8 h-px bg-white/10" />
 
-            <blockquote className="italic text-xl md:text-2xl leading-relaxed opacity-90 mb-8 text-[#efe9d5] font-display border-l-4 border-[#d4a373] pl-6">
+            <blockquote className="italic text-xl md:text-2xl leading-relaxed opacity-90 mb-8 text-[#efe9d5] font-display border-l-4 border-[#FDF4DC] pl-6">
               "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
             </blockquote>
 
-            <div className="mt-auto flex gap-5 pt-4 text-[#d4a373]">
+            <div className="mt-auto flex gap-5 pt-4 text-[#FDF4DC]">
               <a href="#" className="hover:text-white transition-colors"><Facebook size={24} /></a>
               <a href="#" className="hover:text-white transition-colors"><Instagram size={24} /></a>
             </div>

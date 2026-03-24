@@ -85,10 +85,12 @@ const Navbar = ({ theme }: NavbarProps) => {
           to="/"
           className={`flex items-center font-display font-bold text-xl tracking-tighter transition-colors duration-500 ${textClasses}`}
           onClick={(e) => {
-            // Scroll to top if clicking logo on home page
             if (location.pathname === '/') {
               e.preventDefault();
               window.dispatchEvent(new CustomEvent('scrollToSection', { detail: 'hero' }));
+            } else {
+              e.preventDefault();
+              navigate('/', { state: { skipIntro: true } });
             }
           }}
         >

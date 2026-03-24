@@ -25,7 +25,7 @@ const Gallery = () => {
       <Navbar theme="default" />
 
       {/* Animated Title */}
-      <div className="fixed inset-0 z-[40] flex items-center justify-center pointer-events-none select-none">
+      <div className="fixed inset-0 z-[105] flex items-center justify-center pointer-events-none select-none">
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
@@ -56,13 +56,14 @@ const Gallery = () => {
             <div
               key={item.id}
               ref={el => { refs.itemsRef.current[i] = el }}
-              className={`absolute top-0 left-0 group perspective-1000 z-0 hover:z-[150] ${state.isDragging ? 'pointer-events-none' : ''} p-2 sm:p-3 w-[40vw] h-[40vw] -ml-[20vw] -mt-[20vw] md:w-[14vw] md:h-[14vw] md:-ml-[7vw] md:-mt-[7vw]`}
+              className={`absolute top-0 left-0 group perspective-1000 z-0 hover:z-[100] ${state.isDragging ? 'pointer-events-none' : ''} p-2 sm:p-3 w-[40vw] h-[40vw] -ml-[20vw] -mt-[20vw] md:w-[14vw] md:h-[14vw] md:-ml-[7vw] md:-mt-[7vw]`}
               style={{ willChange: 'transform', opacity: 0, transform: 'scale(0.5)' }}
               onClick={() => handleClick(item.src)}
             >
               <div className="w-full h-full relative transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:rotate-[2deg] shadow-md hover:shadow-xl rounded-sm overflow-hidden bg-[#3A2618]">
                 <img src={item.src} alt={`Gallery Image ${i}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#8B5A2B]/40 mix-blend-overlay group-hover:bg-[#8B5A2B]/0 transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#3A2618]/20 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
               </div>
             </div>
           ))}

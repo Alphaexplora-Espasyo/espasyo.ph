@@ -95,11 +95,8 @@ const Intro = ({ onComplete }: IntroProps) => {
                         </div>
 
                         {/* DOOR HARDWARE: Ornate Brass Handle */}
-                        <div className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 md:right-8 z-20 flex flex-col items-center gap-1">
-                            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 bg-gradient-to-br from-[#E6C280] to-[#996B3D] rounded-full border-2 border-black/50 shadow-[0_5px_15px_rgba(0,0,0,0.8)] flex items-center justify-center">
-                                <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-black/60 rounded-full shadow-inner" />
-                            </div>
-                            <div className="w-2 sm:w-3 md:w-4 h-20 sm:h-28 md:h-40 bg-gradient-to-r from-[#E6C280] to-[#996B3D] rounded-sm border-t border-white/30 shadow-[0_5px_15px_rgba(0,0,0,0.8)] relative">
+                        <div className="absolute top-[60%] -translate-y-1/2 right-2 sm:right-4 md:right-8 z-20 flex flex-col items-center gap-1">
+                            <div className="w-2 sm:w-3 md:w-4 h-16 sm:h-20 md:h-28 bg-gradient-to-r from-[#E6C280] to-[#996B3D] rounded-sm border-t border-white/30 shadow-[0_5px_15px_rgba(0,0,0,0.8)] relative">
                                 <div className="absolute inset-x-[1px] top-2 bottom-2 bg-black/20 rounded-full" />
                             </div>
                         </div>
@@ -122,6 +119,13 @@ const Intro = ({ onComplete }: IntroProps) => {
                         
                         {/* Seam Shadow */}
                         <div className="absolute top-0 bottom-0 left-0 w-8 bg-black/40 blur-xl z-10" />
+
+                        {/* DOOR HARDWARE: Ornate Brass Handle */}
+                        <div className="absolute top-[60%] -translate-y-1/2 left-2 sm:left-4 md:left-8 z-20 flex flex-col items-center gap-1">
+                            <div className="w-2 sm:w-3 md:w-4 h-16 sm:h-20 md:h-28 bg-gradient-to-r from-[#E6C280] to-[#996B3D] rounded-sm border-t border-white/30 shadow-[0_5px_15px_rgba(0,0,0,0.8)] relative">
+                                <div className="absolute inset-x-[1px] top-2 bottom-2 bg-black/20 rounded-full" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,7 +150,10 @@ const Intro = ({ onComplete }: IntroProps) => {
                 
                 {/* Final Reveal Text (Cream and Gold to pop on the Dark Wood doors) */}
                 <div className="absolute flex flex-col items-center">
-                    <h2 className="font-display text-[#D4A373] text-lg sm:text-2xl md:text-3xl uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold mb-2 md:mb-4">
+                    <h2 
+                        className="font-display text-[#D4A373] text-lg sm:text-2xl md:text-3xl uppercase tracking-[0.2em] sm:tracking-[0.3em] font-bold mb-2 md:mb-4"
+                        style={{ textShadow: '0 4px 15px rgba(0, 0, 0, 0.9), 0 2px 5px rgba(0,0,0,0.7)' }}
+                    >
                         Welcome to
                     </h2>
                     <h1 className="font-display text-[#FDFCF5] text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] uppercase tracking-tighter" style={{ textShadow: '0 8px 30px rgba(0,0,0,0.8)' }}>

@@ -81,7 +81,7 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
                         Meet the Community
                     </h1>
 
-                    <p className="hidden md:block text-sm opacity-70 mb-8 leading-relaxed pr-4">
+                    <p className="text-sm opacity-70 mb-6 md:mb-8 leading-relaxed pr-4">
                         Discover the diverse businesses, creative studios, and professional agencies within the Espasyo network.
                     </p>
 
@@ -106,7 +106,7 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
                 <div className="w-full md:w-3/4 lg:w-4/5 flex flex-col">
                     
                     {mediaBusinesses.length > 0 && (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 mb-20">
+                        <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-8 mb-20">
                             {mediaBusinesses.map((b) => (
                                 <MediaCard key={b.id} business={b} onClick={() => onBusinessClick?.(b)} />
                             ))}

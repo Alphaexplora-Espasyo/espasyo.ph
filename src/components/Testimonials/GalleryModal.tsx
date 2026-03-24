@@ -5,10 +5,17 @@ import { resolvePath } from '../../constants/testimonialsData';
 export const GalleryModal = ({ business, onClose }: { business: Business, onClose: () => void }) => {
     const [currentMediaIdx, setCurrentMediaIdx] = useState(0);
     const [isClosing, setIsClosing] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        // Trigger open animation on next frame after mount
+        const frame = requestAnimationFrame(() => setIsVisible(true));
+        return () => cancelAnimationFrame(frame);
+    }, []);
 
     const handleClose = () => {
         setIsClosing(true);
-        setTimeout(onClose, 300);
+        setTimeout(onClose, 350);
     };
 
     const allMedia = [];
@@ -34,11 +41,13 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
     return (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 lg:p-12">
             <div 
-                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`} 
+                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isVisible && !isClosing ? 'opacity-100' : 'opacity-0'}`} 
                 onClick={handleClose} 
             />
             
-            <div className={`relative w-full h-[90vh] md:h-full max-h-[900px] max-w-7xl bg-[#FDF4DC] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 transform ${isClosing ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 translate-y-0'}`}>
+            <div className={`relative w-full h-[90vh] md:h-full max-h-[900px] max-w-7xl bg-[#FDF4DC] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl transition-all duration-350 transform ${
+                isVisible && !isClosing ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-6'
+            }`} style={{ transitionDuration: '350ms', transitionTimingFunction: 'cubic-bezier(0.34, 1.1, 0.64, 1)' }}>
                 
                 <button 
                     onClick={handleClose} 
@@ -83,15 +92,15 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                     )}
                 </div>
 
-                <div className="w-full md:w-[40%] h-[60vh] md:h-full text-[#2C3628] p-8 md:p-12 flex flex-col overflow-y-auto no-scrollbar">
-                    <h2 className="font-display text-3xl md:text-5xl uppercase tracking-wider mb-4 text-[#2C3628] leading-tight">
+                <div className="w-full md:w-[40%] h-[60vh] md:h-full text-[#2C3628] p-5 md:p-10 flex flex-col overflow-y-auto no-scrollbar">
+                    <h2 className="font-display text-2xl md:text-3xl uppercase tracking-wider mb-2 md:mb-3 text-[#2C3628] leading-tight">
                         {business.businessName}
                     </h2>
                     
                     {business.industry && business.industry.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-8">
+                        <div className="flex flex-wrap gap-1.5 mb-4 md:mb-6">
                             {business.industry.map((ind, i) => (
-                                <span key={i} className="text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1.5 bg-[#2C3628]/10 rounded-full">
+                                <span key={i} className="text-[9px] md:text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 bg-[#2C3628]/10 rounded-full">
                                     {ind}
                                 </span>
                             ))}
@@ -99,20 +108,20 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                     )}
  
                     {business.testimonial && (
-                        <div className="mb-10">
-                            <p className="font-body text-sm md:text-base italic opacity-90 leading-relaxed border-l-2 border-[#DFA878] pl-4 py-1">
+                        <div className="mb-6 md:mb-8">
+                            <p className="font-body text-xs md:text-sm italic opacity-90 leading-relaxed border-l-2 border-[#DFA878] pl-3 py-1">
                                 "{business.testimonial}"
                             </p>
                         </div>
                     )}
  
                     {business.services && business.services.length > 0 && (
-                        <div className="mb-10">
-                            <h4 className="font-display text-lg uppercase tracking-widest mb-4 opacity-60">Services</h4>
-                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+                        <div className="mb-6 md:mb-8">
+                            <h4 className="font-display text-xs md:text-sm uppercase tracking-widest mb-2 md:mb-3 opacity-60">Services</h4>
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                                 {business.services.map((srv, i) => (
-                                    <li key={i} className="font-body opacity-90 flex items-start gap-3 text-sm md:text-base group">
-                                        <span className="text-[#DFA878] mt-1 text-[10px] md:text-xs shrink-0 transition-transform group-hover:scale-110">◆</span>
+                                    <li key={i} className="font-body opacity-90 flex items-start gap-2 text-xs md:text-sm group">
+                                        <span className="text-[#DFA878] mt-0.5 text-[8px] shrink-0 transition-transform group-hover:scale-110">◆</span>
                                         <span className="flex-1 leading-snug line-clamp-2" title={srv}>{srv}</span>
                                     </li>
                                 ))}
@@ -121,23 +130,23 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                     )}
 
                     {(business.links?.website || business.links?.facebook || business.links?.instagram) && (
-                        <div className="mt-auto pt-8 border-t border-[#2C3628]/10">
-                            <h4 className="font-display text-xs uppercase tracking-widest mb-4 opacity-50">Connect</h4>
-                            <div className="flex flex-wrap items-center gap-4">
+                        <div className="mt-auto pt-4 border-t border-[#2C3628]/10">
+                            <h4 className="font-display text-[10px] uppercase tracking-widest mb-3 opacity-50">Connect</h4>
+                            <div className="flex flex-wrap items-center gap-3">
                                 {business.links.website && (
-                                    <a href={business.links.website.startsWith('http') ? business.links.website : `https://${business.links.website}`} target="_blank" rel="noreferrer" className="text-sm font-bold uppercase tracking-widest hover:text-[#DFA878] transition-colors flex items-center gap-3 w-fit bg-[#2C3628]/5 hover:bg-[#2C3628]/10 px-4 py-3 rounded-full">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                        View website in new tab
+                                    <a href={business.links.website.startsWith('http') ? business.links.website : `https://${business.links.website}`} target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest hover:text-[#DFA878] transition-colors flex items-center gap-2 w-fit bg-[#2C3628]/5 hover:bg-[#2C3628]/10 px-3 py-2 rounded-full">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                        Visit website
                                     </a>
                                 )}
                                 {business.links.facebook && (
-                                    <a href={business.links.facebook} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DFA878] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Facebook">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                    <a href={business.links.facebook} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DFA878] transition-colors p-2.5 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Facebook">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                                     </a>
                                 )}
                                 {business.links.instagram && (
-                                    <a href={business.links.instagram} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DFA878] transition-colors p-3 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Instagram">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    <a href={business.links.instagram} target="_blank" rel="noreferrer" className="text-[#2C3628] hover:text-[#DFA878] transition-colors p-2.5 bg-[#2C3628]/5 hover:bg-[#2C3628]/10 rounded-full" aria-label="Instagram">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                                     </a>
                                 )}
                             </div>

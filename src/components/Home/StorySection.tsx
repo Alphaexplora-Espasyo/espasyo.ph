@@ -56,8 +56,8 @@ const StorySection = ({
 
             {/* Panel 1: Intro */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${originStoryVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
-              <h2 className="font-display text-6xl lg:text-8xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#4B533E]">Our Story</h2>
-              <div className="max-w-3xl font-body text-xl opacity-80 leading-relaxed space-y-6 text-justify text-[#4B533E]">
+              <h2 className="font-display text-6xl lg:text-8xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">Our Story</h2>
+              <div className="max-w-3xl font-body text-xl opacity-80 leading-relaxed space-y-6 text-justify text-[#3A2618]">
                 <p>ESPASYO Coworking &amp; Office Space nurtures a dynamic community from a diverse array of businesses &amp; individuals across various sectors.</p>
                 <p>Established in 2018 by a group of educators, ESPASYO promotes engagement &amp; collaboration among like-minded professionals.</p>
                 <p className="font-bold text-[#B56A54]">Scroll to see our origin story.</p>
@@ -67,12 +67,12 @@ const StorySection = ({
             {/* Panel 2: Origin Story */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${originStoryVisible && !missionVisible ? 'opacity-100 translate-y-0' : originStoryVisible && missionVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
               <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">Origin Story</p>
-              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#4B533E]">How It All Started</h2>
-              <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#4B533E]">
+              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">How It All Started</h2>
+              <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#3A2618]">
                 <p>It began with a simple observation by our founder, <strong>Ms. Tina</strong>. She noticed that many talented freelancers and small business owners were isolated — working from noisy cafes or lonely bedrooms.</p>
                 <p>She didn't want to build just another office hub with cubicles. She envisioned a sanctuary — a place where creatives could collide, collaborate, and grow together.</p>
               </div>
-              <blockquote className="mt-8 italic text-2xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#4B533E]">
+              <blockquote className="mt-8 italic text-2xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#3A2618]">
                 "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
               </blockquote>
             </div>
@@ -80,11 +80,11 @@ const StorySection = ({
             {/* Panel 3: Mission */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
               <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">Mission</p>
-              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#4B533E]">OUR COLLECTIVE IMPACT</h2>
-              <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#4B533E]">
+              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">OUR COLLECTIVE IMPACT</h2>
+              <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#3A2618]">
                 <p>ESPASYO is committed to providing accessible, innovative, and professional workspace and virtual business solutions that support entrepreneurs, freelancers, and growing enterprises—through space, service, and a strong community network.</p>
               </div>
-              <blockquote className="mt-8 italic text-xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#4B533E]">
+              <blockquote className="mt-8 italic text-xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#3A2618]">
                 "A COMMUNITY OF ENTREPRENEURS EMPOWERED TO CONNECT, COLLABORATE AND SUCCEED."
               </blockquote>
             </div>
@@ -103,8 +103,8 @@ const StorySection = ({
 
             {/* MOBILE ONLY: INTRO TEXT (Before any polaroids) */}
             <div className="md:hidden w-full px-2 mb-4 text-center sm:text-left">
-              <h2 className="font-display text-5xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#4B533E]">Our Story</h2>
-              <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#4B533E]">
+              <h2 className="font-display text-5xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">Our Story</h2>
+              <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#3A2618]">
                 <p>ESPASYO Coworking &amp; Office Space nurtures a dynamic community from a diverse array of businesses &amp; individuals across various sectors.</p>
                 <p>Established in 2018 by a group of educators, ESPASYO promotes engagement &amp; collaboration among like-minded professionals.</p>
               </div>
@@ -135,12 +135,12 @@ const StorySection = ({
                   {isOriginStorySlot && (
                     <div className="md:hidden w-full px-2 my-4 text-center sm:text-left">
                       <p className="font-display text-sm uppercase tracking-widest mb-2 font-bold text-[#B56A54]">Origin Story</p>
-                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#4B533E]">How It All Started</h2>
-                      <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#4B533E]">
+                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">How It All Started</h2>
+                      <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#3A2618]">
                         <p>It began with a simple observation by our founder, <strong>Ms. Tina</strong>. She noticed that many talented freelancers and small business owners were isolated — working from noisy cafes or lonely bedrooms.</p>
                         <p>She didn't want to build just another office hub with cubicles. She envisioned a sanctuary — a place where creatives could collide, collaborate, and grow together.</p>
                       </div>
-                      <blockquote className="mt-6 italic text-lg leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#4B533E]">
+                      <blockquote className="mt-6 italic text-lg leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#3A2618]">
                         "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
                       </blockquote>
                     </div>
@@ -150,11 +150,11 @@ const StorySection = ({
                   {isMissionSlot && (
                     <div className="md:hidden w-full px-2 my-4 text-center sm:text-left">
                       <p className="font-display text-sm uppercase tracking-widest mb-2 font-bold text-[#B56A54]">Mission</p>
-                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#4B533E]">OUR COLLECTIVE IMPACT</h2>
-                      <div className="font-body text-base opacity-80 leading-relaxed text-[#4B533E]">
+                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">OUR COLLECTIVE IMPACT</h2>
+                      <div className="font-body text-base opacity-80 leading-relaxed text-[#3A2618]">
                         <p>ESPASYO is committed to providing accessible, innovative, and professional workspace and virtual business solutions that support entrepreneurs, freelancers, and growing enterprises—through space, service, and a strong community network.</p>
                       </div>
-                      <blockquote className="mt-6 italic text-base leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#4B533E]">
+                      <blockquote className="mt-6 italic text-base leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#3A2618]">
                         "A COMMUNITY OF ENTREPRENEURS EMPOWERED TO CONNECT, COLLABORATE AND SUCCEED."
                       </blockquote>
                     </div>
@@ -170,16 +170,16 @@ const StorySection = ({
                 onClick={handleViewAllClick}
                 className="w-full bg-[#FDF4DC] polaroid-shadow rounded-2xl py-6 sm:py-8 lg:py-10 flex flex-col items-center justify-center cursor-pointer group transition-transform duration-300 hover:scale-[1.02] mx-auto"
               >
-                <h3 className="font-display text-xl sm:text-3xl md:text-4xl uppercase tracking-widest mb-2 transition-colors text-[#4B533E] group-hover:text-[#B56A54] text-center">View All Testimonials</h3>
-                <div className="text-xl sm:text-2xl transition-transform duration-300 group-hover:translate-x-2 text-[#4B533E] group-hover:text-[#B56A54]">→</div>
+                <h3 className="font-display text-xl sm:text-3xl md:text-4xl uppercase tracking-widest mb-2 transition-colors text-[#3A2618] group-hover:text-[#B56A54] text-center">View All Testimonials</h3>
+                <div className="text-xl sm:text-2xl transition-transform duration-300 group-hover:translate-x-2 text-[#3A2618] group-hover:text-[#B56A54]">→</div>
               </div>
 
               <button
                 onClick={handleGalleryTransition}
                 className="w-full bg-[#FDF4DC] polaroid-shadow rounded-2xl py-6 sm:py-8 lg:py-10 flex flex-col items-center justify-center cursor-pointer group transition-transform duration-300 hover:scale-[1.02] mx-auto"
               >
-                <h3 className="font-display text-xl sm:text-3xl md:text-4xl uppercase tracking-widest mb-2 transition-colors text-[#4B533E] group-hover:text-[#B56A54] text-center">View The Gallery</h3>
-                <div className="text-xl sm:text-2xl transform transition-transform duration-300 group-hover:translate-x-2 text-[#4B533E] group-hover:text-[#B56A54]">→</div>
+                <h3 className="font-display text-xl sm:text-3xl md:text-4xl uppercase tracking-widest mb-2 transition-colors text-[#3A2618] group-hover:text-[#B56A54] text-center">View The Gallery</h3>
+                <div className="text-xl sm:text-2xl transform transition-transform duration-300 group-hover:translate-x-2 text-[#3A2618] group-hover:text-[#B56A54]">→</div>
               </button>
             </div>
           </div>

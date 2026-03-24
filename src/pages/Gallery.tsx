@@ -27,7 +27,8 @@ const Gallery = () => {
       {/* Animated Title */}
       <div className="fixed inset-0 z-[105] flex items-center justify-center pointer-events-none select-none">
         <div className="flex flex-col items-center gap-6">
-          <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
+          <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden transition-opacity duration-700 ease-in-out"
+               style={{ opacity: state.hasEverDragged ? 0 : 1 }}>
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
             
             <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"

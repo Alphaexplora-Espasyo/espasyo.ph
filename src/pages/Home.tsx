@@ -139,9 +139,10 @@ const Home = () => {
             {activeView !== 'hero' && (
                 <button 
                     onClick={() => setActiveView('hero')} 
-                    className={`fixed top-[92px] left-4 md:left-12 z-[150] px-5 py-2.5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all shadow-xl flex items-center gap-2 border-2 ${navTheme === 'brown' ? 'bg-[#2C3628] border-[#FDF4DC] text-[#FDF4DC] hover:bg-[#DFA878] hover:border-[#DFA878] hover:text-[#2C3628]' : 'bg-[#FDF4DC] border-[#2C3628] text-[#2C3628] hover:bg-[#2C3628] hover:text-[#FDF4DC]'}`}
+                    className={`fixed top-[92px] left-4 md:left-8 z-[150] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 ${navTheme === 'brown' ? 'bg-[#2C3628] text-[#FDF4DC] hover:bg-[#DFA878] hover:text-[#2C3628]' : 'bg-[#3A2618] text-[#FDF4DC] hover:bg-[#DFA878] hover:text-[#3A2618]'}`}
+                    title="Back to Hub"
                 >
-                    <span className="text-sm">←</span> Back to Hub
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 </button>
             )}
 

@@ -30,19 +30,17 @@ export const serviceCategories = [
     },
     {
         id: 'it',
-        title: 'I.T. Services',
+        title: 'Tech & Digital Solutions',
         provider: 'Alphaexplora Information Technology Services',
         providerLink: 'https://www.alphaexplora.com',
         bgText: 'TECHNOLOGY',
         image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Comprehensive digital solutions to power your business operations and scale your growth.",
         services: [
-            { title: "I.T. Consultancy", items: ["Business Process Analysis", "Systems Integration", "Enterprise Architecture", "I.T. Modernization"] },
-            { title: "Software Solutions", items: ["Web Development", "Solutions Integration", "Software as a Service", "Mobile Solutions", "Process Automation"] },
-            { title: "Data Analytics", items: ["Data Warehousing", "Business Intelligence", "Predictive Analytics", "Dashboard Design"] },
-            { title: "Managed Services", items: ["24/7 Monitoring", "Technical Support", "System Maintenance", "Performance Optimization"] },
-            { title: "AI Enablement", items: ["AI Strategy & Consulting", "Machine Learning Models", "Automation Solutions", "AI Integration"] },
-            { title: "Digital Marketing", items: ["SEO Optimization", "Social Media Marketing", "Content Strategy", "PPC Campaigns"] },
+            { title: "Tech Consulting", items: ["Process Improvement", "Custom System Solutions", "Digital Transformation", "Business Process Analysis"] },
+            { title: "Business Software", items: ["Website Development", "Custom Applications", "Workflow Automation", "E-commerce Solutions"] },
+            { title: "Digital Growth", items: ["Social Media Marketing", "Search Engine Optimization", "Data Insights", "Lead Generation"] },
+            { title: "Tech Support", items: ["24/7 IT Helpdesk", "System Maintenance", "Security Audits", "Managed Operations"] },
         ]
     },
     {

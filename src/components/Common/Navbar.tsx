@@ -17,7 +17,7 @@ const Navbar = ({ theme }: NavbarProps) => {
 
   // COLORS
   const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#4B533E]/20';
-  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#4B533E]';
+  const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]';
   const hoverTextClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#B56A54]';
 
   // --- MOBILE MENU STATE ---
@@ -70,7 +70,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
     { label: 'What We Do', dest: '#services', type: 'scroll' },
-    { label: 'Community', dest: '#testimonials', type: 'scroll' },
+    { label: 'Our Community', dest: '#testimonials', type: 'scroll' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
     { label: 'Contact Us', dest: '/contact', type: 'route' },
@@ -79,7 +79,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[110] h-[72px] flex justify-between items-center m-2 px-6 md:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
+        className={`fixed top-0 left-0 right-0 z-[130] h-[72px] flex justify-between items-center m-2 px-6 md:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
       >
         <Link
           to="/"
@@ -127,7 +127,7 @@ const Navbar = ({ theme }: NavbarProps) => {
       {/* MOBILE OVERLAY NAVIGATION */}
       {typeof document !== 'undefined' && createPortal(
         <div
-          className={`fixed inset-0 z-[100] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#4B533E]' : 'bg-[#FDF4DC]'} 
+          className={`fixed inset-0 z-[120] flex flex-col items-center justify-start p-6 pt-32 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${isDarkTheme ? 'bg-[#4B533E]' : 'bg-[#FDF4DC]'} 
           ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-[20px]'}`}
         >
           <div className="flex flex-col items-center gap-6 sm:gap-8 w-full overflow-y-auto no-scrollbar pb-8">

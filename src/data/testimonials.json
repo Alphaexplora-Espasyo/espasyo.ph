@@ -53,11 +53,16 @@
       "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
       "instagram": ""
     },
-    "testimonial": "Espasyo helped us maintain a professional presence while we focused on building digital solutions and supporting our clients' technology needs.",
+    "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
+<<<<<<< HEAD
       "image1": "public/assets/media1/alpha1.jpg",
       "image2": "public/assets/media2/alpha2.jpg",
+=======
+      "image1": "public/assets/logo/Alphaexplora.png",
+      "image2": "public/assets/media1/Media1_ALPHA.jpg",
+>>>>>>> main
       "image3": ""
     },
     "placeholderImage": "public/assets/logo/Alphaexplora.png"
@@ -963,6 +968,10 @@
       "image2": "",
       "image3": ""
     },
+<<<<<<< HEAD
     "placeholderImage": "/assets/logo/Logo.png"
+=======
+    "placeholderImage": "/LogoWhite.jpg"
+>>>>>>> main
   }
 ]

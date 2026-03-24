@@ -3,8 +3,21 @@ import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import { X, Instagram, Facebook, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Helper to resolve public paths
-const resolvePath = (p?: string): string => p ? p.replace(/^public\//, '/') : '';
+// IMPORTANT FIX: Auto-resolve LogoWhite.jpg to the public folder
+const resolvePath = (p?: string): string => {
+  if (!p) return '';
+  if (p.includes('LogoWhite.jpg')) return '/LogoWhite.jpg'; // Force to public folder
+  return p.replace(/^public\//, '/');
+};
+
+// Helper to force external links to have https://
+const formatUrl = (url?: string) => {
+  if (!url) return '#';
+  if (!url.startsWith('http://') && !url.startsWith('https://')) {
+    return `https://${url}`;
+  }
+  return url;
+};
 
 interface DetailModalProps {
   item: {
@@ -37,7 +50,6 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
   const detailsRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   
-  // Carousel State
   const [activeIndex, setActiveIndex] = useState(0);
   const [play, setPlay] = useState(false);
 
@@ -68,41 +80,21 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
     if (!mediaRef.current) return;
 
     const finalRect = mediaRef.current.getBoundingClientRect();
-
     const dx = originRect.left - finalRect.left;
     const dy = originRect.top - finalRect.top;
     const sx = originRect.width / finalRect.width;
     const sy = originRect.height / finalRect.height;
 
     const ctx = gsap.context(() => {
-      // Create a master timeline for the opening sequence
       const tl = gsap.timeline();
-      
-      tl.from(overlayRef.current, {
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      }, 0)
-      .from(mediaRef.current, {
-        x: dx,
-        y: dy,
-        scaleX: sx,
-        scaleY: sy,
-        duration: 0.8,
-        ease: "expo.out",
-      }, 0)
-      .from(detailsRef.current, {
-        opacity: 0,
-        x: 40,
-        duration: 0.6,
-        ease: "power3.out",
-      }, 0.2); // Details fade in slightly after media expansion starts
+      tl.from(overlayRef.current, { opacity: 0, duration: 0.8, ease: "power2.out" }, 0)
+        .from(mediaRef.current, { x: dx, y: dy, scaleX: sx, scaleY: sy, duration: 0.8, ease: "expo.out" }, 0)
+        .from(detailsRef.current, { opacity: 0, x: 40, duration: 0.6, ease: "power3.out" }, 0.2);
     });
 
     return () => ctx.revert();
   }, [originRect]);
 
-  // Handle closing animation
   const handleClose = () => {
     if (!mediaRef.current || !overlayRef.current || !detailsRef.current) {
       onClose();
@@ -116,30 +108,13 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
     const sy = originRect.height / finalRect.height;
 
     const tl = gsap.timeline({ onComplete: onClose });
-    
-    tl.to(detailsRef.current, {
-      opacity: 0,
-      x: 20,
-      duration: 0.4,
-      ease: "power2.in"
-    }, 0)
-    .to(mediaRef.current, {
-      x: dx,
-      y: dy,
-      scaleX: sx,
-      scaleY: sy,
-      duration: 0.6,
-      ease: "expo.inOut"
-    }, 0.1)
-    .to(overlayRef.current, {
-      opacity: 0,
-      duration: 0.6,
-      ease: "power2.in"
-    }, 0.2); // Fade overlay slightly after media starts shrinking
+    tl.to(detailsRef.current, { opacity: 0, x: 20, duration: 0.4, ease: "power2.in" }, 0)
+      .to(mediaRef.current, { x: dx, y: dy, scaleX: sx, scaleY: sy, duration: 0.6, ease: "expo.inOut" }, 0.1)
+      .to(overlayRef.current, { opacity: 0, duration: 0.6, ease: "power2.in" }, 0.2);
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4">
       {/* overlay */}
       <div
         ref={overlayRef}
@@ -147,25 +122,23 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
         onClick={(e) => { e.stopPropagation(); handleClose(); }}
       />
 
-      {/* modal */}
+      {/* MODAL CONTAINER */}
       <div
         ref={modalRef}
-        className="relative z-10 flex flex-col md:flex-row w-[92vw] max-w-6xl h-[78vh] rounded-2xl overflow-hidden bg-[#2b3327]/60 shadow-[0_40px_120px_rgba(0,0,0,0.6)]"
+        className="relative z-10 flex flex-col md:flex-row w-[95vw] max-w-[1200px] h-[90vh] max-h-[900px] rounded-2xl overflow-hidden bg-[#2b3327]/80 backdrop-blur-sm shadow-[0_40px_120px_rgba(0,0,0,0.6)]"
       >
-        {/* close */}
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 z-50 text-[#e6dfc8] hover:text-white transition"
+          className="absolute top-4 right-4 md:top-6 md:right-6 z-50 bg-black/40 hover:bg-black/80 text-[#e6dfc8] hover:text-white p-2 rounded-full backdrop-blur-sm transition border border-white/10"
         >
-          <X size={22} />
+          <X size={20} />
         </button>
 
-        {/* media (Carousel Container) */}
+        {/* MEDIA SECTION */}
         <div
           ref={mediaRef}
-          className="relative w-full h-[40%] md:w-[58%] md:h-full overflow-hidden bg-black shrink-0 flex flex-col"
+          className="relative w-full h-[40%] min-h-[200px] md:h-full md:w-[55%] shrink-0 overflow-hidden bg-black flex flex-col"
         >
-          {/* Active Media Display */}
           <div className="w-full h-full relative">
             {activeMedia.type === 'video' ? (
               <div className="w-full h-full">
@@ -175,6 +148,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                       src={resolvePath(item.placeholderImage || item.src)}
                       alt={item.businessName}
                       className="w-full h-full object-contain opacity-80"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/LogoWhite.jpg'; }}
                     />
                     <div 
                       className="absolute inset-0 flex items-center justify-center transition cursor-pointer hover:scale-105"
@@ -199,37 +173,25 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
               <img 
                 src={resolvePath(activeMedia.src)} 
                 alt={`${item.businessName} gallery`} 
-                className="w-full h-full object-contain" 
+                className="w-full h-full object-contain p-2"
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/LogoWhite.jpg'; }}
               />
             )}
           </div>
 
-          {/* Carousel Navigation Arrows */}
           {availableMedia.length > 1 && (
             <>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveIndex((prev) => (prev === 0 ? availableMedia.length - 1 : prev - 1));
-                  setPlay(false);
-                }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/10"
-                aria-label="Previous Media"
-              >
-                <ChevronLeft size={24} />
+              <button onClick={(e) => { e.stopPropagation(); setActiveIndex((prev) => (prev === 0 ? availableMedia.length - 1 : prev - 1)); setPlay(false); }} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/10">
+                <ChevronLeft size={20} />
               </button>
-              
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setActiveIndex((prev) => (prev === availableMedia.length - 1 ? 0 : prev + 1));
-                  setPlay(false);
-                }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/10"
-                aria-label="Next Media"
-              >
-                <ChevronRight size={24} />
+              <button onClick={(e) => { e.stopPropagation(); setActiveIndex((prev) => (prev === availableMedia.length - 1 ? 0 : prev + 1)); setPlay(false); }} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/80 text-white p-2 rounded-full backdrop-blur-sm transition-colors border border-white/10">
+                <ChevronRight size={20} />
               </button>
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                {availableMedia.map((_, idx) => (
+                  <button key={idx} onClick={() => { setActiveIndex(idx); setPlay(false); }} className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? "bg-[#d4a373] w-6" : "bg-white/50 hover:bg-white/80"}`} />
+                ))}
+              </div>
             </>
           )}
 
@@ -255,10 +217,10 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           )}
         </div>
 
-        {/* details */}
+        {/* DETAILS SECTION */}
         <div
           ref={detailsRef}
-          className="w-full h-[60%] md:w-[42%] md:h-full px-6 py-8 md:px-10 md:py-12 flex flex-col overflow-y-auto pointer-events-auto custom-scrollbar"
+          className="flex-1 min-h-0 md:w-[45%] flex flex-col px-5 py-5 md:px-8 md:py-8 overflow-y-auto custom-scrollbar pointer-events-auto"
         >
           <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#FDF4DC] mb-4 font-bold font-display opacity-80 shrink-0">
             About Our Client

@@ -10,14 +10,7 @@ const resolvePath = (p?: string): string => {
   return p.replace(/^public\//, '/');
 };
 
-// Helper to force external links to have https://
-const formatUrl = (url?: string) => {
-  if (!url) return '#';
-  if (!url.startsWith('http://') && !url.startsWith('https://')) {
-    return `https://${url}`;
-  }
-  return url;
-};
+
 
 interface DetailModalProps {
   item: {

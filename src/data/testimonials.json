@@ -3,9 +3,17 @@
     "id": 1,
     "isFounder": false,
     "businessName": "ABA Training Solutions",
-    "industry": ["Applied Behavior Analysis"],
-    "services": ["Trainings", "Seminars", "Mentorships"],
-    "categories": ["Education"],
+    "industry": [
+      "Applied Behavior Analysis"
+    ],
+    "services": [
+      "Trainings",
+      "Seminars",
+      "Mentorships"
+    ],
+    "categories": [
+      "Education"
+    ],
     "links": {
       "website": "https://abatsph.com/",
       "facebook": "https://www.facebook.com/ABATrainingSolutions",
@@ -24,9 +32,20 @@
     "id": 2,
     "isFounder": false,
     "businessName": "ACCRUA Insight Management Inc.",
-    "industry": ["Financial management", "Advisory support"],
-    "services": ["Financial Management", "FP&A & Financial Advisory", "Business Valuation Services", "Business Support Services"],
-    "categories": ["Consulting", "Financial Services"],
+    "industry": [
+      "Financial management",
+      "Advisory support"
+    ],
+    "services": [
+      "Financial Management",
+      "FP&A & Financial Advisory",
+      "Business Valuation Services",
+      "Business Support Services"
+    ],
+    "categories": [
+      "Consulting",
+      "Financial Services"
+    ],
     "links": {
       "website": "www.accruainsight.com",
       "facebook": "facebook.com/accrua",
@@ -45,9 +64,22 @@
     "id": 3,
     "isFounder": false,
     "businessName": "ALPHAEXPLORA Information Technology Services",
-    "industry": ["Digital Services", "IT Consultation", "Analytics and Service Management"],
-    "services": ["I.T. Consultancy", "Software Solutions", "Data Analytics", "Managed Services", "AI Enablement", "Digital Marketing"],
-    "categories": ["Information Technology"],
+    "industry": [
+      "Digital Services",
+      "IT Consultation",
+      "Analytics and Service Management"
+    ],
+    "services": [
+      "I.T. Consultancy",
+      "Software Solutions",
+      "Data Analytics",
+      "Managed Services",
+      "AI Enablement",
+      "Digital Marketing"
+    ],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "https://alphaexplora.com/",
       "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
@@ -66,9 +98,24 @@
     "id": 4,
     "isFounder": false,
     "businessName": "Astratech Business Innovations Inc.",
-    "industry": ["Digital Agency", "Business Service", "Custom Solutions", "I.T. Consultancy"],
-    "services": ["ERP", "HRIS/PAYROLL", "Enterprise Email Services", "Endpoint Protection Services", "Custom Business Solutions", "I.T. Consulting"],
-    "categories": ["Information Technology", "Consulting"],
+    "industry": [
+      "Digital Agency",
+      "Business Service",
+      "Custom Solutions",
+      "I.T. Consultancy"
+    ],
+    "services": [
+      "ERP",
+      "HRIS/PAYROLL",
+      "Enterprise Email Services",
+      "Endpoint Protection Services",
+      "Custom Business Solutions",
+      "I.T. Consulting"
+    ],
+    "categories": [
+      "Information Technology",
+      "Consulting"
+    ],
     "links": {
       "website": "https://astratech.com.ph/",
       "facebook": "",
@@ -87,9 +134,20 @@
     "id": 5,
     "isFounder": false,
     "businessName": "GLOBALBIM Engineering Services",
-    "industry": ["Engineering Services", "Steel Detailing"],
-    "services": ["Pre-Engineered Building Detailing", "Structural Steel Detailing", "Steel Design and Analysis", "BIM Consulting"],
-    "categories": ["Architecture & Construction", "Consulting"],
+    "industry": [
+      "Engineering Services",
+      "Steel Detailing"
+    ],
+    "services": [
+      "Pre-Engineered Building Detailing",
+      "Structural Steel Detailing",
+      "Steel Design and Analysis",
+      "BIM Consulting"
+    ],
+    "categories": [
+      "Architecture & Construction",
+      "Consulting"
+    ],
     "links": {
       "website": "https://globalbimph.vercel.app",
       "facebook": "",
@@ -108,9 +166,21 @@
     "id": 6,
     "isFounder": false,
     "businessName": "GMST, Inc.",
-    "industry": ["Educational", "Technology Solutions"],
-    "services": ["whiteStrings", "SkillSpark", "Custome Web Systems", "2D Metaverse", "Consulting"],
-    "categories": ["Information Technology", "Education"],
+    "industry": [
+      "Educational",
+      "Technology Solutions"
+    ],
+    "services": [
+      "whiteStrings",
+      "SkillSpark",
+      "Custome Web Systems",
+      "2D Metaverse",
+      "Consulting"
+    ],
+    "categories": [
+      "Information Technology",
+      "Education"
+    ],
     "links": {
       "website": "gmst.com.ph",
       "facebook": "",
@@ -129,9 +199,15 @@
     "id": 7,
     "isFounder": false,
     "businessName": "KREDDU Ventures Corporation",
-    "industry": ["Commercial"],
-    "services": ["Bags"],
-    "categories": ["Retail & General Trade"],
+    "industry": [
+      "Commercial"
+    ],
+    "services": [
+      "Bags"
+    ],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "www.shopee.ph/OurTown257",
       "facebook": "",
@@ -140,8 +216,8 @@
     "testimonial": "Espasyo provided the structure and support that helped us manage our operations efficiently as we explored new opportunities.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/kreddu1.png",
-      "image2": "public/assets/media2/kreddu2.png",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu1.webp",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.webp",
       "image3": ""
     },
     "placeholderImage": "/assets/logo/Logo.png"
@@ -150,9 +226,18 @@
     "id": 8,
     "isFounder": false,
     "businessName": "Ludo Launchpad Software Inc.",
-    "industry": ["Publisher"],
-    "services": ["Game Publisher", "Marketing", "Game Design"],
-    "categories": ["Information Technology", "Art & Design"],
+    "industry": [
+      "Publisher"
+    ],
+    "services": [
+      "Game Publisher",
+      "Marketing",
+      "Game Design"
+    ],
+    "categories": [
+      "Information Technology",
+      "Art & Design"
+    ],
     "links": {
       "website": "https://ludolaunchpad.com",
       "facebook": "",
@@ -171,9 +256,19 @@
     "id": 9,
     "isFounder": false,
     "businessName": "NM Development and Construction Corp.",
-    "industry": ["Design", "Construction"],
-    "services": ["Design", "Construction", "Consultancy"],
-    "categories": ["Architecture & Construction", "Consulting"],
+    "industry": [
+      "Design",
+      "Construction"
+    ],
+    "services": [
+      "Design",
+      "Construction",
+      "Consultancy"
+    ],
+    "categories": [
+      "Architecture & Construction",
+      "Consulting"
+    ],
     "links": {
       "website": "www.nmdc-corp.com",
       "facebook": "",
@@ -192,9 +287,14 @@
     "id": 10,
     "isFounder": false,
     "businessName": "NSC Trading ,OPC",
-    "industry": ["Healthcare"],
+    "industry": [
+      "Healthcare"
+    ],
     "services": [],
-    "categories": ["Healthcare", "Retail & General Trade"],
+    "categories": [
+      "Healthcare",
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/profile.php?id=61577580219245",
@@ -213,9 +313,16 @@
     "id": 11,
     "isFounder": false,
     "businessName": "OVERFLOW Creatives Art Studio Inc.",
-    "industry": ["Art"],
-    "services": ["Mixed Media Abstract", "Cubist Pop Art"],
-    "categories": ["Art & Design"],
+    "industry": [
+      "Art"
+    ],
+    "services": [
+      "Mixed Media Abstract",
+      "Cubist Pop Art"
+    ],
+    "categories": [
+      "Art & Design"
+    ],
     "links": {
       "website": "",
       "facebook": "https://Facebook.com/OverflowCreativesArt",
@@ -234,9 +341,15 @@
     "id": 12,
     "isFounder": false,
     "businessName": "S.T.E.P. Leadership and Management Consultancy",
-    "industry": ["Consulting"],
-    "services": ["Leadership and Management Consultancy"],
-    "categories": ["Consulting"],
+    "industry": [
+      "Consulting"
+    ],
+    "services": [
+      "Leadership and Management Consultancy"
+    ],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/stepleadership",
@@ -257,7 +370,9 @@
     "businessName": "A. Valentin Construction",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -278,7 +393,9 @@
     "businessName": "Ameribuild Company, OPC",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -299,7 +416,10 @@
     "businessName": "APrime Education Experts Technology and Solutions Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Education", "Consulting"],
+    "categories": [
+      "Education",
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -320,7 +440,9 @@
     "businessName": "Axis Point Management Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -341,7 +463,9 @@
     "businessName": "Azure Mobile Telecom, Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -362,7 +486,9 @@
     "businessName": "BCHS Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -383,7 +509,9 @@
     "businessName": "BORJAL-AMAHAN Tax and Accounting Services",
     "industry": [],
     "services": [],
-    "categories": ["Financial Services"],
+    "categories": [
+      "Financial Services"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -404,7 +532,9 @@
     "businessName": "Build Quotient AEC Management OPC",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -425,7 +555,9 @@
     "businessName": "CEECARE Medical Supplies Trading",
     "industry": [],
     "services": [],
-    "categories": ["Healthcare"],
+    "categories": [
+      "Healthcare"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -446,7 +578,9 @@
     "businessName": "ELENJ Consulting Company",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -467,7 +601,9 @@
     "businessName": "Eltech Information Technology Services",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -488,7 +624,10 @@
     "businessName": "Estrukutura Manila Interior Supplies Trading",
     "industry": [],
     "services": [],
-    "categories": ["Art & Design", "Retail & General Trade"],
+    "categories": [
+      "Art & Design",
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -509,7 +648,9 @@
     "businessName": "Everything Green PH Inc",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -530,7 +671,9 @@
     "businessName": "FASCONS Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -551,7 +694,9 @@
     "businessName": "FZA Advertizing Services",
     "industry": [],
     "services": [],
-    "categories": ["Marketing & Advertising"],
+    "categories": [
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -572,7 +717,9 @@
     "businessName": "GAMMS Property MGT. CORP.",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -593,7 +740,9 @@
     "businessName": "Green Pulse Technologies Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -614,7 +763,9 @@
     "businessName": "Highlands Construction Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -635,7 +786,9 @@
     "businessName": "JEXPRESS Tourist Transport Service Cooperative",
     "industry": [],
     "services": [],
-    "categories": ["Logistics & Transport"],
+    "categories": [
+      "Logistics & Transport"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -656,7 +809,9 @@
     "businessName": "JTV Enterprises Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -677,7 +832,9 @@
     "businessName": "K2C Civil Engineering Services",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -698,7 +855,9 @@
     "businessName": "KAIZEN Optima Facility & Property Management Services, Inc",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -719,7 +878,10 @@
     "businessName": "NV Graphic Design Studio",
     "industry": [],
     "services": [],
-    "categories": ["Art & Design", "Marketing & Advertising"],
+    "categories": [
+      "Art & Design",
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -740,7 +902,9 @@
     "businessName": "Primo Digital Marketing Services",
     "industry": [],
     "services": [],
-    "categories": ["Marketing & Advertising"],
+    "categories": [
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -761,7 +925,10 @@
     "businessName": "PYZEN Corp.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology", "Consulting"],
+    "categories": [
+      "Information Technology",
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -782,7 +949,9 @@
     "businessName": "Rockmetal Information Technology Services",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -803,7 +972,10 @@
     "businessName": "Sales Edge Professionals, OPC",
     "industry": [],
     "services": [],
-    "categories": ["Consulting", "Marketing & Advertising"],
+    "categories": [
+      "Consulting",
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -824,7 +996,10 @@
     "businessName": "Shantal's Beauty and Wellness Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Beauty", "Healthcare"],
+    "categories": [
+      "Beauty",
+      "Healthcare"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -845,7 +1020,9 @@
     "businessName": "SJB Ultimate Enterprises",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -866,7 +1043,9 @@
     "businessName": "STARGOLD Group Realty Inc",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -887,7 +1066,9 @@
     "businessName": "SUHAY StratEdge Management Consultancy Services",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -908,7 +1089,10 @@
     "businessName": "Verdan Terra Estate Incorporated",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property", "Architecture & Construction"],
+    "categories": [
+      "Real Estate & Property",
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -929,7 +1113,9 @@
     "businessName": "Wisdom Nourishment Learning Hub, Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Education"],
+    "categories": [
+      "Education"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -950,7 +1136,9 @@
     "businessName": "Gervacio Construction Services",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",

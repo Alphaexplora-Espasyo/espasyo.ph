@@ -19,17 +19,17 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
         {/* Subtle Divider at Top of Form (When embedded) */}
         {hideNavbar && (
           <div className="w-full flex justify-center mb-10 opacity-0 animate-[fade-in_1s_ease-out_forwards]">
-             <div className="w-16 h-[1px] bg-[#4B533E]/20" />
+            <div className="w-16 h-[1px] bg-[#4B533E]/20" />
           </div>
         )}
 
         <div className="w-full max-w-[1100px] bg-[#F2E8D5] rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(44,54,40,0.3)] flex flex-col lg:flex-row border border-[#4B533E]/10 relative z-10 transition-all">
-          
+
           {/* LEFT: CONTENT (Dark Green) */}
           <div ref={contentRef} className="lg:w-[45%] bg-[#3A4332] p-10 lg:p-14 text-[#FDF4DC] flex flex-col justify-between relative overflow-hidden">
             {/* Background Accent */}
             <div className="absolute top-0 left-0 w-full h-full bg-[#2C3628] opacity-50 z-0"></div>
-            
+
             <div className="relative z-10 space-y-10">
               <div className="space-y-1">
                 <h1 className="text-4xl sm:text-5xl font-display font-bold uppercase tracking-tighter text-[#DFA878]">
@@ -83,15 +83,15 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                   Follow On Facebook
                 </a>
-                
+
                 <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden shadow-lg relative group">
-                  <iframe 
-                    src="https://maps.google.com/maps?q=ESPASYO%20STUDY%20%26%20OFFICE%20HUB&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={true} 
-                    loading="lazy" 
+                  <iframe
+                    src="https://maps.google.com/maps?q=ESPASYO%20STUDY%20%26%20OFFICE%20HUB&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
                     className="grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Espasyo Study & Office Hub Location"
@@ -112,7 +112,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
               </p>
             </div>
 
-            <form 
+            <form
               ref={formRef}
               onSubmit={handleSubmit}
               className="space-y-8"
@@ -192,8 +192,8 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   disabled={isSubmitting || submitted}
                   type="submit"
                   className={`group w-full max-w-[280px] py-4 px-8 rounded-full flex items-center justify-center gap-3 transition-all duration-300 font-display text-sm uppercase tracking-widest shadow-md hover:shadow-lg
-                    ${submitted 
-                      ? 'bg-transparent border border-[#3A2618] text-[#3A2618]' 
+                    ${submitted
+                      ? 'bg-transparent border border-[#3A2618] text-[#3A2618]'
                       : 'bg-[#3A2618] text-[#DFA878] hover:bg-[#2A1A10] hover:scale-[1.02]'
                     }
                     ${isSubmitting ? 'opacity-70 pointer-events-none' : ''}

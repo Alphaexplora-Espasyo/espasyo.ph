@@ -1,6 +1,9 @@
 // src/constants/homeData.ts
 
 export const testimonialData = [
+    { id: 'pic1', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic1.jpg', caption: "Opening Doors to Infinite Possibilities.", rotate: "rotate-[-2deg]" },
+    { id: 'pic2', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic2.jpg', caption: "Laying the Foundation for Your Tomorrow.", rotate: "rotate-[1.5deg]" },
+    { id: 'pic3', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic3.jpg', caption: "Built for Community, Designed for Success.", rotate: "rotate-[-1deg]" },
     { id: 'founder', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/team.jpg', caption: "From IDEA to OPERATION, ESPASYO gives you the SPACE, SUPPORT, AND SYSTEM to SUCCEED.", rotate: "rotate-[-3deg]", isFounder: true },
     { id: 1, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/1.jpg', caption: "Where Ambition Meets Opportunity.", rotate: "rotate-[1.5deg]" },
     { id: 2, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-43-09-616.jpg', caption: "Empowering Entrepreneurs, Enabling Success.", rotate: "rotate-[-1deg]" },
@@ -19,7 +22,7 @@ export const serviceCategories = [
         title: 'CORE SERVICES',
         provider: 'Espasyo Coworking',
         bgText: 'WORKSPACE',
-        image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=800&q=80",
+        image: "https://res.cloudinary.com/dlk93aehl/image/upload/v1774457581/landing11.jpg",
         description: "LAUNCH, MANAGE AND GROW.",
         services: [
             {
@@ -61,7 +64,7 @@ export const serviceCategories = [
         title: 'CORE I.T. SERVICES',
         provider: 'Alphaexplora Information Technology Services',
         bgText: 'TECHNOLOGY',
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://res.cloudinary.com/dlk93aehl/image/upload/v1774457570/landing1.jpg",
         description: "Comprehensive digital solutions to power your business operations and scale your growth.",
         services: [
             {
@@ -87,7 +90,7 @@ export const serviceCategories = [
         title: 'CORE BUSINESS SERVICES',
         provider: 'BORJAL-AMAHAN Tax and Accounting Services',
         bgText: 'ACCOUNTING',
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+        image: "https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing9.jpg",
         description: "Expert financial management, compliance, and advisory tailored for businesses and freelancers.",
         services: [
             {

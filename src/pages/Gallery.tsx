@@ -159,6 +159,26 @@ const Gallery = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    const retry = Number(img.dataset.retry || 0);
+
+
+                    const options = ['.png', '.JPG', '.jpeg', '.webp'];
+
+                    if (retry < options.length) {
+
+                      img.src = img.src.replace(/\.(jpg|png|jpeg|webp|JPG)$/, options[retry]);
+                      img.dataset.retry = String(retry + 1);
+                    } else if (retry === options.length) {
+
+                      img.src = img.src.replace(/\/g(\d+)\.[a-zA-Z]+$/, '/G$1.jpg');
+                      img.dataset.retry = String(retry + 1);
+                    } else {
+
+                      img.src = 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774459535/g30.jpg';
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-[#3A2618]/60 group-hover:bg-[#3A2618]/10 transition-colors duration-300 pointer-events-none" />
               </div>

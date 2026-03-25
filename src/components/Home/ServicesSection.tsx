@@ -51,7 +51,6 @@ const ServicesSection = ({
   }, []);
 
   return (
-    // Pinalitan yung background to match Espasyo's Cream (#FEEBCA)
     <section className="w-full relative min-h-fit bg-[#FEEBCA] pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-12 transition-colors duration-1000">
 
       {/* STICKY GHOST TEXT LAYER */}
@@ -71,7 +70,6 @@ const ServicesSection = ({
         {/* TOP SECTION */}
         <div className="w-full flex flex-col items-center relative z-20 pb-12">
           <div className="w-full max-w-5xl text-center pt-4 md:pt-6">
-            {/* Pinalitan to ONE ROOF. ALL THE SOLUTIONS */}
             <h3 className="font-display text-4xl sm:text-5xl uppercase tracking-widest mb-12 text-[#908660]">ONE ROOF. ALL THE SOLUTIONS</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
               <div>
@@ -121,8 +119,12 @@ const ServicesSection = ({
                   >
                     <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                     {isCenter && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" style={{ opacity: isHovering ? 0.3 + (tilt.y / 20) : 0, transition: 'opacity 0.3s' }} />}
-                    <div className={`absolute inset-0 bg-gradient-to-t from-[#482216]/95 via-[#482216]/40 to-transparent flex items-end p-3 sm:p-4 md:p-6 transition-opacity duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>
-                      <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#FDF4DC] leading-tight">{service.title}</h3>
+
+                    {/* ETO YUNG FIX: Laging visible na yung text (opacity-80 kapag sa gilid, opacity-100 kapag sa gitna), at naka font-bold! */}
+                    <div className={`absolute inset-0 bg-gradient-to-t from-[#482216]/95 via-[#482216]/40 to-transparent flex items-end p-3 sm:p-4 md:p-6 transition-all duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-80'}`}>
+                      <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#FEEBCA] leading-tight font-bold drop-shadow-md">
+                        {service.title}
+                      </h3>
                     </div>
                   </div>
                 );
@@ -142,7 +144,7 @@ const ServicesSection = ({
               <button onClick={handleGalleryClick} className="px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2 border-2 border-[#482216] text-[#482216] rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#482216] hover:text-[#FEEBCA] transition-colors">Show All Gallery</button>
             </div>
 
-            {/* UPDATED: Detailed Services Container - Dark Brown Text on Light BG */}
+            {/* Detailed Services Container */}
             <div className="w-full max-w-5xl relative mt-8 bg-[#482216]/5 border border-[#482216]/10 backdrop-blur-md rounded-3xl overflow-hidden transition-all duration-500">
               {serviceCategories.map((service, index) => (
                 <div

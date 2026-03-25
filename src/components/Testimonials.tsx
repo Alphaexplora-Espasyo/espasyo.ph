@@ -11,12 +11,20 @@ import testimonialsData from '../data/testimonials.json';
 
 gsap.registerPlugin(Draggable);
 
-// --- IMAGE LOADING ---
-type GlobModule = { default: string;[key: string]: unknown; };
-const coworkingModules = import.meta.glob<GlobModule>('../assets/gallery/coworking/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const eventModules = import.meta.glob<GlobModule>('../assets/gallery/events/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const extractUrls = (modules: Record<string, GlobModule>) => Object.values(modules).map((mod) => mod.default);
-const loadedImages = [...extractUrls(coworkingModules), ...extractUrls(eventModules)];
+// --- CLOUDINARY HARDCODED IMAGES ---
+// Since local assets were deleted, import.meta.glob cannot scan files anymore.
+// Add all your Cloudinary image URLs into this array:
+const cloudinaryCoworkingUrls: string[] = [
+  "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453003/att.boEIijzqnkbNC3laxiXX9bYfo62R9H0OBArnupqFviY.jpg"
+  // ... Paste the rest of your coworking Cloudinary URLs here!
+];
+
+const cloudinaryEventUrls: string[] = [
+  "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453017/att.kZ3SEWXB5oQ4AShNyTHRv8PSpodbx9s0DPOG-hI_mRE.jpg"
+  // ... Paste the rest of your events Cloudinary URLs here!
+];
+
+const loadedImages = [...cloudinaryCoworkingUrls, ...cloudinaryEventUrls];
 const fallbackImages = [
   'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=500&q=60',
@@ -73,7 +81,7 @@ const isComplete = (t: typeof testimonialsData[0]): boolean =>
   Object.values(t.links ?? {}).some(v => Boolean(v)) && Boolean(t.testimonial);
 
 // 1. Check if a Founder exists first before assigning random images
-const founderData = testimonialsData.find(t => t.isFounder); 
+const founderData = testimonialsData.find(t => t.isFounder);
 
 const allClients = testimonialsData
   .filter(t => !t.isFounder)
@@ -122,11 +130,11 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
     resolvePath(clientData.media?.image1) ||
     LOGO;
 
-  return { 
-    ...clientData, 
+  return {
+    ...clientData,
     id: `${clientData.id}-${i}`, // 3. FIX FOR REACT DOM: Force unique IDs even for duplicate loop items
-    src: thumbnailSrc, 
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg') 
+    src: thumbnailSrc,
+    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg')
   } as TestimonialItem;
 });
 
@@ -319,7 +327,7 @@ const Testimonials = () => {
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
-            
+
             <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"
               style={{ textShadow: '4px 4px 15px rgba(0,0,0,0.6), 10px 5px 0px #2C3628', opacity: titleStep >= 1 ? 1 : 0, transform: titleStep >= 1 ? 'scale(1) translateY(0)' : 'scale(0.5) translateY(50px)', transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)' }}>
               CLIENT
@@ -356,7 +364,7 @@ const Testimonials = () => {
                 onClick={() => handleClick(item, i)}
               >
                 <div className="w-full h-full relative transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:rotate-[2deg] shadow-none group-hover:shadow-xl origin-center">
-                  
+
                   {/* Base Image */}
                   <img
                     src={item.src}
@@ -365,7 +373,7 @@ const Testimonials = () => {
                     loading="lazy"
                     decoding="async"
                   />
-                  
+
                   {/* TEXT ONLY PLACEHOLDER DESIGN */}
                   {item.isPlaceholder && (
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#2C3628] to-[#1a2018] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
@@ -380,7 +388,7 @@ const Testimonials = () => {
                   )}
 
                   <div className="absolute inset-0 bg-[#837B70] opacity-[0.38] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none rounded-sm" />
-                  
+
                   {/* Hover Info Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[2px]">
                     <div className="mb-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">

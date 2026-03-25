@@ -2,17 +2,17 @@ import { useState, useEffect, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/assets/landing/1.png',
-  '/assets/landing/2.png',
-  '/assets/landing/3.png',
-  '/assets/landing/4.png',
-  '/assets/landing/5.png',
-  '/assets/landing/6.png',
-  '/assets/landing/7.png',
-  '/assets/landing/8.png',
-  '/assets/landing/9.png',
-  '/assets/landing/10.png',
-  '/assets/landing/11.png'
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing1.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing2.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing3.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing4.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing5.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing6.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing7.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing8.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing9.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing10.jpg',
+  'https://res.cloudinary.com/dlk93aehl/image/upload/v1774457587/landing11.jpg'
 ];
 
 interface HeroProps {

@@ -20,7 +20,10 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
     const containerRef = useRef<HTMLDivElement>(null);
 
     const filteredBusinesses = useMemo(() => {
-        const data = testimonialsData as Business[];
+        const data = [...(testimonialsData as Business[])].sort((a, b) => 
+            a.businessName.localeCompare(b.businessName)
+        );
+        
         if (activeCategory === "All") return data;
         
         return data.filter(b => {
@@ -106,7 +109,7 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
                 <div className="w-full md:w-3/4 lg:w-4/5 flex flex-col">
                     
                     {mediaBusinesses.length > 0 && (
-                        <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-8 mb-20">
+                        <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 gap-y-6 md:gap-8 mb-20">
                             {mediaBusinesses.map((b) => (
                                 <MediaCard key={b.id} business={b} onClick={() => onBusinessClick?.(b)} />
                             ))}

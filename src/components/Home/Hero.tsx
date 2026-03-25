@@ -2,10 +2,17 @@ import { useState, useEffect, type RefObject } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/assets/landing/1.jpg',
-  '/assets/landing/2.jpg',
-  '/assets/landing/3.jpg',
-  '/assets/landing/4.jpg'
+  '/assets/landing/1.png',
+  '/assets/landing/2.png',
+  '/assets/landing/3.png',
+  '/assets/landing/4.png',
+  '/assets/landing/5.png',
+  '/assets/landing/6.png',
+  '/assets/landing/7.png',
+  '/assets/landing/8.png',
+  '/assets/landing/9.png',
+  '/assets/landing/10.png',
+  '/assets/landing/11.png'
 ];
 
 interface HeroProps {

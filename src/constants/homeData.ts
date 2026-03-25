@@ -32,7 +32,6 @@ export const serviceCategories = [
         id: 'it',
         title: 'Tech & Digital Solutions',
         provider: 'Alphaexplora Information Technology Services',
-        providerLink: 'https://www.alphaexplora.com',
         bgText: 'TECHNOLOGY',
         image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Comprehensive digital solutions to power your business operations and scale your growth.",

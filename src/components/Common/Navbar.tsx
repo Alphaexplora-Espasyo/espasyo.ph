@@ -69,7 +69,7 @@ const Navbar = ({ theme }: NavbarProps) => {
 
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
-    { label: 'What We Do', dest: '#services', type: 'scroll' },
+    { label: 'Our Services', dest: '#services', type: 'scroll' },
     { label: 'Our Community', dest: '#testimonials', type: 'scroll' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here

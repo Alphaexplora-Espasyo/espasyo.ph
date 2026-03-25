@@ -95,7 +95,7 @@ const ServicesSection = ({
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-8 sm:py-12 md:py-16 w-full">
           <div className="flex flex-col items-center w-full max-w-5xl">
             <div className="text-center mb-4 sm:mb-6 md:mb-8">
-              <p className="font-body text-xs sm:text-sm tracking-widest uppercase mb-2 text-[#F0EAD6]/60 font-medium">Our Expertise</p>
+              <p className="font-body text-xs sm:text-sm tracking-widest uppercase mb-2 text-[#DFA878] font-medium">Our Expertise</p>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none text-[#F0EAD6]">SERVICES</h2>
             </div>
 
@@ -160,23 +160,25 @@ const ServicesSection = ({
                         {service.description}
                       </p>
                     </div>
-                    <div className="text-left md:text-right shrink-0">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#DFA878] block mb-1 font-body">Serviced by our trusted community:</span>
-                      {service.providerLink ? (
-                        <a
-                          href={service.providerLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6] hover:text-[#DFA878] transition-colors underline decoration-white/20 hover:decoration-[#DFA878]/50 underline-offset-4 cursor-pointer"
-                        >
-                          {service.provider}
-                        </a>
-                      ) : (
-                        <span className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6]">
-                          {service.provider}
-                        </span>
-                      )}
-                    </div>
+                    {service.id !== 'workspace' && (
+                      <div className="text-left md:text-right shrink-0">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#DFA878] block mb-1 font-body">Serviced by our trusted community:</span>
+                        {service.providerLink ? (
+                          <a
+                            href={service.providerLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6] hover:text-[#DFA878] transition-colors underline decoration-white/20 hover:decoration-[#DFA878]/50 underline-offset-4 cursor-pointer"
+                          >
+                            {service.provider}
+                          </a>
+                        ) : (
+                          <span className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6]">
+                            {service.provider}
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
 
                   {/* Services Grid with Checkmarks and Nested Lists - Reverted to grid and removed box styling */}

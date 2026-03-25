@@ -16,7 +16,7 @@ const Navbar = ({ theme }: NavbarProps) => {
   const isDarkTheme = activeTheme === 'brown';
 
   // COLORS
-  const containerClasses = isDarkTheme ? 'bg-[#4B533E] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#4B533E]/20';
+  const containerClasses = isDarkTheme ? 'bg-[#482216] border-[#FDF4DC]' : 'bg-[#FDF4DC] border-[#4B533E]/20';
   const textClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#3A2618]';
   const hoverTextClasses = isDarkTheme ? 'text-[#FDF4DC]' : 'text-[#B56A54]';
 
@@ -69,7 +69,7 @@ const Navbar = ({ theme }: NavbarProps) => {
 
   const navLinks = [
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
-    { label: 'What We Do', dest: '#services', type: 'scroll' },
+    { label: 'Our Services', dest: '#services', type: 'scroll' },
     { label: 'Our Community', dest: '#testimonials', type: 'scroll' },
     { label: 'The Gallery', dest: '/gallery', type: 'route' },
     { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
@@ -94,7 +94,7 @@ const Navbar = ({ theme }: NavbarProps) => {
             }
           }}
         >
-          ESPASYO Community
+          ESPASYO COMMUNITY
         </Link>
 
         <div className="hidden md:flex gap-8 font-body text-sm font-bold uppercase tracking-widest">

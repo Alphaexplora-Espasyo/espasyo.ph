@@ -6,7 +6,7 @@ import { X, Instagram, Facebook, Play, ChevronLeft, ChevronRight } from "lucide-
 // IMPORTANT FIX: Auto-resolve LogoWhite.jpg to the public folder
 const resolvePath = (p?: string): string => {
   if (!p) return '';
-  if (p.includes('LogoWhite.jpg')) return '/LogoWhite.jpg'; // Force to public folder
+  if (p.includes('LogoWhite.jpg')) return 'https://res.cloudinary.com/dlk93aehl/image/upload/LogoWhite.jpg'; // Force to public folder
   return p.replace(/^public\//, '/');
 };
 
@@ -141,7 +141,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                       src={resolvePath(item.placeholderImage || item.src)}
                       alt={item.businessName}
                       className="w-full h-full object-contain opacity-80"
-                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/LogoWhite.jpg'; }}
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://res.cloudinary.com/dlk93aehl/image/upload/LogoWhite.jpg'; }}
                     />
                     <div 
                       className="absolute inset-0 flex items-center justify-center transition cursor-pointer hover:scale-105"
@@ -167,7 +167,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                 src={resolvePath(activeMedia.src)} 
                 alt={`${item.businessName} gallery`} 
                 className="w-full h-full object-contain p-2"
-                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/LogoWhite.jpg'; }}
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://res.cloudinary.com/dlk93aehl/image/upload/LogoWhite.jpg'; }}
               />
             )}
           </div>

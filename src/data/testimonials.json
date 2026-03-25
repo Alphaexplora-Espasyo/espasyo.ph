@@ -3,9 +3,17 @@
     "id": 1,
     "isFounder": false,
     "businessName": "ABA Training Solutions",
-    "industry": ["Applied Behavior Analysis"],
-    "services": ["Trainings", "Seminars", "Mentorships"],
-    "categories": ["Education"],
+    "industry": [
+      "Applied Behavior Analysis"
+    ],
+    "services": [
+      "Trainings",
+      "Seminars",
+      "Mentorships"
+    ],
+    "categories": [
+      "Education"
+    ],
     "links": {
       "website": "https://abatsph.com/",
       "facebook": "https://www.facebook.com/ABATrainingSolutions",
@@ -13,20 +21,31 @@
     },
     "testimonial": "Espasyo gave us the professional base we needed while we focused on delivering impactful training programs. Having reliable administrative support behind the scenes helped us stay focused on our mission.",
     "media": {
-      "video": "public/assets/video/Testimonial_ABA.mp4",
-      "image1": "public/assets/media1/Media1_ABA.jpg",
-      "image2": "public/assets/media2/Media2_ABA.png",
+      "video": "https://res.cloudinary.com/dlk93aehl/video/upload/v1774453312/Testimonial_ABA.mp4",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/Media1_ABA.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/Media2_ABA.png",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/ABA Training Solutions.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png"
   },
   {
     "id": 2,
     "isFounder": false,
     "businessName": "ACCRUA Insight Management Inc.",
-    "industry": ["Financial management", "Advisory support"],
-    "services": ["Financial Management", "FP&A & Financial Advisory", "Business Valuation Services", "Business Support Services"],
-    "categories": ["Consulting", "Financial Services"],
+    "industry": [
+      "Financial management",
+      "Advisory support"
+    ],
+    "services": [
+      "Financial Management",
+      "FP&A & Financial Advisory",
+      "Business Valuation Services",
+      "Business Support Services"
+    ],
+    "categories": [
+      "Consulting",
+      "Financial Services"
+    ],
     "links": {
       "website": "www.accruainsight.com",
       "facebook": "facebook.com/accrua",
@@ -39,15 +58,28 @@
       "image2": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/Accrua.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png"
   },
   {
     "id": 3,
     "isFounder": false,
     "businessName": "ALPHAEXPLORA Information Technology Services",
-    "industry": ["Digital Services", "IT Consultation", "Analytics and Service Management"],
-    "services": ["I.T. Consultancy", "Software Solutions", "Data Analytics", "Managed Services", "AI Enablement", "Digital Marketing"],
-    "categories": ["Information Technology"],
+    "industry": [
+      "Digital Services",
+      "IT Consultation",
+      "Analytics and Service Management"
+    ],
+    "services": [
+      "I.T. Consultancy",
+      "Software Solutions",
+      "Data Analytics",
+      "Managed Services",
+      "AI Enablement",
+      "Digital Marketing"
+    ],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "https://alphaexplora.com/",
       "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
@@ -56,19 +88,34 @@
     "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/alpha1.jpg",
-      "image2": "public/assets/media2/alpha2.jpg",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/Alphaexplora.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png"
   },
   {
     "id": 4,
     "isFounder": false,
     "businessName": "Astratech Business Innovations Inc.",
-    "industry": ["Digital Agency", "Business Service", "Custom Solutions", "I.T. Consultancy"],
-    "services": ["ERP", "HRIS/PAYROLL", "Enterprise Email Services", "Endpoint Protection Services", "Custom Business Solutions", "I.T. Consulting"],
-    "categories": ["Information Technology", "Consulting"],
+    "industry": [
+      "Digital Agency",
+      "Business Service",
+      "Custom Solutions",
+      "I.T. Consultancy"
+    ],
+    "services": [
+      "ERP",
+      "HRIS/PAYROLL",
+      "Enterprise Email Services",
+      "Endpoint Protection Services",
+      "Custom Business Solutions",
+      "I.T. Consulting"
+    ],
+    "categories": [
+      "Information Technology",
+      "Consulting"
+    ],
     "links": {
       "website": "https://astratech.com.ph/",
       "facebook": "",
@@ -81,15 +128,26 @@
       "image2": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZm9ybWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/AstraTech.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png"
   },
   {
     "id": 5,
     "isFounder": false,
     "businessName": "GLOBALBIM Engineering Services",
-    "industry": ["Engineering Services", "Steel Detailing"],
-    "services": ["Pre-Engineered Building Detailing", "Structural Steel Detailing", "Steel Design and Analysis", "BIM Consulting"],
-    "categories": ["Architecture & Construction", "Consulting"],
+    "industry": [
+      "Engineering Services",
+      "Steel Detailing"
+    ],
+    "services": [
+      "Pre-Engineered Building Detailing",
+      "Structural Steel Detailing",
+      "Steel Design and Analysis",
+      "BIM Consulting"
+    ],
+    "categories": [
+      "Architecture & Construction",
+      "Consulting"
+    ],
     "links": {
       "website": "https://globalbimph.vercel.app",
       "facebook": "",
@@ -98,19 +156,31 @@
     "testimonial": "Espasyo allowed us to concentrate on delivering precise engineering work while they supported the administrative side of running a business.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/gbim1.jpg",
-      "image2": "public/assets/media2/gbim2.jpg",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim2.jpg",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/GBIM.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png"
   },
   {
     "id": 6,
     "isFounder": false,
     "businessName": "GMST, Inc.",
-    "industry": ["Educational", "Technology Solutions"],
-    "services": ["whiteStrings", "SkillSpark", "Custome Web Systems", "2D Metaverse", "Consulting"],
-    "categories": ["Information Technology", "Education"],
+    "industry": [
+      "Educational",
+      "Technology Solutions"
+    ],
+    "services": [
+      "whiteStrings",
+      "SkillSpark",
+      "Custome Web Systems",
+      "2D Metaverse",
+      "Consulting"
+    ],
+    "categories": [
+      "Information Technology",
+      "Education"
+    ],
     "links": {
       "website": "gmst.com.ph",
       "facebook": "",
@@ -123,15 +193,21 @@
       "image2": "https://images.unsplash.com/photo-1771765780945-c788a6ce4b33?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaCUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/GMST.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png"
   },
   {
     "id": 7,
     "isFounder": false,
     "businessName": "KREDDU Ventures Corporation",
-    "industry": ["Commercial"],
-    "services": ["Bags"],
-    "categories": ["Retail & General Trade"],
+    "industry": [
+      "Commercial"
+    ],
+    "services": [
+      "Bags"
+    ],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "www.shopee.ph/OurTown257",
       "facebook": "",
@@ -140,19 +216,28 @@
     "testimonial": "Espasyo provided the structure and support that helped us manage our operations efficiently as we explored new opportunities.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/kreddu1.png",
-      "image2": "public/assets/media2/kreddu2.png",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu1.png",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.png",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 8,
     "isFounder": false,
     "businessName": "Ludo Launchpad Software Inc.",
-    "industry": ["Publisher"],
-    "services": ["Game Publisher", "Marketing", "Game Design"],
-    "categories": ["Information Technology", "Art & Design"],
+    "industry": [
+      "Publisher"
+    ],
+    "services": [
+      "Game Publisher",
+      "Marketing",
+      "Game Design"
+    ],
+    "categories": [
+      "Information Technology",
+      "Art & Design"
+    ],
     "links": {
       "website": "https://ludolaunchpad.com",
       "facebook": "",
@@ -165,15 +250,25 @@
       "image2": "https://images.unsplash.com/photo-1623934199716-dc28818a6ec7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZSUyMGRlc2lnbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/LudoLaunchPad.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png"
   },
   {
     "id": 9,
     "isFounder": false,
     "businessName": "NM Development and Construction Corp.",
-    "industry": ["Design", "Construction"],
-    "services": ["Design", "Construction", "Consultancy"],
-    "categories": ["Architecture & Construction", "Consulting"],
+    "industry": [
+      "Design",
+      "Construction"
+    ],
+    "services": [
+      "Design",
+      "Construction",
+      "Consultancy"
+    ],
+    "categories": [
+      "Architecture & Construction",
+      "Consulting"
+    ],
     "links": {
       "website": "www.nmdc-corp.com",
       "facebook": "",
@@ -186,15 +281,20 @@
       "image2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/NMDC.jpg"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg"
   },
   {
     "id": 10,
     "isFounder": false,
     "businessName": "NSC Trading ,OPC",
-    "industry": ["Healthcare"],
+    "industry": [
+      "Healthcare"
+    ],
     "services": [],
-    "categories": ["Healthcare", "Retail & General Trade"],
+    "categories": [
+      "Healthcare",
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/profile.php?id=61577580219245",
@@ -207,15 +307,22 @@
       "image2": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/NSC.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png"
   },
   {
     "id": 11,
     "isFounder": false,
     "businessName": "OVERFLOW Creatives Art Studio Inc.",
-    "industry": ["Art"],
-    "services": ["Mixed Media Abstract", "Cubist Pop Art"],
-    "categories": ["Art & Design"],
+    "industry": [
+      "Art"
+    ],
+    "services": [
+      "Mixed Media Abstract",
+      "Cubist Pop Art"
+    ],
+    "categories": [
+      "Art & Design"
+    ],
     "links": {
       "website": "",
       "facebook": "https://Facebook.com/OverflowCreativesArt",
@@ -224,19 +331,25 @@
     "testimonial": "Espasyo provided a dependable operational foundation that allowed our creative team to focus on producing meaningful work.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/overflow1.jpg",
-      "image2": "public/assets/media2/overflow2.jpg",
-      "image3": "public/assets/media3/overflow3.jpg"
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow2.jpg",
+      "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow3.jpg"
     },
-    "placeholderImage": "public/assets/logo/Overflow.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png"
   },
   {
     "id": 12,
     "isFounder": false,
     "businessName": "S.T.E.P. Leadership and Management Consultancy",
-    "industry": ["Consulting"],
-    "services": ["Leadership and Management Consultancy"],
-    "categories": ["Consulting"],
+    "industry": [
+      "Consulting"
+    ],
+    "services": [
+      "Leadership and Management Consultancy"
+    ],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/stepleadership",
@@ -245,11 +358,11 @@
     "testimonial": "Espasyo helped streamline the operational side of our consultancy so we could focus on guiding organizations and leaders.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/step1.jpg",
-      "image2": "public/assets/media2/step2.jpg",
-      "image3": "public/assets/media3/step3.jpg"
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/step1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/step2.jpg",
+      "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/step3.jpg"
     },
-    "placeholderImage": "public/assets/logo/STEP.jpg"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg"
   },
   {
     "id": 13,
@@ -257,7 +370,9 @@
     "businessName": "A. Valentin Construction",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -270,7 +385,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 14,
@@ -278,7 +393,9 @@
     "businessName": "Ameribuild Company, OPC",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -291,7 +408,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 15,
@@ -299,7 +416,10 @@
     "businessName": "APrime Education Experts Technology and Solutions Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Education", "Consulting"],
+    "categories": [
+      "Education",
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -312,7 +432,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 16,
@@ -320,7 +440,9 @@
     "businessName": "Axis Point Management Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -333,7 +455,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 17,
@@ -341,7 +463,9 @@
     "businessName": "Azure Mobile Telecom, Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -354,7 +478,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 18,
@@ -362,7 +486,9 @@
     "businessName": "BCHS Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Beauty & Wellness"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -375,7 +501,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 19,
@@ -383,7 +509,9 @@
     "businessName": "BORJAL-AMAHAN Tax and Accounting Services",
     "industry": [],
     "services": [],
-    "categories": ["Financial Services"],
+    "categories": [
+      "Financial Services"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -396,7 +524,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 20,
@@ -404,7 +532,9 @@
     "businessName": "Build Quotient AEC Management OPC",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -417,7 +547,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 21,
@@ -425,10 +555,12 @@
     "businessName": "CEECARE Medical Supplies Trading",
     "industry": [],
     "services": [],
-    "categories": ["Healthcare"],
+    "categories": [
+      "Healthcare"
+    ],
     "links": {
       "website": "",
-      "facebook": "",
+      "facebook": "https://www.facebook.com/share/1AgFquQnoh/?mibextid=wwXIfr",
       "instagram": ""
     },
     "testimonial": "",
@@ -438,7 +570,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 22,
@@ -446,7 +578,9 @@
     "businessName": "ELENJ Consulting Company",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -459,7 +593,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 23,
@@ -467,7 +601,9 @@
     "businessName": "Eltech Information Technology Services",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -480,7 +616,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 24,
@@ -488,7 +624,10 @@
     "businessName": "Estrukutura Manila Interior Supplies Trading",
     "industry": [],
     "services": [],
-    "categories": ["Art & Design", "Retail & General Trade"],
+    "categories": [
+      "Art & Design",
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -501,7 +640,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 25,
@@ -509,7 +648,9 @@
     "businessName": "Everything Green PH Inc",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -522,7 +663,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 26,
@@ -530,7 +671,9 @@
     "businessName": "FASCONS Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -543,7 +686,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 27,
@@ -551,7 +694,9 @@
     "businessName": "FZA Advertizing Services",
     "industry": [],
     "services": [],
-    "categories": ["Marketing & Advertising"],
+    "categories": [
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -564,7 +709,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 28,
@@ -572,7 +717,9 @@
     "businessName": "GAMMS Property MGT. CORP.",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -585,7 +732,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 29,
@@ -593,7 +740,9 @@
     "businessName": "Green Pulse Technologies Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -606,7 +755,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 30,
@@ -614,7 +763,9 @@
     "businessName": "Highlands Construction Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -627,7 +778,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 31,
@@ -635,7 +786,9 @@
     "businessName": "JEXPRESS Tourist Transport Service Cooperative",
     "industry": [],
     "services": [],
-    "categories": ["Logistics & Transport"],
+    "categories": [
+      "Logistics & Transport"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -648,7 +801,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 32,
@@ -656,7 +809,9 @@
     "businessName": "JTV Enterprises Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -669,7 +824,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 33,
@@ -677,7 +832,9 @@
     "businessName": "K2C Civil Engineering Services",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -690,7 +847,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 34,
@@ -698,7 +855,9 @@
     "businessName": "KAIZEN Optima Facility & Property Management Services, Inc",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -711,7 +870,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 35,
@@ -719,7 +878,10 @@
     "businessName": "NV Graphic Design Studio",
     "industry": [],
     "services": [],
-    "categories": ["Art & Design", "Marketing & Advertising"],
+    "categories": [
+      "Art & Design",
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -732,7 +894,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 36,
@@ -740,7 +902,9 @@
     "businessName": "Primo Digital Marketing Services",
     "industry": [],
     "services": [],
-    "categories": ["Marketing & Advertising"],
+    "categories": [
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -753,7 +917,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 37,
@@ -761,7 +925,10 @@
     "businessName": "PYZEN Corp.",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology", "Consulting"],
+    "categories": [
+      "Information Technology",
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -774,7 +941,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 38,
@@ -782,7 +949,9 @@
     "businessName": "Rockmetal Information Technology Services",
     "industry": [],
     "services": [],
-    "categories": ["Information Technology"],
+    "categories": [
+      "Information Technology"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -795,7 +964,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 39,
@@ -803,7 +972,10 @@
     "businessName": "Sales Edge Professionals, OPC",
     "industry": [],
     "services": [],
-    "categories": ["Consulting", "Marketing & Advertising"],
+    "categories": [
+      "Consulting",
+      "Marketing & Advertising"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -816,7 +988,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 40,
@@ -824,7 +996,9 @@
     "businessName": "Shantal's Beauty and Wellness Corporation",
     "industry": [],
     "services": [],
-    "categories": ["Beauty", "Healthcare"],
+    "categories": [
+      "Beauty & Wellness"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -837,7 +1011,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 41,
@@ -845,7 +1019,9 @@
     "businessName": "SJB Ultimate Enterprises",
     "industry": [],
     "services": [],
-    "categories": ["Retail & General Trade"],
+    "categories": [
+      "Retail & General Trade"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -858,7 +1034,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 42,
@@ -866,7 +1042,9 @@
     "businessName": "STARGOLD Group Realty Inc",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property"],
+    "categories": [
+      "Real Estate & Property"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -879,7 +1057,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 43,
@@ -887,7 +1065,9 @@
     "businessName": "SUHAY StratEdge Management Consultancy Services",
     "industry": [],
     "services": [],
-    "categories": ["Consulting"],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -900,7 +1080,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 44,
@@ -908,7 +1088,10 @@
     "businessName": "Verdan Terra Estate Incorporated",
     "industry": [],
     "services": [],
-    "categories": ["Real Estate & Property", "Architecture & Construction"],
+    "categories": [
+      "Real Estate & Property",
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -921,7 +1104,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 45,
@@ -929,7 +1112,9 @@
     "businessName": "Wisdom Nourishment Learning Hub, Inc.",
     "industry": [],
     "services": [],
-    "categories": ["Education"],
+    "categories": [
+      "Education"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -942,7 +1127,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 46,
@@ -950,7 +1135,9 @@
     "businessName": "Gervacio Construction Services",
     "industry": [],
     "services": [],
-    "categories": ["Architecture & Construction"],
+    "categories": [
+      "Architecture & Construction"
+    ],
     "links": {
       "website": "",
       "facebook": "",

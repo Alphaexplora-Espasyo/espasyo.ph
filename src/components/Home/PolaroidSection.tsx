@@ -11,7 +11,7 @@ const PolaroidSection: React.FC = () => {
   // 2. Dummy data
   const items: PolaroidItem[] = [
     { id: 1, text: "Date Night", color: "#FFD700" },
-    { id: 2, text: "Beach Trip", color: "#FF6347" }, 
+    { id: 2, text: "Beach Trip", color: "#FF6347" },
     { id: 3, text: "Anniversary", color: "#87CEEB" },
     { id: 4, text: "Hiking", color: "#90EE90" },
     { id: 5, text: "Christmas", color: "#FF69B4" },
@@ -20,22 +20,22 @@ const PolaroidSection: React.FC = () => {
   return (
     // CONTAINER: Stacks vertically on mobile (flex-col), side-by-side on desktop (md:flex-row)
     <div className="w-full min-h-screen flex flex-col md:flex-row bg-[#3A2618]">
-      
+
       {/* RIGHT PANEL (Text) */}
       <div className="w-full md:w-1/2 order-1 md:order-2 flex flex-col justify-center p-8 md:p-20 text-[#FDF4DC] md:h-screen md:sticky md:top-0 bg-[#3A2618] z-10">
         <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter mb-6 text-[#DDA79A]">
           Our Journey
         </h2>
         <div className="font-body text-lg md:text-xl leading-relaxed opacity-90 space-y-6">
-            <p>
-              This text stays fixed on the right side.
-              You can scroll through the memories on the left,
-              but this description remains right here.
-            </p>
-            <p>
-              It creates a nice storytelling experience where the context
-              is always visible.
-            </p>
+          <p>
+            This text stays fixed on the right side.
+            You can scroll through the memories on the left,
+            but this description remains right here.
+          </p>
+          <p>
+            It creates a nice storytelling experience where the context
+            is always visible.
+          </p>
         </div>
       </div>
 
@@ -43,8 +43,8 @@ const PolaroidSection: React.FC = () => {
       <div className="w-full md:w-1/2 order-2 md:order-1 flex flex-col items-center gap-12 py-12 md:py-24 bg-[#FDF4DC]/5">
         {items.map((item, index) => (
           // POLAROID CARD STYLE
-          <div 
-            key={item.id} 
+          <div
+            key={item.id}
             // RESPONSIVE FIX:
             // 1. w-[90%] -> On mobile, take up 90% of screen width (fixes "too small" issue)
             // 2. max-w-md -> Stops it from getting too big on tablets
@@ -56,13 +56,13 @@ const PolaroidSection: React.FC = () => {
             `}
           >
             {/* Photo Placeholder */}
-            <div 
+            <div
               className="w-full aspect-[4/5] mb-4 bg-gray-200 shadow-inner"
-              style={{ backgroundColor: item.color }} 
+              style={{ backgroundColor: item.color }}
             />
             {/* Caption */}
             <p className="font-display text-center text-[#3A2618] text-2xl md:text-xl uppercase tracking-widest leading-none mt-2">
-                {item.text}
+              {item.text}
             </p>
           </div>
         ))}

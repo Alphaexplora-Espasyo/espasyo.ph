@@ -94,7 +94,7 @@ const Navbar = ({ theme }: NavbarProps) => {
             }
           }}
         >
-          COMMUNITY OF ENTREPENEURS
+          ESPASYO Community
         </Link>
 
         <div className="hidden md:flex gap-8 font-body text-sm font-bold uppercase tracking-widest">

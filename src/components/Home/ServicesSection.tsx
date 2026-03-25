@@ -56,10 +56,10 @@ const ServicesSection = ({
       <div
         className="sticky top-0 h-screen w-full flex items-center justify-center pointer-events-none z-0 overflow-hidden"
       >
-        <h1 
+        <h1
           key={activeService.bgText}
           className="font-display text-[18vw] leading-none uppercase tracking-tighter text-[#F0EAD6] opacity-[0.035] whitespace-nowrap lg:whitespace-normal text-center px-4 will-change-transform"
-          style={{ 
+          style={{
             transform: `translateY(${(scrollY * 0.1) - 100}px)`,
           }}
         >
@@ -69,7 +69,7 @@ const ServicesSection = ({
 
       {/* FOREGROUND CONTENT: Floats over the centered background */}
       <div ref={servicesContentRef} className="w-full relative z-10 flex flex-col mt-[-100vh] pt-8 sm:pt-12 md:pt-16">
-        
+
         {/* NEW: Why Espasyo at the TOP - Masked to hide background text */}
         <div className="w-full flex flex-col items-center bg-[#2C3628] relative z-20 pb-12">
           <div className="w-full max-w-5xl text-center pt-4 md:pt-6">
@@ -89,7 +89,7 @@ const ServicesSection = ({
               </div>
             </div>
           </div>
-          
+
         </div>
 
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-8 sm:py-12 md:py-16 w-full">
@@ -147,8 +147,8 @@ const ServicesSection = ({
             {/* UPDATED: Milk Glass Detailed Services Container - Height now flexible to content */}
             <div className="w-full max-w-5xl relative mt-8 bg-white/5 border border-white/10 backdrop-blur-md rounded-3xl overflow-hidden transition-all duration-500">
               {serviceCategories.map((service, index) => (
-                <div 
-                  key={service.id} 
+                <div
+                  key={service.id}
                   className={`w-full p-6 sm:p-8 md:p-10 transition-all duration-500 ease-in-out ${index === currentIndex ? 'relative opacity-100 z-10' : 'absolute top-0 left-0 opacity-0 z-0 pointer-events-none'}`}
                 >
                   <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-6 md:pb-8 mb-6 md:mb-8 gap-4">
@@ -161,18 +161,18 @@ const ServicesSection = ({
                       </p>
                     </div>
                     <div className="text-left md:text-right shrink-0">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#DFA878] block mb-1 font-body">Provided by</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#DFA878] block mb-1 font-body">Serviced by our trusted community:</span>
                       {service.providerLink ? (
                         <a
                           href={service.providerLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#F0EAD6] hover:text-[#DFA878] transition-colors underline decoration-white/20 hover:decoration-[#DFA878]/50 underline-offset-4 cursor-pointer"
+                          className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6] hover:text-[#DFA878] transition-colors underline decoration-white/20 hover:decoration-[#DFA878]/50 underline-offset-4 cursor-pointer"
                         >
                           {service.provider}
                         </a>
                       ) : (
-                        <span className="font-display text-base sm:text-lg md:text-xl uppercase tracking-wider text-[#F0EAD6]">
+                        <span className="font-display text-sm md:text-base uppercase tracking-wider text-[#F0EAD6]">
                           {service.provider}
                         </span>
                       )}

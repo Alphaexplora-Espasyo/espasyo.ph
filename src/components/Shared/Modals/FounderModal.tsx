@@ -142,7 +142,7 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
           ) : (
             <iframe
               // Replace this URL with Ms. Tina's actual video URL
-              src="https://www.youtube.com/embed/IlPRb2q5VSA?autoplay=1&mute=0" 
+              src="https://www.youtube.com/embed/IlPRb2q5VSA?autoplay=1&mute=0&playsinline=1" 
               title="Founder Story Video"
               className="w-full h-full border-none"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

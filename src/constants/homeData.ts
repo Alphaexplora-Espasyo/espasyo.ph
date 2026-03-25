@@ -1,15 +1,18 @@
 // src/constants/homeData.ts
 
 export const testimonialData = [
-    { id: 'founder', src: '/assets/polaroids/team.jpg', caption: "From IDEA to OPERATION, ESPASYO gives you the SPACE, SUPPORT, AND SYSTEM to SUCCEED.", rotate: "rotate-[-3deg]", isFounder: true },
-    { id: 1, src: '/assets/polaroids/1.jpg', caption: "Where Ambition Meets Opportunity.", rotate: "rotate-[1.5deg]" },
-    { id: 2, src: '/assets/polaroids/viber_image_2026-03-16_19-43-09-616.jpg', caption: "Empowering Entrepreneurs, Enabling Success.", rotate: "rotate-[-1deg]" },
-    { id: 3, src: '/assets/polaroids/viber_image_2026-03-16_19-44-21-936.jpg', caption: "Turning Vision into Enterprise.", rotate: "rotate-[2deg]" },
-    { id: 4, src: '/assets/polaroids/viber_image_2026-03-16_19-44-24-162.jpg', caption: "A HUB for Innovation, Collaboration and Success", rotate: "rotate-[-1.5deg]" },
-    { id: 5, src: '/assets/polaroids/viber_image_2026-03-16_19-44-24-631.jpg', caption: "From Home to CEO, we’ve got your SPACE.", rotate: "rotate-[1deg]" },
-    { id: 6, src: '/assets/polaroids/viber_image_2026-03-16_19-44-28-832.jpg', caption: "Empowering Business with Space, Solutions and Support.", rotate: "rotate-[-2deg]" },
-    { id: 8, src: '/assets/polaroids/viber_image_2026-03-16_19-44-29-257.jpg', caption: "Espasyo is a Space for DREAMERS, DOERS and ACHIEVERS. ", rotate: "rotate-[1.5deg]" },
-    { id: 9, src: '/assets/polaroids/viber_image_2026-03-16_19-44-29-668.jpg', caption: "ESPASYO— Where Business Grow Together!", rotate: "rotate-[-1deg]" },
+    { id: 'pic1', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic1.jpg', caption: "Opening Doors to Infinite Possibilities.", rotate: "rotate-[-2deg]" },
+    { id: 'pic2', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic2.jpg', caption: "Laying the Foundation for Your Tomorrow.", rotate: "rotate-[1.5deg]" },
+    { id: 'pic3', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic3.jpg', caption: "Built for Community, Designed for Success.", rotate: "rotate-[-1deg]" },
+    { id: 'founder', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/team.jpg', caption: "From IDEA to OPERATION, ESPASYO gives you the SPACE, SUPPORT, AND SYSTEM to SUCCEED.", rotate: "rotate-[-3deg]", isFounder: true },
+    { id: 1, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/1.jpg', caption: "Where Ambition Meets Opportunity.", rotate: "rotate-[1.5deg]" },
+    { id: 2, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-43-09-616.jpg', caption: "Empowering Entrepreneurs, Enabling Success.", rotate: "rotate-[-1deg]" },
+    { id: 3, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-21-936.jpg', caption: "Turning Vision into Enterprise.", rotate: "rotate-[2deg]" },
+    { id: 4, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-24-162.jpg', caption: "A HUB for Innovation, Collaboration, and Success.", rotate: "rotate-[-1.5deg]" },
+    { id: 5, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-24-631.jpg', caption: "From Home to CEO, we’ve got your SPACE.", rotate: "rotate-[1deg]" },
+    { id: 6, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-28-832.jpg', caption: "Empowering Business with Space, Solutions, and Support.", rotate: "rotate-[-2deg]" },
+    { id: 8, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-29-257.jpg', caption: "Espasyo is a Space for DREAMERS, DOERS, and ACHIEVERS. ", rotate: "rotate-[1.5deg]" },
+    { id: 9, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/viber_image_2026-03-16_19-44-29-668.jpg', caption: "ESPASYO— Where Business Grow Together!", rotate: "rotate-[-1deg]" },
     { id: 'viewall', src: null, caption: "VIEW ALL TESTIMONIALS", rotate: "rotate-0", isViewAll: true },
 ];
 
@@ -37,15 +40,27 @@ export const serviceCategories = [
         image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description: "Comprehensive digital solutions to power your business operations and scale your growth.",
         services: [
-            { title: "Tech Consulting", items: ["Process Improvement", "Custom System Solutions", "Digital Transformation", "Business Process Analysis"] },
-            { title: "Business Software", items: ["Website Development", "Custom Applications", "Workflow Automation", "E-commerce Solutions"] },
-            { title: "Digital Growth", items: ["Social Media Marketing", "Search Engine Optimization", "Data Insights", "Lead Generation"] },
-            { title: "Tech Support", items: ["24/7 IT Helpdesk", "System Maintenance", "Security Audits", "Managed Operations"] },
+            {
+                title: "Digital Foundation",
+                items: ["Website Development", "E-commerce Solutions", "Custom Applications", "Search Engine Optimization"]
+            },
+            {
+                title: "Traction & Growth",
+                items: ["Social Media Marketing", "Lead Generation", "Data Insights", "Digital Transformation"]
+            },
+            {
+                title: "Lean Operations",
+                items: ["Workflow Automation", "Process Improvement", "Custom System Solutions", "Business Process Analysis"]
+            },
+            {
+                title: "Managed Reliability",
+                items: ["Managed Operations", "System Maintenance", "24/7 IT Helpdesk", "Security Audits"]
+            }
         ]
     },
     {
         id: 'accounting',
-        title: 'Accounting & Tax Arm',
+        title: 'Accounting & Tax',
         provider: 'BORJAL-AMAHAN Tax and Accounting Services',
         bgText: 'ACCOUNTING',
         image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",

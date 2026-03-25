@@ -9,12 +9,12 @@ const images = [
 ];
 
 interface HeroProps {
-  heroTextRef1: RefObject<HTMLHeadingElement | null>;
+  heroTextRef1?: RefObject<HTMLHeadingElement | null>;
   introFinished: boolean;
   onNavigate: (direction: 'left' | 'right') => void;
 }
 
-const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
+const Hero = ({ introFinished, onNavigate }: HeroProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

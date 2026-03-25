@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'stiff-black': '#14110F',
-        'stiff-gray': '#34312D', 
+        'stiff-gray': '#34312D',
         'stiff-white': '#F3F3F4',
         'stiff-accent': '#6300FF',
       },

@@ -16,21 +16,49 @@ export const testimonialData = [
 export const serviceCategories = [
     {
         id: 'workspace',
-        title: 'Physical & Virtual Space',
+        title: 'CORE SERVICES',
         provider: 'Espasyo Coworking',
         bgText: 'WORKSPACE',
         image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=800&q=80",
-        description: "Flexible, inspiring environments designed for focus, collaboration, and finding your tribe.",
+        description: "LAUNCH, MANAGE AND GROW.",
         services: [
-            { title: "Coworking Desks", items: ["Shared desks", "Dedicated desks", "High-speed fiber internet"] },
-            { title: "Private Offices", items: ["Fully furnished", "Conference Room", "Mail handling"] },
-            { title: "Virtual Office", items: ["Professional business address", "Mail & package receiving", "Meeting room credits"] },
-            { title: "Meeting & Event Spaces", items: ["Boardrooms", "Whiteboard", "A/V equipment included"] },
+            {
+                title: "Coworking Space Memberships",
+                items: [
+                    "Flexible desk rentals (daily, weekly, monthly)",
+                    "Dedicated desks for long-term professionals",
+                    "Private office spaces for teams"
+                ]
+            },
+            {
+                title: "Virtual Office Solutions",
+                items: [
+                    "Business address registration",
+                    "Mail handling and forwarding",
+                    "Call answering and reception services"
+                ]
+            },
+            {
+                title: "Study Hub Access",
+                items: [
+                    "Hourly or daily study desk rentals",
+                    "Quiet zones for students and exam reviewers",
+                    "Group study rooms with booking options"
+                ]
+            },
+            {
+                title: "Business Hub Services",
+                items: [
+                    "Meeting room rentals (with AV equipment)",
+                    "Event space for workshops, seminars, and networking",
+                    "Business consultancy and mentorship programs"
+                ]
+            },
         ]
     },
     {
         id: 'it',
-        title: 'Tech & Digital Solutions',
+        title: 'CORE I.T. SERVICES',
         provider: 'Alphaexplora Information Technology Services',
         bgText: 'TECHNOLOGY',
         image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -56,17 +84,44 @@ export const serviceCategories = [
     },
     {
         id: 'accounting',
-        title: 'Accounting & Tax',
+        title: 'CORE BUSINESS SERVICES',
         provider: 'BORJAL-AMAHAN Tax and Accounting Services',
         bgText: 'ACCOUNTING',
         image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
         description: "Expert financial management, compliance, and advisory tailored for businesses and freelancers.",
         services: [
-            { title: "Tax Compliance and Advisory", items: ["Preparation and filing of tax returns", "Tax compliance assistance", "Tax planning and advisory services", "BIR registration and updates", "Assist client with LOA"] },
-            { title: "Accounting and Bookkeeping", items: ["Monthly bookkeeping services", "Financial statement preparation", "Accounting system setup and support", "Financial record organization"] },
-            { title: "Business Registration and Compliance", items: ["Business registration with government agencies", "Assistance with regulatory compliance", "Business documentation and reporting support"] },
-            { title: "Financial Guidance", items: ["Financial record analysis", "Basic financial advisory support for small businesses", "Assistance in financial organization and reporting"] },
-            { title: "Value-Added Services", items: ["Documentation requirements and processing applications for Building Permits", "Assistance in securing Occupational Permits", "Facilitation of Land Title Transfer", "Processing and Documentation for SSS, Pag-ibig, Philhealth", "End-to End Business Compliance Assistance"] },
+            {
+                title: "Business Incorporation & Registration",
+                items: [
+                    "Assistance with SEC/DTI registration",
+                    "Business name reservation and permits",
+                    "End-to-end incorporation packages (solo, partnership, corporation)"
+                ]
+            },
+            {
+                title: "Tax Services",
+                items: [
+                    "Tax filing and compliance (monthly, quarterly, annual)",
+                    "VAT registration and reporting",
+                    "Tax advisory and planning for entrepreneurs"
+                ]
+            },
+            {
+                title: "Accounting & Bookkeeping",
+                items: [
+                    "Monthly bookkeeping services",
+                    "Payroll management and compliance",
+                    "Financial statement preparation and audit support"
+                ]
+            },
+            {
+                title: "Virtual Office + Compliance Bundle",
+                items: [
+                    "Business address + incorporation support",
+                    "Mail handling + tax filing assistance",
+                    "Premium package for startups needing both space and compliance"
+                ]
+            },
         ]
     }
 ];

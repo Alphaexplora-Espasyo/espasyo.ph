@@ -29,6 +29,7 @@ html.lenis {
 *::-webkit-scrollbar {
   display: none !important;
 }
+
 * {
   -ms-overflow-style: none !important;
   scrollbar-width: none !important;
@@ -72,7 +73,7 @@ html.lenis {
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(58,38,24, 0.2);
+  border: 1px solid rgba(58, 38, 24, 0.2);
   transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -107,7 +108,3 @@ html.lenis {
   width: 100% !important;
   height: 100% !important;
 }
-
-
-
-

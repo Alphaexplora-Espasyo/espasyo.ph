@@ -21,12 +21,12 @@
     },
     "testimonial": "Espasyo gave us the professional base we needed while we focused on delivering impactful training programs. Having reliable administrative support behind the scenes helped us stay focused on our mission.",
     "media": {
-      "video": "public/assets/video/Testimonial_ABA.mp4",
-      "image1": "public/assets/media1/Media1_ABA.jpg",
-      "image2": "public/assets/media2/Media2_ABA.png",
+      "video": "https://res.cloudinary.com/dlk93aehl/image/upload/Testimonial_ABA.mp4",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/Media1_ABA.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/Media2_ABA.png",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/ABA Training Solutions.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/logo/ABA Training Solutions.png"
   },
   {
     "id": 2,
@@ -58,7 +58,7 @@
       "image2": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/Accrua.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png"
   },
   {
     "id": 3,
@@ -88,11 +88,11 @@
     "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/alpha1.jpg",
-      "image2": "public/assets/media2/alpha2.jpg",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/Alphaexplora.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png"
   },
   {
     "id": 4,
@@ -128,7 +128,7 @@
       "image2": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZm9ybWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/AstraTech.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png"
   },
   {
     "id": 5,
@@ -156,11 +156,11 @@
     "testimonial": "Espasyo allowed us to concentrate on delivering precise engineering work while they supported the administrative side of running a business.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/gbim1.jpg",
-      "image2": "public/assets/media2/gbim2.jpg",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim2.jpg",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/GBIM.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png"
   },
   {
     "id": 6,
@@ -193,7 +193,7 @@
       "image2": "https://images.unsplash.com/photo-1771765780945-c788a6ce4b33?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaCUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/GMST.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png"
   },
   {
     "id": 7,
@@ -216,11 +216,11 @@
     "testimonial": "Espasyo provided the structure and support that helped us manage our operations efficiently as we explored new opportunities.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/kreddu1.png",
-      "image2": "public/assets/media2/kreddu2.png",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu1.png",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.png",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 8,
@@ -250,7 +250,7 @@
       "image2": "https://images.unsplash.com/photo-1623934199716-dc28818a6ec7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZSUyMGRlc2lnbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/LudoLaunchPad.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png"
   },
   {
     "id": 9,
@@ -281,7 +281,7 @@
       "image2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/NMDC.jpg"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg"
   },
   {
     "id": 10,
@@ -307,7 +307,7 @@
       "image2": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "public/assets/logo/NSC.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png"
   },
   {
     "id": 11,
@@ -331,11 +331,11 @@
     "testimonial": "Espasyo provided a dependable operational foundation that allowed our creative team to focus on producing meaningful work.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/overflow1.jpg",
-      "image2": "public/assets/media2/overflow2.jpg",
-      "image3": "public/assets/media3/overflow3.jpg"
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow2.jpg",
+      "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow3.jpg"
     },
-    "placeholderImage": "public/assets/logo/Overflow.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png"
   },
   {
     "id": 12,
@@ -358,11 +358,11 @@
     "testimonial": "Espasyo helped streamline the operational side of our consultancy so we could focus on guiding organizations and leaders.",
     "media": {
       "video": "",
-      "image1": "public/assets/media1/step1.jpg",
-      "image2": "public/assets/media2/step2.jpg",
-      "image3": "public/assets/media3/step3.jpg"
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/step1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/step2.jpg",
+      "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/step3.jpg"
     },
-    "placeholderImage": "public/assets/logo/STEP.jpg"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg"
   },
   {
     "id": 13,
@@ -385,7 +385,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 14,
@@ -408,7 +408,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 15,
@@ -432,7 +432,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 16,
@@ -455,7 +455,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 17,
@@ -478,7 +478,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 18,
@@ -501,7 +501,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 19,
@@ -524,7 +524,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 20,
@@ -547,7 +547,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 21,
@@ -570,7 +570,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 22,
@@ -593,7 +593,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 23,
@@ -616,7 +616,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 24,
@@ -640,7 +640,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 25,
@@ -663,7 +663,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 26,
@@ -686,7 +686,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 27,
@@ -709,7 +709,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 28,
@@ -732,7 +732,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 29,
@@ -755,7 +755,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 30,
@@ -778,7 +778,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 31,
@@ -801,7 +801,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 32,
@@ -824,7 +824,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 33,
@@ -847,7 +847,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 34,
@@ -870,7 +870,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 35,
@@ -894,7 +894,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 36,
@@ -917,7 +917,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 37,
@@ -941,7 +941,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 38,
@@ -964,7 +964,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 39,
@@ -988,7 +988,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 40,
@@ -1011,7 +1011,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 41,
@@ -1034,7 +1034,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 42,
@@ -1057,7 +1057,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 43,
@@ -1080,7 +1080,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 44,
@@ -1104,7 +1104,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 45,
@@ -1127,7 +1127,7 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/assets/logo/Logo.png"
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 46,

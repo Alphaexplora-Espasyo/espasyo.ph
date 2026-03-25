@@ -6,7 +6,7 @@ import { Draggable } from 'gsap/all';
 import DetailModal from './Shared/Modals/DetailModal';
 import FounderModal from './Shared/Modals/FounderModal';
 import Navbar from './Common/Navbar';
-import LOGO from '../assets/LOGO.png';
+const LOGO = "https://res.cloudinary.com/dlk93aehl/image/upload/LOGO.png";
 import testimonialsData from '../data/testimonials.json';
 
 gsap.registerPlugin(Draggable);

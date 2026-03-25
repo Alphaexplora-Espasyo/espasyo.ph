@@ -9,12 +9,12 @@ const images = [
 ];
 
 interface HeroProps {
-  heroTextRef1: RefObject<HTMLHeadingElement | null>;
+  heroTextRef1?: RefObject<HTMLHeadingElement | null>;
   introFinished: boolean;
   onNavigate: (direction: 'left' | 'right') => void;
 }
 
-const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
+const Hero = ({ introFinished, onNavigate }: HeroProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -38,15 +38,14 @@ const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
           src="https://res.cloudinary.com/dlk93aehl/video/upload/v1774184312/Untitled_design.mp4"
         />
         */}
-        
+
         {images.map((img, index) => (
           <div
             key={img}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'
-            }`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'
+              }`}
           >
-            <div 
+            <div
               className="w-full h-full bg-cover bg-center animate-breathe"
               style={{ backgroundImage: `url(${img})` }}
             />
@@ -57,21 +56,11 @@ const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
         <div className="absolute inset-0 bg-[#3A2618]/60 mix-blend-multiply z-10"></div>
       </div>
 
-      {/* Main Text Content */}
-      <div className="z-10 relative flex flex-col items-center justify-center">
-        <h1
-          ref={heroTextRef1}
-          className={`text-6xl sm:text-8xl md:text-10xl lg:text-[12rem] font-display text-[#FDF4DC] drop-shadow-[0_8px_16px_rgba(0,0,0,0.4)] uppercase text-center tracking-tighter leading-[0.8] ${introFinished ? '' : 'opacity-0'}`}
-        >
-          ESPASYO
-        </h1>
-      </div>
-
       {/* --- DIRECTIONAL NAVIGATION ARROWS --- */}
       <div className={`absolute inset-0 pointer-events-none z-20 transition-opacity duration-1000 ${introFinished ? 'opacity-100' : 'opacity-0'}`}>
-        
+
         {/* Left Arrow -> Our Story */}
-        <button 
+        <button
           onClick={() => onNavigate('left')}
           className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 pointer-events-auto flex flex-col items-center gap-2 text-[#FDF4DC] hover:text-white transition-all group"
         >
@@ -82,7 +71,7 @@ const Hero = ({ heroTextRef1, introFinished, onNavigate }: HeroProps) => {
         </button>
 
         {/* Right Arrow -> Testimonials/Community */}
-        <button 
+        <button
           onClick={() => onNavigate('right')}
           className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 pointer-events-auto flex flex-col items-center gap-2 text-[#FDF4DC] hover:text-white transition-all group"
         >

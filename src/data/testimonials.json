@@ -26,7 +26,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/Media2_ABA.png",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 2,
@@ -58,7 +59,8 @@
       "image2": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 3,
@@ -92,7 +94,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 4,
@@ -128,7 +131,8 @@
       "image2": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZm9ybWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 5,
@@ -160,7 +164,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim2.jpg",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 6,
@@ -193,7 +198,8 @@
       "image2": "https://images.unsplash.com/photo-1771765780945-c788a6ce4b33?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaCUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 7,
@@ -220,6 +226,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.webp",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -250,7 +257,8 @@
       "image2": "https://images.unsplash.com/photo-1623934199716-dc28818a6ec7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZSUyMGRlc2lnbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 9,
@@ -281,7 +289,8 @@
       "image2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 10,
@@ -307,7 +316,8 @@
       "image2": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 11,
@@ -335,7 +345,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow3.jpg"
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 12,
@@ -362,29 +373,40 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/step2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/step3.jpg"
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 13,
     "isFounder": false,
     "businessName": "A. Valentin Construction",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Construction"
+    ],
+    "services": [
+      "Supply of Labor and Materials in General Construction",
+      "Civil/Structural Works",
+      "Architectural Works",
+      "Electrical, Plumbing, Fire Protection works"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "email": "avalentin_builders@yahoo.com, avalentin.construction@gmail.com",
+      "address": "6 T. Bugallon Street, Marikina Heights, Marikina City",
+      "phone": "0926-7083787 (Globe) / 0961-0440138 (Smart)"
     },
-    "testimonial": "",
+    "testimonial": "Our Mission is to give our full potential, service, develop and building, To achieve space for every people worth living.",
     "media": {
       "video": "",
       "image1": "",
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537070/A.-Valentin-Construction.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -408,6 +430,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -432,6 +455,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -455,6 +479,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -478,6 +503,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -501,6 +527,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -524,6 +551,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550973/borjal-amahan.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -547,6 +575,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -570,6 +599,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -582,17 +612,18 @@
       "Consulting"
     ],
     "links": {
-      "website": "",
+      "LinkedIn": "https://www.linkedin.com/company/elenj-consulting-company-inc/",
       "facebook": "",
       "instagram": ""
     },
-    "testimonial": "",
+    "testimonial": "ElenJ Consulting is a purpose-driven staffing and recruitment firm committed to connecting exceptional talent with organizations that value growth, impact, and people. With a strategic approach to hiring and a passion for empowering careers, we deliver smart, scalable solutions that help businesses thrive and individuals succeed.",
     "media": {
       "video": "",
       "image1": "",
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549846/ECC.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -616,6 +647,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -640,6 +672,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -663,6 +696,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -686,6 +720,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -709,6 +744,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -732,6 +768,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -755,6 +792,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -778,6 +816,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -801,6 +840,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -824,6 +864,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -847,6 +888,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -870,6 +912,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -894,6 +937,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -917,6 +961,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -941,6 +986,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -964,6 +1010,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -988,12 +1035,13 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 40,
     "isFounder": false,
-    "businessName": "Shantal's Beauty and Wellness Corporation",
+    "businessName": "Shantal's Beauty and Wellness Products",
     "industry": [],
     "services": [],
     "categories": [
@@ -1002,15 +1050,19 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "mail": "shantalsbeautyandwellnesscorp@gmail.com",
+      "address": "6 T Bugallon Marikina Heights Marikina City, Philippines",
+      "phone": "0927 132 6788",
+      "email": "shantalsbeautyandwellnesscorp@gmail.com"
     },
-    "testimonial": "",
+    "testimonial": "Committed to enriching lives through wellness and beauty, our goal is to offer accessible and inventive solutions that foster self-care, confidence, and holistic health.",
     "media": {
       "video": "",
       "image1": "",
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537752/shantal.jpg",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1018,22 +1070,30 @@
     "isFounder": false,
     "businessName": "SJB Ultimate Enterprises",
     "industry": [],
-    "services": [],
+    "services": [
+      "Collection and sorting of scrap materials",
+      "Sale of processed materials to recycling companies and manufacturers",
+      "Demolition and retrieving metal materials"
+    ],
     "categories": [
-      "Retail & General Trade"
+      "Scrap & Recycling"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "address": "6 T. Bugallon Street, Marikina Heights, Marikina City",
+      "phone": "0995 946 2609 / 0917 7940 084",
+      "office": "700-600-42"
     },
-    "testimonial": "",
+    "testimonial": "To deliver value through sustainable scrap management while promoting a cleaner and greener environment.",
     "media": {
       "video": "",
       "image1": "",
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774538290/SJB.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1057,6 +1117,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1080,6 +1141,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1104,6 +1166,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1117,7 +1180,7 @@
     ],
     "links": {
       "website": "",
-      "facebook": "",
+      "facebook": "https://www.facebook.com/profile.php?id=61558381175745",
       "instagram": ""
     },
     "testimonial": "",
@@ -1127,6 +1190,7 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549418/WNLH.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1150,6 +1214,110 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/LogoWhite.jpg"
+    "logo": "/LogoWhite.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 47,
+    "isFounder": false,
+    "businessName": "Notable Visuals",
+    "industry": [
+      "Events and Weddings",
+      "Graphic Design",
+      "Souvenirs & Invitations"
+    ],
+    "services": [
+      "Bespoke Invitations",
+      "Wedding Websites",
+      "Custom Magnet Souvenirs",
+      "Event Photobooks",
+      "Custom-made Wedding Essentials"
+    ],
+    "categories": [
+      "Art & Design",
+      "Marketing & Advertising"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "mail": "notablevisuals@gmail.com",
+      "phone": "09778278441",
+      "contactPerson": "Hazel Sadiwa"
+    },
+    "testimonial": "Award-winning wedding supplier recognized by Q Asia Publication and Philippine Buyer’s Choice Awards for exceptional quality in souvenirs and invitations.",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551374/notable-visuals.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 48,
+    "isFounder": false,
+    "businessName": "EBM Talent Bucket",
+    "industry": [
+      "Recruitment and Human Resources Consulting"
+    ],
+    "services": [
+      "Talent Acquisition",
+      "Employer Branding",
+      "Workforce Management",
+      "Search Solutions"
+    ],
+    "categories": [
+      "Consulting"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "LinkedI": "https://www.linkedin.com/company/ebm-talentbucket/"
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550020/EBM.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 49,
+    "isFounder": false,
+    "businessName": "Suhay-Link Management Services",
+    "industry": [
+      "Business Consulting",
+      "Strategic Support",
+      "Operational Support"
+    ],
+    "services": [
+      "Strategic Guidance",
+      "Business Setup",
+      "Compliance Support",
+      "Tailored Business Solutions"
+    ],
+    "categories": [
+      "Consulting"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "email": "suhaylinkconsulting@gmail.com",
+      "phone": "0916 611 2928 / 700 600 42"
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551516/Media1_Suhay-Link.jpg",
+      "image2": "",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551102/SUHAY-LINK.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   }
 ]

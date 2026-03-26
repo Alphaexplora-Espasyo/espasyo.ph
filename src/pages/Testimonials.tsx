@@ -39,8 +39,9 @@ const Testimonials = ({ hideNavbar = false, onBusinessClick }: TestimonialsProps
             const m = b.media;
             const hasMedia = m && (m.video || m.image1 || m.image2 || m.image3);
             const hasTestimonial = b.testimonial && b.testimonial.trim().length > 0;
+            const hasCustomLogo = b.logo && !b.logo.includes('LOGO.png') && !b.logo.includes('Logo.png') && !b.logo.includes('LogoWhite.jpg');
             
-            if (hasMedia || hasTestimonial) {
+            if (hasMedia || hasTestimonial || hasCustomLogo) {
                 media.push(b);
             } else {
                 list.push(b);

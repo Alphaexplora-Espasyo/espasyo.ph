@@ -84,18 +84,22 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   Follow On Facebook
                 </a>
 
-                <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden shadow-lg relative group">
-                  <iframe
-                    src="https://maps.google.com/maps?q=ESPASYO%20STUDY%20%26%20OFFICE%20HUB&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    className="grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Espasyo Study & Office Hub Location"
-                  ></iframe>
+                <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer">
+                  <img
+                    src="https://res.cloudinary.com/dlk93aehl/image/upload/v1774545067/espasyoMaps.png"
+                    alt="Espasyo Location Map"
+                    className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-105 group-hover:scale-100"
+                  />
+                  <a
+                    href="https://maps.app.goo.gl/fF5wsVjxofb1co857"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center"
+                  >
+                    <div className="bg-[#F2E8D5] text-[#3A2618] px-4 py-2 rounded-full font-display text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                      Open in Google Maps
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

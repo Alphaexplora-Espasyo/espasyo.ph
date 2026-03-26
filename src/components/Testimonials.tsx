@@ -126,6 +126,7 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
 
   const clientData = clientBySlot.get(i)!;
   const thumbnailSrc =
+    resolvePath(clientData.logo) ||
     resolvePath(clientData.placeholderImage) ||
     resolvePath(clientData.media?.image1) ||
     LOGO;
@@ -134,7 +135,7 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
     ...clientData,
     id: `${clientData.id}-${i}`, // 3. FIX FOR REACT DOM: Force unique IDs even for duplicate loop items
     src: thumbnailSrc,
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg')
+    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg') || thumbnailSrc.includes('Logo.png')
   } as TestimonialItem;
 });
 

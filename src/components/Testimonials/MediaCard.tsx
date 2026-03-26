@@ -6,7 +6,7 @@ export const MediaCard = ({ business, onClick }: { business: Business, onClick: 
         <div className="flex flex-col h-full group cursor-pointer gallery-anim-item" onClick={onClick}>
             <div className="relative w-full flex items-center justify-center p-2 md:p-8 h-24 sm:h-32 md:h-auto md:aspect-square transition-transform duration-500 group-hover:-translate-y-2">
                 <img 
-                    src={resolvePath(business.placeholderImage)} 
+                    src={resolvePath(business.logo) || resolvePath(business.placeholderImage)} 
                     alt={business.businessName} 
                     className="max-w-full max-h-16 sm:max-h-20 md:max-h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-lg relative z-10" 
                     loading="lazy"

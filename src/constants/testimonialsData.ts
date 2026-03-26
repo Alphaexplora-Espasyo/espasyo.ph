@@ -10,7 +10,16 @@ export interface Media {
 export interface Links {
   website: string;
   facebook: string;
-  instagram: string;
+  instagram?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+  office?: string;
+  contactPerson?: string;
+  LinkedIn?: string;
+  LinkedI?: string;
+  mail?: string;
+  [key: string]: string | undefined;
 }
 
 export interface Business {
@@ -23,6 +32,7 @@ export interface Business {
   links: Links;
   testimonial: string;
   media: Media;
+  logo: string;
   placeholderImage: string;
 }
 

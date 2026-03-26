@@ -1,0 +1,211 @@
+import { useState, useRef, useEffect } from 'react';
+import { Quote, Pause, Play, ChevronLeft, ChevronRight, X } from 'lucide-react';
+
+import reviewData from '../data/reviews.json';
+import Navbar from '../components/Common/Navbar';
+
+const Reviews = () => {
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const [selectedReview, setSelectedReview] = useState<any>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false); // Controls animation state
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const shouldScroll = isAutoPlaying && activeCardId === null && !selectedReview;
+
+  // --- MODAL ANIMATION LOGIC ---
+  const openModal = (review: any) => {
+    setSelectedReview(review);
+    setTimeout(() => setIsModalVisible(true), 10); // Tiny delay to trigger CSS transition
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setTimeout(() => setSelectedReview(null), 300); // Wait for animation to finish before unmounting
+  };
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedReview) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedReview]);
+
+  // --- AUTO-SCROLL LOGIC ---
+  useEffect(() => {
+    let animationFrameId: number;
+    const autoScroll = () => {
+      if (scrollRef.current && shouldScroll) {
+        scrollRef.current.scrollLeft += 0.5; 
+        if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
+          scrollRef.current.scrollLeft = 0;
+        }
+        animationFrameId = requestAnimationFrame(autoScroll);
+      }
+    };
+    if (shouldScroll) animationFrameId = requestAnimationFrame(autoScroll);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [shouldScroll]);
+
+  const manualScroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 300; 
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F2E8D5] overflow-x-hidden">
+      <Navbar />
+
+      <main className="relative flex-1 flex flex-col justify-center items-center py-16">
+        
+        {/* --- 1. TITLE & UNDERLINE --- */}
+        <div className="relative z-10 flex flex-col items-center mb-6 px-4 shrink-0 text-center w-full">
+          <div className="inline-flex flex-col items-center mb-6 max-w-full">
+            <h1 className="font-display text-3xl md:text-5xl font-medium text-[#3A2618] tracking-tight">
+              What our <span className="font-bold">Ka-Espasyo</span> says!
+            </h1>
+            <div className="w-full h-1.5 bg-[#8C6B50] rounded-full mt-3 shadow-inner"></div>
+          </div>
+          
+          <h3 className="text-center mb-4 opacity-80 px-4 font-sans italic text-[#5C4D3C] tracking-wide">
+            <span className="md:hidden text-sm font-medium">Tap a card to pause. Click SEE MORE for full review.</span>
+            <span className="hidden md:inline-block text-base font-medium">Hover to pause. Click SEE MORE to read.</span>
+          </h3>
+          
+          <button 
+            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+            className="flex items-center gap-2 bg-[#FDF4DC] border border-[#8C6B50]/30 text-[#3A2618] px-5 py-2.5 rounded-full shadow-sm hover:bg-white transition-all font-sans text-sm font-bold tracking-wider uppercase mb-2"
+          >
+            {isAutoPlaying ? <Pause size={18} /> : <Play size={18} />}
+            <span>{isAutoPlaying ? "Pause" : "Resume"} Auto-Scroll</span>
+          </button>
+        </div>
+
+        {/* --- 4. CAROUSEL --- */}
+        <div className="relative w-full max-w-[100vw] mx-auto flex items-center group">
+          {!isAutoPlaying && (
+            <button onClick={() => manualScroll('left')} className="absolute left-2 md:left-6 z-20 p-3 rounded-full bg-[#FDF4DC]/90 border border-[#8C6B50]/20 hidden md:block">
+              <ChevronLeft size={28} strokeWidth={3} className="text-[#3A2618]" />
+            </button>
+          )}
+
+          <div ref={scrollRef} className={`flex w-full overflow-x-auto py-6 items-start ${isAutoPlaying ? 'hide-scrollbar' : 'custom-h-scrollbar snap-x snap-mandatory'}`}>
+            <div className="flex gap-4 md:gap-6 px-4 md:px-6 w-max shrink-0">
+              {reviewData.concat(reviewData).map((review, idx) => (
+                <ReviewCard 
+                  key={idx}
+                  review={review} 
+                  onSeeMore={() => openModal(review)}
+                  onInteractionStart={() => setActiveCardId(`card-${idx}`)}
+                  onInteractionEnd={() => setActiveCardId(null)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {!isAutoPlaying && (
+            <button onClick={() => manualScroll('right')} className="absolute right-2 md:right-6 z-20 p-3 rounded-full bg-[#FDF4DC]/90 border border-[#8C6B50]/20 hidden md:block">
+              <ChevronRight size={28} strokeWidth={3} className="text-[#3A2618]" />
+            </button>
+          )}
+        </div>
+
+        <div className="mt-10 relative z-10 px-4 text-center">
+          <h2 className="font-serif text-2xl md:text-3xl text-[#5C4D3C]">
+            See more reviews <a href="https://facebook.com" target="_blank" className="font-bold text-[#8C6B50] underline decoration-2">here</a>.
+          </h2>
+        </div>
+      </main>
+
+      {/* --- MODAL OVERLAY WITH ANIMATION --- */}
+      {selectedReview && (
+        <div 
+          className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#3A2618]/60 backdrop-blur-md transition-opacity duration-300 ease-out ${isModalVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={closeModal}
+        >
+          <div 
+            className={`bg-[#FDF4DC] w-full max-w-2xl max-h-[80vh] rounded-2xl shadow-2xl flex flex-col relative border border-[#8C6B50]/30 transition-all duration-300 ease-out ${isModalVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-4 opacity-0'}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-[#8C6B50]/10 text-[#3A2618] transition-colors z-20"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="p-8 overflow-y-auto custom-scrollbar">
+              <Quote className="w-10 h-10 text-[#A69076] mb-4 opacity-50" fill="currentColor" />
+              <h4 className="font-serif text-3xl font-bold text-[#3A2618] mb-6">{selectedReview.user}</h4>
+              <p className="font-serif text-xl text-[#5C4D3C] leading-relaxed italic">
+                "{selectedReview.statement}"
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .custom-h-scrollbar::-webkit-scrollbar { height: 8px; }
+        .custom-h-scrollbar::-webkit-scrollbar-thumb { background: rgba(140, 107, 80, 0.3); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #8C6B50; border-radius: 10px; }
+      `}</style>
+    </div>
+  );
+};
+
+/* --- CARD COMPONENT --- */
+const ReviewCard = ({ review, onSeeMore, onInteractionStart, onInteractionEnd }: any) => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+
+  useEffect(() => {
+    if (textRef.current) {
+      setIsOverflowing(textRef.current.scrollHeight > textRef.current.clientHeight);
+    }
+  }, [review.statement]);
+
+  return (
+    <div 
+      onMouseEnter={onInteractionStart}
+      onMouseLeave={onInteractionEnd}
+      onClick={() => { if(isOverflowing) onSeeMore(); }}
+      className={`w-[280px] h-[380px] bg-[#FDF4DC] rounded-xl shadow-lg border border-[#8C6B50]/20 flex flex-col p-6 shrink-0 transition-transform hover:-translate-y-1 ${isOverflowing ? 'cursor-pointer' : ''}`}
+    >
+      <div className="flex justify-between items-start mb-4">
+        <h4 className="font-serif text-xl font-bold text-[#3A2618] line-clamp-2">{review.user}</h4>
+        <Quote className="w-5 h-5 text-[#A69076] rotate-180" fill="currentColor" />
+      </div>
+
+      <div className="flex-1 flex flex-col min-h-0">
+        <div ref={textRef} className="font-serif text-lg text-[#5C4D3C] leading-snug line-clamp-[8] overflow-hidden italic">
+          "{review.statement}"
+        </div>
+        
+        {isOverflowing && (
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              onSeeMore();
+            }}
+            className="mt-auto pt-4 text-[#8C6B50] font-sans text-xs font-black tracking-widest uppercase hover:text-[#3A2618] text-left"
+          >
+            ...SEE MORE
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Reviews;

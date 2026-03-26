@@ -1,4 +1,4 @@
-import { type RefObject, type MouseEvent, type TouchEvent, useState, useEffect } from 'react';
+import { type RefObject, type MouseEvent, type TouchEvent } from 'react';
 import { Check } from 'lucide-react';
 
 interface ServicesSectionProps {
@@ -21,7 +21,8 @@ interface ServicesSectionProps {
 }
 
 const ServicesSection = ({
-  activeService,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  activeService: _activeService,
   servicesContentRef,
   handleTouchStart,
   handleTouchMove,
@@ -38,51 +39,28 @@ const ServicesSection = ({
   handleGalleryClick,
   getSlideStyles,
 }: ServicesSectionProps) => {
-  // --- PARALLAX EFFECT ---
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const scrollCol = document.getElementById('main-scroll-column');
-    if (!scrollCol) return;
-    const handleScroll = () => {
-      setScrollY(scrollCol.scrollTop);
-    };
-    scrollCol.addEventListener('scroll', handleScroll);
-    return () => scrollCol.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <section className="w-full relative min-h-fit bg-[#FEEBCA] pt-4 sm:pt-6 md:pt-8 lg:pt-10 pb-12 transition-colors duration-1000">
 
-      {/* STICKY GHOST TEXT LAYER */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <h1
-          key={activeService.bgText}
-          className="font-display text-[18vw] leading-none uppercase tracking-tighter text-[#482216] opacity-[0.05] whitespace-nowrap lg:whitespace-normal text-center px-4 will-change-transform"
-          style={{ transform: `translateY(${(scrollY * 0.1) - 100}px)` }}
-        >
-          {activeService.bgText}
-        </h1>
-      </div>
-
       {/* FOREGROUND CONTENT */}
-      <div ref={servicesContentRef} className="w-full relative z-10 flex flex-col mt-[-100vh] pt-8 sm:pt-12 md:pt-16">
+      <div ref={servicesContentRef} className="w-full relative z-10 flex flex-col pt-8 sm:pt-12 md:pt-16">
 
         {/* TOP SECTION */}
         <div className="w-full flex flex-col items-center relative z-20 pb-12">
           <div className="w-full max-w-5xl text-center pt-4 md:pt-6">
-            <h3 className="font-display text-4xl sm:text-5xl uppercase tracking-widest mb-12 text-[#908660]">ONE ROOF. ALL THE SOLUTIONS</h3>
+            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl uppercase tracking-widest mb-12 text-[#908660]">ONE ROOF. ALL THE SOLUTIONS</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#482216] mb-3 leading-none">LEGAL &<br />COMPLIANCE</h4>
-                <p className="font-body text-sm text-[#482216]/70 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</p>
+                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">LEGAL &<br />COMPLIANCE</h2>
+                <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</h3>
               </div>
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#482216] mb-3 leading-none">COST<br />EFFICIENT</h4>
-                <p className="font-body text-sm text-[#482216]/70 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</p>
+                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">COST<br />EFFICIENT</h2>
+                <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</h3>
               </div>
               <div>
-                <h4 className="font-display text-2xl uppercase text-[#482216] mb-3 leading-none">TRUSTED &<br />DEPENDABLE</h4>
-                <p className="font-body text-sm text-[#482216]/70 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</p>
+                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">TRUSTED &<br />DEPENDABLE</h2>
+                <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</h3>
               </div>
             </div>
           </div>
@@ -120,11 +98,13 @@ const ServicesSection = ({
                     <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                     {isCenter && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" style={{ opacity: isHovering ? 0.3 + (tilt.y / 20) : 0, transition: 'opacity 0.3s' }} />}
 
-                    {/* ETO YUNG FIX: Laging visible na yung text (opacity-80 kapag sa gilid, opacity-100 kapag sa gitna), at naka font-bold! */}
-                    <div className={`absolute inset-0 bg-gradient-to-t from-[#482216]/95 via-[#482216]/40 to-transparent flex items-end p-3 sm:p-4 md:p-6 transition-all duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-80'}`}>
-                      <h3 className="font-display text-sm sm:text-base md:text-xl uppercase tracking-tight text-[#FEEBCA] leading-tight font-bold drop-shadow-md">
-                        {service.title}
-                      </h3>
+                    {/* Brown overlay + centered white text */}
+                    <div className={`absolute inset-0 bg-[#3A2618]/70 flex items-center justify-center p-2 sm:p-4 transition-all duration-500 ${index === currentIndex ? 'opacity-100' : 'opacity-80'}`}>
+                      <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter text-[#D4B896] font-bold text-center leading-[0.9]" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.6)' }}>
+                        {service.title.split(' ').map((word: string, i: number) => (
+                          <span key={i} className="block">{word}</span>
+                        ))}
+                      </h2>
                     </div>
                   </div>
                 );
@@ -132,14 +112,24 @@ const ServicesSection = ({
             </div>
 
             <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8 md:mb-10">
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-                <button onClick={prevSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#482216] text-[#482216] rounded-full flex items-center justify-center hover:bg-[#482216] hover:text-[#FEEBCA] transition-colors font-bold text-sm md:text-lg">←</button>
-                <div className="flex gap-2 sm:gap-2.5 md:gap-3">
+              <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+                <button 
+                  onClick={prevSlide} 
+                  className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 border-2 md:border-3 border-[#482216] text-[#482216] rounded-full flex items-center justify-center hover:bg-[#482216] hover:text-[#FEEBCA] transition-all font-bold text-lg md:text-2xl shadow-md hover:shadow-lg active:scale-95"
+                >
+                  ←
+                </button>
+                <div className="flex gap-2.5 sm:gap-3 md:gap-4">
                   {serviceCategories.map((_, i) => (
-                    <div key={i} className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#908660] w-3 sm:w-4' : 'bg-[#482216]/20'}`} />
+                    <div key={i} className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#908660] w-5 sm:w-6' : 'bg-[#482216]/10'}`} />
                   ))}
                 </div>
-                <button onClick={nextSlide} className="w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border-2 border-[#482216] text-[#482216] rounded-full flex items-center justify-center hover:bg-[#482216] hover:text-[#FEEBCA] transition-colors font-bold text-sm md:text-lg">→</button>
+                <button 
+                  onClick={nextSlide} 
+                  className="w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 border-2 md:border-3 border-[#482216] text-[#482216] rounded-full flex items-center justify-center hover:bg-[#482216] hover:text-[#FEEBCA] transition-all font-bold text-lg md:text-2xl shadow-md hover:shadow-lg active:scale-95"
+                >
+                  →
+                </button>
               </div>
               <button onClick={handleGalleryClick} className="px-4 sm:px-6 md:px-8 py-1.5 sm:py-2 md:py-2 border-2 border-[#482216] text-[#482216] rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#482216] hover:text-[#FEEBCA] transition-colors">Show All Gallery</button>
             </div>

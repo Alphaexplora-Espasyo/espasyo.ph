@@ -17,7 +17,7 @@ const Footer = () => {
             <div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase tracking-tighter leading-none mb-3 sm:mb-4 md:mb-6 text-[#3A2618]">Espasyo</h2>
               <p className="font-body text-xs sm:text-sm text-[#3A2618]/80 max-w-xs leading-relaxed">
-                We are not just selling space; we are building a home for your business.
+                ONE-STOP-SHOP FOR ENTREPRENEURS
               </p>
             </div>
           </div>

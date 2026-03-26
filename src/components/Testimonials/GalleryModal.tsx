@@ -59,7 +59,7 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
 
                 <div className="w-full md:w-[60%] h-[40vh] md:h-full relative flex items-center justify-center bg-[#2C3628]/5 p-4 md:p-8">
                     {currentMedia.type === 'video' ? (
-                        <video src={src} controls autoPlay className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
+                        <video src={src} controls autoPlay playsInline webkit-playsinline="true" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
                     ) : (
                         <img src={src} alt="Media preview" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
                     )}

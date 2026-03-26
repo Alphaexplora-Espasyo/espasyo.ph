@@ -153,13 +153,24 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                     </div>
                   </>
                 ) : (
-                  <iframe
-                    src={resolvePath(activeMedia.src).replace("/open?id=", "/file/d/").replace("/view", "/preview")}
-                    title="Video"
-                    className="w-full h-full border-none"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
+                  activeMedia.src.toLowerCase().endsWith('.mp4') || activeMedia.src.includes('cloudinary.com/') ? (
+                    <video
+                      src={resolvePath(activeMedia.src)}
+                      className="w-full h-full object-contain"
+                      autoPlay
+                      controls
+                      playsInline
+                      webkit-playsinline="true"
+                    />
+                  ) : (
+                    <iframe
+                      src={resolvePath(activeMedia.src).replace("/open?id=", "/file/d/").replace("/view", "/preview")}
+                      title="Video"
+                      className="w-full h-full border-none"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  )
                 )}
               </div>
             ) : (

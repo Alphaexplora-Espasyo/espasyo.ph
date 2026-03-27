@@ -32,10 +32,10 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
 
             <div className="relative z-10 space-y-10">
               <div className="space-y-1">
-                <h1 className="text-4xl sm:text-5xl font-display font-bold uppercase tracking-tighter text-[#DFA878]">
+                <h1 className="text-8xl sm:text-8xl font-display font-bold uppercase tracking-tighter text-[#DFA878]">
                   ESPASYO
                 </h1>
-                <p className="text-sm font-body tracking-[0.2em] uppercase text-[#FDF4DC]/60 font-semibold">
+                <p className="text-lg font-body tracking-[0.2em] uppercase text-[#FDF4DC]/60 font-semibold">
                   Study & Office Hub
                 </p>
               </div>
@@ -46,8 +46,8 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                     <MapPin size={16} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Visit Us</p>
-                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">
+                    <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Visit Us</p>
+                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">
                       6A T. Bugallon Street, Marikina Heights,<br />
                       Marikina City, Philippines
                     </p>
@@ -59,8 +59,8 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                     <Phone size={16} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Call Us</p>
-                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">
+                    <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Call Us</p>
+                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">
                       0916 611 2928<br />
                       700 600 42
                     </p>
@@ -72,16 +72,16 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                     <Mail size={16} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Email Us</p>
-                    <p className="text-sm font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
+                    <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Email Us</p>
+                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6 space-y-4">
-                <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noreferrer" className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#FDF4DC] flex items-center gap-3 hover:text-[#DFA878] transition-colors w-max">
+              <div className="pt-4 space-y-12">
+                <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noreferrer" className="text-[18px] font-bold uppercase tracking-[0.15em] text-[#FDF4DC] flex items-center gap-3 hover:text-[#DFA878] transition-colors w-max">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-                  Follow On Facebook
+                  Follow Us on Facebook
                 </a>
 
                 <div className="w-full h-32 sm:h-44 rounded-xl overflow-hidden shadow-lg relative group cursor-pointer">
@@ -108,10 +108,10 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
           {/* RIGHT: FORM */}
           <div className="lg:w-[55%] p-10 lg:p-16 bg-[#F2E8D5] relative flex flex-col justify-center">
             <div className="mb-12 space-y-2">
-              <h2 className="text-5xl lg:text-6xl font-display font-bold uppercase tracking-tighter text-[#3A2618]">
+              <h2 className="text-8xl lg:text-7xl font-display font-bold uppercase tracking-tighter text-[#3A2618]">
                 Get In Touch
               </h2>
-              <p className="text-sm text-[#3A2618]/70 font-body">
+              <p className="text-lg text-[#3A2618]/70 font-body">
                 Fill out the form below and we'll get back to you shortly.
               </p>
             </div>
@@ -123,7 +123,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
             >
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="space-y-2 w-full">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">First Name</label>
+                  <label className="text-[24px] font-bold uppercase tracking-widest text-[#3A2618]/60">First Name</label>
                   <input
                     required
                     type="text"
@@ -135,7 +135,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   />
                 </div>
                 <div className="space-y-2 w-full">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Last Name</label>
+                  <label className="text-[24px] font-bold uppercase tracking-widest text-[#3A2618]/60">Last Name</label>
                   <input
                     required
                     type="text"
@@ -149,7 +149,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Email Address</label>
+                <label className="text-[24px] font-bold uppercase tracking-widest text-[#3A2618]/60">Email Address</label>
                 <input
                   required
                   type="email"
@@ -162,7 +162,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Inquiry Type</label>
+                <label className="text-[24px] font-bold uppercase tracking-widest text-[#3A2618]/60">Inquiry Type</label>
                 <select
                   required
                   name="inquiryType"
@@ -179,7 +179,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-[#3A2618]/60">Message</label>
+                <label className="text-[24px] font-bold uppercase tracking-widest text-[#3A2618]/60">Message</label>
                 <textarea
                   required
                   name="message"

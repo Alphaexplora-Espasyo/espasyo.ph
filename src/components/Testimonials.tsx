@@ -42,6 +42,17 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
+const getInitials = (name: string) => {
+    if (!name) return 'E';
+    return name
+      .split(' ')
+      .filter(word => word.length > 0)
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 3);
+};
+
 const imagePool = loadedImages.length > 0 ? shuffleArray(loadedImages) : fallbackImages;
 
 // --- GRID CONFIGURATION ---
@@ -115,17 +126,21 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
   }
 
   const clientData = clientBySlot.get(i)!;
-  const thumbnailSrc =
-    resolvePath(clientData.logo) ||
-    resolvePath(clientData.placeholderImage) ||
-    resolvePath(clientData.media?.image1) ||
-    LOGO;
+  const rawLogo = clientData.logo || '';
+  const logoUrl = resolvePath(rawLogo);
+  const thumbnailSrc = logoUrl || LOGO;
+
+  // Mark as placeholder if no logo exists OR if it contains generic "logo" naming
+  const isPlaceholder = !rawLogo || 
+                        rawLogo.toLowerCase().includes('logo.png') ||
+                        rawLogo.toLowerCase().includes('logowhite') ||
+                        thumbnailSrc === LOGO;
 
   return {
     ...clientData,
-    id: `${clientData.id}-${i}`, // 3. FIX FOR REACT DOM: Force unique IDs even for duplicate loop items
+    id: `${clientData.id}-${i}`,
     src: thumbnailSrc,
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg') || thumbnailSrc.includes('Logo.png')
+    isPlaceholder
   } as TestimonialItem;
 });
 
@@ -360,21 +375,20 @@ const Testimonials = () => {
                   <img
                     src={item.src}
                     alt={item.businessName}
-                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-0' : ''}`}
+                    className={`w-full h-full object-contain pointer-events-none rounded-sm ${item.isPlaceholder ? 'hidden' : 'bg-[#2C3628]'}`}
                     loading="lazy"
                     decoding="async"
                   />
 
-                  {/* TEXT ONLY PLACEHOLDER DESIGN */}
+                  {/* TEXT ONLY PLACEHOLDER DESIGN (Initials centered) */}
                   {item.isPlaceholder && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#2C3628] to-[#1a2018] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
-                      <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] overflow-hidden pointer-events-none">
-                        <span className="font-display text-[15vw] md:text-[8vw] leading-none text-[#F0EAD6]">E</span>
+                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#3A2618] to-[#251810] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <span className="font-display text-[8vw] md:text-[4vw] leading-none text-white font-black tracking-tighter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                          {getInitials(item.businessName)}
+                        </span>
+                        <div className="w-8 md:w-12 h-0.5 bg-white/20 rounded-full mt-2" />
                       </div>
-
-                      <h3 className="font-display text-base md:text-lg lg:text-xl font-bold uppercase tracking-widest text-[#F0EAD6] line-clamp-4 relative z-10 leading-snug drop-shadow-md" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
-                        {item.businessName}
-                      </h3>
                     </div>
                   )}
 

@@ -2,6 +2,16 @@ import { useState, useEffect } from 'react';
 import type { Business } from '../../constants/testimonialsData';
 import { resolvePath } from '../../constants/testimonialsData';
 
+// Helper to extract up to 2 initials from the business name
+const getInitials = (name: string) => {
+    if (!name) return '';
+    const words = name.trim().split(' ');
+    if (words.length >= 2) {
+        return (words[0][0] + words[1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+};
+
 export const GalleryModal = ({ business, onClose }: { business: Business, onClose: () => void }) => {
     const [currentMediaIdx, setCurrentMediaIdx] = useState(0);
     const [isClosing, setIsClosing] = useState(false);
@@ -23,8 +33,10 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
     if (business.media?.image1) allMedia.push({ type: 'img', src: business.media.image1 });
     if (business.media?.image2) allMedia.push({ type: 'img', src: business.media.image2 });
     if (business.media?.image3) allMedia.push({ type: 'img', src: business.media.image3 });
+    
+    // If no media is found, push our new initials type
     if (allMedia.length === 0) {
-        allMedia.push({ type: 'img', src: business.placeholderImage });
+        allMedia.push({ type: 'initials', src: '' });
     }
 
     const currentMedia = allMedia[currentMediaIdx];
@@ -60,8 +72,14 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                 <div className="w-full md:w-[60%] h-[40vh] md:h-full relative flex items-center justify-center bg-[#2C3628]/5 p-4 md:p-8">
                     {currentMedia.type === 'video' ? (
                         <video src={src} controls autoPlay playsInline webkit-playsinline="true" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
-                    ) : (
+                    ) : currentMedia.type === 'img' ? (
                         <img src={src} alt="Media preview" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
+                    ) : (
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-[#4A3525] text-[#FDF4DC] flex items-center justify-center rounded-2xl shadow-xl">
+                            <span className="font-display text-6xl md:text-8xl font-bold tracking-widest">
+                                {getInitials(business.businessName)}
+                            </span>
+                        </div>
                     )}
 
                     {allMedia.length > 1 && (

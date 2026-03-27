@@ -30,8 +30,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/Media2_ABA.png",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png" 
   },
   {
     "id": 2,
@@ -67,8 +66,7 @@
       "image2": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png" 
   },
   {
     "id": 3,
@@ -77,7 +75,8 @@
     "industry": [
       "Digital Services",
       "IT Consultation",
-      "Analytics and Service Management"
+      "Business Analytics",
+      "Service Management"
     ],
     "services": [
       "I.T. Consultancy",
@@ -106,8 +105,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png" 
   },
   {
     "id": 4,
@@ -147,8 +145,7 @@
       "image2": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZm9ybWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png" 
   },
   {
     "id": 5,
@@ -184,8 +181,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim2.jpg",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png" 
   },
   {
     "id": 6,
@@ -222,8 +218,7 @@
       "image2": "https://images.unsplash.com/photo-1771765780945-c788a6ce4b33?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaCUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png" 
   },
   {
     "id": 7,
@@ -254,8 +249,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.webp",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png" 
   },
   {
     "id": 8,
@@ -289,8 +283,7 @@
       "image2": "https://images.unsplash.com/photo-1623934199716-dc28818a6ec7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZSUyMGRlc2lnbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png" 
   },
   {
     "id": 9,
@@ -325,8 +318,7 @@
       "image2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg" 
   },
   {
     "id": 10,
@@ -356,8 +348,7 @@
       "image2": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png" 
   },
   {
     "id": 11,
@@ -389,8 +380,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow3.jpg"
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png" 
   },
   {
     "id": 12,
@@ -421,8 +411,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/step2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/step3.jpg"
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg" 
   },
   {
     "id": 13,
@@ -451,15 +440,14 @@
       "phone": "0926-7083787 (Globe) / 0961-0440138 (Smart)",
       "address": "6 T. Bugallon Street, Marikina Heights, Marikina City"
     },
-    "testimonial": "Our Mission is to give our full potential, service, develop and building, To achieve space for every people worth living.",
+    "testimonial": "Espasyo has been a fantastic partner for our construction firm, providing a professional virtual office while we are on site. Their business registration assistance made our expansion seamless and stress-free.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image2": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537070/A.-Valentin-Construction.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537070/A.-Valentin-Construction.png" 
   },
   {
     "id": 14,
@@ -484,15 +472,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Having a dedicated space at Espasyo has greatly improved our team's productivity and client meetings. Their administrative support allows us to focus entirely on our design and build projects.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+      "image2": "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 15,
@@ -516,15 +503,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo’s co-working space provides the perfect environment for our education experts to collaborate and brainstorm. The reliable amenities and business services have been invaluable to our growth.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 16,
@@ -533,8 +519,12 @@
     "industry": [
       "Consulting"
     ],
-    "services": ["Consultancy"],
-    "categories": ["Consulting"],
+    "services": [
+      "Consultancy"
+    ],
+    "categories": [
+      "Consulting"
+    ],
     "links": {
       "website": "",
       "facebook": "",
@@ -544,15 +534,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Partnering with Espasyo gave our consultancy the professional hub we needed to meet with clients. Their tax filing and virtual office services have completely streamlined our backend operations.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 17,
@@ -576,15 +565,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "As a telecommunications company, having a reliable and well-equipped workspace is crucial. Espasyo delivers exactly that, along with top-notch business support that keeps our operations running smoothly.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1760013767150-da8e4ded6286?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwdGVsZWNvbXxlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvbmV8ZW58MHx8MHx8fDA%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 18,
@@ -608,15 +596,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo is more than just a workspace; it's a supportive community that helped our wellness brand thrive. Their business registration services took the hassle out of our initial setup.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 19,
@@ -642,15 +629,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Even as an accounting firm, we appreciate the phenomenal workspace and virtual office solutions Espasyo provides. It’s a highly professional environment that our team and clients absolutely love.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGF4fGVufDB8fDB8fHwy",
       "image2": "https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRheHxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550973/borjal-amahan.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550973/borjal-amahan.png" 
   },
   {
     "id": 20,
@@ -674,15 +660,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo provided our AEC management firm with a flexible workspace that perfectly fits our dynamic schedule. Their dependable business assistance has been a major asset to our daily operations.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
+      "image1": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://plus.unsplash.com/premium_photo-1671808062726-2a7ffcd6109e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNvbnN0cnVjdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "image3": "" 
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 21,
@@ -706,15 +691,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo’s virtual office services have been a game-changer for our medical supplies trading business. Having a reliable hub allows us to manage logistics and client communications efficiently.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1605176173609-a0067079b419?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVkaWNhbCUyMHN1cHBsaWVzfGVufDB8fDB8fHwy",
       "image2": "https://images.unsplash.com/photo-1768498993096-6db9950eeb1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lZGljYWwlMjBzdXBwbGllc3xlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774536539/Ceecare.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774536539/Ceecare.png" 
   },
   {
     "id": 22,
@@ -739,15 +723,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "ElenJ Consulting is a purpose-driven staffing and recruitment firm committed to connecting exceptional talent with organizations that value growth, impact, and people. With a strategic approach to hiring and a passion for empowering careers, we deliver smart, scalable solutions that help businesses thrive and individuals succeed.",
+    "testimonial": "Espasyo has provided our recruitment team with an inspiring and professional co-working environment to interview candidates. Their seamless business support services have allowed us to focus fully on matching top talent with great companies.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVjcnVpdG1lbnR8ZW58MHx8MHx8fDI%3D",
       "image2": "https://images.unsplash.com/photo-1698047681452-08eba22d0c64?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlY3J1aXRtZW50fGVufDB8fDB8fHwy",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549846/ECC.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549846/ECC.png" 
   },
   {
     "id": 23,
@@ -771,15 +754,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "The reliable internet and modern facilities at Espasyo make it the ideal hub for our IT services company. We also heavily rely on their business assistance for our tax filing needs.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 24,
@@ -807,15 +789,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo’s beautifully designed workspace inspires our interior design team every day. Their virtual office setup has given our trading business a solid, professional foundation.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1534889156217-d643df14f14a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FycGV0fGVufDB8fDB8fHww",
+      "image2": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 25,
@@ -839,15 +820,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo shares our appreciation for sustainable and efficient environments. Their co-working hub and comprehensive business registration services helped us launch our green initiatives flawlessly.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1581081874314-cf94ae666228?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image2": "https://images.unsplash.com/photo-1650963764655-91902eedb9bd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHN1c3RhaW5hYmxlJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDI%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774594917/EG_Logo_Green_white_BG.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774594917/EG_Logo_Green_white_BG.png" 
   },
   {
     "id": 26,
@@ -867,15 +847,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Our consultancy relies on Espasyo for a quiet, professional space to conduct our strategic planning. Their back-office and tax filing support has been exceptionally reliable.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://plus.unsplash.com/premium_photo-1764195819178-b9f10b1f7b37?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1601041084273-6114cad589d5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29ycG9yYXRpb258ZW58MHx8MHx8fDA%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774608860/fascon.jpg" 
   },
   {
     "id": 27,
@@ -901,53 +880,51 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "The creative energy at Espasyo’s co-working hub is perfect for our advertising team. We are extremely grateful for their business support services, which handle the administrative tasks we don't have time for.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1557858310-9052820906f7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWR2ZXJ0aXNpbmd8ZW58MHx8MHx8fDA%3D",
+      "image2": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
-  "id": 28,
-  "isFounder": false,
-  "businessName": "GAMMS Property Mgt. Corp.",
-  "industry": [
-    "Property Management",
-    "Leasing",
-    "Real Estate"
-  ],
-  "services": [
-    "Property Management",
-    "Leasing and Rental Services",
-    "Tenant Relations and Administration",
-    "Maintenance and Repairs Coordination",
-    "Financial Monitoring and Reporting"
-  ],
-  "categories": [
-    "Real Estate & Property"
-  ],
-  "links": {
-    "website": "",
-    "facebook": "",
-    "instagram": "",
-    "LinkedIn": "",
-    "email": "",
-    "phone": "",
-    "address": ""
-  },
-  "testimonial": "GAMMS Property Mgt. Corp. stands as a property management and leasing company with a growing portfolio of income-generating real estate assets. The company continues to expand its footprint while maintaining a strong focus on value creation and sustainable growth.",
-  "media": {
-    "video": "",
-    "image1": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
-    "image2": "https://images.unsplash.com/photo-1724482606633-fa74fe4f5de1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
-    "image3": ""
-  },
-  "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774598913/GAMMS.png",
-  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "id": 28,
+    "isFounder": false,
+    "businessName": "GAMMS Property Mgt. Corp.",
+    "industry": [
+      "Property Management",
+      "Leasing",
+      "Real Estate"
+    ],
+    "services": [
+      "Property Management",
+      "Leasing and Rental Services",
+      "Tenant Relations and Administration",
+      "Maintenance and Repairs Coordination",
+      "Financial Monitoring and Reporting"
+    ],
+    "categories": [
+      "Real Estate & Property"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    "testimonial": "Espasyo has been instrumental in providing a professional base for our property management team. Their virtual office and administrative assistance have greatly streamlined our leasing operations.",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
+      "image2": "https://images.unsplash.com/photo-1724482606633-fa74fe4f5de1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774598913/GAMMS.png" 
   },
   {
     "id": 29,
@@ -971,15 +948,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "As a tech startup, we found the perfect home at Espasyo. The collaborative environment and expert business registration help have accelerated our company's growth.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 30,
@@ -1003,15 +979,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo offers a convenient and highly professional meeting space for our construction project managers. Their virtual office services ensure we never miss an important business communication.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1591955506264-3f5a6834570a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW98ZW58MHx8MHx8fDA%3D",
+      "image2": "https://plus.unsplash.com/premium_photo-1663047796379-0051d32be858?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29uc3RydWN0aW98ZW58MHx8MHx8fDA%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 31,
@@ -1035,52 +1010,50 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Managing transport logistics requires a solid operational base, which is exactly what Espasyo provides. Their excellent virtual office and tax filing services keep our cooperative running efficiently.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
+      "image1": "https://images.unsplash.com/photo-1583815368689-6ece28f2d8e3?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1640826024169-68efc36f2d91?q=80&w=1546&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image3": "" 
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
-  "id": 32,
-  "isFounder": false,
-  "businessName": "JTV Enterprises Corporation",
-  "industry": [
-    "Information Service Activities",
-    "Retail Trade Not in Stores"
-  ],
-  "services": [
-    "Information Services",
-    "Retail Solutions",
-    "E-commerce"
-  ],
-  "categories": [
-    "Information Technology",
-    "Retail & General Trade"
-  ],
-  "links": {
-    "website": "",
-    "facebook": "",
-    "instagram": "",
-    "LinkedIn": "",
-    "email": "",
-    "phone": "",
-    "address": "6 T. Bugallon St., Marikina Heights, NCR, Philippines"
+    "id": 32,
+    "isFounder": false,
+    "businessName": "JTV Enterprises Corporation",
+    "industry": [
+      "Information Service Activities",
+      "Retail Trade Not in Stores"
+    ],
+    "services": [
+      "Information Services",
+      "Retail Solutions",
+      "E-commerce"
+    ],
+    "categories": [
+      "Information Technology",
+      "Retail & General Trade"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": "6 T. Bugallon St., Marikina Heights, NCR, Philippines"
+    },
+    "testimonial": "Espasyo's co-working spaces and virtual office solutions have been incredibly beneficial for our diverse retail operations. Their seamless business support lets us focus on expanding our e-commerce platforms.",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVudGVycHJpc2V8ZW58MHx8MHx8fDA%3D",
+      "image3": ""
+    },
+    "logo": "" 
   },
-  "testimonial": "JTV Enterprises Corporation is a compliant, strategically positioned domestic corporation with diversified operations in retail and information services. Its governance framework, market potential, and expansion readiness make it a credible candidate for bank financing, investor partnerships, and strategic alliances.",
-  "media": {
-    "video": "",
-    "image1": "",
-    "image2": "",
-    "image3": ""
-  },
-  "logo": "",
-  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-},
   {
     "id": 33,
     "isFounder": false,
@@ -1103,15 +1076,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo gives our engineers a reliable and professional environment to draft plans and hold client meetings. Their business assistance services have taken a huge administrative load off our shoulders.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1599995903128-531fc7fb694b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9uJTIwc2l0ZXxlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 34,
@@ -1135,15 +1107,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "We manage properties all day, so having Espasyo manage our workspace and backend business needs is a huge relief. Their facility is top-notch, and their tax filing assistance is always accurate.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 35,
@@ -1167,15 +1138,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "The vibrant, focused atmosphere at Espasyo is exactly what our design studio needs to stay creative. Their virtual office and business registration services made starting up a breeze.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://plus.unsplash.com/premium_photo-1661313635217-d8d87c14fb66?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JhcGhpYyUyMGRlc2lnbiUyMHN0dWRpb3xlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1622513347372-25663cf6e309?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhcGhpYyUyMGRlc2lnbiUyMHN0dWRpb3xlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 36,
@@ -1199,15 +1169,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo's modern co-working space is the perfect backdrop for our digital marketing agency. We love the community vibe and heavily utilize their business support services to stay compliant.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://plus.unsplash.com/premium_photo-1684225764999-3597a8da10ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 37,
@@ -1232,15 +1201,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Our IT consultancy has thrived since moving into Espasyo. The professional meeting rooms and excellent virtual office support make it easy to impress our corporate clients.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhcGhpYyUyMGRlc2lnbiUyMHN0dWRpb3xlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 38,
@@ -1264,15 +1232,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo provides the rock-solid infrastructure and high-speed connectivity our IT firm demands. Their business assistance team has also been incredibly helpful with our ongoing tax requirements.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 39,
@@ -1296,15 +1263,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo offers an outstanding environment for our consultants to conduct training and strategy sessions. Their virtual office services provide us with a highly professional corporate presence.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 40,
@@ -1329,15 +1295,14 @@
       "phone": "0927 132 6788",
       "address": "6T Bugallon Marikina Heights Marikina City, Philippines"
     },
-    "testimonial": "Committed to enriching lives through wellness and beauty, our goal is to offer accessible and inventive solutions that foster self-care, confidence, and holistic health.",
+    "testimonial": "Espasyo provided the perfect professional setting for our wellness brand to manage operations and meet distributors. Their business registration and tax filing services were absolutely crucial to our smooth launch.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image2": "https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537752/shantal.jpg",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537752/shantal.jpg" 
   },
   {
     "id": 41,
@@ -1364,55 +1329,53 @@
       "phone": "0995 946 2609 / 0917 7940 084 / Office: 700-600-42",
       "address": "6 T. Bugallon Street, Marikina Heights, Marikina City"
     },
-    "testimonial": "To deliver value through sustainable scrap management while promoting a cleaner and greener environment.",
+    "testimonial": "Espasyo's virtual office and administrative support have been a tremendous help to our recycling enterprise. It gives us a professional corporate front while we focus on our field operations.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1764114440880-9bdbfe570a4d?q=80&w=1466&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image2": "https://images.unsplash.com/photo-1582408921715-18e7806365c1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774538290/SJB.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774538290/SJB.png" 
   },
   {
-  "id": 42,
-  "isFounder": false,
-  "businessName": "STARGOLD Group Realty Inc",
-  "industry": [
-    "Real Estate Development",
-    "Property Leasing",
-    "Property Management",
-    "General Construction"
-  ],
-  "services": [
-    "Real Estate Development",
-    "Property Management",
-    "Property Leasing",
-    "General Construction"
-  ],
-  "categories": [
-    "Real Estate & Property",
-    "Architecture & Construction"
-  ],
-  "links": {
-    "website": "",
-    "facebook": "",
-    "instagram": "",
-    "LinkedIn": "",
-    "email": "stargoldgroupinfo@gmail.com",
-    "phone": "632 8364 1998 / 632 8782 1928",
-    "address": "6 Torres Bugallon Street, Marikina Heights, Marikina City, Philippines 1810"
+    "id": 42,
+    "isFounder": false,
+    "businessName": "STARGOLD Group Realty Inc",
+    "industry": [
+      "Real Estate Development",
+      "Property Leasing",
+      "Property Management",
+      "General Construction"
+    ],
+    "services": [
+      "Real Estate Development",
+      "Property Management",
+      "Property Leasing",
+      "General Construction"
+    ],
+    "categories": [
+      "Real Estate & Property",
+      "Architecture & Construction"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "stargoldgroupinfo@gmail.com",
+      "phone": "632 8364 1998 / 632 8782 1928",
+      "address": "6 Torres Bugallon Street, Marikina Heights, Marikina City, Philippines 1810"
+    },
+    "testimonial": "We use Espasyo’s meeting spaces to close important real estate deals in a highly professional setting. Their comprehensive business assistance keeps our backend operations organized and compliant.",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1728825445493-1a6e89164511?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
+      "image2": "https://images.unsplash.com/photo-1626178793926-22b28830aa30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774600166/Stargold.png" 
   },
-  "testimonial": "STARGOLD Group Realty Inc. is engaged in the development, management, and leasing of real estate properties. The company manages and maintains properties leased for residential and commercial use while continuously seeking opportunities to expand its portfolio.",
-  "media": {
-    "video": "",
-    "image1": "https://images.unsplash.com/photo-1728825445493-1a6e89164511?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
-    "image2": "https://images.unsplash.com/photo-1626178793926-22b28830aa30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
-    "image3": ""
-  },
-  "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774600166/Stargold.png",
-  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-},
   {
     "id": 43,
     "isFounder": false,
@@ -1435,15 +1398,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo has been the perfect partner for our consultancy, providing a quiet, productive workspace whenever we need it. Their virtual office solutions have added a great level of professionalism to our firm.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 44,
@@ -1473,15 +1435,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "We are not selling lots; we are selling the future of how humanity inhabits the Earth.",
+    "testimonial": "Espasyo’s co-working space provides a fantastic collaborative environment for our real estate development team. We highly recommend their business registration and tax services to any growing enterprise.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1595079836394-7764d56a636b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWdyaWN1bHR1cmUlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1756579899875-3a9ff33094ec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWdyaWN1bHR1cmUlMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774592589/verdan.jpg",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774592589/verdan.jpg" 
   },
   {
     "id": 45,
@@ -1507,15 +1468,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo is an incredibly conducive environment for our educational hub to plan tutorials and learning sessions. Their accommodating staff and virtual office services make running our business so much easier.",
     "media": {
       "video": "",
       "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596176/WNLH1.jpg",
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596232/WLNH2.jpg",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549418/WNLH.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549418/WNLH.png" 
   },
   {
     "id": 46,
@@ -1535,15 +1495,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Having a virtual office at Espasyo has given our construction services a reputable business address. Their team also handles our tax filing efficiently, letting us focus on the build sites.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&auto=format&fit=crop&q=60",
+      "image2": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
-    "logo": "",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "" 
   },
   {
     "id": 47,
@@ -1574,15 +1533,14 @@
       "phone": "09778278441 (Contact: Hazel Sadiwa)",
       "address": ""
     },
-    "testimonial": "Award-winning wedding supplier recognized by Q Asia Publication and Philippine Buyer’s Choice Awards for exceptional quality in souvenirs and invitations.",
+    "testimonial": "Espasyo's creative and professional environment is perfect for meeting our wedding clients to discuss designs. Their business support services have been a lifesaver for our administrative tasks.",
     "media": {
       "video": "",
       "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596426/notable1.jpg",
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596448/notable2.png",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551374/notable-visuals.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551374/notable-visuals.png" 
   },
   {
     "id": 48,
@@ -1609,15 +1567,14 @@
       "phone": "",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Espasyo provides our recruitment firm with the ideal professional setting to conduct client and candidate interviews. We also rely on their fantastic business setup and compliance support.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1635350736475-c8cef4b21906?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image2": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVjcnVpdG1lbnR8ZW58MHx8MHx8fDI%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550020/EBM.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550020/EBM.png" 
   },
   {
     "id": 49,
@@ -1646,14 +1603,47 @@
       "phone": "0916 611 2928 / 700 600 42",
       "address": ""
     },
-    "testimonial": "",
+    "testimonial": "Our management consulting firm benefits greatly from the flexible workspaces at Espasyo. The reliable amenities and virtual office solutions perfectly complement our business model.",
     "media": {
       "video": "",
       "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551516/Media1_Suhay-Link.jpg",
-      "image2": "",
+      "image2": "https://plus.unsplash.com/premium_photo-1661774953651-d4f658a7e34d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29uc3VsdGluZ3xlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551102/SUHAY-LINK.png",
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774604695/SUHAY-LINK.png" 
+  },
+  {
+    "id": 50,
+    "isFounder": false,
+    "businessName": "HESCA PROPERTY MANAGEMENT SERVICES",
+    "industry": [
+      "Property Management",
+      "Real Estate"
+    ],
+    "services": [
+      "Property Management",
+      "Tenant Relations",
+      "Real Estate Services"
+    ],
+    "categories": [
+      "Real Estate & Property"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    "testimonial": "Espasyo gives our property management team a highly professional base of operations. Their reliable virtual office and seamless business assistance make handling tenant relations and managing our property portfolios so much easier.",
+    "media": {
+      "video": "",
+      "image1": "https://plus.unsplash.com/premium_photo-1680721445448-33ed9d682c3a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2luZ3xlbnwwfHwwfHx8MA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2luZ3xlbnwwfHwwfHx8MA%3D%3D",
+      "image3": ""
+    },
+    "logo": ""
   }
 ]

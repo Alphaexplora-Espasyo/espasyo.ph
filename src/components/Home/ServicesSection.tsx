@@ -48,18 +48,18 @@ const ServicesSection = ({
         {/* TOP SECTION */}
         <div className="w-full flex flex-col items-center relative z-20 pb-12">
           <div className="w-full max-w-5xl text-center pt-4 md:pt-6">
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl uppercase tracking-widest mb-12 text-[#908660]">ONE ROOF. ALL THE SOLUTIONS</h1>
+            <h1 className="font-display text-6xl sm:text-7xl md:text-6xl uppercase tracking-widest mb-12 text-[#908660]">ONE ROOF. ALL THE SOLUTIONS</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center px-4">
               <div>
-                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">LEGAL &<br />COMPLIANCE</h2>
+                <h2 className="font-display text-4xl sm:text-4xl uppercase text-[#482216] mb-4 leading-none">LEGAL &<br />COMPLIANCE</h2>
                 <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">We ensure your business meets all regulatory requirements without the headache.</h3>
               </div>
               <div>
-                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">COST<br />EFFICIENT</h2>
+                <h2 className="font-display text-4xl sm:text-4xl uppercase text-[#482216] mb-4 leading-none">COST<br />EFFICIENT</h2>
                 <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">Reduce overhead costs with our flexible virtual packages.</h3>
               </div>
               <div>
-                <h2 className="font-display text-4xl sm:text-5xl uppercase text-[#482216] mb-4 leading-none">TRUSTED &<br />DEPENDABLE</h2>
+                <h2 className="font-display text-4xl sm:text-4xl uppercase text-[#482216] mb-4 leading-none">TRUSTED &<br />DEPENDABLE</h2>
                 <h3 className="font-body text-xl sm:text-2xl text-[#482216]/70 leading-relaxed">With 8 years experience supporting nearly 100 MSMEs.</h3>
               </div>
             </div>
@@ -69,7 +69,7 @@ const ServicesSection = ({
         <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 px-4 sm:px-6 py-8 sm:py-12 md:py-16 w-full">
           <div className="flex flex-col items-center w-full max-w-5xl">
             <div className="text-center mb-4 sm:mb-6 md:mb-8">
-              <p className="font-body text-xs sm:text-sm tracking-widest uppercase mb-2 text-[#908660] font-bold">Our Expertise</p>
+              <p className="font-body text-xs sm:text-lg tracking-widest uppercase mb-2 text-[#908660] font-bold">Our Expertise</p>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase tracking-tighter leading-none text-[#482216]">SERVICES</h2>
             </div>
 
@@ -146,7 +146,7 @@ const ServicesSection = ({
                       <h3 className="font-display text-3xl md:text-4xl lg:text-5xl uppercase tracking-tighter mb-2 text-[#482216]">
                         {service.title}
                       </h3>
-                      <p className="font-body text-[#482216]/80 max-w-2xl text-sm md:text-base leading-relaxed font-bold">
+                      <p className="font-body text-[#482216]/80 max-w-2xl text-lg md:text-base leading-relaxed font-bold">
                         {service.description}
                       </p>
                     </div>
@@ -158,12 +158,12 @@ const ServicesSection = ({
                             href={service.providerLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-display text-sm md:text-base uppercase tracking-wider text-[#482216] hover:text-[#908660] transition-colors underline decoration-[#482216]/20 hover:decoration-[#908660]/50 underline-offset-4 cursor-pointer"
+                            className="font-display text-lg md:text-base uppercase tracking-wider text-[#482216] hover:text-[#908660] transition-colors underline decoration-[#482216]/20 hover:decoration-[#908660]/50 underline-offset-4 cursor-pointer"
                           >
                             {service.provider}
                           </a>
                         ) : (
-                          <span className="font-display text-sm md:text-base uppercase tracking-wider text-[#482216]">
+                          <span className="font-display text-lg md:text-base uppercase tracking-wider text-[#482216]">
                             {service.provider}
                           </span>
                         )}
@@ -183,7 +183,7 @@ const ServicesSection = ({
                         {subService.items.length > 0 && (
                           <ul className="flex flex-col gap-2 pl-6">
                             {subService.items.map((item: string, i: number) => (
-                              <li key={i} className="text-sm font-body text-[#482216]/80 leading-relaxed list-disc marker:text-[#908660]">
+                              <li key={i} className="text-lg font-body text-[#482216]/80 leading-relaxed list-disc marker:text-[#908660]">
                                 {item}
                               </li>
                             ))}

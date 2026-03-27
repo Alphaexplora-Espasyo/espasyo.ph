@@ -27,7 +27,7 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
     }
 
     const currentMedia = allMedia[currentMediaIdx];
-    const src = resolvePath(currentMedia.src);
+    const src = resolvePath(currentMedia.src || '');
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -39,18 +39,17 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
 
     return (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8 lg:p-12">
-            <div 
-                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isVisible && !isClosing ? 'opacity-100' : 'opacity-0'}`} 
-                onClick={handleClose} 
+            <div
+                className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isVisible && !isClosing ? 'opacity-100' : 'opacity-0'}`}
+                onClick={handleClose}
             />
-            
+
             {/* Modal Container: Halved Layout (50/50) */}
-            <div className={`relative w-full h-[85vh] md:h-[80vh] max-h-[900px] max-w-7xl bg-[#FDF4DC] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl transition-all duration-350 transform ${
-                isVisible && !isClosing ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-6'
-            }`} style={{ transitionDuration: '350ms', transitionTimingFunction: 'cubic-bezier(0.34, 1.1, 0.64, 1)' }}>
-                
-                <button 
-                    onClick={handleClose} 
+            <div className={`relative w-full h-[85vh] md:h-[80vh] max-h-[900px] max-w-7xl bg-[#FDF4DC] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl transition-all duration-350 transform ${isVisible && !isClosing ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-6'
+                }`} style={{ transitionDuration: '350ms', transitionTimingFunction: 'cubic-bezier(0.34, 1.1, 0.64, 1)' }}>
+
+                <button
+                    onClick={handleClose}
                     className="absolute top-4 left-4 md:top-6 md:left-6 z-[110] text-[#2C3628] hover:text-[#FDF4DC] p-2 md:p-3 bg-white/50 hover:bg-white/80 backdrop-blur-md rounded-full transition-all flex items-center gap-2"
                 >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -67,13 +66,13 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
 
                     {allMedia.length > 1 && (
                         <>
-                            <button 
+                            <button
                                 onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === 0 ? allMedia.length - 1 : i - 1); }}
                                 className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#FDF4DC] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
                             >
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
                             </button>
-                            <button 
+                            <button
                                 onClick={(e) => { e.stopPropagation(); setCurrentMediaIdx(i => i === allMedia.length - 1 ? 0 : i + 1); }}
                                 className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-3 bg-white/50 hover:bg-[#FDF4DC] rounded-full text-[#2C3628] hover:text-white transition-colors z-50 hover:scale-105"
                             >
@@ -81,10 +80,10 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                             </button>
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-50 bg-[#2C3628]/40 px-3 py-2 rounded-full backdrop-blur-md">
                                 {allMedia.map((_, i) => (
-                                    <button 
-                                        key={i} 
+                                    <button
+                                        key={i}
                                         onClick={() => setCurrentMediaIdx(i)}
-                                        className={`w-2 h-2 rounded-full transition-all ${i === currentMediaIdx ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`} 
+                                        className={`w-2 h-2 rounded-full transition-all ${i === currentMediaIdx ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'}`}
                                         aria-label={`Go to slide ${i + 1}`}
                                     />
                                 ))}
@@ -95,8 +94,8 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
 
                 {/* Right Panel: Content (50%) with Scrollable Bordered Box */}
                 <div className="w-full md:w-1/2 flex flex-col flex-1 bg-[#FDF4DC] text-[#2C3628] min-h-0 border-l border-[#2C3628]/20 h-[50vh] md:h-full">
-                    <div 
-                        className="flex-1 overflow-y-auto p-5 md:p-10 overscroll-contain" 
+                    <div
+                        className="flex-1 overflow-y-auto p-5 md:p-10 overscroll-contain"
                         data-lenis-prevent
                         style={{ scrollbarWidth: 'thin', msOverflowStyle: 'auto' }}
                     >
@@ -154,7 +153,7 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                                     ))}
                                 </div>
                             )}
-        
+
                             {business.testimonial && (
                                 <div className="mb-8">
                                     <p className="font-body text-base italic opacity-90 leading-relaxed border-l-2 border-[#DFA878] pl-3 py-1">
@@ -162,7 +161,7 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                                     </p>
                                 </div>
                             )}
-        
+
                             {business.services && business.services.length > 0 && (
                                 <div className="mb-8">
                                     <h4 className="font-display text-base uppercase tracking-widest mb-3 opacity-60">Services</h4>

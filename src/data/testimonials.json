@@ -17,7 +17,11 @@
     "links": {
       "website": "https://abatsph.com/",
       "facebook": "https://www.facebook.com/ABATrainingSolutions",
-      "instagram": "https://www.instagram.com/abatrainingsolutions/"
+      "instagram": "https://www.instagram.com/abatrainingsolutions/",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo gave us the professional base we needed while we focused on delivering impactful training programs. Having reliable administrative support behind the scenes helped us stay focused on our mission.",
     "media": {
@@ -26,7 +30,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/Media2_ABA.png",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453196/ABA_Training_Solutions.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 2,
@@ -49,7 +54,11 @@
     "links": {
       "website": "www.accruainsight.com",
       "facebook": "facebook.com/accrua",
-      "instagram": "https://www.instagram.com/accruainsight?igsh=MXdocTl4ZXd1bnhjOQ=="
+      "instagram": "https://www.instagram.com/accruainsight?igsh=MXdocTl4ZXd1bnhjOQ==",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Working with Espasyo allowed us to focus on advising our clients while they handled many of the operational details that come with running a growing firm.",
     "media": {
@@ -58,7 +67,8 @@
       "image2": "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Accrua.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 3,
@@ -83,7 +93,11 @@
     "links": {
       "website": "https://alphaexplora.com/",
       "facebook": "https://www.facebook.com/profile.php?id=61581265528238",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
@@ -92,7 +106,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Alphaexplora.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 4,
@@ -119,7 +134,11 @@
     "links": {
       "website": "https://astratech.com.ph/",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "As a company focused on innovation, Espasyo provided the operational structure that helped us stay organized while we developed solutions for our clients.",
     "media": {
@@ -128,7 +147,8 @@
       "image2": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZm9ybWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/AstraTech.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 5,
@@ -151,7 +171,11 @@
     "links": {
       "website": "https://globalbimph.vercel.app",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo allowed us to concentrate on delivering precise engineering work while they supported the administrative side of running a business.",
     "media": {
@@ -160,7 +184,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/gbim2.jpg",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GBIM.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 6,
@@ -184,7 +209,11 @@
     "links": {
       "website": "gmst.com.ph",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "With Espasyo supporting our office and documentation needs, our team was able to dedicate more time to developing technology and learning solutions.",
     "media": {
@@ -193,7 +222,8 @@
       "image2": "https://images.unsplash.com/photo-1771765780945-c788a6ce4b33?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaCUyMGVkdWNhdGlvbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/GMST.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 7,
@@ -211,7 +241,11 @@
     "links": {
       "website": "www.shopee.ph/OurTown257",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo provided the structure and support that helped us manage our operations efficiently as we explored new opportunities.",
     "media": {
@@ -220,6 +254,7 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/kreddu2.webp",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -241,7 +276,11 @@
     "links": {
       "website": "https://ludolaunchpad.com",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo helped us maintain a professional business presence while we focused on creating and launching new software products.",
     "media": {
@@ -250,7 +289,8 @@
       "image2": "https://images.unsplash.com/photo-1623934199716-dc28818a6ec7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2FtZSUyMGRlc2lnbnxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/LudoLaunchPad.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 9,
@@ -272,7 +312,11 @@
     "links": {
       "website": "www.nmdc-corp.com",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Having Espasyo support our administrative processes allowed our team to focus on planning, design, and project execution.",
     "media": {
@@ -281,7 +325,8 @@
       "image2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NMDC.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 10,
@@ -298,7 +343,11 @@
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/profile.php?id=61577580219245",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo helped us keep our business operations organized so we could focus on serving clients in the healthcare sector.",
     "media": {
@@ -307,7 +356,8 @@
       "image2": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGVhbHRoY2FyZXxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/NSC.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 11,
@@ -326,7 +376,11 @@
     "links": {
       "website": "",
       "facebook": "https://Facebook.com/OverflowCreativesArt",
-      "instagram": "https://Instagram.com/jmesamson"
+      "instagram": "https://Instagram.com/jmesamson",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo provided a dependable operational foundation that allowed our creative team to focus on producing meaningful work.",
     "media": {
@@ -335,7 +389,8 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/overflow3.jpg"
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/Overflow.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 12,
@@ -353,7 +408,11 @@
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/stepleadership",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "Espasyo helped streamline the operational side of our consultancy so we could focus on guiding organizations and leaders.",
     "media": {
@@ -362,44 +421,68 @@
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/step2.jpg",
       "image3": "https://res.cloudinary.com/dlk93aehl/image/upload/step3.jpg"
     },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg"
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/STEP.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 13,
     "isFounder": false,
     "businessName": "A. Valentin Construction",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Construction"
+    ],
+    "services": [
+      "Labor and Construction Materials Supplier",
+      "Civil/Structural Works",
+      "Architectural Works",
+      "Electrical",
+      "Plumbing",
+      "Fire Protection works"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "avalentin_builders@yahoo.com, avalentin.construction@gmail.com",
+      "phone": "0926-7083787 (Globe) / 0961-0440138 (Smart)",
+      "address": "6 T. Bugallon Street, Marikina Heights, Marikina City"
     },
-    "testimonial": "",
+    "testimonial": "Our Mission is to give our full potential, service, develop and building, To achieve space for every people worth living.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537070/A.-Valentin-Construction.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 14,
     "isFounder": false,
     "businessName": "Ameribuild Company, OPC",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Construction"
+    ],
+    "services": [
+      "General Construction",
+      "Design and Build"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -408,13 +491,17 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 15,
     "isFounder": false,
     "businessName": "APrime Education Experts Technology and Solutions Inc.",
-    "industry": [],
+    "industry": [
+      "Technology Solutions",
+      "I.T. Consultancy"
+    ],
     "services": [],
     "categories": [
       "Education",
@@ -423,7 +510,11 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -432,21 +523,26 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 16,
     "isFounder": false,
     "businessName": "Axis Point Management Inc.",
-    "industry": [],
-    "services": [],
-    "categories": [
+    "industry": [
       "Consulting"
     ],
+    "services": ["Consultancy"],
+    "categories": ["Consulting"],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -455,21 +551,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 17,
     "isFounder": false,
     "businessName": "Azure Mobile Telecom, Inc.",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Telecommunications"
+    ],
+    "services": [
+      "Mobile Telecommunications"
+    ],
     "categories": [
       "Information Technology"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -478,21 +583,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 18,
     "isFounder": false,
     "businessName": "BCHS Corporation",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Beauty & Wellness"
+    ],
+    "services": [
+      "Beauty & Wellness"
+    ],
     "categories": [
       "Beauty & Wellness"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -501,44 +615,64 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 19,
     "isFounder": false,
     "businessName": "BORJAL-AMAHAN Tax and Accounting Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Tax and Accounting"
+    ],
+    "services": [
+      "Business Incorporation & Registration",
+      "Tax Services",
+      "Accounting & Bookkeeping"
+    ],
     "categories": [
       "Financial Services"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGF4fGVufDB8fDB8fHwy",
+      "image2": "https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRheHxlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550973/borjal-amahan.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 20,
     "isFounder": false,
     "businessName": "Build Quotient AEC Management OPC",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Architecture & Construction"
+    ],
+    "services": [
+      "Architecture & Construction"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -547,67 +681,95 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 21,
     "isFounder": false,
     "businessName": "CEECARE Medical Supplies Trading",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Healthcare"
+    ],
+    "services": [
+      "Medical Supplies Trading"
+    ],
     "categories": [
       "Healthcare"
     ],
     "links": {
       "website": "",
       "facebook": "https://www.facebook.com/share/1AgFquQnoh/?mibextid=wwXIfr",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1605176173609-a0067079b419?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVkaWNhbCUyMHN1cHBsaWVzfGVufDB8fDB8fHwy",
+      "image2": "https://images.unsplash.com/photo-1768498993096-6db9950eeb1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lZGljYWwlMjBzdXBwbGllc3xlbnwwfHwwfHx8Mg%3D%3D",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774536539/Ceecare.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 22,
     "isFounder": false,
     "businessName": "ELENJ Consulting Company",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Recruitment and Human Resources Consulting",
+      "Consulting"
+    ],
+    "services": [
+      "Staffing and Recruitment"
+    ],
     "categories": [
       "Consulting"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "https://www.linkedin.com/company/elenj-consulting-company-inc/",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
-    "testimonial": "",
+    "testimonial": "ElenJ Consulting is a purpose-driven staffing and recruitment firm committed to connecting exceptional talent with organizations that value growth, impact, and people. With a strategic approach to hiring and a passion for empowering careers, we deliver smart, scalable solutions that help businesses thrive and individuals succeed.",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVjcnVpdG1lbnR8ZW58MHx8MHx8fDI%3D",
+      "image2": "https://images.unsplash.com/photo-1698047681452-08eba22d0c64?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlY3J1aXRtZW50fGVufDB8fDB8fHwy",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549846/ECC.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 23,
     "isFounder": false,
     "businessName": "Eltech Information Technology Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Information Technology"
+    ],
+    "services": [
+      "Information Technology"
+    ],
     "categories": [
       "Information Technology"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -616,14 +778,22 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 24,
     "isFounder": false,
     "businessName": "Estrukutura Manila Interior Supplies Trading",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Carpet Supply",
+      "Interior Design"
+    ],
+    "services": [
+      "Carpet Supply",
+      "Interior Design",
+      "Blinds and Wallpapers"
+    ],
     "categories": [
       "Art & Design",
       "Retail & General Trade"
@@ -631,7 +801,11 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -640,29 +814,39 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 25,
     "isFounder": false,
     "businessName": "Everything Green PH Inc",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Retail & General Trade"
+    ],
+    "services": [
+      "Trading and Consulting for Local and Sustainable Products and Services"
+    ],
     "categories": [
       "Retail & General Trade"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://images.unsplash.com/photo-1581081874314-cf94ae666228?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1650963764655-91902eedb9bd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHN1c3RhaW5hYmxlJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDI%3D",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774594917/EG_Logo_Green_white_BG.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -677,7 +861,11 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -686,21 +874,32 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 27,
     "isFounder": false,
     "businessName": "FZA Advertizing Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Marketing",
+      "Advertising"
+    ],
+    "services": [
+      "Marketing",
+      "Advertising"
+    ],
     "categories": [
       "Marketing & Advertising"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -709,44 +908,68 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
-    "id": 28,
-    "isFounder": false,
-    "businessName": "GAMMS Property MGT. CORP.",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Real Estate & Property"
-    ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  "id": 28,
+  "isFounder": false,
+  "businessName": "GAMMS Property Mgt. Corp.",
+  "industry": [
+    "Property Management",
+    "Leasing",
+    "Real Estate"
+  ],
+  "services": [
+    "Property Management",
+    "Leasing and Rental Services",
+    "Tenant Relations and Administration",
+    "Maintenance and Repairs Coordination",
+    "Financial Monitoring and Reporting"
+  ],
+  "categories": [
+    "Real Estate & Property"
+  ],
+  "links": {
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "LinkedIn": "",
+    "email": "",
+    "phone": "",
+    "address": ""
+  },
+  "testimonial": "GAMMS Property Mgt. Corp. stands as a property management and leasing company with a growing portfolio of income-generating real estate assets. The company continues to expand its footprint while maintaining a strong focus on value creation and sustainable growth.",
+  "media": {
+    "video": "",
+    "image1": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
+    "image2": "https://images.unsplash.com/photo-1724482606633-fa74fe4f5de1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHklMjBtYW5hZ2VtZW50fGVufDB8fDB8fHwy",
+    "image3": ""
+  },
+  "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774598913/GAMMS.png",
+  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 29,
     "isFounder": false,
     "businessName": "Green Pulse Technologies Inc.",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Information Technology"
+    ],
+    "services": [
+      "Information Technology"
+    ],
     "categories": [
       "Information Technology"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -755,21 +978,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 30,
     "isFounder": false,
     "businessName": "Highlands Construction Corporation",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Architecture & Construction"
+    ],
+    "services": [
+      "Architecture & Construction"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -778,21 +1010,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 31,
     "isFounder": false,
     "businessName": "JEXPRESS Tourist Transport Service Cooperative",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Logistics & Transport"
+    ],
+    "services": [
+      "Logistics & Transport"
+    ],
     "categories": [
       "Logistics & Transport"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -801,44 +1042,66 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
-    "id": 32,
-    "isFounder": false,
-    "businessName": "JTV Enterprises Corporation",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Retail & General Trade"
-    ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  "id": 32,
+  "isFounder": false,
+  "businessName": "JTV Enterprises Corporation",
+  "industry": [
+    "Information Service Activities",
+    "Retail Trade Not in Stores"
+  ],
+  "services": [
+    "Information Services",
+    "Retail Solutions",
+    "E-commerce"
+  ],
+  "categories": [
+    "Information Technology",
+    "Retail & General Trade"
+  ],
+  "links": {
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "LinkedIn": "",
+    "email": "",
+    "phone": "",
+    "address": "6 T. Bugallon St., Marikina Heights, NCR, Philippines"
   },
+  "testimonial": "JTV Enterprises Corporation is a compliant, strategically positioned domestic corporation with diversified operations in retail and information services. Its governance framework, market potential, and expansion readiness make it a credible candidate for bank financing, investor partnerships, and strategic alliances.",
+  "media": {
+    "video": "",
+    "image1": "",
+    "image2": "",
+    "image3": ""
+  },
+  "logo": "",
+  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+},
   {
     "id": 33,
     "isFounder": false,
     "businessName": "K2C Civil Engineering Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Construction"
+    ],
+    "services": [
+      "Construction"
+    ],
     "categories": [
       "Architecture & Construction"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -847,21 +1110,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 34,
     "isFounder": false,
     "businessName": "KAIZEN Optima Facility & Property Management Services, Inc",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Real Estate & Property"
+    ],
+    "services": [
+      "Property Management"
+    ],
     "categories": [
       "Real Estate & Property"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -870,22 +1142,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 35,
     "isFounder": false,
     "businessName": "NV Graphic Design Studio",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Art & Design"
+    ],
+    "services": [
+      "Graphic Design"
+    ],
     "categories": [
-      "Art & Design",
-      "Marketing & Advertising"
+      "Art & Design"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -894,21 +1174,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 36,
     "isFounder": false,
     "businessName": "Primo Digital Marketing Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Marketing & Advertising"
+    ],
+    "services": [
+      "Marketing & Advertising"
+    ],
     "categories": [
       "Marketing & Advertising"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -917,14 +1206,19 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 37,
     "isFounder": false,
     "businessName": "PYZEN Corp.",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Information Technology"
+    ],
+    "services": [
+      "Information Technology"
+    ],
     "categories": [
       "Information Technology",
       "Consulting"
@@ -932,7 +1226,11 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -941,21 +1239,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 38,
     "isFounder": false,
     "businessName": "Rockmetal Information Technology Services",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Information Technology"
+    ],
+    "services": [
+      "Information Technology"
+    ],
     "categories": [
       "Information Technology"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -964,114 +1271,30 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 39,
     "isFounder": false,
     "businessName": "Sales Edge Professionals, OPC",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Consulting",
-      "Marketing & Advertising"
+    "industry": [
+      "Consulting"
     ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-  },
-  {
-    "id": 40,
-    "isFounder": false,
-    "businessName": "Shantal's Beauty and Wellness Corporation",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Beauty & Wellness"
+    "services": [
+      "Consulting"
     ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-  },
-  {
-    "id": 41,
-    "isFounder": false,
-    "businessName": "SJB Ultimate Enterprises",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Retail & General Trade"
-    ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-  },
-  {
-    "id": 42,
-    "isFounder": false,
-    "businessName": "STARGOLD Group Realty Inc",
-    "industry": [],
-    "services": [],
-    "categories": [
-      "Real Estate & Property"
-    ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    "testimonial": "",
-    "media": {
-      "video": "",
-      "image1": "",
-      "image2": "",
-      "image3": ""
-    },
-    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
-  },
-  {
-    "id": 43,
-    "isFounder": false,
-    "businessName": "SUHAY StratEdge Management Consultancy Services",
-    "industry": [],
-    "services": [],
     "categories": [
       "Consulting"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -1080,53 +1303,218 @@
       "image2": "",
       "image3": ""
     },
+    "logo": "",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 40,
+    "isFounder": false,
+    "businessName": "Shantal's Beauty and Wellness Products",
+    "industry": [
+      "Beauty & Wellness",
+      "Retail & General Trade"
+    ],
+    "services": [
+      "Retail & General Trade"
+    ],
+    "categories": [
+      "Beauty & Wellness"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "shantalsbeautyandwellnesscorp@gmail.com",
+      "phone": "0927 132 6788",
+      "address": "6T Bugallon Marikina Heights Marikina City, Philippines"
+    },
+    "testimonial": "Committed to enriching lives through wellness and beauty, our goal is to offer accessible and inventive solutions that foster self-care, confidence, and holistic health.",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774537752/shantal.jpg",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 41,
+    "isFounder": false,
+    "businessName": "SJB Ultimate Enterprises",
+    "industry": [
+      "Green Technology",
+      "Scrap & Recycling"
+    ],
+    "services": [
+      "Collection and sorting of scrap materials",
+      "Sale of processed materials",
+      "Demolition and retrieving metal materials"
+    ],
+    "categories": [
+      "Retail & General Trade"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "0995 946 2609 / 0917 7940 084 / Office: 700-600-42",
+      "address": "6 T. Bugallon Street, Marikina Heights, Marikina City"
+    },
+    "testimonial": "To deliver value through sustainable scrap management while promoting a cleaner and greener environment.",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1764114440880-9bdbfe570a4d?q=80&w=1466&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1582408921715-18e7806365c1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774538290/SJB.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+  "id": 42,
+  "isFounder": false,
+  "businessName": "STARGOLD Group Realty Inc",
+  "industry": [
+    "Real Estate Development",
+    "Property Leasing",
+    "Property Management",
+    "General Construction"
+  ],
+  "services": [
+    "Real Estate Development",
+    "Property Management",
+    "Property Leasing",
+    "General Construction"
+  ],
+  "categories": [
+    "Real Estate & Property",
+    "Architecture & Construction"
+  ],
+  "links": {
+    "website": "",
+    "facebook": "",
+    "instagram": "",
+    "LinkedIn": "",
+    "email": "stargoldgroupinfo@gmail.com",
+    "phone": "632 8364 1998 / 632 8782 1928",
+    "address": "6 Torres Bugallon Street, Marikina Heights, Marikina City, Philippines 1810"
+  },
+  "testimonial": "STARGOLD Group Realty Inc. is engaged in the development, management, and leasing of real estate properties. The company manages and maintains properties leased for residential and commercial use while continuously seeking opportunities to expand its portfolio.",
+  "media": {
+    "video": "",
+    "image1": "https://images.unsplash.com/photo-1728825445493-1a6e89164511?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
+    "image2": "https://images.unsplash.com/photo-1626178793926-22b28830aa30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvcGVydHklMjBsZWFzaW5nfGVufDB8fDB8fHwy",
+    "image3": ""
+  },
+  "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774600166/Stargold.png",
+  "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+},
+  {
+    "id": 43,
+    "isFounder": false,
+    "businessName": "SUHAY StratEdge Management Consultancy Services",
+    "industry": [
+      "Consulting"
+    ],
+    "services": [
+      "Consulting"
+    ],
+    "categories": [
+      "Consulting"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    "logo": "",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 44,
     "isFounder": false,
     "businessName": "Verdan Terra Estate Incorporated",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Real Estate Development",
+      "Agri-Luxury",
+      "Regenerative Living"
+    ],
+    "services": [
+      "TerraLoft™ Ecosystem",
+      "Legacy Orchard Lots",
+      "Yield-Focused Entry Lots",
+      "Roxx Moto Hub & Café",
+      "Orchard Management"
+    ],
     "categories": [
-      "Real Estate & Property",
-      "Architecture & Construction"
+      "Real Estate & Property"
     ],
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
-    "testimonial": "",
+    "testimonial": "We are not selling lots; we are selling the future of how humanity inhabits the Earth.",
     "media": {
       "video": "",
       "image1": "",
       "image2": "",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774592589/verdan.jpg",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
     "id": 45,
     "isFounder": false,
     "businessName": "Wisdom Nourishment Learning Hub, Inc.",
-    "industry": [],
-    "services": [],
+    "industry": [
+      "Education",
+      "Tutorial"
+    ],
+    "services": [
+      "Education",
+      "Tutorial"
+    ],
     "categories": [
       "Education"
     ],
     "links": {
       "website": "",
-      "facebook": "",
-      "instagram": ""
+      "facebook": "https://www.facebook.com/profile.php?id=61558381175745",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
       "video": "",
-      "image1": "",
-      "image2": "",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596176/WNLH1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596232/WLNH2.jpg",
       "image3": ""
     },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774549418/WNLH.png",
     "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   },
   {
@@ -1141,7 +1529,11 @@
     "links": {
       "website": "",
       "facebook": "",
-      "instagram": ""
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "",
+      "phone": "",
+      "address": ""
     },
     "testimonial": "",
     "media": {
@@ -1150,6 +1542,118 @@
       "image2": "",
       "image3": ""
     },
-    "placeholderImage": "/LogoWhite.jpg"
+    "logo": "",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 47,
+    "isFounder": false,
+    "businessName": "Notable Visuals",
+    "industry": [
+      "Events and Weddings",
+      "Graphic Design",
+      "Souvenirs & Invitations"
+    ],
+    "services": [
+      "Bespoke Invitations",
+      "Wedding Websites",
+      "Custom Magnet Souvenirs",
+      "Event Photobooks",
+      "Custom-made Wedding Essentials"
+    ],
+    "categories": [
+      "Art & Design",
+      "Marketing & Advertising"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "https://www.facebook.com/notablevisuals",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "notablevisuals@gmail.com",
+      "phone": "09778278441 (Contact: Hazel Sadiwa)",
+      "address": ""
+    },
+    "testimonial": "Award-winning wedding supplier recognized by Q Asia Publication and Philippine Buyer’s Choice Awards for exceptional quality in souvenirs and invitations.",
+    "media": {
+      "video": "",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596426/notable1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774596448/notable2.png",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551374/notable-visuals.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 48,
+    "isFounder": false,
+    "businessName": "EBM Talent Bucket",
+    "industry": [
+      "Recruitment and Human Resources Consulting"
+    ],
+    "services": [
+      "Talent Acquisition",
+      "Employer Branding",
+      "Workforce Management",
+      "Search Solutions"
+    ],
+    "categories": [
+      "Consulting"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "https://www.linkedin.com/company/ebm-talentbucket/",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "https://images.unsplash.com/photo-1635350736475-c8cef4b21906?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image2": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVjcnVpdG1lbnR8ZW58MHx8MHx8fDI%3D",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774550020/EBM.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
+  },
+  {
+    "id": 49,
+    "isFounder": false,
+    "businessName": "Suhay-Link Management Services",
+    "industry": [
+      "Business Consulting",
+      "Strategic Support",
+      "Operational Support"
+    ],
+    "services": [
+      "Strategic Guidance",
+      "Business Setup",
+      "Compliance Support",
+      "Tailored Business Solutions"
+    ],
+    "categories": [
+      "Consulting"
+    ],
+    "links": {
+      "website": "",
+      "facebook": "",
+      "instagram": "",
+      "LinkedIn": "",
+      "email": "suhaylinkconsulting@gmail.com",
+      "phone": "0916 611 2928 / 700 600 42",
+      "address": ""
+    },
+    "testimonial": "",
+    "media": {
+      "video": "",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551516/Media1_Suhay-Link.jpg",
+      "image2": "",
+      "image3": ""
+    },
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774551102/SUHAY-LINK.png",
+    "placeholderImage": "https://res.cloudinary.com/dlk93aehl/image/upload/Logo.png"
   }
 ]

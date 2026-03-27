@@ -1,8 +1,8 @@
 // src/constants/homeData.ts
 
 export const testimonialData = [
-    { id: 'pic1', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic1.jpg', caption: "Opening Doors to Infinite Possibilities.", rotate: "rotate-[-2deg]" },
-    { id: 'pic2', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic2.jpg', caption: "Laying the Foundation for Your Tomorrow.", rotate: "rotate-[1.5deg]" },
+    { id: 'pic1', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic1.jpg', caption: "Your hub for INNOVATION and COMMUNITY.", rotate: "rotate-[-2deg]" },
+    { id: 'pic2', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic2.jpg', caption: "Transforming spaces into opportunities.", rotate: "rotate-[1.5deg]" },
     { id: 'pic3', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/v1774460460/Pic3.jpg', caption: "Built for Community, Designed for Success.", rotate: "rotate-[-1deg]" },
     { id: 'founder', src: 'https://res.cloudinary.com/dlk93aehl/image/upload/team.jpg', caption: "From IDEA to OPERATION, ESPASYO gives you the SPACE, SUPPORT, AND SYSTEM to SUCCEED.", rotate: "rotate-[-3deg]", isFounder: true },
     { id: 1, src: 'https://res.cloudinary.com/dlk93aehl/image/upload/1.jpg', caption: "Where Ambition Meets Opportunity.", rotate: "rotate-[1.5deg]" },

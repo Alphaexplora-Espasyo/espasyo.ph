@@ -1,7 +1,7 @@
 // DetailModal.tsx
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
-import { X, Instagram, Facebook, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Instagram, Facebook, Linkedin, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 // IMPORTANT FIX: Auto-resolve LogoWhite.jpg to the public folder
 const resolvePath = (p?: string): string => {
@@ -22,6 +22,7 @@ interface DetailModalProps {
       website?: string;
       facebook?: string;
       instagram?: string;
+      LinkedIn?: string;
     };
     testimonial: string;
     media?: {
@@ -279,7 +280,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           <div className="mt-8 flex items-center gap-4 pt-4 border-t border-white/5">
             {item.links?.website && (
               <a
-                href={item.links.website}
+                href={item.links.website.startsWith('http') ? item.links.website : `https://${item.links.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FDF4DC] text-[#2b3327] hover:bg-[#E6C280] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
@@ -291,7 +292,7 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
             <div className="flex gap-4 ml-auto text-[#FDF4DC]">
               {item.links?.facebook && (
                 <a
-                  href={item.links.facebook}
+                  href={item.links.facebook.startsWith('http') ? item.links.facebook : `https://${item.links.facebook}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
@@ -300,16 +301,26 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                   <Facebook size={24} />
                 </a>
               )}
-
               {item.links?.instagram && (
                 <a
-                  href={item.links.instagram}
+                  href={item.links.instagram.startsWith('http') ? item.links.instagram : `https://${item.links.instagram}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram size={24} />
+                </a>
+              )}
+              {item.links?.LinkedIn && (
+                <a
+                  href={item.links.LinkedIn.startsWith('http') ? item.links.LinkedIn : `https://${item.links.LinkedIn}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={24} />
                 </a>
               )}
             </div>

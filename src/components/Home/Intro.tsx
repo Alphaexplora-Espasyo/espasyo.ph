@@ -161,22 +161,22 @@ const Intro = ({ onComplete }: IntroProps) => {
                 className="absolute inset-0 flex items-center justify-center pointer-events-none text-center px-4 sm:px-6 z-30"
             >
                 {/* Intro 1 */}
-                <h2 className="absolute font-display text-[#2C3628] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
+                <h2 className="absolute font-display text-[#3A2618] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
                     ESPASYO STUDY & OFFICE HUB <br className="hidden sm:block" /><span className="text-[#D4A373]">THE HUB</span>
                 </h2>
 
                 {/* Intro 2 */}
-                <h2 className="absolute font-display text-[#2C3628] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
+                <h2 className="absolute font-display text-[#3A2618] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
                     WHERE ENTREPRENEURS <br className="hidden sm:block" /><span className="text-[#D4A373]">RISE TOGETHER</span>
                 </h2>
 
                 {/* Intro 3 */}
-                <h2 className="absolute font-display text-[#2C3628] text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.1em] sm:tracking-[0.15em] font-bold leading-tight">
+                <h2 className="absolute font-display text-[#3A2618] text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.1em] sm:tracking-[0.15em] font-bold leading-tight">
                     WHERE IDEAS BECOME ENTERPRISE <br className="hidden sm:block" /><span className="text-[#D4A373] text-lg sm:text-2xl md:text-3xl">YOUR SPACE FOR BUSINESS SOLUTIONS</span>
                 </h2>
 
                 {/* Intro 4 */}
-                <h2 className="absolute font-display text-[#2C3628] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
+                <h2 className="absolute font-display text-[#3A2618] text-2xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold leading-tight">
                     A Hub Built on <br className="hidden sm:block" /><span className="text-[#D4A373]">Community Spirit</span>
                 </h2>
 

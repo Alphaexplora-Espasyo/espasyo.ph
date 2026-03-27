@@ -82,7 +82,7 @@ const Gallery = () => {
                 transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}
             >
-              THE
+              OUR
             </h1>
             <h1
               className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-[#2C1A0E]"
@@ -94,7 +94,7 @@ const Gallery = () => {
                 transitionDelay: '0.2s',
               }}
             >
-              GALLERY
+              KA-ESPASYO
             </h1>
           </div>
         </div>

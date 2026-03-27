@@ -9,6 +9,7 @@ import Gallery from "./pages/Gallery";
 import Testimonials from "./pages/Testimonials";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import Reviews from './pages/Reviews';
 
 // Register ScrollTrigger globally here as well to be safe
 gsap.registerPlugin(ScrollTrigger);
@@ -83,6 +84,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>

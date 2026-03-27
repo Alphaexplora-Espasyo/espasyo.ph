@@ -71,8 +71,9 @@ const Navbar = ({ theme }: NavbarProps) => {
     { label: 'Our Story', dest: '#our-story', type: 'scroll' },
     { label: 'Our Services', dest: '#services', type: 'scroll' },
     { label: 'Our Community', dest: '#testimonials', type: 'scroll' },
-    { label: 'The Gallery', dest: '/gallery', type: 'route' },
-    { label: 'Resources', dest: '/resources', type: 'route' }, // Added here
+    { label: 'Our Gallery', dest: '/gallery', type: 'route' },
+    { label: 'Our Reviews', dest: '/reviews', type: 'route' },
+    { label: 'Resources', dest: '/resources', type: 'route' },
     { label: 'Contact Us', dest: '/contact', type: 'route' },
   ] as const;
 

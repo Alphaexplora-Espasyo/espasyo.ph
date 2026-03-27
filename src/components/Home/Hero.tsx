@@ -84,15 +84,15 @@ const Hero = ({ introFinished, onNavigate }: HeroProps) => {
       </div>
 
       {/* --- SCROLL INDICATOR --- */}
-      <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 transition-opacity duration-1000 delay-500 ${introFinished ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`absolute bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 transition-opacity duration-1000 delay-500 ${introFinished ? 'opacity-100' : 'opacity-0'}`}>
         
         {/* Uniform High-Contrast Text Pill */}
-        <div className="text-center font-body text-[10px] md:text-sm uppercase tracking-[0.2em] font-black text-[#FDF4DC] bg-[#3A2618]/80 backdrop-blur-sm px-5 py-2.5 rounded-3xl shadow-lg opacity-90 leading-relaxed">
+        <div className="text-center font-body text-[11px] md:text-sm uppercase tracking-[0.2em] font-black text-[#FDF4DC] bg-[#3A2618]/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-2xl opacity-90 leading-relaxed border border-[#FDF4DC]/10">
           Scroll to see <br /> Our Services
         </div>
 
         {/* Animated Line */}
-        <div className="w-0.5 h-10 md:h-14 bg-[#FDF4DC]/20 relative overflow-hidden rounded-full border border-[#FDF4DC]/10">
+        <div className="w-0.5 h-12 md:h-14 bg-[#FDF4DC]/20 relative overflow-hidden rounded-full border border-[#FDF4DC]/10">
           <div className="absolute top-0 left-0 w-full h-[30%] bg-[#FDF4DC] animate-scroll-line-v2 shadow-[0_0_15px_#FDF4DC]" />
         </div>
       </div>

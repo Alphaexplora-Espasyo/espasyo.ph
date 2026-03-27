@@ -1,6 +1,6 @@
 // src/components/Testimonials.tsx
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { Play } from 'lucide-react';
+import { Play, Facebook, Instagram, Linkedin } from 'lucide-react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
 import DetailModal from './Shared/Modals/DetailModal';
@@ -60,6 +60,7 @@ export interface TestimonialItem {
     website?: string;
     facebook?: string;
     instagram?: string;
+    LinkedIn?: string;
   };
   testimonial: string;
   media?: {
@@ -76,18 +77,13 @@ export interface TestimonialItem {
 // Helper to resolve public paths
 const resolvePath = (p?: string): string => p ? p.replace(/^public\//, '/') : '';
 
-// --- ITEMS ARRAY BUILD (BUG FIX APPLIED HERE) ---
-const isComplete = (t: typeof testimonialsData[0]): boolean =>
-  Object.values(t.links ?? {}).some(v => Boolean(v)) && Boolean(t.testimonial);
-
 // 1. Check if a Founder exists first before assigning random images
 const founderData = testimonialsData.find(t => t.isFounder);
 
 const allClients = testimonialsData
   .filter(t => !t.isFounder)
   .slice()
-  .sort((a, b) => (isComplete(b) ? 1 : 0) - (isComplete(a) ? 1 : 0));
-const completeClients = allClients.filter(isComplete);
+  .sort((a, b) => a.businessName.localeCompare(b.businessName));
 
 // 2. Only reserve Slot 0 if there is actually a Founder. Otherwise, use all slots.
 const availableSlots = Array.from({ length: TOTAL_ITEMS }, (_, i) => i).filter(i => founderData ? i !== 0 : true);
@@ -103,14 +99,8 @@ const centerPrioritySlots = availableSlots.sort((a, b) => {
 
 const clientBySlot = new Map<number, typeof allClients[0]>();
 
-completeClients.forEach((client, j) => {
-  clientBySlot.set(centerPrioritySlots[j], client);
-});
-
-let cycleIdx = 0;
-centerPrioritySlots.slice(completeClients.length).forEach(idx => {
-  clientBySlot.set(idx, allClients[cycleIdx % allClients.length]);
-  cycleIdx++;
+centerPrioritySlots.forEach((slotIdx, i) => {
+  clientBySlot.set(slotIdx, allClients[i % allClients.length]);
 });
 
 const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
@@ -401,7 +391,24 @@ const Testimonials = () => {
                       </div>
                     </div>
                     <div className="mt-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                      <p className="font-body text-[12px] md:text-auto text-center text-white leading-tight italic opacity-90 line-clamp-2 drop-shadow-sm">"{item.testimonial}"</p>
+                      <p className="font-body text-[12px] md:text-auto text-center text-white leading-tight italic opacity-90 line-clamp-2 drop-shadow-sm mb-3">"{item.testimonial}"</p>
+                      <div className="flex justify-center gap-3 text-[#FDF4DC]">
+                        {item.links?.facebook && (
+                          <a href={item.links.facebook.startsWith('http') ? item.links.facebook : `https://${item.links.facebook}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Facebook size={16} />
+                          </a>
+                        )}
+                        {item.links?.instagram && (
+                          <a href={item.links.instagram.startsWith('http') ? item.links.instagram : `https://${item.links.instagram}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Instagram size={16} />
+                          </a>
+                        )}
+                        {item.links?.LinkedIn && (
+                          <a href={item.links.LinkedIn.startsWith('http') ? item.links.LinkedIn : `https://${item.links.LinkedIn}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Linkedin size={16} />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

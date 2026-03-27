@@ -75,7 +75,7 @@ const Footer = () => {
             <p className="font-body text-lg md:text-lg text-[#3A2618]/40">
               © {currentYear} Espasyo Coworking Space. All rights reserved.
             </p>
-            <p className="font-body text-[12px] md:text-s text-[#3A2618]/40 mt-1.5 tracking-wide">
+            <p className="font-body text-[12px] md:text-xs text-[#3A2618]/40 mt-1.5 tracking-wide">
               Powered by{' '}
               <a
                 href="https://www.alphaexplora.com/"

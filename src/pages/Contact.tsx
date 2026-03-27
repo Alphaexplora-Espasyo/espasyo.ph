@@ -47,7 +47,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   </div>
                   <div>
                     <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Visit Us</p>
-                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">
+                    <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">
                       6A T. Bugallon Street, Marikina Heights,<br />
                       Marikina City, Philippines
                     </p>
@@ -60,7 +60,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   </div>
                   <div>
                     <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Call Us</p>
-                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">
+                    <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">
                       0916 611 2928<br />
                       700 600 42
                     </p>
@@ -73,7 +73,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   </div>
                   <div>
                     <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Email Us</p>
-                    <p className="text-m font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
+                    <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
                   </div>
                 </div>
               </div>

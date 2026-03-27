@@ -11,9 +11,25 @@ const getInitials = (name: string) => {
     return name.substring(0, 2).toUpperCase();
 };
 
+// Returns a consistent color scheme based on the business name string
+const getColorScheme = (name: string) => {
+    const schemes = [
+        { bg: '#3A2618', text: '#FDF4DC' }, // Dark Brown + Cream
+        { bg: '#2C3628', text: '#FDF4DC' }, // Dark Green + Cream
+        { bg: '#DFA878', text: '#3A2618' }, // Sandy Beige + Dark Brown
+    ];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % schemes.length;
+    return schemes[index];
+};
+
 export const MediaCard = ({ business, onClick }: { business: Business, onClick: () => void }) => {
     // Check if the business has a custom logo instead of the default generic ones
     const hasCustomLogo = business.logo && !business.logo.includes('LOGO.png') && !business.logo.includes('Logo.png') && !business.logo.includes('LogoWhite.jpg');
+    const scheme = getColorScheme(business.businessName);
 
     return (
         <div className="flex flex-col h-full group cursor-pointer gallery-anim-item" onClick={onClick}>
@@ -26,8 +42,14 @@ export const MediaCard = ({ business, onClick }: { business: Business, onClick: 
                         loading="lazy"
                     />
                 ) : (
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-full md:h-full md:max-w-[120px] md:max-h-[120px] bg-[#4A3525] text-[#FDF4DC] flex items-center justify-center rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-110 drop-shadow-lg relative z-10">
-                        <span className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest">
+                    <div 
+                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-full md:h-full md:max-w-[120px] md:max-h-[120px] flex items-center justify-center rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-110 drop-shadow-lg relative z-10"
+                        style={{ backgroundColor: scheme.bg }}
+                    >
+                        <span 
+                            className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-widest"
+                            style={{ color: scheme.text }}
+                        >
                             {getInitials(business.businessName)}
                         </span>
                     </div>

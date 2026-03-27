@@ -67,6 +67,7 @@ export interface TestimonialItem {
   businessName: string;
   industry: string[];
   services: string[];
+  categories?: string[];
   links?: {
     website?: string;
     facebook?: string;

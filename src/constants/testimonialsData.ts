@@ -33,7 +33,7 @@ export interface Business {
   testimonial: string;
   media: Media;
   logo: string;
-  placeholderImage: string;
+  placeholderImage?: string;
 }
 
 export const CATEGORIES = [

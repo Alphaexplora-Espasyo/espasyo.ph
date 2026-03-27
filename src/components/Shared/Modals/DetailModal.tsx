@@ -128,10 +128,10 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           <X size={20} />
         </button>
 
-        {/* MEDIA SECTION */}
+        {/* MEDIA SECTION (50%) */}
         <div
           ref={mediaRef}
-          className="relative w-full h-[40%] min-h-[200px] md:h-full md:w-[55%] shrink-0 overflow-hidden bg-black flex flex-col"
+          className="relative w-full h-[40%] min-h-[200px] md:h-full md:w-1/2 shrink-0 overflow-hidden bg-black flex flex-col"
         >
           <div className="w-full h-full relative">
             {activeMedia.type === 'video' ? (
@@ -222,20 +222,85 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
           )}
         </div>
 
-        {/* DETAILS SECTION */}
+        {/* DETAILS SECTION (50%) */}
         <div
           ref={detailsRef}
-          className="flex-1 min-h-0 md:w-[45%] flex flex-col px-5 py-5 md:px-8 md:py-8 overflow-y-auto custom-scrollbar pointer-events-auto"
+          className="flex-1 min-h-0 md:w-1/2 flex flex-col px-5 py-5 md:px-8 md:py-8 overflow-y-auto overscroll-contain pointer-events-auto border-l border-white/10"
+          data-lenis-prevent
+          style={{ scrollbarWidth: 'thin', msOverflowStyle: 'auto' }}
         >
+          <style>{`
+              [data-lenis-prevent]::-webkit-scrollbar {
+                  display: block !important;
+                  width: 5px !important;
+              }
+              [data-lenis-prevent]::-webkit-scrollbar-thumb {
+                  background: #FDF4DC40;
+                  border-radius: 10px;
+              }
+          `}</style>
           <h3 className="uppercase tracking-widest text-[16px] md:text-[20px] text-[#FDF4DC] mb-4 font-bold font-display opacity-80 shrink-0">
             About Our Client
           </h3>
 
           <div className="space-y-4 text-sm">
             <div>
-              <p className="font-display uppercase text-[24px] md:text-[32px] text-[#B56A54] font-bold leading-tight mb-3">
+              <p className="font-display uppercase text-2xl text-[#B56A54] font-bold leading-tight mb-5">
                 {item.businessName}
               </p>
+
+              {/* Connect Links: Moved up below Business Name */}
+              {(item.links?.website || item.links?.facebook || item.links?.instagram || item.links?.LinkedIn) && (
+                <div className="flex flex-wrap items-center gap-4 mb-8">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#FDF4DC]/50">Connect with us:</span>
+                  {item.links.website && (
+                    <a
+                      href={item.links.website.startsWith('http') ? item.links.website : `https://${item.links.website}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#FDF4DC] text-[#2b3327] hover:bg-[#E6C280] transition-colors px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider"
+                    >
+                      View Website
+                    </a>
+                  )}
+
+                  <div className="flex gap-4 items-center">
+                    {item.links.facebook && (
+                      <a
+                        href={item.links.facebook.startsWith('http') ? item.links.facebook : `https://${item.links.facebook}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#FDF4DC] hover:text-white transition-colors"
+                        aria-label="Facebook"
+                      >
+                        <Facebook size={20} />
+                      </a>
+                    )}
+                    {item.links.instagram && (
+                      <a
+                        href={item.links.instagram.startsWith('http') ? item.links.instagram : `https://${item.links.instagram}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#FDF4DC] hover:text-white transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <Instagram size={20} />
+                      </a>
+                    )}
+                    {item.links.LinkedIn && (
+                      <a
+                        href={item.links.LinkedIn.startsWith('http') ? item.links.LinkedIn : `https://${item.links.LinkedIn}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#FDF4DC] hover:text-white transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin size={20} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )}
               
               {item.industry && item.industry.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-2">
@@ -253,16 +318,22 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
                 <p className="font-display uppercase text-[12px] text-[#FDF4DC] font-semibold tracking-widest mb-2 opacity-70">
                   Services Provided
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 ml-4 block w-full">
-                  <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 block w-full">
+                  <ul className="text-[#f2f0e9] font-body text-base leading-relaxed opacity-90 space-y-3 block w-full">
                     {item.services.slice(0, 4).map((service, idx) => (
-                      <li key={idx} className="break-words" title={service}>{service}</li>
+                      <li key={idx} className="flex items-center gap-3 group">
+                        <span className="text-[#DFA878] text-[10px] shrink-0">◆</span>
+                        <span className="flex-1 leading-snug" title={service}>{service}</span>
+                      </li>
                     ))}
                   </ul>
                   {item.services.length > 4 && (
-                    <ul className="text-[#f2f0e9] font-body text-[14px] leading-relaxed opacity-90 list-disc list-outside space-y-1 block w-full">
-                      {item.services.slice(4, 8).map((service, idx) => (
-                        <li key={idx} className="break-words" title={service}>{service}</li>
+                    <ul className="text-[#f2f0e9] font-body text-base leading-relaxed opacity-90 space-y-3 block w-full">
+                      {item.services.slice(4, 12).map((service, idx) => (
+                        <li key={idx} className="flex items-center gap-3 group">
+                          <span className="text-[#DFA878] text-[10px] shrink-0">◆</span>
+                          <span className="flex-1 leading-snug" title={service}>{service}</span>
+                        </li>
                       ))}
                     </ul>
                   )}
@@ -273,58 +344,10 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
 
           <div className="my-6 h-px bg-white/10" />
 
-          <blockquote className="italic text-lg md:text-xl leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#FDF4DC]/50 pl-4">
+          <blockquote className="italic text-base leading-relaxed opacity-90 mb-auto text-[#efe9d5] font-body border-l-2 border-[#FDF4DC]/50 pl-4">
             “{item.testimonial}”
           </blockquote>
 
-          <div className="mt-8 flex items-center gap-4 pt-4 border-t border-white/5">
-            {item.links?.website && (
-              <a
-                href={item.links.website.startsWith('http') ? item.links.website : `https://${item.links.website}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#FDF4DC] text-[#2b3327] hover:bg-[#E6C280] hover:text-white transition-colors px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widermr-auto"
-              >
-                View Website
-              </a>
-            )}
-
-            <div className="flex gap-4 ml-auto text-[#FDF4DC]">
-              {item.links?.facebook && (
-                <a
-                  href={item.links.facebook.startsWith('http') ? item.links.facebook : `https://${item.links.facebook}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={24} />
-                </a>
-              )}
-              {item.links?.instagram && (
-                <a
-                  href={item.links.instagram.startsWith('http') ? item.links.instagram : `https://${item.links.instagram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={24} />
-                </a>
-              )}
-              {item.links?.LinkedIn && (
-                <a
-                  href={item.links.LinkedIn.startsWith('http') ? item.links.LinkedIn : `https://${item.links.LinkedIn}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={24} />
-                </a>
-              )}
-            </div>
-          </div>
         </div>
       </div>
     </div>

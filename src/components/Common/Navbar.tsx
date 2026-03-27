@@ -80,11 +80,11 @@ const Navbar = ({ theme }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[130] h-[72px] flex justify-between items-center m-2 px-6 md:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
+        className={`fixed top-0 left-0 right-0 z-[130] h-[72px] flex justify-between items-center m-2 px-6 lg:px-12 rounded-lg border-2 transition-colors duration-500 ease-in-out ${containerClasses}`}
       >
         <Link
           to="/"
-          className={`flex items-center font-display font-bold text-xl tracking-tighter transition-colors duration-500 ${textClasses}`}
+          className={`flex items-center font-display font-bold text-xl tracking-tighter transition-colors duration-500 shrink-0 ${textClasses}`}
           onClick={(e) => {
             if (location.pathname === '/') {
               e.preventDefault();
@@ -98,12 +98,13 @@ const Navbar = ({ theme }: NavbarProps) => {
           ESPASYO COMMUNITY
         </Link>
 
-        <div className="hidden md:flex gap-8 font-body text-sm font-bold uppercase tracking-widest">
+        {/* ETO YUNG FIX: Ginawang lg:flex para sa laptop lang lalabas. Pinaliit din yung text/gap sa smaller laptops (lg) tapos lalaki sa desktop (xl) */}
+        <div className="hidden lg:flex gap-4 xl:gap-8 font-body text-xs xl:text-sm font-bold uppercase tracking-widest">
           {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavigation(link.dest, link.type)}
-              className="relative group overflow-hidden"
+              className="relative group overflow-hidden whitespace-nowrap"
             >
               <span className={`block group-hover:-translate-y-full transition-transform duration-300 ease-out ${hoverTextClasses}`}>
                 {link.label}
@@ -115,9 +116,9 @@ const Navbar = ({ theme }: NavbarProps) => {
           ))}
         </div>
 
-        {/* MOBILE HAMBURGER ICON */}
+        {/* MOBILE HAMBURGER ICON - FIX: Ginawang lg:hidden para lumabas sa tablets */}
         <button
-          className={`md:hidden p-2 -mr-2 transition-colors duration-300 ${textClasses} hover:${hoverTextClasses}`}
+          className={`lg:hidden p-2 -mr-2 transition-colors duration-300 ${textClasses} hover:${hoverTextClasses}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >

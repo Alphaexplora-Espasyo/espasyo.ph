@@ -8,9 +8,12 @@ const Reviews = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [selectedReview, setSelectedReview] = useState<any>(null);
-  const [isModalVisible, setIsModalVisible] = useState(false); // Controls animation state
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  // Ref to track exact float value for mobile browser sub-pixel scrolling
+  const exactScrollPos = useRef(0); 
+
   const shouldScroll = isAutoPlaying && activeCardId === null && !selectedReview;
 
   // --- MODAL ANIMATION LOGIC ---
@@ -37,16 +40,30 @@ const Reviews = () => {
   // --- AUTO-SCROLL LOGIC ---
   useEffect(() => {
     let animationFrameId: number;
+    
     const autoScroll = () => {
       if (scrollRef.current && shouldScroll) {
-        scrollRef.current.scrollLeft += 0.5; 
+        // Sync our exact position if the user manually swiped/scrolled
+        if (Math.abs(scrollRef.current.scrollLeft - exactScrollPos.current) > 1) {
+          exactScrollPos.current = scrollRef.current.scrollLeft;
+        }
+
+        // Use float tracker to bypass iOS fractional scroll bug
+        exactScrollPos.current += 0.5; 
+        scrollRef.current.scrollLeft = exactScrollPos.current; 
+
         if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
           scrollRef.current.scrollLeft = 0;
+          exactScrollPos.current = 0;
         }
         animationFrameId = requestAnimationFrame(autoScroll);
       }
     };
-    if (shouldScroll) animationFrameId = requestAnimationFrame(autoScroll);
+
+    if (shouldScroll) {
+      animationFrameId = requestAnimationFrame(autoScroll);
+    }
+    
     return () => cancelAnimationFrame(animationFrameId);
   }, [shouldScroll]);
 
@@ -120,7 +137,7 @@ const Reviews = () => {
 
         <div className="mt-10 relative z-10 px-4 text-center">
           <h2 className="font-serif text-2xl md:text-3xl text-[#5C4D3C]">
-            See more reviews <a href="https://facebook.com" target="_blank" className="font-bold text-[#8C6B50] underline decoration-2">here</a>.
+            See more reviews <a href="https://www.facebook.com/espasyostudynofficehub/reviews" target="_blank" className="font-bold text-[#8C6B50] underline decoration-2">here</a>.
           </h2>
         </div>
       </main>
@@ -128,11 +145,13 @@ const Reviews = () => {
       {/* --- MODAL OVERLAY WITH ANIMATION --- */}
       {selectedReview && (
         <div 
-          className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#3A2618]/60 backdrop-blur-md transition-opacity duration-300 ease-out ${isModalVisible ? 'opacity-100' : 'opacity-0'}`}
+          // ADDED pt-24 for mobile to push below navbar, reverts to standard center on md screens
+          className={`fixed inset-0 z-[100] flex items-center justify-center p-4 pt-24 md:pt-4 bg-[#3A2618]/60 backdrop-blur-md transition-opacity duration-300 ease-out ${isModalVisible ? 'opacity-100' : 'opacity-0'}`}
           onClick={closeModal}
         >
           <div 
-            className={`bg-[#FDF4DC] w-full max-w-2xl max-h-[80vh] rounded-2xl shadow-2xl flex flex-col relative border border-[#8C6B50]/30 transition-all duration-300 ease-out ${isModalVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-4 opacity-0'}`}
+            // RESTORED max-h-[85vh] so the box never exceeds screen limits
+            className={`bg-[#FDF4DC] w-full max-w-4xl max-h-[85vh] rounded-2xl shadow-2xl flex flex-col relative border border-[#8C6B50]/30 transition-all duration-300 ease-out ${isModalVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-4 opacity-0'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <button 
@@ -142,13 +161,27 @@ const Reviews = () => {
               <X size={24} />
             </button>
             
-            <div className="p-8 overflow-y-auto custom-scrollbar">
-              <Quote className="w-10 h-10 text-[#A69076] mb-4 opacity-50" fill="currentColor" />
-              <h4 className="font-serif text-3xl font-bold text-[#3A2618] mb-6">{selectedReview.user}</h4>
-              <p className="font-serif text-xl text-[#5C4D3C] leading-relaxed italic">
-                "{selectedReview.statement}"
-              </p>
+            {/* ADDED overflow-y-auto to this container. Text scrolls inside, box stays fixed size */}
+            <div className="p-6 md:p-8 flex flex-col flex-1 overflow-y-auto custom-scrollbar">
+              <div className="flex-1">
+                {/* Scaled icons and text slightly for a better fit on smaller screens */}
+                <Quote className="w-8 h-8 md:w-10 md:h-10 text-[#A69076] mb-4 opacity-50" fill="currentColor" />
+                <h4 className="font-serif text-2xl md:text-3xl font-bold text-[#3A2618] mb-4 md:mb-6">{selectedReview.user}</h4>
+                <p className="font-serif text-lg md:text-xl text-[#5C4D3C] leading-relaxed italic pb-4 md:pb-8">
+                  "{selectedReview.statement}"
+                </p>
+              </div>
+              
+              <div className="mt-auto pt-4 md:pt-6 border-t border-[#8C6B50]/20 flex justify-end shrink-0">
+                <button 
+                  onClick={closeModal}
+                  className="bg-[#8C6B50] text-[#FDF4DC] px-8 py-2.5 rounded-full font-sans text-sm font-bold tracking-wider uppercase hover:bg-[#3A2618] transition-colors shadow-sm"
+                >
+                  Close
+                </button>
+              </div>
             </div>
+
           </div>
         </div>
       )}
@@ -179,6 +212,9 @@ const ReviewCard = ({ review, onSeeMore, onInteractionStart, onInteractionEnd }:
     <div 
       onMouseEnter={onInteractionStart}
       onMouseLeave={onInteractionEnd}
+      onTouchStart={onInteractionStart} 
+      onTouchEnd={onInteractionEnd}     
+      onTouchCancel={onInteractionEnd}  
       onClick={() => { if(isOverflowing) onSeeMore(); }}
       className={`w-[280px] h-[380px] bg-[#FDF4DC] rounded-xl shadow-lg border border-[#8C6B50]/20 flex flex-col p-6 shrink-0 transition-transform hover:-translate-y-1 ${isOverflowing ? 'cursor-pointer' : ''}`}
     >

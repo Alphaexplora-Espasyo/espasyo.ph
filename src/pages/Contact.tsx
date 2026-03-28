@@ -73,7 +73,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   </div>
                   <div>
                     <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Email Us</p>
-                    <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">inquiry@espasyo.com</p>
+                    <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">inquire@espasyo.ph</p>
                   </div>
                 </div>
               </div>

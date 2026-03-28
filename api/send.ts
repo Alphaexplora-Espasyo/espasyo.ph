@@ -1,35 +1,23 @@
 import { Resend } from 'resend';
 
-// We initialize the Resend SDK with the environment variable.
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function handler(req: any, res: any) {
-    // Only accept POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method Not Allowed' });
     }
 
     try {
-        const { firstName, lastName, email, company, service, details, file_name, file_content } = req.body;
+        const { firstName, lastName, email, company, service, details } = req.body;
 
-        const attachments = [];
-        if (file_name && file_content) {
-            // The frontend sends base64 with a data URI prefix (e.g. "data:application/pdf;base64,...")
-            // Resend expects only the base64 content
-            attachments.push({
-                filename: file_name,
-                content: file_content.split(',')[1],
-            });
-        }
-
-        // Send the email
         const { data, error } = await resend.emails.send({
-            // Until you verify your domain in Resend, you must use onboarding@resend.dev as the 'from' address
-            from: 'ESPASYO Inquiry <onboarding@resend.dev>',
-            // This MUST be the email address you verified on Resend (usually the one you signed up with)
-            to: ['dev.espasyo@alphaexplora.com'],
-            subject: `New Project Inquiry from ${firstName} ${lastName}`,
+            
+            from: 'ESPASYO Website <inquiry@espasyo.ph>', 
+            
+       
+            to: ['inquire@espasyo.ph'], 
+            
+            subject: `New Inquiry from ${firstName} ${lastName}`,
             html: `
         <h2>New Contact Request</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
@@ -37,8 +25,7 @@ export default async function handler(req: any, res: any) {
         <p><strong>Company:</strong> ${company}</p>
         <p><strong>Service Requested:</strong> ${service}</p>
         <p><strong>Details:</strong><br/>${details}</p>
-      `,
-            attachments: attachments.length > 0 ? attachments : undefined
+      `
         });
 
         if (error) {

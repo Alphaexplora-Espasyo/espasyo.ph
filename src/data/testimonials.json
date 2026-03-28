@@ -1160,9 +1160,9 @@
     ],
     "links": {
       "website": "",
-      "facebook": "",
-      "instagram": "",
-      "LinkedIn": "",
+      "facebook": "https://www.facebook.com/profile.php?id=61584806217735",
+      "instagram": "https://www.instagram.com/convertwithprimo",
+      "LinkedIn": "https://www.linkedin.com/company/convert-with-primo/",
       "email": "",
       "phone": "",
       "address": ""
@@ -1174,7 +1174,7 @@
       "image2": "https://plus.unsplash.com/premium_photo-1684225764999-3597a8da10ab?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D",
       "image3": ""
     },
-    "logo": ""
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774677344/primo.jpg"
   },
   {
     "id": 37,

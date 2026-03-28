@@ -61,7 +61,7 @@ const Contact = ({ hideNavbar = false }: ContactProps) => {
                   <div>
                     <p className="text-[28px] font-bold uppercase tracking-[0.15em] text-[#DFA878] mb-1">Call Us</p>
                     <p className="text-base font-body leading-relaxed text-[#FDF4DC]/90">
-                      0916 611 2928<br />
+                      0921 233 4805<br />
                       700 600 42
                     </p>
                   </div>

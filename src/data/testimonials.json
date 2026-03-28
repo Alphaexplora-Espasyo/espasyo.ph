@@ -1375,37 +1375,6 @@
     "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774600166/Stargold.png"
   },
   {
-    "id": 43,
-    "isFounder": false,
-    "businessName": "SUHAY StratEdge Management Consultancy Services",
-    "industry": [
-      "Consulting"
-    ],
-    "services": [
-      "Consulting"
-    ],
-    "categories": [
-      "Consulting"
-    ],
-    "links": {
-      "website": "",
-      "facebook": "",
-      "instagram": "",
-      "LinkedIn": "",
-      "email": "",
-      "phone": "",
-      "address": ""
-    },
-    "testimonial": "Espasyo has been the perfect partner for our consultancy, providing a quiet, productive workspace whenever we need it. Their virtual office solutions have added a great level of professionalism to our firm.",
-    "media": {
-      "video": "",
-      "image1": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=800&auto=format&fit=crop&q=60",
-      "image2": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
-      "image3": ""
-    },
-    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774604695/SUHAY-LINK.png" 
-  },
-  {
     "id": 44,
     "isFounder": false,
     "businessName": "Verdan Terra Estate Incorporated",

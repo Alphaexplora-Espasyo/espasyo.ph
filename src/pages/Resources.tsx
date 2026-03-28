@@ -266,7 +266,7 @@ const Resources = () => {
         </div>
       </div>
 
-      <Navbar theme="brown" />
+      <Navbar theme="default" />
 
       {/* --- HEADER (UPDATED LAYOUT) --- */}
       <div className="pt-32 px-6 md:px-12 max-w-[1600px] mx-auto w-full relative z-10">

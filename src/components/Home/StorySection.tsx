@@ -57,20 +57,19 @@ const StorySection = ({
             {/* Panel 1: Intro */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${originStoryVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
               <h2 className="font-display text-6xl lg:text-8xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">Our Story</h2>
-              <div className="max-w-3xl font-body text-xl opacity-80 leading-relaxed space-y-6 text-justify text-[#3A2618]">
-                <p>ESPASYO Coworking &amp; Office Space nurtures a dynamic community from a diverse array of businesses &amp; individuals across various sectors.</p>
-                <p>Established in 2018 by a group of educators, ESPASYO promotes engagement &amp; collaboration among like-minded professionals.</p>
+              <div className="max-w-3xl font-body text-m opacity-80 leading-relaxed space-y-6 text-justify text-[#3A2618]">
+                <p>Founded in 2018 by respected educators, Espasyo was created to give Filipinos a professional, welcoming, and flexible space for both learning and working. Located in the heart of Marikina City, it has grown into a vibrant hub where students, freelancers, entrepreneurs, and businesses come together in an inspiring environment.</p>
+                <p>Recognizing the community’s need for a space that blends focused study areas with collaborative coworking and virtual office services, Espasyo introduced a hybrid model designed to meet the diverse requirements of a dynamic clientele.</p>
                 <p className="font-bold text-[#B56A54]">Scroll to see our origin story.</p>
               </div>
             </div>
 
-            {/* Panel 2: Origin Story */}
+            {/* Panel 2: Vision */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${originStoryVisible && !missionVisible ? 'opacity-100 translate-y-0' : originStoryVisible && missionVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
-              <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">Origin Story</p>
-              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">How It All Started</h2>
+              <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">The Vision</p>
+              <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">OUR SHARED PROSPERITY</h2>
               <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#3A2618]">
-                <p>It began with a simple observation by our founder, <strong>Ms. Tina</strong>. She noticed that many talented freelancers and small business owners were isolated — working from noisy cafes or lonely bedrooms.</p>
-                <p>She didn't want to build just another office hub with cubicles. She envisioned a sanctuary — a place where creatives could collide, collaborate, and grow together.</p>
+                <p>Espasyo aims to be the leading coworking, virtual office, and study and business hub in Marikina City—empowering Filipinos to innovate, connect, and thrive in a collaborative environment.</p>
               </div>
               <blockquote className="mt-8 italic text-2xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#3A2618]">
                 "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
@@ -79,10 +78,10 @@ const StorySection = ({
 
             {/* Panel 3: Mission */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${missionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'}`}>
-              <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">Mission</p>
+              <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">The Mission</p>
               <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">OUR COLLECTIVE IMPACT</h2>
               <div className="max-w-3xl font-body text-lg opacity-80 leading-relaxed space-y-5 text-justify text-[#3A2618]">
-                <p>ESPASYO is committed to providing accessible, innovative, and professional workspace and virtual business solutions that support entrepreneurs, freelancers, and growing enterprises—through space, service, and a strong community network.</p>
+                <p>To provide a professional, welcoming, and flexible space for learning and working—empowering individuals and businesses to succeed in a collaborative community.</p>
               </div>
               <blockquote className="mt-8 italic text-xl leading-relaxed opacity-90 font-display border-l-4 pl-6 border-[#B56A54] text-[#3A2618]">
                 "A COMMUNITY OF ENTREPRENEURS EMPOWERED TO CONNECT, COLLABORATE AND SUCCEED."
@@ -105,8 +104,8 @@ const StorySection = ({
             <div className="md:hidden w-full px-2 mb-4 text-center sm:text-left">
               <h2 className="font-display text-5xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">Our Story</h2>
               <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#3A2618]">
-                <p>ESPASYO Coworking &amp; Office Space nurtures a dynamic community from a diverse array of businesses &amp; individuals across various sectors.</p>
-                <p>Established in 2018 by a group of educators, ESPASYO promotes engagement &amp; collaboration among like-minded professionals.</p>
+                <p>Founded in 2018 by respected educators, Espasyo was created to give Filipinos a professional, welcoming, and flexible space for both learning and working. Located in the heart of Marikina City, it has grown into a vibrant hub where students, freelancers, entrepreneurs, and businesses come together in an inspiring environment.</p>
+                <p>Recognizing the community’s need for a space that blends focused study areas with collaborative coworking and virtual office services, Espasyo introduced a hybrid model designed to meet the diverse requirements of a dynamic clientele.</p>
               </div>
             </div>
 
@@ -134,11 +133,10 @@ const StorySection = ({
                   {/* MOBILE ONLY: ORIGIN STORY (After 3rd polaroid) */}
                   {isOriginStorySlot && (
                     <div className="md:hidden w-full px-2 my-4 text-center sm:text-left">
-                      <p className="font-display text-sm uppercase tracking-widest mb-2 font-bold text-[#B56A54]">Origin Story</p>
-                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">How It All Started</h2>
+                      <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">The Vision</p>
+                      <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">OUR SHARED PROSPERITY</h2>
                       <div className="font-body text-base opacity-80 leading-relaxed space-y-4 text-[#3A2618]">
-                        <p>It began with a simple observation by our founder, <strong>Ms. Tina</strong>. She noticed that many talented freelancers and small business owners were isolated — working from noisy cafes or lonely bedrooms.</p>
-                        <p>She didn't want to build just another office hub with cubicles. She envisioned a sanctuary — a place where creatives could collide, collaborate, and grow together.</p>
+                        <p>Espasyo aims to be the leading coworking, virtual office, and study and business hub in Marikina City—empowering Filipinos to innovate, connect, and thrive in a collaborative environment.</p>
                       </div>
                       <blockquote className="mt-6 italic text-lg leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#3A2618]">
                         "Espasyo isn't about the desk you rent. It's about the person sitting next to you."
@@ -149,10 +147,10 @@ const StorySection = ({
                   {/* MOBILE ONLY: MISSION (After 6th polaroid) */}
                   {isMissionSlot && (
                     <div className="md:hidden w-full px-2 my-4 text-center sm:text-left">
-                      <p className="font-display text-sm uppercase tracking-widest mb-2 font-bold text-[#B56A54]">Mission</p>
-                      <h2 className="font-display text-4xl uppercase tracking-tighter mb-4 leading-[0.9] text-[#3A2618]">OUR COLLECTIVE IMPACT</h2>
+                      <p className="font-display text-sm uppercase tracking-widest mb-3 font-bold text-[#B56A54]">The Mission</p>
+                      <h2 className="font-display text-5xl lg:text-7xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">OUR COLLECTIVE IMPACT</h2>
                       <div className="font-body text-base opacity-80 leading-relaxed text-[#3A2618]">
-                        <p>ESPASYO is committed to providing accessible, innovative, and professional workspace and virtual business solutions that support entrepreneurs, freelancers, and growing enterprises—through space, service, and a strong community network.</p>
+                        <p>To provide a professional, welcoming, and flexible space for learning and working—empowering individuals and businesses to succeed in a collaborative community.</p>
                       </div>
                       <blockquote className="mt-6 italic text-base leading-relaxed opacity-90 font-display border-l-4 pl-4 border-[#B56A54] text-[#3A2618]">
                         "A COMMUNITY OF ENTREPRENEURS EMPOWERED TO CONNECT, COLLABORATE AND SUCCEED."

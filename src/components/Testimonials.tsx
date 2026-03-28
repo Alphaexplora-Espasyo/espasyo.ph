@@ -1,22 +1,30 @@
 // src/components/Testimonials.tsx
 import { useRef, useEffect, useState, useCallback } from 'react';
-import { Play } from 'lucide-react';
+import { Play, Facebook, Instagram, Linkedin } from 'lucide-react';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
 import DetailModal from './Shared/Modals/DetailModal';
 import FounderModal from './Shared/Modals/FounderModal';
 import Navbar from './Common/Navbar';
-import LOGO from '../assets/LOGO.png';
+const LOGO = "https://res.cloudinary.com/dlk93aehl/image/upload/LOGO.png";
 import testimonialsData from '../data/testimonials.json';
 
 gsap.registerPlugin(Draggable);
 
-// --- IMAGE LOADING ---
-type GlobModule = { default: string;[key: string]: unknown; };
-const coworkingModules = import.meta.glob<GlobModule>('../assets/gallery/coworking/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const eventModules = import.meta.glob<GlobModule>('../assets/gallery/events/*.{png,jpg,jpeg,webp,svg,PNG,JPG,JPEG}', { eager: true });
-const extractUrls = (modules: Record<string, GlobModule>) => Object.values(modules).map((mod) => mod.default);
-const loadedImages = [...extractUrls(coworkingModules), ...extractUrls(eventModules)];
+// --- CLOUDINARY HARDCODED IMAGES ---
+// Since local assets were deleted, import.meta.glob cannot scan files anymore.
+// Add all your Cloudinary image URLs into this array:
+const cloudinaryCoworkingUrls: string[] = [
+  "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453003/att.boEIijzqnkbNC3laxiXX9bYfo62R9H0OBArnupqFviY.jpg"
+  // ... Paste the rest of your coworking Cloudinary URLs here!
+];
+
+const cloudinaryEventUrls: string[] = [
+  "https://res.cloudinary.com/dlk93aehl/image/upload/v1774453017/att.kZ3SEWXB5oQ4AShNyTHRv8PSpodbx9s0DPOG-hI_mRE.jpg"
+  // ... Paste the rest of your events Cloudinary URLs here!
+];
+
+const loadedImages = [...cloudinaryCoworkingUrls, ...cloudinaryEventUrls];
 const fallbackImages = [
   'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=500&q=60',
@@ -34,6 +42,17 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return shuffled;
 };
 
+const getInitials = (name: string) => {
+    if (!name) return 'E';
+    return name
+      .split(' ')
+      .filter(word => word.length > 0)
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 3);
+};
+
 const imagePool = loadedImages.length > 0 ? shuffleArray(loadedImages) : fallbackImages;
 
 // --- GRID CONFIGURATION ---
@@ -48,10 +67,12 @@ export interface TestimonialItem {
   businessName: string;
   industry: string[];
   services: string[];
+  categories?: string[];
   links?: {
     website?: string;
     facebook?: string;
     instagram?: string;
+    LinkedIn?: string;
   };
   testimonial: string;
   media?: {
@@ -68,18 +89,13 @@ export interface TestimonialItem {
 // Helper to resolve public paths
 const resolvePath = (p?: string): string => p ? p.replace(/^public\//, '/') : '';
 
-// --- ITEMS ARRAY BUILD (BUG FIX APPLIED HERE) ---
-const isComplete = (t: typeof testimonialsData[0]): boolean =>
-  Object.values(t.links ?? {}).some(v => Boolean(v)) && Boolean(t.testimonial);
-
 // 1. Check if a Founder exists first before assigning random images
-const founderData = testimonialsData.find(t => t.isFounder); 
+const founderData = testimonialsData.find(t => t.isFounder);
 
 const allClients = testimonialsData
   .filter(t => !t.isFounder)
   .slice()
-  .sort((a, b) => (isComplete(b) ? 1 : 0) - (isComplete(a) ? 1 : 0));
-const completeClients = allClients.filter(isComplete);
+  .sort((a, b) => a.businessName.localeCompare(b.businessName));
 
 // 2. Only reserve Slot 0 if there is actually a Founder. Otherwise, use all slots.
 const availableSlots = Array.from({ length: TOTAL_ITEMS }, (_, i) => i).filter(i => founderData ? i !== 0 : true);
@@ -95,14 +111,8 @@ const centerPrioritySlots = availableSlots.sort((a, b) => {
 
 const clientBySlot = new Map<number, typeof allClients[0]>();
 
-completeClients.forEach((client, j) => {
-  clientBySlot.set(centerPrioritySlots[j], client);
-});
-
-let cycleIdx = 0;
-centerPrioritySlots.slice(completeClients.length).forEach(idx => {
-  clientBySlot.set(idx, allClients[cycleIdx % allClients.length]);
-  cycleIdx++;
+centerPrioritySlots.forEach((slotIdx, i) => {
+  clientBySlot.set(slotIdx, allClients[i % allClients.length]);
 });
 
 const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
@@ -117,16 +127,21 @@ const items: TestimonialItem[] = Array.from({ length: TOTAL_ITEMS }, (_, i) => {
   }
 
   const clientData = clientBySlot.get(i)!;
-  const thumbnailSrc =
-    resolvePath(clientData.placeholderImage) ||
-    resolvePath(clientData.media?.image1) ||
-    LOGO;
+  const rawLogo = clientData.logo || '';
+  const logoUrl = resolvePath(rawLogo);
+  const thumbnailSrc = logoUrl || LOGO;
 
-  return { 
-    ...clientData, 
-    id: `${clientData.id}-${i}`, // 3. FIX FOR REACT DOM: Force unique IDs even for duplicate loop items
-    src: thumbnailSrc, 
-    isPlaceholder: thumbnailSrc === LOGO || thumbnailSrc.includes('LOGO.png') || thumbnailSrc.includes('LogoWhite.jpg') 
+  // Mark as placeholder if no logo exists OR if it contains generic "logo" naming
+  const isPlaceholder = !rawLogo || 
+                        rawLogo.toLowerCase().includes('logo.png') ||
+                        rawLogo.toLowerCase().includes('logowhite') ||
+                        thumbnailSrc === LOGO;
+
+  return {
+    ...clientData,
+    id: `${clientData.id}-${i}`,
+    src: thumbnailSrc,
+    isPlaceholder
   } as TestimonialItem;
 });
 
@@ -319,7 +334,7 @@ const Testimonials = () => {
         <div className="flex flex-col items-center gap-6">
           <div className="flex gap-4 md:gap-8 px-12 py-6 rounded-3xl bg-black/20 backdrop-blur-md border border-black/10 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none"></div>
-            
+
             <h1 className="font-display text-[12vw] md:text-[7vw] uppercase tracking-tighter leading-none text-center whitespace-nowrap text-white relative z-10"
               style={{ textShadow: '4px 4px 15px rgba(0,0,0,0.6), 10px 5px 0px #2C3628', opacity: titleStep >= 1 ? 1 : 0, transform: titleStep >= 1 ? 'scale(1) translateY(0)' : 'scale(0.5) translateY(50px)', transition: 'all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)' }}>
               CLIENT
@@ -356,31 +371,30 @@ const Testimonials = () => {
                 onClick={() => handleClick(item, i)}
               >
                 <div className="w-full h-full relative transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:rotate-[2deg] shadow-none group-hover:shadow-xl origin-center">
-                  
+
                   {/* Base Image */}
                   <img
                     src={item.src}
                     alt={item.businessName}
-                    className={`w-full h-full object-contain pointer-events-none rounded-sm bg-[#2C3628] ${item.isPlaceholder ? 'opacity-0' : ''}`}
+                    className={`w-full h-full object-contain pointer-events-none rounded-sm ${item.isPlaceholder ? 'hidden' : 'bg-[#2C3628]'}`}
                     loading="lazy"
                     decoding="async"
                   />
-                  
-                  {/* TEXT ONLY PLACEHOLDER DESIGN */}
-                  {item.isPlaceholder && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#2C3628] to-[#1a2018] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
-                      <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] overflow-hidden pointer-events-none">
-                        <span className="font-display text-[15vw] md:text-[8vw] leading-none text-[#F0EAD6]">E</span>
-                      </div>
 
-                      <h3 className="font-display text-base md:text-lg lg:text-xl font-bold uppercase tracking-widest text-[#F0EAD6] line-clamp-4 relative z-10 leading-snug drop-shadow-md" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
-                        {item.businessName}
-                      </h3>
+                  {/* TEXT ONLY PLACEHOLDER DESIGN (Initials centered) */}
+                  {item.isPlaceholder && (
+                    <div className="absolute inset-0 flex items-center justify-center p-4 text-center pointer-events-none z-10 bg-gradient-to-br from-[#3A2618] to-[#251810] rounded-sm border border-white/5 shadow-inner transition-opacity duration-300 group-hover:opacity-0">
+                      <div className="flex flex-col items-center justify-center gap-1">
+                        <span className="font-display text-[8vw] md:text-[4vw] leading-none text-white font-black tracking-tighter drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                          {getInitials(item.businessName)}
+                        </span>
+                        <div className="w-8 md:w-12 h-0.5 bg-white/20 rounded-full mt-2" />
+                      </div>
                     </div>
                   )}
 
                   <div className="absolute inset-0 bg-[#837B70] opacity-[0.38] transition-opacity duration-300 group-hover:opacity-0 pointer-events-none rounded-sm" />
-                  
+
                   {/* Hover Info Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col p-3 md:p-5 shadow-inner border border-white/5 rounded-sm backdrop-blur-[2px]">
                     <div className="mb-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
@@ -392,7 +406,24 @@ const Testimonials = () => {
                       </div>
                     </div>
                     <div className="mt-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                      <p className="font-body text-[12px] md:text-auto text-center text-white leading-tight italic opacity-90 line-clamp-2 drop-shadow-sm">"{item.testimonial}"</p>
+                      <p className="font-body text-[12px] md:text-auto text-center text-white leading-tight italic opacity-90 line-clamp-2 drop-shadow-sm mb-3">"{item.testimonial}"</p>
+                      <div className="flex justify-center gap-3 text-[#FDF4DC]">
+                        {item.links?.facebook && (
+                          <a href={item.links.facebook.startsWith('http') ? item.links.facebook : `https://${item.links.facebook}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Facebook size={16} />
+                          </a>
+                        )}
+                        {item.links?.instagram && (
+                          <a href={item.links.instagram.startsWith('http') ? item.links.instagram : `https://${item.links.instagram}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Instagram size={16} />
+                          </a>
+                        )}
+                        {item.links?.LinkedIn && (
+                          <a href={item.links.LinkedIn.startsWith('http') ? item.links.LinkedIn : `https://${item.links.LinkedIn}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="opacity-80 hover:opacity-100 transition-opacity">
+                            <Linkedin size={16} />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

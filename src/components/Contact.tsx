@@ -140,16 +140,22 @@ const Contact = () => {
                                 <a href="https://www.facebook.com/espasyostudynofficehub" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-widest hover:text-[#D4A373] transition-colors">
                                     <Facebook size={18} /><span>Follow on Facebook</span>
                                 </a>
-                                <div className="w-full h-48 rounded-xl overflow-hidden border-2 border-[#F0EAD6]/10 shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.2796443493134!2d121.1147575114704!3d14.640050876115993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9a528a49c95%3A0xc02e3b1c678ec09a!2sEspasyo%20Study%20%26%20Office%20Hub!5e0!3m2!1sen!2sph!4v1709123456789!5m2!1sen!2sph"
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                    ></iframe>
+                                <div className="w-full h-48 rounded-xl overflow-hidden border-2 border-[#F0EAD6]/10 shadow-lg relative group cursor-pointer">
+                                    <img
+                                        src="https://res.cloudinary.com/dlk93aehl/image/upload/v1774546085/espasyoMaps.png"
+                                        alt="Espasyo Location Map"
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                                    />
+                                    <a
+                                        href="https://maps.app.goo.gl/fF5wsVjxofb1co857"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center"
+                                    >
+                                        <div className="bg-[#F0EAD6] text-[#2C3628] px-4 py-2 rounded-full font-display text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                                            Open in Google Maps
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +168,6 @@ const Contact = () => {
                             <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tighter mb-2">Get in Touch</h2>
                             <p className="font-body text-sm opacity-70 mb-8">Fill out the form below and we'll get back to you shortly.</p>
 
-                            {/* Status Message Display */}
                             {/* Status Message Display */}
                             {statusMessage.text && (
                                 <div className={`mb-6 p-4 rounded-xl border-2 flex items-center justify-center text-center font-display text-xs font-bold uppercase tracking-widest transition-all ${statusMessage.type === 'success'

@@ -1,4 +1,4 @@
-import { useState, type MouseEvent, useEffect } from 'react';
+import { useState, type MouseEvent, useEffect, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -18,6 +18,7 @@ import type { Business } from '../constants/testimonialsData';
 import { testimonialData, serviceCategories } from '../constants/homeData';
 import { useSpatialHub } from '../hooks/useSpatialHub';
 import { useServicesCarousel } from '../hooks/useServicesCarousel';
+import NavTransition from '../components/Common/NavTransition';
 
 const Home = () => {
     const location = useLocation();
@@ -38,6 +39,8 @@ const Home = () => {
     const [selectedDetail, setSelectedDetail] = useState<any>(null);
     const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null);
     const [originRect, setOriginRect] = useState<DOMRect | null>(null);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const pendingAction = useRef<(() => void) | null>(null);
 
     // --- SPATIAL HUB HOOK ---
     const { 
@@ -53,6 +56,12 @@ const Home = () => {
     } = useServicesCarousel(serviceCategories.length);
 
     // --- HANDLERS ---
+    // Wrap any view switch in the transition curtain
+    const withTransition = useCallback((action: () => void) => {
+        pendingAction.current = action;
+        setIsTransitioning(true);
+    }, []);
+
     const handleIntroComplete = () => {
         sessionStorage.setItem('hasSeenIntro', 'true');
         setIntroFinished(true);
@@ -64,11 +73,11 @@ const Home = () => {
         setSelectedDetail(item);
     };
 
-    const handleViewAllClick = () => setActiveView('testimonials');
+    const handleViewAllClick = () => withTransition(() => setActiveView('testimonials'));
 
     const handleHeroNavigate = (dir: 'left' | 'right') => {
-        if (dir === 'left') setActiveView('story');
-        else if (dir === 'right') setActiveView('testimonials');
+        if (dir === 'left') withTransition(() => setActiveView('story'));
+        else if (dir === 'right') withTransition(() => setActiveView('testimonials'));
     };
 
     const activeService = serviceCategories[currentIndex];
@@ -95,25 +104,37 @@ const Home = () => {
 
     const navTheme = (activeView === 'hero' && scrolledTheme === 'brown') ? 'brown' : 'default';
 
-    // Handle incoming navigation events from Navbar
+    // Handle incoming navigation events from Navbar or Initial State
     useEffect(() => {
-        const handleScrollEvent = (e: Event) => {
-            const target = (e as CustomEvent).detail;
-            if (target === 'our-story') setActiveView('story');
-            if (target === 'testimonials') setActiveView('testimonials');
-            if (target === 'services' || target === 'contact' || target === 'hero') {
-                setActiveView('hero');
-                setTimeout(() => {
-                   document.getElementById('main-scroll-column')?.scrollTo({
-                     top: document.getElementById(target)?.offsetTop || 0,
-                     behavior: 'smooth'
-                   });
-                }, 100);
+        const scrollToTarget = (target: string) => {
+            if (target === 'our-story') withTransition(() => setActiveView('story'));
+            else if (target === 'testimonials') withTransition(() => setActiveView('testimonials'));
+            else if (target === 'services' || target === 'contact' || target === 'hero') {
+                withTransition(() => {
+                    setActiveView('hero');
+                    setTimeout(() => {
+                       document.getElementById('main-scroll-column')?.scrollTo({
+                         top: document.getElementById(target)?.offsetTop || 0,
+                         behavior: 'smooth'
+                       });
+                    }, 100);
+                });
             }
         };
+
+        // Check if there's a target in location state on mount
+        if (location.state?.scrollToSection) {
+            scrollToTarget(location.state.scrollToSection);
+        }
+
+        const handleScrollEvent = (e: Event) => {
+            const target = (e as CustomEvent).detail;
+            scrollToTarget(target);
+        };
+        
         window.addEventListener('scrollToSection', handleScrollEvent);
         return () => window.removeEventListener('scrollToSection', handleScrollEvent);
-    }, [setActiveView]);
+    }, [setActiveView, withTransition, location.state]);
 
     return (
         <div ref={containerRef} 
@@ -231,6 +252,16 @@ const Home = () => {
             {selectedBusiness && (
                 <GalleryModal business={selectedBusiness} onClose={() => setSelectedBusiness(null)} />
             )}
+
+            {/* NAV TRANSITION OVERLAY */}
+            <NavTransition
+                isVisible={isTransitioning}
+                onHalfway={() => {
+                    pendingAction.current?.();
+                    pendingAction.current = null;
+                }}
+                onDone={() => setIsTransitioning(false)}
+            />
         </div>
     );
 };

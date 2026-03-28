@@ -1,6 +1,6 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
-import { X, Instagram, Facebook, Play } from "lucide-react";
+import { X, Instagram, Facebook, Linkedin, Play } from "lucide-react";
 
 interface FounderModalProps {
   originRect: DOMRect;
@@ -142,7 +142,7 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
           ) : (
             <iframe
               // Replace this URL with Ms. Tina's actual video URL
-              src="https://www.youtube.com/embed/IlPRb2q5VSA?autoplay=1&mute=0" 
+              src="https://www.youtube.com/embed/IlPRb2q5VSA?autoplay=1&mute=0&playsinline=1" 
               title="Founder Story Video"
               className="w-full h-full border-none"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -178,8 +178,9 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
             </blockquote>
 
             <div className="mt-auto flex gap-5 pt-4 text-[#FDF4DC]">
-              <a href="#" className="hover:text-white transition-colors"><Facebook size={24} /></a>
-              <a href="#" className="hover:text-white transition-colors"><Instagram size={24} /></a>
+              <a href="#" className="hover:text-white transition-colors" aria-label="Facebook"><Facebook size={24} /></a>
+              <a href="#" className="hover:text-white transition-colors" aria-label="Instagram"><Instagram size={24} /></a>
+              <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn"><Linkedin size={24} /></a>
             </div>
           </div>
         </div>

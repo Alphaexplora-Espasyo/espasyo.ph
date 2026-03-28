@@ -31,7 +31,6 @@ const Contact = () => {
         setStatusMessage({ type: '', text: '' });
 
         try {
-            // Send to the Next.js/Vercel serverless function
             const response = await fetch('/api/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -39,13 +38,13 @@ const Contact = () => {
                     firstName: formData.firstName,
                     lastName: formData.lastName,
                     email: formData.email,
-                    company: "N/A (Espasyo Inquiry)",
-                    service: "Espasyo Inquiry",
-                    details: formData.message
+                    message: formData.message // Match na ito sa send.ts
                 }),
             });
 
             if (response.ok) {
+                // Walang variable assignment para walang "unused" warning
+                await response.json(); 
                 setStatusMessage({ type: 'success', text: 'Thank you! Your inquiry has been sent.' });
                 setFormData({ firstName: '', lastName: '', email: '', message: '' });
             } else {
@@ -53,6 +52,8 @@ const Contact = () => {
                 throw new Error(errorData.error?.message || 'Failed to send');
             }
         } catch (error) {
+            // Ginamit natin 'yung error variable para mawala 'yung linter warning
+            console.error("Form Submission Error:", error);
             setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
         } finally {
             setIsLoading(false);
@@ -132,7 +133,7 @@ const Contact = () => {
                                 </div>
                                 <div className="flex items-start gap-4 group">
                                     <div className="p-3 bg-[#F0EAD6]/10 rounded-full group-hover:bg-[#D4A373] group-hover:text-[#2C3628] transition-colors"><Mail size={20} /></div>
-                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#D4A373]">Email Us</h3><p className="text-sm opacity-80">inquiry@espasyo.ph</p></div>
+                                    <div><h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#D4A373]">Email Us</h3><p className="text-sm opacity-80">inquire@espasyo.ph</p></div>
                                 </div>
                             </div>
 

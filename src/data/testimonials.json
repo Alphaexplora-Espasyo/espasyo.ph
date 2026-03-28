@@ -433,7 +433,7 @@
     ],
     "links": {
       "website": "",
-      "facebook": "",
+      "facebook": "https://www.facebook.com/profile.php?id=61577437473542",
       "instagram": "",
       "LinkedIn": "",
       "email": "avalentin_builders@yahoo.com, avalentin.construction@gmail.com",
@@ -1024,17 +1024,15 @@
     "isFounder": false,
     "businessName": "JTV Enterprises Corporation",
     "industry": [
-      "Information Service Activities",
-      "Retail Trade Not in Stores"
+      "Property Management",
+      "Rental and Trading"
     ],
     "services": [
-      "Information Services",
-      "Retail Solutions",
-      "E-commerce"
+      "Property Management",
+      "Property Leasing"
     ],
     "categories": [
-      "Information Technology",
-      "Retail & General Trade"
+      "Real Estate & Property"
     ],
     "links": {
       "website": "",
@@ -1045,7 +1043,7 @@
       "phone": "",
       "address": "6 T. Bugallon St., Marikina Heights, NCR, Philippines"
     },
-    "testimonial": "Espasyo's co-working spaces and virtual office solutions have been incredibly beneficial for our diverse retail operations. Their seamless business support lets us focus on expanding our e-commerce platforms.",
+    "testimonial": "Espasyo's co-working spaces and virtual office solutions have been incredibly beneficial for our diverse rental operations. Their seamless business support lets us focus on expanding our e-commerce platforms.",
     "media": {
       "video": "",
       "image1": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60",
@@ -1059,10 +1057,10 @@
     "isFounder": false,
     "businessName": "K2C Civil Engineering Services",
     "industry": [
-      "Construction"
+      "Construction Consultancy"
     ],
     "services": [
-      "Construction"
+      "Construction", "Consulting"
     ],
     "categories": [
       "Architecture & Construction"
@@ -1405,7 +1403,11 @@
       "image2": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60",
       "image3": ""
     },
+<<<<<<< Updated upstream
     "logo": ""
+=======
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1774604695/SUHAY-LINK.png" 
+>>>>>>> Stashed changes
   },
   {
     "id": 44,

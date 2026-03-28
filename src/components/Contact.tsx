@@ -3,7 +3,8 @@ import Footer from '../components/Common/Footer';
 import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { useContactForm } from '../hooks/useContactForm';
 import { useContactAnimations } from '../hooks/useContactAnimations';
-interface ContactProps {
+
+export interface ContactProps {
   hideNavbar?: boolean;
 }
 

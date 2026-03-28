@@ -9,17 +9,22 @@ export default async function handler(req: any, res: any) {
     }
 
     try {
-        const { firstName, lastName, email, message } = req.body;
+        const { firstName, lastName, email, inquiryType, message } = req.body;
 
         const { data, error } = await resend.emails.send({
             from: 'ESPASYO Website <inquire@espasyo.ph>', 
             to: ['inquire@espasyo.ph'], 
-            subject: `New Inquiry from ${firstName} ${lastName}`,
+            subject: `[${inquiryType}] New Inquiry from ${firstName} ${lastName}`,
             html: `
-                <h2>New Contact Request</h2>
-                <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Message:</strong><br/>${message}</p>
+                <div style="font-family: sans-serif; padding: 20px;">
+                    <h2 style="color: #3A2618;">New Contact Request</h2>
+                    <hr/>
+                    <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
+                    <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Message:</strong></p>
+                    <p style="background: #f4f4f4; padding: 15px; border-radius: 5px;">${message}</p>
+                </div>
             `
         });
 

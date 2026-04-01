@@ -39,9 +39,9 @@ const Footer = () => {
                 Marikina Heights,<br />
                 Marikina City
               </p>
-              <p>0916 611 2928</p>
+              <p>0921 233 4805</p>
               <p>700 600 42</p>
-              <a href="mailto:inquiry@espasyo.com" className="block hover:text-[#B56A54] transition-colors">inquiry@espasyo.com</a>
+              <a href="mailto:inquire@espasyo.ph" className="block hover:text-[#B56A54] transition-colors">inquire@espasyo.ph</a>
             </div>
           </div>
           <div className="md:col-span-3">

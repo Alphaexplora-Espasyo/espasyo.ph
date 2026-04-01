@@ -57,7 +57,7 @@ const StorySection = ({
             {/* Panel 1: Intro */}
             <div className={`absolute inset-0 flex flex-col justify-center transition-all duration-700 ease-in-out ${originStoryVisible ? 'opacity-0 -translate-y-6 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
               <h2 className="font-display text-6xl lg:text-8xl uppercase tracking-tighter mb-8 leading-[0.9] text-[#3A2618]">Our Story</h2>
-              <div className="max-w-3xl font-body text-xl opacity-80 leading-relaxed space-y-6 text-justify text-[#3A2618]">
+              <div className="max-w-3xl font-body text-m opacity-80 leading-relaxed space-y-6 text-justify text-[#3A2618]">
                 <p>Founded in 2018 by respected educators, Espasyo was created to give Filipinos a professional, welcoming, and flexible space for both learning and working. Located in the heart of Marikina City, it has grown into a vibrant hub where students, freelancers, entrepreneurs, and businesses come together in an inspiring environment.</p>
                 <p>Recognizing the community’s need for a space that blends focused study areas with collaborative coworking and virtual office services, Espasyo introduced a hybrid model designed to meet the diverse requirements of a dynamic clientele.</p>
                 <p className="font-bold text-[#B56A54]">Scroll to see our origin story.</p>

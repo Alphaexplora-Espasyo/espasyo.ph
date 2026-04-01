@@ -101,7 +101,7 @@
     "testimonial": "Espasyo has helped us easily jumpstart our business, providing the guidance we needed to stay fully compliant. They’ve taken away the operational headaches so we can focus on creating real value. More than just a workspace, they are true partners.",
     "media": {
       "video": "",
-      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha1.jpg",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1775011709/alpha3.jpg",
       "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/alpha2.jpg",
       "image3": ""
     },
@@ -757,11 +757,11 @@
     "testimonial": "The reliable internet and modern facilities at Espasyo make it the ideal hub for our IT services company. We also heavily rely on their business assistance for our tax filing needs.",
     "media": {
       "video": "",
-      "image1": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
-      "image2": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=60",
+      "image1": "https://res.cloudinary.com/dlk93aehl/image/upload/v1775011316/eltech1.jpg",
+      "image2": "https://res.cloudinary.com/dlk93aehl/image/upload/v1775011347/eltech2.jpg",
       "image3": ""
     },
-    "logo": ""
+    "logo": "https://res.cloudinary.com/dlk93aehl/image/upload/v1775011279/eltech.jpg"
   },
   {
     "id": 24,

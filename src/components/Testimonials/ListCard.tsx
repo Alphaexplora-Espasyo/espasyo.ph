@@ -1,4 +1,4 @@
-import type { Business } from '../../constants/testimonialsData';
+import type { Business } from '../../models/types';
 
 export const ListCard = ({ business, onClick }: { business: Business, onClick: () => void }) => {
     return (

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Business } from '../../constants/testimonialsData';
+import type { Business } from '../../models/types';
 import { resolvePath } from '../../constants/testimonialsData';
 
 export const GalleryModal = ({ business, onClose }: { business: Business, onClose: () => void }) => {
@@ -61,7 +61,7 @@ export const GalleryModal = ({ business, onClose }: { business: Business, onClos
                     {currentMedia.type === 'video' ? (
                         <video src={src} controls autoPlay playsInline webkit-playsinline="true" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
                     ) : (
-                        <img src={src} alt="Media preview" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
+                        <img src={src} alt="Media preview" loading="lazy" decoding="async" className="max-w-full max-h-full object-contain rounded-xl shadow-lg" />
                     )}
 
                     {allMedia.length > 1 && (

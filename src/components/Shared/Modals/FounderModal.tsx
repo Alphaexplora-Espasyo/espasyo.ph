@@ -127,7 +127,7 @@ const FounderModal = ({ originRect, onClose, src }: FounderModalProps) => {
           {!play ? (
             <>
               {/* Thumbnail Image */}
-              <img src={src} alt="Ms. Tina" className="w-full h-full object-contain opacity-90 transition-transform duration-700 group-hover:scale-105" />
+              <img src={src} alt="Ms. Tina" loading="lazy" decoding="async" className="w-full h-full object-contain opacity-90 transition-transform duration-700 group-hover:scale-105" />
               
               {/* Dark Gradient for Text Legibility */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#2b3327]/90 pointer-events-none" />

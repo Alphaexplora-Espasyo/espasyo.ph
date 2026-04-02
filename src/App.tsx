@@ -1,15 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router-dom";
 import Lenis from "lenis";
-import gsap from "gsap"; // NEW IMPORT
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // NEW IMPORT
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
-import Testimonials from "./pages/Testimonials";
-import Resources from "./pages/Resources";
-import Contact from "./pages/Contact";
-import Reviews from './pages/Reviews';
+const Home = lazy(() => import("./pages/Home"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
+const Resources = lazy(() => import("./pages/Resources"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Reviews = lazy(() => import("./pages/Reviews"));
 
 // Register ScrollTrigger globally here as well to be safe
 gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +26,15 @@ const ScrollToTop = () => {
 
   return null;
 };
+
+const LoadingScreen = () => (
+  <div className="fixed inset-0 flex items-center justify-center bg-[#FDF4DC] z-[9999]">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-4 border-[#3A2618]/20 border-t-[#3A2618] rounded-full animate-spin" />
+      <span className="font-display text-[#3A2618] uppercase tracking-widest text-sm font-bold">Loading...</span>
+    </div>
+  </div>
+);
 
 function App() {
   useEffect(() => {
@@ -79,14 +88,16 @@ function App() {
       <ScrollToTop />
       <div className="antialiased bg-[#FDF4DC] min-h-screen relative">
         <GlobalCTA />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<LoadingScreen />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </div>
     </BrowserRouter>
   );

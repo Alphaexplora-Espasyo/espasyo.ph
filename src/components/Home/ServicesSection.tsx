@@ -95,7 +95,7 @@ const ServicesSection = ({
                       transition: isHovering ? 'transform 0.1s ease-out' : 'all 0.7s cubic-bezier(0.25,0.8,0.25,1)'
                     }}
                   >
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={service.image} alt={service.title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     {isCenter && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" style={{ opacity: isHovering ? 0.3 + (tilt.y / 20) : 0, transition: 'opacity 0.3s' }} />}
 
                     {/* Brown overlay + centered white text */}

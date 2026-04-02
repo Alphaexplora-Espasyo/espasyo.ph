@@ -178,6 +178,8 @@ const DetailModal = ({ item, originRect, onClose }: DetailModalProps) => {
               <img 
                 src={resolvePath(activeMedia.src)} 
                 alt={`${item.businessName} gallery`} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain p-2"
                 onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://res.cloudinary.com/dlk93aehl/image/upload/LogoWhite.jpg'; }}
               />

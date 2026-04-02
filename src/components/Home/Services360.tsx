@@ -11,6 +11,26 @@ const Services360 = () => {
   const [currentScene, setCurrentScene] = useState('nav3');
   const [modalImage, setModalImage] = useState<string | null>(null);
   const [isInteractive, setIsInteractive] = useState(false);
+  
+  // --- VIEWPORT CULLING ---
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+        }
+      },
+      { rootMargin: '300px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // --- 360 VIEWER STATE ---
   const viewerRef = useRef<any>(null);
@@ -234,6 +254,7 @@ const Services360 = () => {
 
         {/* 360 VIEWER CONTAINER - EDGE TO EDGE */}
         <div
+          ref={containerRef}
           onMouseLeave={() => setIsInteractive(false)}
           className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[280px] relative group z-20 bg-black shadow-[0_30px_60px_rgba(0,0,0,0.3)] overflow-hidden"
           style={{ filter: 'sepia(0.2) saturate(1.2) contrast(1.05) brightness(1.05)' }}
@@ -273,7 +294,7 @@ const Services360 = () => {
 
                 {/* --- IMAGE TRANSITION CONTAINER --- */}
                 <div key={modalImage} className="relative inline-block max-h-[80vh] animate-image-transition">
-                  <img src={modalImage} alt="Detail View" className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-[#FEEBCA]/20" />
+                  <img src={modalImage} alt="Detail View" loading="lazy" decoding="async" className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-[#FEEBCA]/20" />
 
                   {/* ========================================================= */}
                   {/* HOTSPOTS FOR NAV 3-1 */}
@@ -349,42 +370,44 @@ const Services360 = () => {
             </div>
           )}
 
-          <ReactPhotoSphereViewer
-            src={scenes['nav3'].image}
-            width="100%"
-            height="100%"
-            fisheye={false}
-            minZoom={10}
-            maxZoom={100}
-            defaultZoomLvl={50}
-            defaultYaw={scenes['nav3'].initialYaw * Math.PI / 180}
-            defaultPitch={0}
-            plugins={[[MarkersPlugin, {}]]}
-            onReady={(instance: any) => {
-              viewerRef.current = instance;
+          {isInView && (
+            <ReactPhotoSphereViewer
+              src={scenes['nav3'].image}
+              width="100%"
+              height="100%"
+              fisheye={false}
+              minZoom={10}
+              maxZoom={100}
+              defaultZoomLvl={50}
+              defaultYaw={scenes['nav3'].initialYaw * Math.PI / 180}
+              defaultPitch={0}
+              plugins={[[MarkersPlugin, {}]]}
+              onReady={(instance: any) => {
+                viewerRef.current = instance;
 
-              const markersPlugin = instance.getPlugin(MarkersPlugin);
-              if (markersPlugin) {
-                markersPlugin.clearMarkers();
-                const markers = getMarkersForScene();
-                markersPlugin.setMarkers(markers);
+                const markersPlugin = instance.getPlugin(MarkersPlugin);
+                if (markersPlugin) {
+                  markersPlugin.clearMarkers();
+                  const markers = getMarkersForScene();
+                  markersPlugin.setMarkers(markers);
 
-                // Fixed selecting markers to call their onClick handler
-                markersPlugin.addEventListener('select-marker', (e: any) => {
-                  const marker = e.marker;
-                  if (marker.config.data && marker.config.data.onClick) {
-                    marker.config.data.onClick();
-                  }
+                  // Fixed selecting markers to call their onClick handler
+                  markersPlugin.addEventListener('select-marker', (e: any) => {
+                    const marker = e.marker;
+                    if (marker.config.data && marker.config.data.onClick) {
+                      marker.config.data.onClick();
+                    }
+                  });
+                }
+
+                instance.addEventListener('click', ({ data }: any) => {
+                  const pitchDeg = (data.pitch * 180) / Math.PI;
+                  const yawDeg = (data.yaw * 180) / Math.PI;
+                  console.log(`📍 { pitch: ${pitchDeg.toFixed(2)}, yaw: ${yawDeg.toFixed(2)} }`);
                 });
-              }
-
-              instance.addEventListener('click', ({ data }: any) => {
-                const pitchDeg = (data.pitch * 180) / Math.PI;
-                const yawDeg = (data.yaw * 180) / Math.PI;
-                console.log(`📍 { pitch: ${pitchDeg.toFixed(2)}, yaw: ${yawDeg.toFixed(2)} }`);
-              });
-            }}
-          />
+              }}
+            />
+          )}
 
         </div>
 

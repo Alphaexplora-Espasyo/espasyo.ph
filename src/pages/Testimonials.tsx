@@ -4,7 +4,8 @@ import { useGSAP } from '@gsap/react';
 import Navbar from '../components/Common/Navbar';
 import testimonialsData from '../data/testimonials.json';
 
-import type { Business } from '../constants/testimonialsData';
+import type { Business } from '../models/types';
+
 import { CATEGORIES } from '../constants/testimonialsData';
 import { MediaCard } from '../components/Testimonials/MediaCard';
 import { ListCard } from '../components/Testimonials/ListCard';

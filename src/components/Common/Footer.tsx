@@ -64,11 +64,11 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-4 sm:gap-5 md:gap-6">
             <h4 className="font-display text-xl font-bold uppercase tracking-wider text-[#3A2618]/60">Accredited By</h4>
             <div className="flex items-center gap-4 sm:gap-6 md:gap-8 flex-wrap justify-center">
-              <img src={secLogo} alt="SEC Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
-              <img src={dtiLogo} alt="DTI Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
-              <img src={lguLogo} alt="LGU Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
-              <img src={birLogo} alt="BIR Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
-              <img src={cdaLogo} alt="CDA Accredited" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <img src={secLogo} alt="SEC Accredited" loading="lazy" decoding="async" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <img src={dtiLogo} alt="DTI Accredited" loading="lazy" decoding="async" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <img src={lguLogo} alt="LGU Accredited" loading="lazy" decoding="async" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <img src={birLogo} alt="BIR Accredited" loading="lazy" decoding="async" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <img src={cdaLogo} alt="CDA Accredited" loading="lazy" decoding="async" className="h-16 sm:h-20 md:h-24 w-auto" />
             </div>
           </div>
           <div className="flex flex-col items-center text-center px-4">
